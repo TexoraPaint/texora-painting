@@ -114,6 +114,13 @@
     font-size:clamp(26px,3.5vw,40px); color:var(--dark); margin-bottom:50px;
   }
   .services-grid { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; max-width:940px; margin:0 auto; }
+  @media (min-width:769px) {
+    .services-grid {
+      display:grid; grid-template-columns:repeat(3, 1fr);
+      gap:20px; max-width:760px;
+    }
+    .services-grid .service-card { width:auto; padding:34px 18px 28px; }
+  }
   .service-card {
     background:var(--white); border-radius:14px; padding:30px 18px 24px;
     width:146px; text-align:center; box-shadow:0 2px 14px rgba(0,0,0,.07);
