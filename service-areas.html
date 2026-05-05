@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Areas | Texora Painting — Tsawwassen, Ladner, Coquitlam & Metro Vancouver</title>
+<meta name="description" content="Texora Painting serves Tsawwassen, Ladner, Coquitlam, Delta, Burnaby, North Vancouver, Vancouver and surrounding Metro Vancouver areas. Free quotes for all locations.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://texorapainting.com/service-areas.html">
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#1a3a6e;--blue-mid:#1e4fa0;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;--light-gray:#e5e9f2;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:linear-gradient(135deg,rgba(15,32,80,.97) 0%,rgba(26,58,110,.97) 60%,rgba(30,79,160,.95) 100%);box-shadow:0 4px 24px rgba(0,0,0,.2);}
+  .logo img{height:72px;width:auto;}
+  .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+  .nav-links a{color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.9;}
+  .nav-links a:hover{opacity:1;}
+  .btn-nav{background:var(--orange);padding:12px 22px;border-radius:6px;opacity:1 !important;}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;}
+  .nav-toggle span{display:block;width:26px;height:3px;background:#fff;border-radius:2px;}
+  .page-hero{min-height:280px;display:flex;align-items:center;padding:140px 5% 70px;background:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 42%,rgba(15,65,130,.5) 100%),url('img/hero-bg.jpg') center/cover;}
+  .page-hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(30px,5vw,50px);color:#fff;line-height:1.1;margin-bottom:12px;}
+  .page-hero h1 em{color:var(--orange);font-style:normal;}
+  .page-hero p{color:rgba(255,255,255,.85);font-size:16px;max-width:560px;}
+  .section-label{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;display:block;}
+  .section-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(24px,3vw,36px);color:var(--dark);margin-bottom:16px;}
+  .section-title em{color:var(--orange);font-style:normal;}
+  .areas-section{padding:80px 5%;text-align:center;}
+  .areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:40px auto;}
+  .area-card{background:#fff;border-radius:12px;padding:28px 20px;text-align:left;box-shadow:0 2px 12px rgba(0,0,0,.06);border-bottom:3px solid var(--orange);}
+  .area-card h3{font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;color:var(--blue);margin-bottom:8px;}
+  .area-card p{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:12px;}
+  .area-card a{color:var(--orange);text-decoration:none;font-weight:700;font-size:13px;}
+  .areas-note{color:var(--gray);font-size:14px;margin-top:16px;}
+  .areas-note strong a{color:var(--orange);text-decoration:none;}
+  .faq-section{background:var(--off-white);padding:80px 5%;}
+  .faq-section .section-label,.faq-section .section-title{text-align:center;}
+  .faq-list{max-width:780px;margin:40px auto 0;}
+  .faq-item{border-bottom:1px solid var(--light-gray);background:#fff;margin-bottom:4px;border-radius:8px;}
+  .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--dark);gap:16px;}
+  .faq-q span{font-size:22px;color:var(--orange);flex-shrink:0;transition:transform .25s;}
+  .faq-q.open span{transform:rotate(45deg);}
+  .faq-a{display:none;padding:0 24px 20px;}
+  .faq-a.open{display:block;}
+  .faq-a p{color:var(--gray);font-size:14px;line-height:1.8;}
+  .cta-bar{background:var(--blue);padding:60px 5%;text-align:center;}
+  .cta-bar h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(22px,3vw,34px);color:#fff;margin-bottom:12px;}
+  .cta-bar p{color:rgba(255,255,255,.8);margin-bottom:28px;}
+  .btn-cta{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:16px 36px;border-radius:8px;box-shadow:0 6px 24px rgba(244,123,32,.5);}
+  footer{background:#0f1e40;padding:24px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .footer-call{display:flex;align-items:center;gap:14px;text-decoration:none;}
+  .call-icon{background:var(--orange);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .footer-call-text{color:rgba(255,255,255,.7);font-size:12px;}
+  .footer-call-num{color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;}
+  .footer-copy{color:rgba(255,255,255,.5);font-size:12px;}
+  @media(max-width:768px){.nav-links{display:none;}.nav-toggle{display:flex;}.areas-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Texora Painting"></a></div>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#work">Our Work</a></li>
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#quote" class="btn-nav">Get Free Quote</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div>
+    <span class="section-label">Where We Work</span>
+    <h1>Serving <em>Metro Vancouver</em><br>& the Lower Mainland</h1>
+    <p>Professional painting services for Tsawwassen, Ladner, Coquitlam, Delta, Burnaby, North Vancouver, Vancouver and surrounding areas.</p>
+  </div>
+</div>
+
+<section class="areas-section">
+  <span class="section-label">Our Locations</span>
+  <h2 class="section-title">Cities We <em>Serve</em></h2>
+  <div class="areas-grid">
+    <div class="area-card">
+      <h3>Tsawwassen</h3>
+      <p>Our primary focus area. Interior painting, exterior repaints, cabinet refinishing and drywall repair for Tsawwassen homes.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Ladner</h3>
+      <p>Trusted house painters in Ladner. Full home repaints, trim work, ceilings and more — local crew, fast response.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Coquitlam</h3>
+      <p>Professional painters serving Coquitlam with quality interior and exterior painting for homes of all sizes.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Delta</h3>
+      <p>Local Delta painters for residential and light commercial painting projects. Covering all of Delta municipality.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Burnaby</h3>
+      <p>Painting services throughout Burnaby — from single room refreshes to complete home repaints inside and out.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>North Vancouver</h3>
+      <p>Exterior and interior painting for North Vancouver homes. Experienced with the specific demands of North Shore properties.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>Vancouver</h3>
+      <p>Serving Vancouver homeowners with premium painting, cabinet refinishing and drywall services across all neighbourhoods.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+    <div class="area-card">
+      <h3>White Rock</h3>
+      <p>Professional painters serving White Rock and South Surrey. Interior and exterior painting, free quotes, fast response times.</p>
+      <a href="index.html#quote">Get a quote →</a>
+    </div>
+  </div>
+  <p class="areas-note">Don't see your city? <strong><a href="tel:+16044176483">Call (604) 417-6483</a></strong> — we likely cover your area.</p>
+</section>
+
+<section class="faq-section">
+  <span class="section-label">Common Questions</span>
+  <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+  <div class="faq-list">
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How much does it cost to paint a house in Vancouver? <span>+</span></button><div class="faq-a"><p>Most residential interior projects range from $1,500–$6,000+ depending on square footage and condition. Exterior painting typically runs $3,000–$10,000+. We provide free, no-obligation quotes so you know exactly what to expect.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you provide free painting quotes? <span>+</span></button><div class="faq-a"><p>Yes — all quotes are 100% free with no obligation. Fill out our quote form or call (604) 417-6483 and we'll get back to you quickly with a detailed estimate.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does interior painting take? <span>+</span></button><div class="faq-a"><p>A single room typically takes 1 day. A full home interior repaint usually takes 3–7 days depending on size and prep required. We give you a clear timeline before starting — and we stick to it.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you do cabinet painting? <span>+</span></button><div class="faq-a"><p>Yes — cabinet painting is one of our specialties. We use a professional spray process for a smooth, factory-like finish. It's one of the most cost-effective ways to transform a kitchen without a full renovation.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are you licensed and insured? <span>+</span></button><div class="faq-a"><p>Yes. Texora Painting is fully insured and WorkSafe BC registered. Your home and our team are fully protected throughout every project.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you serve my area? <span>+</span></button><div class="faq-a"><p>We primarily serve Tsawwassen, Ladner, Coquitlam, Delta, Burnaby, North Vancouver, Vancouver and White Rock. Call (604) 417-6483 if you're unsure — we'll tell you right away.</p></div></div>
+  </div>
+</section>
+
+<section class="cta-bar">
+  <h2>Ready for a Free Quote?</h2>
+  <p>No obligation. We respond fast — usually same day.</p>
+  <a href="index.html#quote" class="btn-cta">Request Your Free Quote →</a>
+</section>
+
+<footer>
+  <a class="footer-call" href="tel:+16044176483">
+    <div class="call-icon">📞</div>
+    <div><div class="footer-call-text">Prefer to talk? Call us directly!</div><div class="footer-call-num">(604) 417-6483</div></div>
+  </a>
+  <div class="footer-copy">© 2025 Texora Painting. All rights reserved.</div>
+</footer>
+<script>
+  function toggleFaq(btn){var a=btn.nextElementSibling,open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!open){a.classList.add('open');btn.classList.add('open');}}
+  (function(){var btn=document.getElementById('navToggle'),links=document.getElementById('navLinks');if(btn&&links)btn.addEventListener('click',function(){links.classList.toggle('open');});})();
+</script>
+</body>
+</html>
