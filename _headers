@@ -1,0 +1,34 @@
+# Static assets — cache 1 year (immutable, versioned by filename)
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon*
+  Cache-Control: public, max-age=31536000, immutable
+
+/android-chrome*
+  Cache-Control: public, max-age=31536000, immutable
+
+/apple-touch-icon*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML — always revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate

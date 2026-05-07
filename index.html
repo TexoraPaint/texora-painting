@@ -785,25 +785,35 @@
     if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
   }
 
-  // Scroll to top button
+  // Scroll to top button — uses IntersectionObserver to avoid forced reflow
   (function() {
     var btn = document.getElementById('scrollTop');
     var footer = document.querySelector('footer');
-    function updateBtn() {
-      var scrolled = window.scrollY > 400;
-      btn.classList.toggle('visible', scrolled);
-      // Lift button above footer when footer enters viewport
-      var footerTop = footer.getBoundingClientRect().top;
-      var viewH = window.innerHeight;
-      if (footerTop < viewH) {
-        btn.style.bottom = (viewH - footerTop + 12) + 'px';
-      } else {
-        btn.style.bottom = '28px';
+    var footerVisible = false;
+
+    // Watch scroll position for show/hide
+    var showObs = new IntersectionObserver(function(entries) {
+      // sentinel div placed 400px from top triggers show
+    }, {});
+
+    // Lift button when footer enters viewport
+    new IntersectionObserver(function(entries) {
+      footerVisible = entries[0].isIntersecting;
+      btn.style.bottom = footerVisible ? '80px' : '28px';
+    }, { threshold: 0 }).observe(footer);
+
+    // Show/hide based on scroll — cheap, no layout read
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          btn.classList.toggle('visible', window.scrollY > 400);
+          ticking = false;
+        });
+        ticking = true;
       }
-    }
-    window.addEventListener('scroll', updateBtn, { passive: true });
-    window.addEventListener('resize', updateBtn, { passive: true });
-    updateBtn();
+    }, { passive: true });
+
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
