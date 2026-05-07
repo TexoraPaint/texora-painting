@@ -113,7 +113,14 @@
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Preload LCP image -->
+<link rel="preload" as="image" href="img/hero-bg.webp" type="image/webp">
+<!-- Preconnect for fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Load fonts async to eliminate render blocking -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
 <style>
   :root {
     --blue: #1a3a6e; --blue-mid: #1e4fa0; --blue-light: #2d6bcf;
@@ -498,7 +505,10 @@
 <!-- NAV -->
 <nav>
   <div class="logo">
-    <img src="img/logo.png" alt="Texora Painting">
+    <picture>
+      <source srcset="img/logo.webp" type="image/webp">
+      <img src="img/logo.png" alt="Texora Painting" width="160" height="107" fetchpriority="high">
+    </picture>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -521,7 +531,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('img/hero-bg.jpg')"></div>
+  <div class="hero-bg" style="background-image:url('img/hero-bg.webp')"></div>
   <div class="hero-content">
     <div class="hero-badge">⭐ 5-Star Rated · Metro Vancouver</div>
     <h1>Interior &amp; Exterior Painting<em>Done Right</em></h1>
@@ -540,17 +550,17 @@
 <!-- TRUST STRIP -->
 <section class="trust-strip">
   <div class="trust-item">
-    <img loading="lazy" class="trust-icon" src="img/trust-icon-1.png" alt="100% Satisfaction Guarantee">
+    <picture><source srcset="img/trust-icon-1.webp" type="image/webp"><img loading="lazy" class="trust-icon" src="img/trust-icon-1.png" alt="100% Satisfaction Guarantee" width="110" height="110"></picture>
     <h3>100% Satisfaction Guarantee</h3>
     <p>We stand behind every job.</p>
   </div>
   <div class="trust-item">
-    <img loading="lazy" class="trust-icon" src="img/trust-icon-2.png" alt="5-Star Rated">
+    <picture><source srcset="img/trust-icon-2.webp" type="image/webp"><img loading="lazy" class="trust-icon" src="img/trust-icon-2.png" alt="5-Star Rated" width="110" height="110"></picture>
     <h3>5-Star Rated</h3>
     <p>Trusted by local homeowners.</p>
   </div>
   <div class="trust-item">
-    <img loading="lazy" class="trust-icon" src="img/trust-icon-3.png" alt="Locally Owned">
+    <picture><source srcset="img/trust-icon-3.webp" type="image/webp"><img loading="lazy" class="trust-icon" src="img/trust-icon-3.png" alt="Locally Owned" width="110" height="110"></picture>
     <h3>Locally Owned &amp; Operated</h3>
     <p>Proudly serving our community.</p>
   </div>
@@ -562,32 +572,32 @@
   <h2 class="section-title">Quality Work. Every Time.</h2>
   <div class="services-grid">
     <a class="service-card" href="interior-painting.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-1.png" alt="Interior Painting">
+      <img loading="lazy" class="svc-icon" src="img/svc-icon-1.png" alt="Interior Painting" width="64" height="64">
       <h4>Interior Painting</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
     <a class="service-card" href="exterior-painting.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-2.png" alt="Exterior Painting">
+      <img loading="lazy" class="svc-icon" src="img/svc-icon-2.png" alt="Exterior Painting" width="64" height="64">
       <h4>Exterior Painting</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
     <a class="service-card" href="cabinet-painting.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-3.png" alt="Cabinet Painting">
+      <img loading="lazy" class="svc-icon" src="img/svc-icon-3.png" alt="Cabinet Painting" width="64" height="64">
       <h4>Cabinet Painting</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
     <a class="service-card" href="drywall-repair.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-4.png" alt="Drywall Repair">
+      <img loading="lazy" class="svc-icon" src="img/svc-icon-4.png" alt="Drywall Repair" width="64" height="64">
       <h4>Drywall Repair &amp; Mudding</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
     <a class="service-card" href="trim-doors-ceilings.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-5.png" alt="Trim Doors Ceilings">
+      <img loading="lazy" class="svc-icon" src="img/svc-icon-5.png" alt="Trim Doors Ceilings" width="64" height="64">
       <h4>Trim, Doors &amp; Ceilings</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
     <a class="service-card" href="full-home-repaint.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-6.png" alt="Full Home Repaints">
+      <img loading="lazy" class="svc-icon" src="img/svc-icon-6.png" alt="Full Home Repaints" width="64" height="64">
       <h4>Full Home Repaints</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
@@ -668,7 +678,10 @@
         <script defer async src='https://cdn.trustindex.io/loader.js?afac43b702828972b91648d5659'></script>
       </div>
             <div class="reviews-mascot-wrap">
-        <img loading="lazy" class="reviews-mascot" src="img/mascot.png" alt="Texora Painting mascot">
+        <picture>
+          <source srcset="img/mascot.webp" type="image/webp">
+          <img loading="lazy" class="reviews-mascot" src="img/mascot.png" alt="Texora Painting mascot" width="533" height="800">
+        </picture>
       </div>
     </div>
   </div>
@@ -677,7 +690,7 @@
 
 <!-- QUOTE FORM -->
 <section class="quote" id="quote">
-  <div class="quote-bg" style="background-image:url('img/quote-bg.jpg')"></div>
+  <div class="quote-bg" style="background-image:url('img/quote-bg.webp')"></div>
   <div class="quote-inner">
     <div class="quote-left">
       <h2>Request Your <em>Free Quote</em></h2>
@@ -688,8 +701,8 @@
         <li>100% Satisfaction Guaranteed</li>
       </ul>
       <div class="trust-logos">
-        <img src="worksafe-bc.jpg" alt="WorkSafe BC" class="trust-logo">
-        <img src="bbb.jpg" alt="BBB Accredited Business" class="trust-logo" style="height:62px;">
+        <picture><source srcset="worksafe-bc.webp" type="image/webp"><img src="worksafe-bc.jpg" alt="WorkSafe BC" class="trust-logo" width="177" height="34"></picture>
+        <picture><source srcset="bbb.webp" type="image/webp"><img src="bbb.jpg" alt="BBB Accredited Business" class="trust-logo" width="146" height="52" style="height:62px;"></picture>
       </div>
     </div>
     <form class="form-grid" action="https://formsubmit.co/info@texorapainting.com" method="POST">
