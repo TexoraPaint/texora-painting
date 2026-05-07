@@ -1,0 +1,7 @@
+# www → non-www
+https://www.texorapainting.com/* https://texorapainting.com/:splat 301!
+http://www.texorapainting.com/*  https://texorapainting.com/:splat 301!
+
+# Old pages → homepage
+/service-inquiry  /  301
+/m/account        /  301
