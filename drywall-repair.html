@@ -163,6 +163,29 @@
       btn.classList.toggle('open');
     });
   })();
+
+  // Scroll to top button
+  (function() {
+    var btn = document.getElementById('scrollTop');
+    var footer = document.querySelector('footer');
+    function updateBtn() {
+      var scrolled = window.scrollY > 400;
+      btn.classList.toggle('visible', scrolled);
+      var footerTop = footer.getBoundingClientRect().top;
+      var viewH = window.innerHeight;
+      if (footerTop < viewH) {
+        btn.style.bottom = (viewH - footerTop + 12) + 'px';
+      } else {
+        btn.style.bottom = '28px';
+      }
+    }
+    window.addEventListener('scroll', updateBtn, { passive: true });
+    window.addEventListener('resize', updateBtn, { passive: true });
+    updateBtn();
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
 </script>
 <button id="scrollTop" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

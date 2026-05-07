@@ -169,6 +169,29 @@
 <script>
   function toggleFaq(btn){var a=btn.nextElementSibling,open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!open){a.classList.add('open');btn.classList.add('open');}}
   (function(){var btn=document.getElementById('navToggle'),links=document.getElementById('navLinks');if(btn&&links)btn.addEventListener('click',function(){links.classList.toggle('open');});})();
+
+  // Scroll to top button
+  (function() {
+    var btn = document.getElementById('scrollTop');
+    var footer = document.querySelector('footer');
+    function updateBtn() {
+      var scrolled = window.scrollY > 400;
+      btn.classList.toggle('visible', scrolled);
+      var footerTop = footer.getBoundingClientRect().top;
+      var viewH = window.innerHeight;
+      if (footerTop < viewH) {
+        btn.style.bottom = (viewH - footerTop + 12) + 'px';
+      } else {
+        btn.style.bottom = '28px';
+      }
+    }
+    window.addEventListener('scroll', updateBtn, { passive: true });
+    window.addEventListener('resize', updateBtn, { passive: true });
+    updateBtn();
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
 </script>
 <button id="scrollTop" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
