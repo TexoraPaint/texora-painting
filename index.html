@@ -212,16 +212,25 @@
   .hero {
     min-height:600px; position:relative; overflow:hidden;
     display:flex; align-items:center; padding:120px 5% 90px;
+    background:linear-gradient(115deg, #091852 0%, #0e2b8a 45%, #1545b0 100%);
   }
-  .hero-bg {
-    position:absolute; inset:0; background-size:cover; background-position:center; z-index:0;
-  }
-  .hero-bg::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(110deg, rgba(10,32,90,.92) 0%, rgba(22,65,150,.80) 42%, rgba(15,65,130,.45) 100%);
-  }
+  /* tape strips — semi-transparent white, simulate painter's tape */
+  .hero-tapes { position:absolute; inset:0; z-index:1; overflow:hidden; }
+  .tape { position:absolute; background:rgba(255,255,255,.10); transform-origin:center center; }
+  .tape-1 { width:38px;  height:170%; top:-35%; left:43%; transform:rotate(-9deg); }
+  .tape-2 { width:72px;  height:170%; top:-35%; left:47%; transform:rotate(-9deg); }
+  .tape-3 { width:28px;  height:170%; top:-35%; left:55%; transform:rotate(-9deg); }
+  .tape-4 { width:95px;  height:170%; top:-35%; left:59%; transform:rotate(-9deg); }
+  .tape-5 { width:22px;  height:170%; top:-35%; left:70%; transform:rotate(-9deg); }
+  .tape-6 { width:55px;  height:170%; top:-35%; left:74%; transform:rotate(-9deg); }
   .hero-content { position:relative; z-index:6; max-width:520px; animation:fadeUp .8s ease both; }
   @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+  .hero-house {
+    position:absolute; right:-2%; bottom:0; width:54%; max-width:760px; z-index:5;
+    animation:floatIn .9s ease both;
+  }
+  .hero-house img { width:100%; height:auto; display:block; }
+  @keyframes floatIn { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
   .hero-badge {
     display:inline-block; background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.28);
     color:var(--white); font-family:'Montserrat',sans-serif; font-weight:700; font-size:12px;
@@ -252,8 +261,6 @@
     box-sizing:border-box;
   }
   .btn-hero-call:hover { background:var(--orange-dark); transform:translateY(-2px); box-shadow:0 10px 30px rgba(244,123,32,.55); }
-  
-  @keyframes floatIn { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
 
   /* ── TRUST STRIP ── */
   .trust-strip {
@@ -522,7 +529,14 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('img/hero-bg.jpg')"></div>
+  <div class="hero-tapes">
+    <div class="tape tape-1"></div>
+    <div class="tape tape-2"></div>
+    <div class="tape tape-3"></div>
+    <div class="tape tape-4"></div>
+    <div class="tape tape-5"></div>
+    <div class="tape tape-6"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-badge">⭐ 5-Star Rated · Metro Vancouver</div>
     <h1>Interior &amp; Exterior Painting<em>Done Right</em></h1>
@@ -536,7 +550,9 @@
       <a href="tel:+16044176483" class="btn-hero-call" aria-label="Call (604) 417-6483">📞</a>
     </div>
   </div>
-  
+  <div class="hero-house">
+    <img src="img/house-hero.png" alt="Beautifully painted home">
+  </div>
 </section>
 
 <!-- TRUST STRIP -->
