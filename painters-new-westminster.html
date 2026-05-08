@@ -186,11 +186,13 @@
     <div><div class="footer-call-text">Prefer to talk? Call us directly!</div><div class="footer-call-num">(604) 417-6483</div></div>
   </a>
   <div class="footer-links">
-    <a class="footer-email" href="mailto:info@texorapainting.com">✉ info@texorapainting.com</a>
+    <a class="footer-email" href="mailto:info@texorapainting.com">📧 info@texorapainting.com</a>
     <span class="footer-sep">|</span>
     <a class="footer-profile" href="https://share.google/ktiq1kINB0cnvunmX" target="_blank" rel="noopener">⭐ Google Reviews</a>
     <span class="footer-sep">|</span>
-    <a class="footer-profile" href="https://www.homestars.com/profile/texora" target="_blank" rel="noopener">HomeStars</a>
+    <a class="footer-profile" href="https://www.homestars.com/profile/texora" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle;margin-right:3px;border-radius:3px"><rect width="16" height="16" fill="#06A04A" rx="3"/><path d="M8 3L9.18 6.38L12.76 6.45L9.9 8.62L10.94 12.05L8 10L5.06 12.05L6.1 8.62L3.24 6.45L6.82 6.38Z" fill="white"/></svg>HomeStars</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://biz.yelp.com/home/NlyHcfwPoPcZiAda3t8v8A/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle;margin-right:3px;border-radius:3px"><rect width="16" height="16" fill="#D32323" rx="3"/><path d="M8 3L9.18 6.38L12.76 6.45L9.9 8.62L10.94 12.05L8 10L5.06 12.05L6.1 8.62L3.24 6.45L6.82 6.38Z" fill="white"/></svg>Yelp</a>
   </div>
   <div class="footer-copy">© 2025 Texora Painting. All rights reserved.</div>
 </footer>
@@ -199,7 +201,7 @@
 </button>
 <script>
   (function(){var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(b&&l)b.addEventListener('click',function(){l.classList.toggle('open');b.classList.toggle('open');});})();
-  (function(){var btn=document.getElementById('scrollTop'),f=document.querySelector('footer'),fv=false;new IntersectionObserver(function(e){fv=e[0].isIntersecting;btn.style.bottom=fv?'80px':'28px';},{threshold:0}).observe(f);var t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
+  (function(){var btn=document.getElementById('scrollTop'),f=document.querySelector('footer'),fv=false;new IntersectionObserver(function(e){fv=e[0].isIntersecting;btn.style.bottom=fv?(f.offsetHeight+16)+'px':'28px';},{threshold:0}).observe(f);var t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
   function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');b.classList.add('open');}}
 </script>
 </body>

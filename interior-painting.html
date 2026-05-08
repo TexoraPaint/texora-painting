@@ -206,11 +206,13 @@
     <div><div class="footer-call-text">Prefer to talk? Call us directly!</div><div class="footer-call-num">(604) 417-6483</div></div>
   </a>
   <div class="footer-links">
-    <a class="footer-email" href="mailto:info@texorapainting.com">✉ info@texorapainting.com</a>
+    <a class="footer-email" href="mailto:info@texorapainting.com">📧 info@texorapainting.com</a>
     <span class="footer-sep">|</span>
     <a class="footer-profile" href="https://share.google/ktiq1kINB0cnvunmX" target="_blank" rel="noopener">⭐ Google Reviews</a>
     <span class="footer-sep">|</span>
-    <a class="footer-profile" href="https://www.homestars.com/profile/texora" target="_blank" rel="noopener">HomeStars</a>
+    <a class="footer-profile" href="https://www.homestars.com/profile/texora" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle;margin-right:3px;border-radius:3px"><rect width="16" height="16" fill="#06A04A" rx="3"/><path d="M8 3L9.18 6.38L12.76 6.45L9.9 8.62L10.94 12.05L8 10L5.06 12.05L6.1 8.62L3.24 6.45L6.82 6.38Z" fill="white"/></svg>HomeStars</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://biz.yelp.com/home/NlyHcfwPoPcZiAda3t8v8A/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align:middle;margin-right:3px;border-radius:3px"><rect width="16" height="16" fill="#D32323" rx="3"/><path d="M8 3L9.18 6.38L12.76 6.45L9.9 8.62L10.94 12.05L8 10L5.06 12.05L6.1 8.62L3.24 6.45L6.82 6.38Z" fill="white"/></svg>Yelp</a>
   </div>
   <div class="footer-copy">© 2025 Texora Painting. All rights reserved.</div>
 </footer>
@@ -226,7 +228,7 @@
     var btn=document.getElementById('scrollTop');
     var footer=document.querySelector('footer');
     var footerVisible=false;
-    new IntersectionObserver(function(e){footerVisible=e[0].isIntersecting;btn.style.bottom=footerVisible?'80px':'28px';},{threshold:0}).observe(footer);
+    new IntersectionObserver(function(e){footerVisible=e[0].isIntersecting;btn.style.bottom=footerVisible?(footer.offsetHeight+16)+'px':'28px';},{threshold:0}).observe(footer);
     var ticking=false;
     window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);ticking=false;});ticking=true;}},{passive:true});
     btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
