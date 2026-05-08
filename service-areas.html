@@ -29,7 +29,7 @@
   .section-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(24px,3vw,36px);color:var(--dark);margin-bottom:16px;}
   .section-title em{color:var(--orange);font-style:normal;}
   .areas-section{padding:80px 5%;text-align:center;}
-  .areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:40px auto;}
+  .areas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1200px;margin:40px auto;}
   .area-card{background:#fff;border-radius:12px;padding:28px 20px;text-align:left;box-shadow:0 2px 12px rgba(0,0,0,.06);border-bottom:3px solid var(--orange);}
   .area-card h3{font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;color:var(--blue);margin-bottom:8px;}
   .area-card p{font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:12px;}
@@ -56,6 +56,11 @@
   .footer-call-text{color:rgba(255,255,255,.7);font-size:12px;}
   .footer-call-num{color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;}
   .footer-copy{color:rgba(255,255,255,.5);font-size:12px;}
+  .footer-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .footer-email,.footer-profile{color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;font-weight:600;transition:color .2s;}
+  .footer-email:hover,.footer-profile:hover{color:var(--orange);}
+  .footer-sep{color:rgba(255,255,255,.25);font-size:13px;}
+  @media(max-width:900px){.areas-grid{grid-template-columns:repeat(3,1fr);}}
   @media(max-width:768px){.nav-links{display:none;}.nav-toggle{display:flex;}.areas-grid{grid-template-columns:repeat(2,1fr);}}
 
   #scrollTop {
@@ -99,42 +104,52 @@
     <div class="area-card">
       <h3>Tsawwassen</h3>
       <p>Our primary focus area. Interior painting, exterior repaints, cabinet refinishing and drywall repair for Tsawwassen homes.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <a href="painters-tsawwassen.html">Learn more →</a>
     </div>
     <div class="area-card">
       <h3>Ladner</h3>
       <p>Trusted house painters in Ladner. Full home repaints, trim work, ceilings and more — local crew, fast response.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <a href="painters-ladner.html">Learn more →</a>
     </div>
     <div class="area-card">
       <h3>Coquitlam</h3>
       <p>Professional painters serving Coquitlam with quality interior and exterior painting for homes of all sizes.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <a href="painters-coquitlam.html">Learn more →</a>
     </div>
     <div class="area-card">
       <h3>Delta</h3>
       <p>Local Delta painters for residential and light commercial painting projects. Covering all of Delta municipality.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <a href="painters-delta.html">Learn more →</a>
     </div>
     <div class="area-card">
       <h3>Burnaby</h3>
       <p>Painting services throughout Burnaby — from single room refreshes to complete home repaints inside and out.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <a href="painters-burnaby.html">Learn more →</a>
     </div>
     <div class="area-card">
       <h3>North Vancouver</h3>
       <p>Exterior and interior painting for North Vancouver homes. Experienced with the specific demands of North Shore properties.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <a href="painters-north-vancouver.html">Learn more →</a>
     </div>
     <div class="area-card">
       <h3>Vancouver</h3>
       <p>Serving Vancouver homeowners with premium painting, cabinet refinishing and drywall services across all neighbourhoods.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <a href="painters-vancouver.html">Learn more →</a>
     </div>
     <div class="area-card">
-      <h3>White Rock</h3>
-      <p>Professional painters serving White Rock and South Surrey. Interior and exterior painting, free quotes, fast response times.</p>
-      <a href="index.html#quote">Get a quote →</a>
+      <h3>Surrey</h3>
+      <p>Professional painters serving Surrey with interior, exterior and cabinet painting. Free quotes, reliable crews.</p>
+      <a href="painters-surrey.html">Learn more →</a>
+    </div>
+    <div class="area-card">
+      <h3>Richmond</h3>
+      <p>Experienced house painters in Richmond for interior repaints, exterior work, and cabinet refinishing.</p>
+      <a href="painters-richmond.html">Learn more →</a>
+    </div>
+    <div class="area-card">
+      <h3>New Westminster</h3>
+      <p>Quality painting services in New Westminster. Interior, exterior, trim, and full home repaints done right.</p>
+      <a href="painters-new-westminster.html">Learn more →</a>
     </div>
   </div>
   <p class="areas-note">Don't see your city? <strong><a href="tel:+16044176483">Call (604) 417-6483</a></strong> — we likely cover your area.</p>
@@ -164,6 +179,15 @@
     <div class="call-icon">📞</div>
     <div><div class="footer-call-text">Prefer to talk? Call us directly!</div><div class="footer-call-num">(604) 417-6483</div></div>
   </a>
+  <div class="footer-links">
+    <a class="footer-email" href="mailto:info@texorapainting.com">✉ info@texorapainting.com</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://g.co/kgs/texorapainting" target="_blank" rel="noopener">⭐ Google Reviews</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://www.homestars.com/companies/texora-painting" target="_blank" rel="noopener">HomeStars</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://www.yelp.ca/biz/texora-painting" target="_blank" rel="noopener">Yelp</a>
+  </div>
   <div class="footer-copy">© 2025 Texora Painting. All rights reserved.</div>
 </footer>
 <button id="scrollTop" aria-label="Back to top">

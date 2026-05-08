@@ -98,6 +98,11 @@
     }
   ],
   "knowsLanguage": ["en"],
+  "sameAs": [
+    "https://g.co/kgs/texorapainting",
+    "https://www.homestars.com/companies/texora-painting",
+    "https://www.yelp.ca/biz/texora-painting"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Painting Services",
@@ -459,8 +464,10 @@
   }
   .footer-call-text { font-size:12px; color:rgba(255,255,255,.6); }
   .footer-call-num { font-family:'Montserrat',sans-serif; font-weight:900; font-size:26px; color:var(--orange); letter-spacing:1px; }
-  .footer-email { color:rgba(255,255,255,.6); font-size:13px; text-decoration:none; font-weight:600; transition:color .2s; }
-  .footer-email:hover { color:var(--orange); }
+  .footer-links { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .footer-email, .footer-profile { color:rgba(255,255,255,.6); font-size:13px; text-decoration:none; font-weight:600; transition:color .2s; }
+  .footer-email:hover, .footer-profile:hover { color:var(--orange); }
+  .footer-sep { color:rgba(255,255,255,.25); font-size:13px; }
   .footer-copy { font-size:12px; color:rgba(255,255,255,.35); }
 
   @media (max-width:768px) {
@@ -751,7 +758,15 @@
       <div class="footer-call-num">(604) 417-6483</div>
     </div>
   </a>
-  <a class="footer-email" href="mailto:info@texorapainting.com">✉ info@texorapainting.com</a>
+  <div class="footer-links">
+    <a class="footer-email" href="mailto:info@texorapainting.com">✉ info@texorapainting.com</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://g.co/kgs/texorapainting" target="_blank" rel="noopener">⭐ Google Reviews</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://www.homestars.com/companies/texora-painting" target="_blank" rel="noopener">HomeStars</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://www.yelp.ca/biz/texora-painting" target="_blank" rel="noopener">Yelp</a>
+  </div>
   <div class="footer-copy">© 2025 Texora Painting. All rights reserved.</div>
 </footer>
 
