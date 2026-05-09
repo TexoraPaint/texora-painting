@@ -371,6 +371,7 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
   }
   .step-ico { font-size:30px; margin-bottom:12px; display:block; }
   .step h3 { font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; color:var(--dark); margin-bottom:8px; }
+  .step-title-ico { display:none; }
   .step p { font-size:13px; color:var(--gray); line-height:1.6; }
 
   /* ── QUOTE ── */
@@ -489,11 +490,14 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
 
   @media (max-width:768px) {
     
-    .trust-strip { flex-direction:column; align-items:center; }
-    .trust-item { border-right:none; border-bottom:1px solid var(--light-gray); padding:20px 0; max-width:100%; }
-    .trust-item:last-child { border-bottom:none; }
+    .trust-strip { flex-direction:row; align-items:flex-start; justify-content:space-evenly; padding:24px 3%; gap:0; }
+    .trust-item { border-right:1px solid var(--light-gray); border-bottom:none; padding:0 10px; max-width:none; flex:1; }
+    .trust-item:last-child { border-right:none; }
+    .trust-icon { width:58px; height:58px; margin-bottom:8px; }
+    .trust-item h3 { font-size:9px; }
+    .trust-item p { font-size:10px; }
     .before-after-grid { grid-template-columns:1fr; }
-    .steps { flex-direction:column; align-items:center; }
+    .steps { flex-direction:column; align-items:stretch; gap:0; }
     .steps::before { display:none; }
     .quote-inner { grid-template-columns:1fr; }
     .quote-mascot { display:none; }
@@ -523,18 +527,83 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
     @keyframes navDrop { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
   }
   .footer-social{display:inline-flex;align-items:center;opacity:.8;transition:opacity .2s,transform .2s;}.footer-social:hover{opacity:1;transform:translateY(-2px);}
+
+  /* ── MOBILE LAYOUT FIXES ── */
+  @media(max-width:768px){
+    /* Hero — tighter padding so less dead space */
+    .hero { padding:86px 6% 52px; min-height:0; }
+
+    /* Sections — reduce vertical breathing room on small screens */
+    .trust-strip { padding:24px 3%; }
+    .services    { padding:44px 4%; }
+
+    /* Services — 3×2 compact grid */
+    .services-grid { display:grid !important; grid-template-columns:repeat(3,1fr) !important; gap:10px !important; max-width:100% !important; }
+    .service-card  { width:auto !important; padding:16px 8px 14px !important; }
+    .service-card .svc-icon { width:54px !important; height:54px !important; margin-bottom:10px; }
+    .service-card h4 { font-size:9px !important; }
+    .portfolio   { padding:52px 5%; }
+    .how         { padding:52px 5%; }
+    .reviews     { padding:52px 5%; }
+    .quote       { padding:52px 5%; }
+    .section-title { margin-bottom:30px; }
+
+    /* Reviews — fix grid-item min-width so card sizes correctly */
+    .reviews-widget { min-width:0; overflow:hidden; }
+    .gr-track-wrap  { width:100%; }
+    .gr-track       { width:100%; }
+    .gr-text        { word-break:break-word; overflow-wrap:break-word; }
+    /* Hide mascot on mobile — it adds ~200px of dead vertical space */
+    .reviews-mascot-wrap { display:none !important; }
+
+    /* Quote — reduce form card padding for small screens */
+    .form-grid   { padding:26px 18px; }
+    .quote-inner { gap:26px; }
+
+    /* Footer — stack into a column instead of awkward wrap */
+    .footer-bar      { flex-direction:column; align-items:flex-start; gap:12px; padding:22px 5%; }
+    .footer-call-num { font-size:22px; }
+    .footer-links    { gap:8px; }
+    .footer-copy     { width:100%; margin-top:2px; }
+
+    /* How It Works — vertical timeline, inline emoji, even spacing */
+    .steps { gap:0; }
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      column-gap: 18px;
+      text-align: left;
+      max-width: none;
+      padding-bottom: 32px;
+      position: relative;
+    }
+    .step:last-child { padding-bottom: 0; }
+    /* Connector line only between steps — stops before circle 3 */
+    .step:not(:last-child)::after {
+      content: ''; display: block;
+      position: absolute;
+      left: 27px; top: 56px; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--orange), var(--blue-light));
+    }
+    .step-num { grid-column:1; grid-row:1; margin:0 auto; align-self:center; }
+    .step-ico { display: none; }
+    .step-title-ico { display: inline; }
+    .step h3 { grid-column:2; grid-row:1; align-self:center; font-size:15px; margin:0; }
+    .step p  { grid-column:2; grid-row:2; padding-top:6px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="logo">
+  <a class="logo" href="#" aria-label="Back to top">
     <picture>
       <source srcset="img/logo.webp" type="image/webp">
       <img src="img/logo.png" alt="Texora Painting" width="160" height="107" fetchpriority="high">
     </picture>
-  </div>
+  </a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -675,19 +744,19 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
     <div class="step">
       <div class="step-num">1</div>
       <span class="step-ico">📋</span>
-      <h3>Request a Quote</h3>
+      <h3>Request a Quote <span class="step-title-ico">📋</span></h3>
       <p>Fill out the form and tell us about your project.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <span class="step-ico">📞</span>
-      <h3>We Review &amp; Contact You</h3>
+      <h3>We Review &amp; Contact You <span class="step-title-ico">📞</span></h3>
       <p>We'll get in touch to discuss your needs and provide a clear estimate.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <span class="step-ico">🖌️</span>
-      <h3>Schedule &amp; Complete the Job</h3>
+      <h3>Schedule &amp; Complete the Job <span class="step-title-ico">🖌️</span></h3>
       <p>We show up on time, do quality work, and leave your space clean and beautiful.</p>
     </div>
   </div>
@@ -704,7 +773,7 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
         <script src="https://elfsightcdn.com/platform.js" async></script>
         <div class="elfsight-app-caf38022-a2fa-4edf-b0b3-443c05d5f137" data-elfsight-app-lazy></div>
       </div>
-            <div class="reviews-mascot-wrap">
+                  <div class="reviews-mascot-wrap">
         <picture>
           <source srcset="img/mascot.webp" type="image/webp">
           <img loading="lazy" class="reviews-mascot" src="img/mascot.png" alt="Texora Painting mascot" width="533" height="800">
@@ -871,5 +940,6 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
     onScroll();
   })();
 </script>
+
 </body>
 </html>
