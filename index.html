@@ -466,6 +466,7 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
     filter:drop-shadow(0 14px 28px rgba(10,32,90,.22));
   }
   .reviews-widget { position:relative; min-height:200px; text-align:left; }
+  .reviews-mascot-lying-wrap { display:none; }
 
   /* ── FOOTER ── */
   .footer-bar {
@@ -530,16 +531,16 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
 
   /* ── MOBILE LAYOUT FIXES ── */
   @media(max-width:768px){
-    /* Hero — tighter padding so less dead space */
-    .hero { padding:86px 6% 52px; min-height:0; }
+    /* Hero — enough top clearance for sticky nav */
+    .hero { padding:108px 6% 52px; min-height:0; }
 
     /* Sections — reduce vertical breathing room on small screens */
     .trust-strip { padding:24px 3%; }
     .services    { padding:44px 4%; }
 
-    /* Services — 3×2 compact grid */
+    /* Services — 3×2 compact grid, all cards equal height */
     .services-grid { display:grid !important; grid-template-columns:repeat(3,1fr) !important; gap:10px !important; max-width:100% !important; }
-    .service-card  { width:auto !important; padding:16px 8px 14px !important; }
+    .service-card  { width:auto !important; padding:16px 8px 14px !important; min-height:158px; justify-content:center; }
     .service-card .svc-icon { width:54px !important; height:54px !important; margin-bottom:10px; }
     .service-card h4 { font-size:9px !important; }
     .portfolio   { padding:52px 5%; }
@@ -553,8 +554,10 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
     .gr-track-wrap  { width:100%; }
     .gr-track       { width:100%; }
     .gr-text        { word-break:break-word; overflow-wrap:break-word; }
-    /* Hide mascot on mobile — it adds ~200px of dead vertical space */
+    /* Hide standing mascot on mobile, show lying mascot instead */
     .reviews-mascot-wrap { display:none !important; }
+    .reviews-mascot-lying-wrap { display:block; width:100%; margin-top:24px; text-align:center; }
+    .reviews-mascot-lying { width:90%; max-width:360px; height:auto; }
 
     /* Quote — reduce form card padding for small screens */
     .form-grid   { padding:26px 18px; }
@@ -772,6 +775,9 @@ src="https://www.facebook.com/tr?id=1503091811834061&ev=PageView&noscript=1"
         <!-- Elfsight Google Reviews -->
         <script src="https://elfsightcdn.com/platform.js" async></script>
         <div class="elfsight-app-caf38022-a2fa-4edf-b0b3-443c05d5f137" data-elfsight-app-lazy></div>
+      </div>
+      <div class="reviews-mascot-lying-wrap">
+        <img class="reviews-mascot-lying" src="img/mascot-lying.png" alt="Texora Painting mascot" width="1536" height="1024">
       </div>
                   <div class="reviews-mascot-wrap">
         <picture>
