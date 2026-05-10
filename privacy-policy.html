@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<title>Privacy Policy | Texora Painting</title>
+<meta name="description" content="Texora Painting's privacy policy. Learn how we collect, use, and protect your personal information.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://texorapainting.com/privacy-policy.html">
+
+<!-- Preload hero image + fonts -->
+<link rel="preload" as="image" href="img/hero-bg.webp" type="image/webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
+
+<style>
+  :root {
+    --blue:#1a3a6e; --orange:#f47b20; --orange-dark:#d96a10;
+    --white:#ffffff; --off-white:#f4f7fb; --dark:#111827; --gray:#6b7280;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;overscroll-behavior-y:none;background:var(--off-white);}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:transparent;transition:background .35s ease,box-shadow .35s ease,padding .35s ease;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:transform;}
+  nav.scrolled{background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);box-shadow:none;padding:8px 5%;}
+  nav.scrolled .logo img{height:72px;}
+  .logo img{height:96px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));transition:height .35s ease;}
+  .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+  .nav-links a{color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.88;transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;}
+  .btn-nav{background:var(--orange);color:#fff !important;padding:12px 22px;border-radius:6px;opacity:1 !important;box-shadow:0 4px 14px rgba(244,123,32,.4);}
+  .btn-nav:hover{background:var(--orange-dark) !important;}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:5px;}
+  .nav-toggle span{display:block;width:26px;height:3px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s;}
+  .nav-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+  /* HERO */
+  .page-hero{min-height:220px;display:flex;align-items:flex-end;padding:140px 5% 48px;background:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.52) 100%),url('img/hero-bg.webp') center/cover;}
+  .page-hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(28px,4vw,48px);color:#fff;line-height:1.1;}
+  .page-hero p{color:rgba(255,255,255,.75);font-size:14px;margin-top:8px;}
+
+  /* CONTENT */
+  .policy-wrap{max-width:780px;margin:0 auto;padding:60px 5% 80px;}
+  .policy-wrap h2{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:var(--blue);margin:40px 0 12px;padding-top:4px;border-top:2px solid #e5e9f2;}
+  .policy-wrap h2:first-child{margin-top:0;border-top:none;}
+  .policy-wrap p{font-size:15px;line-height:1.85;color:#374151;margin-bottom:14px;}
+  .policy-wrap ul{padding-left:20px;margin-bottom:14px;}
+  .policy-wrap ul li{font-size:15px;line-height:1.85;color:#374151;margin-bottom:6px;}
+  .policy-wrap a{color:var(--orange);text-decoration:none;font-weight:600;}
+  .policy-wrap a:hover{text-decoration:underline;}
+  .policy-date{display:inline-block;background:#e5e9f2;color:var(--gray);font-size:12px;font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:36px;}
+
+  /* FOOTER */
+  footer{background:#0f1e40;padding:22px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  .footer-call{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;cursor:pointer;transition:transform .15s;}
+  .footer-call:hover{transform:translateY(-1px);}
+  .call-icon{background:var(--orange);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .footer-call-text{font-size:12px;color:rgba(255,255,255,.6);}
+  .footer-call-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;color:var(--orange);}
+  .footer-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .footer-email,.footer-profile{color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;font-weight:600;transition:color .2s;}
+  .footer-email:hover,.footer-profile:hover{color:var(--orange);}
+  .footer-sep{color:rgba(255,255,255,.25);font-size:13px;}
+  .footer-social{display:inline-flex;align-items:center;opacity:.8;transition:opacity .2s,transform .2s;}
+  .footer-social:hover{opacity:1;transform:translateY(-2px);}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,.35);width:100%;}
+
+  /* SCROLL TOP */
+  #scrollTop{position:fixed;bottom:28px;right:28px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--orange);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(244,123,32,.45);opacity:0;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,background .2s;pointer-events:none;}
+  #scrollTop.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+  #scrollTop:hover{background:var(--orange-dark);}
+
+  @media(max-width:900px){
+    nav{flex-wrap:wrap;}
+    .nav-toggle{display:flex !important;}
+    nav .nav-links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,32,90,.97);margin-top:12px;padding:8px 0;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.35);}
+    nav .nav-links.open{display:flex;animation:navDrop .22s ease both;}
+    nav .nav-links li{width:100%;}
+    nav .nav-links a{display:block;padding:14px 22px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.08);}
+    nav .nav-links li:last-child a{border-bottom:none;}
+    nav .nav-links .btn-nav{margin:10px 16px 6px;text-align:center;border-radius:8px;}
+    @keyframes navDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+    footer{flex-direction:column;align-items:flex-start;}
+    .footer-copy{margin-top:2px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html" aria-label="Texora Painting home">
+    <picture>
+      <source srcset="img/logo.webp" type="image/webp">
+      <img src="img/logo.png" alt="Texora Painting" width="160" height="107">
+    </picture>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#work">Our Work</a></li>
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="service-areas.html">About Us</a></li>
+    <li><a href="index.html#quote" class="btn-nav">Get Free Quote</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div>
+    <h1>Privacy Policy</h1>
+    <p>Texora Painting — Metro Vancouver</p>
+  </div>
+</section>
+
+<div class="policy-wrap">
+  <span class="policy-date">Last updated: May 2025</span>
+
+  <h2>Who We Are</h2>
+  <p>Texora Painting ("we", "us", or "our") is a residential painting company based in Delta, BC, serving Metro Vancouver. Our website is <a href="https://texorapainting.com">texorapainting.com</a>. You can reach us at <a href="mailto:info@texorapainting.com">info@texorapainting.com</a> or by phone at <a href="tel:+16044176483">(604) 417-6483</a>.</p>
+
+  <h2>What Information We Collect</h2>
+  <p>We only collect information you voluntarily provide through our quote request form:</p>
+  <ul>
+    <li>Full name</li>
+    <li>Phone number</li>
+    <li>Email address</li>
+    <li>Home address</li>
+    <li>Service type and project details</li>
+  </ul>
+  <p>We do not collect payment information on this website.</p>
+
+  <h2>How We Use Your Information</h2>
+  <p>Information submitted through our quote form is used solely to:</p>
+  <ul>
+    <li>Contact you to discuss your painting project and provide a free estimate</li>
+    <li>Follow up on your quote request</li>
+    <li>Communicate about scheduling and project details if you become a client</li>
+  </ul>
+  <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+  <h2>Cookies &amp; Analytics</h2>
+  <p>Our website uses cookies and similar tracking technologies to understand how visitors use the site and to improve our services. Specifically:</p>
+  <ul>
+    <li><strong>Google Analytics (GA4):</strong> Collects anonymized data about page visits, traffic sources, and user behaviour. Data is processed by Google. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out tool</a>.</li>
+    <li><strong>Facebook Pixel:</strong> Tracks website visits to help us measure the effectiveness of our Facebook advertising. Data is processed by Meta. You can manage your ad preferences at <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">facebook.com/adpreferences</a>.</li>
+  </ul>
+  <p>Both tools are loaded only after a user interaction (scroll, click, or keypress) to minimize their impact on page load and your privacy. No personally identifiable information is passed to these tools.</p>
+  <p>You can disable cookies in your browser settings at any time. Note that doing so may affect the functionality of some websites.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>Our website uses the following third-party services:</p>
+  <ul>
+    <li><strong>FormSubmit</strong> — processes quote form submissions and delivers them to our email inbox. Form data is transmitted securely.</li>
+    <li><strong>Elfsight</strong> — displays our Google Reviews widget. Elfsight may set its own cookies when the widget loads.</li>
+    <li><strong>Google Fonts</strong> — loads typefaces from Google's servers. Google may collect basic request data (IP address, browser type).</li>
+    <li><strong>Netlify</strong> — hosts this website. Netlify may log standard server access data (IP address, browser type, pages visited) for security and performance purposes.</li>
+  </ul>
+
+  <h2>Data Retention</h2>
+  <p>Quote request information is retained in our email inbox for as long as necessary to complete your project or respond to your inquiry. You may request deletion of your data at any time by contacting us.</p>
+
+  <h2>Your Rights (PIPEDA)</h2>
+  <p>Under Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), you have the right to:</p>
+  <ul>
+    <li>Know what personal information we hold about you</li>
+    <li>Request corrections to your information</li>
+    <li>Request deletion of your information</li>
+    <li>Withdraw consent to our use of your information</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at <a href="mailto:info@texorapainting.com">info@texorapainting.com</a>.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Our services are not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of our website after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact Us</h2>
+  <p>Questions about this Privacy Policy? Reach us at:</p>
+  <ul>
+    <li>Email: <a href="mailto:info@texorapainting.com">info@texorapainting.com</a></li>
+    <li>Phone: <a href="tel:+16044176483">(604) 417-6483</a></li>
+    <li>Location: Delta, BC, Canada</li>
+  </ul>
+</div>
+
+<footer class="footer-bar">
+  <a class="footer-call" href="tel:+16044176483" aria-label="Call Texora Painting">
+    <div class="call-icon">📞</div>
+    <div>
+      <div class="footer-call-text">Prefer to talk? Call us directly!</div>
+      <div class="footer-call-num">(604) 417-6483</div>
+    </div>
+  </a>
+  <div class="footer-links">
+    <a class="footer-email" href="mailto:info@texorapainting.com">📧 info@texorapainting.com</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-profile" href="https://share.google/ktiq1kINB0cnvunmX" target="_blank" rel="noopener">⭐ Google Reviews</a>
+    <span class="footer-sep">|</span>
+    <a class="footer-social" href="https://www.facebook.com/people/Texora-Painting/61577587997631/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><rect width="22" height="22" rx="5" fill="#1877F2"/><path d="M14.5 11.5h-2.2V18H9.7v-6.5H8V9.2h1.7V7.8C9.7 6 10.6 5 12.6 5H14.5v2.3h-1.2c-.9 0-1.1.4-1.1 1v1h2.2l-.4 2.2z" fill="white"/></svg></a>
+    <a class="footer-social" href="https://www.instagram.com/texora.painting/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><defs><linearGradient id="igG2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="22" height="22" rx="5" fill="url(#igG2)"/><rect x="5.5" y="5.5" width="11" height="11" rx="3" fill="none" stroke="white" stroke-width="1.6"/><circle cx="11" cy="11" r="2.8" fill="none" stroke="white" stroke-width="1.6"/><circle cx="15" cy="7" r="0.9" fill="white"/></svg></a>
+  </div>
+  <div class="footer-copy">© 2025 Texora Painting. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,.45);text-decoration:none;">Privacy Policy</a></div>
+</footer>
+
+<button id="scrollTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+  (function(){
+    var btn=document.getElementById('navToggle'),menu=document.getElementById('navLinks');
+    if(!btn||!menu)return;
+    btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');});
+    menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+  })();
+  (function(){
+    var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer');
+    function u(){btn.classList.toggle('visible',window.scrollY>300);if(footer){var ft=footer.getBoundingClientRect().top,vh=window.innerHeight;btn.style.bottom=ft<vh?(vh-ft+8)+'px':'28px';}}
+    window.addEventListener('scroll',u,{passive:true});
+    btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  })();
+  (function(){
+    var nav=document.querySelector('nav');
+    function s(){nav.classList.toggle('scrolled',window.scrollY>60);}
+    window.addEventListener('scroll',s,{passive:true});s();
+  })();
+</script>
+</body>
+</html>
