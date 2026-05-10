@@ -595,6 +595,19 @@ function gtag(){dataLayer.push(arguments);}
     .step h3 { grid-column:2; grid-row:1; align-self:center; font-size:15px; margin:0; }
     .step p  { grid-column:2; grid-row:2; padding-top:6px; }
   }
+/* Scroll-reveal */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .55s ease, transform .55s ease; }
+.reveal.visible { opacity:1; transform:none; }
+.reveal-scale { opacity:0; transform:scale(.85); transition:opacity .5s ease, transform .5s ease; }
+.reveal-scale.visible { opacity:1; transform:none; }
+.reveal-delay-1,.reveal-scale-delay-1 { transition-delay:.1s; }
+.reveal-delay-2,.reveal-scale-delay-2 { transition-delay:.2s; }
+.reveal-delay-3,.reveal-scale-delay-3 { transition-delay:.3s; }
+.reveal-delay-4 { transition-delay:.4s; }
+.reveal-delay-5 { transition-delay:.5s; }
+.reveal-delay-6 { transition-delay:.6s; }
+.reveal-scale-delay-1,.reveal-scale-delay-2,.reveal-scale-delay-3 { opacity:0; transform:scale(.85); transition:opacity .5s ease, transform .5s ease; }
+.reveal-scale-delay-1.visible,.reveal-scale-delay-2.visible,.reveal-scale-delay-3.visible { opacity:1; transform:none; }
 </style>
 </head>
 <body>
@@ -646,17 +659,17 @@ function gtag(){dataLayer.push(arguments);}
 
 <!-- TRUST STRIP -->
 <section class="trust-strip">
-  <div class="trust-item">
+  <div class="trust-item reveal-scale">
     <picture><source srcset="img/trust-icon-1.webp" type="image/webp"><img loading="lazy" class="trust-icon" src="img/trust-icon-1.png" alt="100% Satisfaction Guarantee" width="110" height="110"></picture>
     <h3>100% Satisfaction Guarantee</h3>
     <p>We stand behind every job.</p>
   </div>
-  <div class="trust-item">
+  <div class="trust-item reveal-scale reveal-scale-delay-1">
     <picture><source srcset="img/trust-icon-2.webp" type="image/webp"><img loading="lazy" class="trust-icon" src="img/trust-icon-2.png" alt="5-Star Rated" width="110" height="110"></picture>
     <h3>5-Star Rated</h3>
     <p>Trusted by local homeowners.</p>
   </div>
-  <div class="trust-item">
+  <div class="trust-item reveal-scale reveal-scale-delay-2">
     <picture><source srcset="img/trust-icon-3.webp" type="image/webp"><img loading="lazy" class="trust-icon" src="img/trust-icon-3.png" alt="Locally Owned" width="110" height="110"></picture>
     <h3>Locally Owned &amp; Operated</h3>
     <p>Proudly serving our community.</p>
@@ -665,36 +678,36 @@ function gtag(){dataLayer.push(arguments);}
 
 <!-- SERVICES -->
 <section class="services" id="services">
-  <p class="section-label">Our Services</p>
-  <h2 class="section-title">Quality Work. Every Time.</h2>
+  <p class="section-label reveal">Our Services</p>
+  <h2 class="section-title reveal reveal-delay-1">Quality Work. Every Time.</h2>
   <div class="services-grid">
-    <a class="service-card" href="interior-painting.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-1.png" alt="Interior Painting" width="64" height="64">
+    <a class="service-card reveal reveal-delay-1" href="interior-painting.html">
+      <picture><source srcset="img/svc-icon-1.webp" type="image/webp"><img loading="lazy" class="svc-icon" src="img/svc-icon-1.png" alt="Interior Painting" width="128" height="128"></picture>
       <h4>Interior Painting</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
-    <a class="service-card" href="exterior-painting.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-2.png" alt="Exterior Painting" width="64" height="64">
+    <a class="service-card reveal reveal-delay-2" href="exterior-painting.html">
+      <picture><source srcset="img/svc-icon-2.webp" type="image/webp"><img loading="lazy" class="svc-icon" src="img/svc-icon-2.png" alt="Exterior Painting" width="128" height="128"></picture>
       <h4>Exterior Painting</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
-    <a class="service-card" href="cabinet-painting.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-3.png" alt="Cabinet Painting" width="64" height="64">
+    <a class="service-card reveal reveal-delay-3" href="cabinet-painting.html">
+      <picture><source srcset="img/svc-icon-3.webp" type="image/webp"><img loading="lazy" class="svc-icon" src="img/svc-icon-3.png" alt="Cabinet Painting" width="128" height="128"></picture>
       <h4>Cabinet Painting</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
-    <a class="service-card" href="drywall-repair.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-4.png" alt="Drywall Repair" width="64" height="64">
+    <a class="service-card reveal reveal-delay-4" href="drywall-repair.html">
+      <picture><source srcset="img/svc-icon-4.webp" type="image/webp"><img loading="lazy" class="svc-icon" src="img/svc-icon-4.png" alt="Drywall Repair" width="128" height="128"></picture>
       <h4>Drywall Repair &amp; Mudding</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
-    <a class="service-card" href="trim-doors-ceilings.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-5.png" alt="Trim Doors Ceilings" width="64" height="64">
+    <a class="service-card reveal reveal-delay-5" href="trim-doors-ceilings.html">
+      <picture><source srcset="img/svc-icon-5.webp" type="image/webp"><img loading="lazy" class="svc-icon" src="img/svc-icon-5.png" alt="Trim Doors Ceilings" width="128" height="128"></picture>
       <h4>Trim, Doors &amp; Ceilings</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
-    <a class="service-card" href="full-home-repaint.html">
-      <img loading="lazy" class="svc-icon" src="img/svc-icon-6.png" alt="Full Home Repaints" width="64" height="64">
+    <a class="service-card reveal reveal-delay-6" href="full-home-repaint.html">
+      <picture><source srcset="img/svc-icon-6.webp" type="image/webp"><img loading="lazy" class="svc-icon" src="img/svc-icon-6.png" alt="Full Home Repaints" width="128" height="128"></picture>
       <h4>Full Home Repaints</h4>
       <span class="svc-learn">Learn more →</span>
     </a>
@@ -703,8 +716,8 @@ function gtag(){dataLayer.push(arguments);}
 
 <!-- PORTFOLIO -->
 <section class="portfolio" id="work">
-  <p class="section-label">See Our Work</p>
-  <h2 class="section-title">Clean Lines. Smooth Finishes.</h2>
+  <p class="section-label reveal">See Our Work</p>
+  <h2 class="section-title reveal reveal-delay-1">Clean Lines. Smooth Finishes.</h2>
   <div class="before-after-grid">
     <div class="ba-pair">
       <div class="ba-slot before">
@@ -741,22 +754,22 @@ function gtag(){dataLayer.push(arguments);}
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
-  <p class="section-label">Simple Process</p>
-  <h2 class="section-title">How It Works</h2>
+  <p class="section-label reveal">Simple Process</p>
+  <h2 class="section-title reveal reveal-delay-1">How It Works</h2>
   <div class="steps">
-    <div class="step">
+    <div class="step reveal reveal-delay-1">
       <div class="step-num">1</div>
       <span class="step-ico">📋</span>
       <h3>Request a Quote <span class="step-title-ico">📋</span></h3>
       <p>Fill out the form and tell us about your project.</p>
     </div>
-    <div class="step">
+    <div class="step reveal reveal-delay-2">
       <div class="step-num">2</div>
       <span class="step-ico">📞</span>
       <h3>We Review &amp; Contact You <span class="step-title-ico">📞</span></h3>
       <p>We'll get in touch to discuss your needs and provide a clear estimate.</p>
     </div>
-    <div class="step">
+    <div class="step reveal reveal-delay-3">
       <div class="step-num">3</div>
       <span class="step-ico">🖌️</span>
       <h3>Schedule &amp; Complete the Job <span class="step-title-ico">🖌️</span></h3>
@@ -768,8 +781,8 @@ function gtag(){dataLayer.push(arguments);}
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
   <div class="reviews-inner">
-    <p class="section-label">Real Reviews</p>
-    <h2 class="section-title">What Our <em>Customers</em> Say</h2>
+    <p class="section-label reveal">Real Reviews</p>
+    <h2 class="section-title reveal reveal-delay-1">What Our <em>Customers</em> Say</h2>
     <div class="reviews-content">
 <div class="reviews-widget">
         <!-- Elfsight Google Reviews -->
@@ -941,6 +954,21 @@ function gtag(){dataLayer.push(arguments);}
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+
+  // Scroll-reveal
+  (function() {
+    var els = document.querySelectorAll('.reveal, .reveal-scale, .reveal-scale-delay-1, .reveal-scale-delay-2, .reveal-scale-delay-3');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el) { el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { io.observe(el); });
   })();
 </script>
 
