@@ -905,17 +905,11 @@ function gtag(){dataLayer.push(arguments);}
   (function() {
     var btn = document.getElementById('scrollTop');
     var footer = document.querySelector('footer');
-    var footerVisible = false;
-
-    // Watch scroll position for show/hide
-    var showObs = new IntersectionObserver(function(entries) {
-      // sentinel div placed 400px from top triggers show
-    }, {});
+    var footerH = footer.offsetHeight; // read once, avoid reflow on every scroll
 
     // Lift button when footer enters viewport
     new IntersectionObserver(function(entries) {
-      footerVisible = entries[0].isIntersecting;
-      btn.style.bottom = footerVisible ? (footer.offsetHeight + 16) + 'px' : '28px';
+      btn.style.bottom = entries[0].isIntersecting ? (footerH + 16) + 'px' : '28px';
     }, { threshold: 0 }).observe(footer);
 
     // Show/hide based on scroll — cheap, no layout read
