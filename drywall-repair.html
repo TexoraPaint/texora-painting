@@ -129,6 +129,13 @@ function gtag(){dataLayer.push(arguments);}
     .footer-links{justify-content:center;}
   }
   .footer-social{display:inline-flex;align-items:center;opacity:.8;transition:opacity .2s,transform .2s;}.footer-social:hover{opacity:1;transform:translateY(-2px);}
+  .svc-gallery{padding:0 5% 70px;max-width:960px;margin:0 auto;}
+  .svc-gallery h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(20px,2.5vw,28px);color:var(--dark);margin-bottom:28px;}
+  .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);}
+  .ba-slot{position:relative;aspect-ratio:4/3;overflow:hidden;}
+  .ba-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+  .ba-slot:hover img{transform:scale(1.03);}
+  .ba-label{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.62);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
 </style>
 </head>
 <body>
@@ -159,6 +166,26 @@ function gtag(){dataLayer.push(arguments);}
 <p>We repair everything from small nail holes and picture-hanging damage to large holes from plumbing or electrical work, water-damaged sections, cracked drywall tape, and failing texture. Our goal is always the same: a seamless repair you can't find after painting. We serve Vancouver, Burnaby, Coquitlam, Delta, Tsawwassen, Ladner, North Vancouver, Surrey, and Richmond.</p>
 <p>Many contractors rush drywall repair — thin coats, inadequate feathering, skipping primer. The result shows through paint, especially in raking light. We apply multiple thin coats, sand between each, feather edges wide to blend with surrounding texture, and prime before painting. The difference is visible.</p>
   <ul class="svc-highlights"><li>✔ Patch holes of any size</li><li>✔ Crack & drywall tape repair</li><li>✔ Water damage & stain blocking</li><li>✔ Texture matching (knockdown, orange peel, smooth)</li><li>✔ Skim coating available</li><li>✔ Prime-ready surfaces every time</li></ul>
+</div>
+
+<div class="svc-gallery">
+  <h2>Our Work — Drywall Repair</h2>
+  <div class="ba-row">
+    <div class="ba-slot">
+      <picture>
+        <source srcset="img/ba-drywall-before.webp" type="image/webp">
+        <img loading="lazy" src="img/ba-drywall-before.jpg" alt="Drywall ceiling before repair" width="800" height="600">
+      </picture>
+      <div class="ba-label">Before</div>
+    </div>
+    <div class="ba-slot">
+      <picture>
+        <source srcset="img/ba-drywall-after.webp" type="image/webp">
+        <img loading="lazy" src="img/ba-drywall-after.jpg" alt="Drywall ceiling after repair" width="800" height="600">
+      </picture>
+      <div class="ba-label">After</div>
+    </div>
+  </div>
 </div>
 
 <div class="svc-details">

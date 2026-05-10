@@ -79,6 +79,13 @@ function gtag(){dataLayer.push(arguments);}
   .svc-intro p{color:var(--gray);font-size:15px;line-height:1.9;margin-bottom:20px;}
   .svc-highlights{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;}
   .svc-highlights li{background:var(--off-white);padding:13px 16px;border-radius:8px;font-size:13px;font-weight:700;color:var(--blue);border-left:3px solid var(--orange);font-family:'Montserrat',sans-serif;}
+  .svc-gallery{padding:0 5% 70px;max-width:960px;margin:0 auto;}
+  .svc-gallery h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(20px,2.5vw,28px);color:var(--dark);margin-bottom:28px;}
+  .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);}
+  .ba-slot{position:relative;aspect-ratio:4/3;overflow:hidden;}
+  .ba-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+  .ba-slot:hover img{transform:scale(1.03);}
+  .ba-label{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.62);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:4px;}
   .svc-details{background:var(--off-white);padding:70px 5%;}
   .svc-details h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(20px,2.5vw,28px);color:var(--dark);text-align:center;margin-bottom:36px;}
   .details-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
@@ -159,6 +166,26 @@ function gtag(){dataLayer.push(arguments);}
 <p>At Texora Painting, we treat cabinet painting as a specialty process, not a standard brush-and-roll job. Cabinets are removed, sprayed in a controlled environment, and reinstalled — resulting in a dust-free, brush-mark-free finish that's smooth to the touch. We serve Vancouver, Burnaby, Coquitlam, Delta, Tsawwassen, Ladner, North Vancouver, Surrey, and Richmond.</p>
 <p>The most common question we get is whether painted cabinets chip or peel. The answer is: not if they're done right. We use a catalyzed urethane or waterborne alkyd topcoat specifically formulated for high-traffic cabinet surfaces. Properly prepared and primed, your painted cabinets will outlast a cheap veneer replacement — and look significantly better.</p>
   <ul class="svc-highlights"><li>✔ Cabinet doors removed & spray finished</li><li>✔ Proper degreasing & sanding prep</li><li>✔ Catalyzed topcoat — chip & peel resistant</li><li>✔ Hardware reinstalled on completion</li><li>✔ Colour matching available</li><li>✔ 100% satisfaction guaranteed</li></ul>
+</div>
+
+<div class="svc-gallery">
+  <h2>Our Work — Cabinet Painting</h2>
+  <div class="ba-row">
+    <div class="ba-slot">
+      <picture>
+        <source srcset="img/ba-kitchen-before.webp" type="image/webp">
+        <img loading="lazy" src="img/ba-kitchen-before.jpg" alt="Kitchen cabinets before painting — old oak finish">
+      </picture>
+      <div class="ba-label">Before</div>
+    </div>
+    <div class="ba-slot">
+      <picture>
+        <source srcset="img/ba-kitchen-after.webp" type="image/webp">
+        <img loading="lazy" src="img/ba-kitchen-after.jpg" alt="Kitchen cabinets after painting — sage green finish">
+      </picture>
+      <div class="ba-label">After</div>
+    </div>
+  </div>
 </div>
 
 <div class="svc-details">
