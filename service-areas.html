@@ -26,14 +26,21 @@ function gtag(){dataLayer.push(arguments);}
 <meta name="description" content="Learn about Texora Painting — a family-run painting company serving Metro Vancouver with 5-star reviews and a commitment to quality on every job.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://texorapainting.com/service-areas.html">
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{--blue:#1a3a6e;--blue-mid:#1e4fa0;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;--light-gray:#e5e9f2;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:linear-gradient(135deg,rgba(15,32,80,.97) 0%,rgba(26,58,110,.97) 60%,rgba(30,79,160,.95) 100%);box-shadow:0 4px 24px rgba(0,0,0,.2);}
-  .logo img{height:72px;width:auto;}
+  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;overscroll-behavior-y:none;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:transparent;transition:background .35s ease,box-shadow .35s ease,padding .35s ease;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:transform;}
+
+  nav.scrolled{background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);box-shadow:none;padding:8px 5%;}
+  nav.scrolled .logo img{height:72px;}
+  .logo img{height:96px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));transition:height .35s ease;}
   .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
   .nav-links a{color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.9;}
   .nav-links a:hover{opacity:1;}
@@ -103,7 +110,7 @@ function gtag(){dataLayer.push(arguments);}
   #scrollTop:hover{background:var(--orange-dark);transform:translateY(-3px);box-shadow:0 8px 22px rgba(244,123,32,.5);}
 
   @media(max-width:900px){.areas-grid{grid-template-columns:repeat(3,1fr);}.about-stats{grid-template-columns:repeat(2,1fr);}.values-list{grid-template-columns:1fr;}}
-  @media(max-width:768px){.nav-links{display:none;}.nav-toggle{display:flex;}.areas-grid{grid-template-columns:repeat(2,1fr);}.about-stats{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:900px){nav{flex-wrap:wrap;}.nav-toggle{display:flex !important;}nav .nav-links{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,32,90,.97);margin-top:12px;padding:8px 0;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.35);}nav .nav-links.open{display:flex;animation:navDrop .22s ease both;}nav .nav-links li{width:100%;}nav .nav-links a{display:block;padding:14px 22px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.08);}nav .nav-links li:last-child a{border-bottom:none;}nav .nav-links .btn-nav{margin:10px 16px 6px;text-align:center;border-radius:8px;}@keyframes navDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}.areas-grid{grid-template-columns:repeat(2,1fr);}.about-stats{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
 <body>
@@ -257,8 +264,10 @@ function gtag(){dataLayer.push(arguments);}
 </button>
 <script>
   function toggleFaq(btn){var a=btn.nextElementSibling,open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!open){a.classList.add('open');btn.classList.add('open');}}
-  (function(){var btn=document.getElementById('navToggle'),links=document.getElementById('navLinks');if(btn&&links)btn.addEventListener('click',function(){links.classList.toggle('open');});})();
+  (function(){var btn=document.getElementById('navToggle'),menu=document.getElementById('navLinks');if(!btn||!menu)return;btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');});menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
   (function(){var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer');function u(){var s=window.scrollY>400;btn.classList.toggle('visible',s);var ft=footer.getBoundingClientRect().top,vh=window.innerHeight;btn.style.bottom=ft<vh?(vh-ft+12)+'px':'28px';}window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u,{passive:true});u();btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
+  // Sticky nav gradient on scroll
+  (function(){var nav=document.querySelector('nav');function onScroll(){if(window.scrollY>60){nav.classList.add('scrolled');}else{nav.classList.remove('scrolled');}}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
 </script>
 </body>
 </html>

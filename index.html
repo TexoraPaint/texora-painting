@@ -155,7 +155,7 @@ function gtag(){dataLayer.push(arguments);}
     --dark: #111827; --gray: #6b7280; --light-gray: #e5e9f2;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Open Sans',sans-serif; color:var(--dark); overflow-x:hidden; }
+  body { font-family:'Open Sans',sans-serif; color:var(--dark); overflow-x:hidden; overscroll-behavior-y:none; }
 
   /* ── NAV ── */
   nav {
@@ -163,6 +163,8 @@ function gtag(){dataLayer.push(arguments);}
     display:flex; align-items:center; justify-content:space-between; padding:12px 5%;
     background:transparent;
     transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    -webkit-transform:translate3d(0,0,0); transform:translate3d(0,0,0);
+    will-change:transform;
   }
   nav.scrolled {
     background:linear-gradient(to bottom, rgba(15,32,80,.97) 0%, rgba(22,50,105,.92) 55%, transparent 100%);
@@ -223,7 +225,7 @@ function gtag(){dataLayer.push(arguments);}
   .faq-a.open { display:block; }
   .faq-a p { color:var(--gray); font-size:14px; line-height:1.8; }
 
-  @media(max-width:768px) {
+  @media(max-width:900px) {
     .areas-grid { grid-template-columns:repeat(2,1fr); }
   }
 
@@ -493,7 +495,7 @@ function gtag(){dataLayer.push(arguments);}
   .footer-sep { color:rgba(255,255,255,.25); font-size:13px; }
   .footer-copy { font-size:12px; color:rgba(255,255,255,.35); }
 
-  @media (max-width:768px) {
+  @media (max-width:900px) {
     
     .trust-strip { flex-direction:row; align-items:flex-start; justify-content:space-evenly; padding:24px 3%; gap:0; }
     .trust-item { border-right:1px solid var(--light-gray); border-bottom:none; padding:0 10px; max-width:none; flex:1; }
@@ -511,7 +513,7 @@ function gtag(){dataLayer.push(arguments);}
 
     .form-row { grid-template-columns:1fr; }
     nav { flex-wrap:wrap; }
-    .nav-toggle { display:flex; }
+    .nav-toggle { display:flex !important; }
     nav .nav-links {
       display:none; flex-basis:100%; flex-direction:column; align-items:stretch; gap:0;
       background:rgba(10,32,90,.96); backdrop-filter:blur(8px);
@@ -534,7 +536,7 @@ function gtag(){dataLayer.push(arguments);}
   .footer-social{display:inline-flex;align-items:center;opacity:.8;transition:opacity .2s,transform .2s;}.footer-social:hover{opacity:1;transform:translateY(-2px);}
 
   /* ── MOBILE LAYOUT FIXES ── */
-  @media(max-width:768px){
+  @media(max-width:900px){
     /* Hero — enough top clearance for sticky nav */
     .hero { padding:108px 6% 52px; min-height:0; }
 
@@ -940,12 +942,31 @@ function gtag(){dataLayer.push(arguments);}
   (function() {
     var btn = document.getElementById('scrollTop');
     var footer = document.querySelector('footer');
-    var footerH = footer.offsetHeight; // read once, avoid reflow on every scroll
+    var formGrid = document.querySelector('.form-grid');
 
-    // Lift button when footer enters viewport
-    new IntersectionObserver(function(entries) {
-      btn.style.bottom = entries[0].isIntersecting ? (footerH + 16) + 'px' : '28px';
-    }, { threshold: 0 }).observe(footer);
+    function updateBtnBottom() {
+      var vpH = window.innerHeight;
+      var bottom = 28;
+
+      // 1. Stay clear of footer (8px gap)
+      if (footer) {
+        var ft = footer.getBoundingClientRect().top;
+        if (ft < vpH) bottom = Math.max(bottom, vpH - ft + 8);
+      }
+
+      // 2. If button would overlap the white form card, push it just below the card
+      if (formGrid) {
+        var fg = formGrid.getBoundingClientRect();
+        var btnTop = vpH - bottom - 44;   // where button top would sit
+        if (fg.bottom > 0 && fg.bottom < vpH && btnTop < fg.bottom + 8) {
+          // Place button top = form bottom + 4px
+          bottom = vpH - fg.bottom - 44 - 4;
+        }
+      }
+
+      btn.style.bottom = Math.max(8, bottom) + 'px';
+    }
+    window.addEventListener('resize', updateBtnBottom, { passive: true });
 
     // Show/hide based on scroll — cheap, no layout read
     var ticking = false;
@@ -953,6 +974,7 @@ function gtag(){dataLayer.push(arguments);}
       if (!ticking) {
         requestAnimationFrame(function() {
           btn.classList.toggle('visible', window.scrollY > 400);
+          updateBtnBottom();
           ticking = false;
         });
         ticking = true;

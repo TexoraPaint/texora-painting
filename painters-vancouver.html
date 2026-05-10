@@ -19,6 +19,8 @@ function gtag(){dataLayer.push(arguments);}
   });
   setTimeout(loadTracking,3500);
 })();
+  // Sticky nav gradient on scroll
+  (function(){var nav=document.querySelector('nav');function onScroll(){if(window.scrollY>60){nav.classList.add('scrolled');}else{nav.classList.remove('scrolled');}}window.addEventListener('scroll',onScroll,{passive:true});onScroll();})();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +32,11 @@ function gtag(){dataLayer.push(arguments);}
 <meta property="og:description" content="Looking for painters in Vancouver? Texora Painting offers professional interior and exterior painting, cabinet painting, and drywall repair across Vancouver, BC. Free quote.">
 <meta property="og:url" content="https://texorapainting.com/painters-vancouver.html">
 <meta property="og:image" content="https://texorapainting.com/og-image.png">
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -47,9 +53,12 @@ function gtag(){dataLayer.push(arguments);}
 <style>
   :root{--blue:#1a3a6e;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:linear-gradient(135deg,rgba(15,32,80,.97) 0%,rgba(26,58,110,.97) 60%,rgba(30,79,160,.95) 100%);box-shadow:0 4px 24px rgba(0,0,0,.2);}
-  .logo img{height:72px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));}
+  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;overscroll-behavior-y:none;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:transparent;transition:background .35s ease,box-shadow .35s ease,padding .35s ease;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:transform;}
+
+  nav.scrolled{background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);box-shadow:none;padding:8px 5%;}
+  nav.scrolled .logo img{height:72px;}
+  .logo img{height:96px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));transition:height .35s ease;}
   .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
   .nav-links a{color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.9;transition:opacity .2s;}
   .nav-links a:hover{opacity:1;}
