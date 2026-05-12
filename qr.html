@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Texora Painting — Free Quote</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H03RYY12LT"></script>
 <script>
-// Queue GA4 event then redirect immediately.
-// gtag uses navigator.sendBeacon internally so the event
-// is transmitted reliably even as the page navigates away.
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
@@ -18,9 +16,11 @@ gtag('event', 'qr_scan', {
   event_label: 'flyer_qr_code',
   transport_type: 'beacon'
 });
-window.location.replace('https://texorapainting.com/#quote');
+// 300ms gives GA4 time to send the beacon — imperceptible to users
+setTimeout(function(){
+  window.location.replace('https://texorapainting.com/#quote');
+}, 300);
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H03RYY12LT"></script>
 </head>
 <body></body>
 </html>
