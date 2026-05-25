@@ -246,15 +246,21 @@ function gtag(){dataLayer.push(arguments);}
 
   /* ── HERO ── */
   .hero {
-    min-height:600px; position:relative; overflow:hidden;
-    display:flex; align-items:center; padding:120px 5% 90px;
+    min-height:720px; position:relative; overflow:hidden;
+    display:flex; align-items:center; padding:140px 5% 100px;
   }
   .hero-bg {
-    position:absolute; inset:0; background-size:cover; background-position:center; z-index:0;
+    position:absolute; inset:0; background-size:cover;
+    background-position:center center; z-index:0;
   }
   .hero-bg::after {
     content:''; position:absolute; inset:0;
-    background:linear-gradient(110deg, rgba(10,32,90,.92) 0%, rgba(22,65,150,.80) 42%, rgba(15,65,130,.45) 100%);
+    background:linear-gradient(to right,
+      rgba(4,12,45,.72) 0%,
+      rgba(6,18,58,.58) 30%,
+      rgba(5,14,48,.22) 55%,
+      transparent 100%
+    );
   }
   .hero-content { position:relative; z-index:6; max-width:520px; animation:fadeUp .8s ease both; }
   @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
@@ -539,7 +545,8 @@ function gtag(){dataLayer.push(arguments);}
   /* ── MOBILE LAYOUT FIXES ── */
   @media(max-width:900px){
     /* Hero — enough top clearance for sticky nav */
-    .hero { padding:108px 6% 52px; min-height:0; }
+    .hero { padding:108px 6% 60px; min-height:0; }
+    .hero-bg { background-position:72% center; }
 
     /* Sections — reduce vertical breathing room on small screens */
     .trust-strip { padding:24px 3%; }
@@ -648,7 +655,7 @@ function gtag(){dataLayer.push(arguments);}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('img/hero-bg.webp')"></div>
+  <div class="hero-bg" style="background-image:url('img/hero-main.png')"></div>
   <div class="hero-content">
     <div class="hero-badge">⭐ 5-Star Rated · Metro Vancouver</div>
     <h1>Interior &amp; Exterior Painting<em>Done Right</em></h1>
