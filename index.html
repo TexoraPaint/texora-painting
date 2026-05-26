@@ -552,7 +552,19 @@ function gtag(){dataLayer.push(arguments);}
   @media(max-width:900px){
     /* Hero — enough top clearance for sticky nav */
     .hero { padding:108px 6% 60px; min-height:0; }
-    .hero-bg { background-position:72% center; }
+    .hero-bg { background-position:82% center; }
+    /* Lighter overlay — keep painter visible, text stays crisp */
+    .hero-bg::after { background:linear-gradient(to right,rgba(4,12,45,.78) 0%,rgba(6,18,58,.65) 42%,rgba(5,14,48,.35) 65%,transparent 100%); }
+    /* Constrain text so it doesn't stretch over the painter */
+    .hero-content { max-width:340px; }
+    .hero h1 { font-size:clamp(28px,8vw,40px); }
+    .hero-tagline { font-size:15px; max-width:310px; margin-bottom:28px; }
+    /* Badge — force single line */
+    .hero-badge { font-size:10px; padding:5px 12px; white-space:nowrap; }
+    /* Brushmark — keep on one line so underline renders cleanly */
+    .hero-brushmark { white-space:nowrap; }
+    .btn-hero { font-size:13px; padding:14px 22px; }
+    .hero-cta-row { gap:10px; }
 
     /* Sections — reduce vertical breathing room on small screens */
     .trust-strip { padding:24px 3%; }
@@ -628,6 +640,28 @@ function gtag(){dataLayer.push(arguments);}
 .reveal-delay-6 { transition-delay:.6s; }
 .reveal-scale-delay-1,.reveal-scale-delay-2,.reveal-scale-delay-3 { opacity:0; transform:scale(.85); transition:opacity .5s ease, transform .5s ease; }
 .reveal-scale-delay-1.visible,.reveal-scale-delay-2.visible,.reveal-scale-delay-3.visible { opacity:1; transform:none; }
+
+  /* ── PHONE-SPECIFIC (≤480px) ── */
+  @media(max-width:480px){
+    .hero { padding:90px 5% 52px; }
+    .hero-content { max-width:290px; }
+    .hero h1 { font-size:clamp(26px,9vw,34px); }
+    .hero-tagline { font-size:14px; max-width:270px; }
+    .btn-hero { font-size:12px; padding:13px 18px; }
+    /* Trust strip — shrink icons further, tighten text */
+    .trust-icon { width:46px; height:46px; margin-bottom:6px; }
+    .trust-item h3 { font-size:8px; letter-spacing:0; }
+    .trust-item p  { font-size:9px; }
+    /* Services — 2×3 grid on very small phones */
+    .services-grid { grid-template-columns:repeat(2,1fr) !important; }
+    .service-card h4 { font-size:10px !important; }
+    /* Before/after — full width single column */
+    .before-after-grid { grid-template-columns:1fr; gap:12px; }
+    /* Quote form padding */
+    .form-grid { padding:20px 14px; }
+    /* Footer */
+    .footer-call-num { font-size:19px; }
+  }
 </style>
 </head>
 <body>
@@ -947,8 +981,8 @@ function gtag(){dataLayer.push(arguments);}
     var answer = btn.nextElementSibling;
     var isOpen = answer.classList.contains('open');
     document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
-    if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); }
+    document.querySelectorAll('.faq-q').forEach(q => { q.classList.remove('open'); q.setAttribute('aria-expanded','false'); });
+    if (!isOpen) { answer.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
   }
 
   // Scroll to top button — uses IntersectionObserver to avoid forced reflow
