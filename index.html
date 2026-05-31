@@ -39,7 +39,7 @@ function gtag(){dataLayer.push(arguments);}
 
 <!-- Primary SEO -->
 <title>Texora Painting | Painters in Delta, Tsawwassen & Ladner BC</title>
-<meta name="description" content="Delta's top-rated residential painters. Interior & exterior painting, drywall repair & installation in Tsawwassen, Ladner & Coquitlam. 5-star Google reviews. Free quote today.">
+<meta name="description" content="Delta's top-rated residential painters. Interior & exterior painting, drywall repair & installation in Tsawwassen, Ladner & Coquitlam. 5-star Google.">
 <meta name="keywords" content="painters Tsawwassen, painters Ladner, painters Delta BC, drywall repair Tsawwassen, drywall repair Ladner, drywall repair Delta BC, drywall installation Delta, interior painting Tsawwassen, exterior painting Ladner, cabinet painting Delta, painting contractor Tsawwassen, painters Coquitlam, drywall repair Coquitlam, house painters Delta BC, Texora Painting">
 <meta name="author" content="Texora Painting">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -121,6 +121,7 @@ function gtag(){dataLayer.push(arguments);}
   "knowsLanguage": ["en"],
   "sameAs": [
     "https://share.google/ktiq1kINB0cnvunmX",
+    "https://share.google/zObcI4I178kQJ2OV8",
     "https://www.facebook.com/people/Texora-Painting/61577587997631/",
     "https://www.instagram.com/texora.painting/",
     "https://www.homestars.com/profile/texora",
@@ -144,9 +145,10 @@ function gtag(){dataLayer.push(arguments);}
 
 <!-- Preload LCP image -->
 <link rel="preload" as="image" href="img/hero-main.webp" type="image/webp" fetchpriority="high">
-<!-- Preconnect for fonts -->
+<!-- Preconnect for fonts & Google reviewer photos -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
 <!-- Load fonts async to eliminate render blocking -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
@@ -170,8 +172,8 @@ function gtag(){dataLayer.push(arguments);}
     will-change:transform;
   }
   nav.scrolled {
-    background:linear-gradient(to bottom, rgba(15,32,80,.97) 0%, rgba(22,50,105,.92) 55%, transparent 100%);
-    box-shadow:none;
+    background:rgba(10,24,70,.97);
+    box-shadow:0 2px 20px rgba(0,0,0,.25);
     padding:8px 5%;
   }
   .logo img {
@@ -474,29 +476,51 @@ function gtag(){dataLayer.push(arguments);}
   .form-note { text-align:center; margin-top:10px; font-size:11px; color:var(--gray); display:flex; align-items:center; justify-content:center; gap:5px; }
 
   /* ── REVIEWS ── */
-  .reviews { background:var(--off-white); padding:80px 5%; text-align:center; position:relative; overflow:hidden; }
-  .reviews-inner { max-width:1180px; margin:0 auto; position:relative; }
-  .section-title em { color:var(--orange); font-style:normal; }
-  .reviews-content {
-    display:grid; grid-template-columns:1.6fr 0.7fr; gap:30px;
-    align-items:center; margin-top:10px;
-  }
-  /* layout: reviews on left, mascot on right */
-  .reviews-mascot-wrap {
-    position:relative; display:flex; align-items:center; justify-content:center;
-  }
-  .reviews-mascot-wrap::before {
-    content:''; position:absolute; inset:6%;
-    background:radial-gradient(ellipse at center, rgba(244,123,32,.18) 0%, rgba(244,123,32,.06) 35%, transparent 70%);
-    filter:blur(22px); z-index:0; pointer-events:none;
-  }
-  .reviews-mascot {
-    position:relative; z-index:1;
-    width:100%; max-width:320px; height:auto;
-    filter:drop-shadow(0 14px 28px rgba(10,32,90,.22));
-  }
-  .reviews-widget { position:relative; min-height:200px; text-align:left; }
-  .reviews-mascot-lying-wrap { display:none; }
+  .reviews{padding:80px 5% 64px;background:#fff;position:relative;overflow:hidden;}
+  .reviews-inner{max-width:1100px;margin:0 auto;}
+  .section-title em{color:var(--orange);font-style:normal;}
+  /* Intro row: heading left, mascot right */
+  .rv-intro{display:flex;align-items:flex-end;gap:32px;margin-bottom:48px;position:relative;}
+  .rv-intro-text{flex:1;min-width:0;}
+  .rv-intro-mascot{flex-shrink:0;width:200px;align-self:flex-end;margin-bottom:-4px;}
+  .rv-intro-mascot img{width:100%;height:auto;display:block;filter:drop-shadow(0 12px 32px rgba(26,58,110,.18));}
+  /* Score badge */
+  .rv-score-bar{display:inline-flex;align-items:center;gap:14px;margin-top:22px;background:#f4f7fb;padding:14px 20px;border-radius:12px;}
+  .rv-score-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:38px;color:var(--dark);line-height:1;}
+  .rv-score-sep{width:1px;height:36px;background:#dde3ef;flex-shrink:0;}
+  .rv-score-mid{display:flex;flex-direction:column;gap:3px;}
+  .rv-stars{color:#f59e0b;font-size:19px;letter-spacing:2px;line-height:1;}
+  .rv-score-label{font-size:11px;color:var(--gray);font-weight:600;font-family:'Montserrat',sans-serif;letter-spacing:.04em;}
+  /* Featured review */
+  .rv-featured{background:#fff;border:1px solid #eef0f6;border-radius:16px;padding:28px 32px;box-shadow:0 2px 20px rgba(0,0,0,.06);margin-bottom:16px;display:flex;gap:22px;align-items:flex-start;}
+  .rv-f-photo-wrap{flex-shrink:0;}
+  .rv-f-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;}
+  .rv-f-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;}
+  .rv-f-body{flex:1;min-width:0;}
+  .rv-f-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;gap:8px;}
+  .rv-f-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;color:var(--dark);}
+  .rv-f-date{font-size:12px;color:var(--gray);flex-shrink:0;}
+  .rv-f-stars{color:#f59e0b;font-size:15px;letter-spacing:1px;margin-bottom:10px;}
+  .rv-f-text{font-size:15px;line-height:1.8;color:var(--gray);}
+  .rv-f-quote{font-size:40px;line-height:.55;color:var(--orange);opacity:.35;font-family:Georgia,serif;vertical-align:text-top;margin-right:3px;}
+  /* Card grid */
+  .rv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .rv-card{background:#fff;border:1px solid #eef0f6;border-radius:14px;padding:22px;box-shadow:0 2px 12px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s;}
+  .rv-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.09);}
+  .rv-c-header{display:flex;align-items:center;gap:10px;}
+  .rv-c-photo{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;display:block;}
+  .rv-c-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;flex-shrink:0;}
+  .rv-c-meta{flex:1;min-width:0;}
+  .rv-c-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .rv-c-date{font-size:11px;color:var(--gray);margin-top:2px;}
+  .rv-c-stars{color:#f59e0b;font-size:13px;letter-spacing:1px;}
+  .rv-c-text{font-size:13px;line-height:1.75;color:var(--gray);flex:1;word-break:break-word;overflow-wrap:break-word;}
+  /* Footer */
+  .rv-footer{margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .rv-all-link{display:inline-flex;align-items:center;gap:8px;color:var(--blue);font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;text-decoration:none;border:2px solid rgba(26,58,110,.2);padding:13px 28px;border-radius:8px;transition:background .2s,color .2s,border-color .2s;}
+  .rv-all-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+  .rv-attr{font-size:11px;color:var(--gray);opacity:.55;}
+  .rv-lying-wrap{display:none;}
 
   /* ── FOOTER ── */
   .footer-bar {
@@ -532,8 +556,6 @@ function gtag(){dataLayer.push(arguments);}
     .steps::before { display:none; }
     .quote-inner { grid-template-columns:1fr; }
     .quote-mascot { display:none; }
-    .reviews-content { grid-template-columns:1fr; gap:0; }
-    .reviews-mascot { max-width:180px; margin:0 auto 14px; }
 
     .form-row { grid-template-columns:1fr; }
     nav { flex-wrap:wrap; }
@@ -592,15 +614,15 @@ function gtag(){dataLayer.push(arguments);}
     .quote       { padding:52px 5%; }
     .section-title { margin-bottom:30px; }
 
-    /* Reviews — fix grid-item min-width so card sizes correctly */
-    .reviews-widget { min-width:0; }
-    .gr-track-wrap  { width:100%; }
-    .gr-track       { width:100%; }
-    .gr-text        { word-break:break-word; overflow-wrap:break-word; }
-    /* Hide standing mascot on mobile, show lying mascot instead */
-    .reviews-mascot-wrap { display:none !important; }
-    .reviews-mascot-lying-wrap { display:block; width:100%; margin-top:24px; text-align:center; }
-    .reviews-mascot-lying { width:90%; max-width:360px; height:auto; }
+    /* Reviews — mobile layout */
+    .rv-intro{flex-wrap:wrap;gap:0;margin-bottom:32px;}
+    .rv-intro-text{width:100%;}
+    .rv-intro-mascot{position:absolute;right:0;top:-8px;width:110px;opacity:.7;}
+    .rv-score-bar{flex-wrap:wrap;gap:10px;}
+    .rv-score-sep{display:none;}
+    .rv-featured{padding:20px;}
+    .rv-grid{grid-template-columns:1fr;}
+    .rv-lying-wrap{display:none;}
 
     /* Quote — reduce form card padding for small screens */
     .form-grid   { padding:26px 18px; }
@@ -675,6 +697,10 @@ function gtag(){dataLayer.push(arguments);}
   }
 
 </style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Texora Painting","telephone":"+1-604-417-6483","url":"https://texorapainting.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"5","bestRating":"5"}}</script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://texorapainting.com/"}]}</script>
 </head>
 <body>
 
@@ -689,10 +715,10 @@ function gtag(){dataLayer.push(arguments);}
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
-    <li><a href="#work">Our Work</a></li>
-    <li><a href="#how">How It Works</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
     <li><a href="service-areas.html">About Us</a></li>
     <li><a href="#quote" class="btn-nav">Get Free Quote</a></li>
   </ul>
@@ -864,31 +890,39 @@ function gtag(){dataLayer.push(arguments);}
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
   <div class="reviews-inner">
-    <p class="section-label">Real Reviews</p>
-    <h2 class="section-title">What Our <em>Customers</em> Say</h2>
-    <div class="reviews-content">
-<div class="reviews-widget">
-        <!-- Elfsight Google Reviews -->
-        <script src="https://elfsightcdn.com/platform.js" defer></script>
-        <div class="elfsight-app-caf38022-a2fa-4edf-b0b3-443c05d5f137" data-elfsight-app-lazy></div>
+    <!-- Intro: heading left, mascot right -->
+    <div class="rv-intro">
+      <div class="rv-intro-text">
+        <p class="section-label">Real Reviews</p>
+        <h2 class="section-title">What Our <em>Customers</em> Say</h2>
+        <div class="rv-score-bar">
+          <span class="rv-score-num">5.0</span>
+          <div class="rv-score-sep"></div>
+          <div class="rv-score-mid">
+            <div class="rv-stars">★★★★★</div>
+            <div class="rv-score-label">5-star rating on Google</div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
       </div>
-      <div class="reviews-mascot-lying-wrap">
-        <picture>
-          <source srcset="img/mascot-lying.webp" type="image/webp">
-          <img loading="lazy" decoding="async" class="reviews-mascot-lying" src="img/mascot-lying.png" alt="Texora Painting mascot" width="590" height="393">
-        </picture>
+      <div class="rv-intro-mascot">
+        <img src="img/mascot.webp" alt="Texora Painting lion mascot" width="170" height="256" loading="lazy" decoding="async">
       </div>
-                  <div class="reviews-mascot-wrap">
-        <picture>
-          <source srcset="img/mascot.webp" type="image/webp">
-          <img loading="lazy" decoding="async" class="reviews-mascot" src="img/mascot.png" alt="Texora Painting mascot" width="533" height="800">
-        </picture>
-      </div>
+    </div>
+    <!-- Featured review — filled by JS -->
+    <div class="rv-featured" id="rvFeatured"></div>
+    <!-- Grid of remaining reviews — filled by JS -->
+    <div class="rv-grid" id="rvGrid"></div>
+    <!-- Footer -->
+    <div class="rv-footer">
+      <a class="rv-all-link" href="https://share.google/ktiq1kINB0cnvunmX" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        See all reviews on Google
+      </a>
+      <p class="rv-attr">Reviews sourced from Google Maps · Powered by Google Places API</p>
     </div>
   </div>
 </section>
-
-
 <!-- QUOTE FORM -->
 <section class="quote" id="quote">
   <div class="quote-bg" style="background-image:url('img/quote-bg.webp')"></div>
@@ -1075,5 +1109,58 @@ function gtag(){dataLayer.push(arguments);}
   })();
 </script>
 
+<!-- GOOGLE REVIEWS — editorial layout, real profile photos, no third-party widget -->
+<script>
+(function(){
+  var FALLBACK = [
+    { author_name:"Dominic Brayton",  rating:5, relative_time_description:"a month ago",  text:"Absolutely amazing work! The attention to detail and professionalism really stood out, and the final result completely exceeded expectations." },
+    { author_name:"Edem Lucas",       rating:5, relative_time_description:"a month ago",  text:"Quality work and service. Very nice and exceptional. Really recommended." },
+    { author_name:"Purity Summer",    rating:5, relative_time_description:"a month ago",  text:"They’re great and efficient. Definitely recommend!" },
+    { author_name:"Anton Kolomiiets", rating:5, relative_time_description:"3 weeks ago",  text:"Great service, amazing people!" },
+    { author_name:"Arta Manian",      rating:5, relative_time_description:"3 months ago", text:"They do know what they are doing. Highly recommend 🙏" }
+  ];
+  var COLORS = [‘#f47b20’,’#1a3a6e’,’#0d9488’,’#7c3aed’,’#dc2626’];
+  function stars(n){ return ‘★’.repeat(n)+’☆’.repeat(5-n); }
+  function avatarHtml(r, idx, isFeature){
+    var init  = (r.author_name||’?’).charAt(0).toUpperCase();
+    var color = COLORS[idx % COLORS.length];
+    var sz    = isFeature ? ‘rv-f-photo’ : ‘rv-c-photo’;
+    var av    = isFeature ? ‘rv-f-avatar’ : ‘rv-c-avatar’;
+    if(r.profile_photo_url){
+      return ‘<img class="’+sz+’" src="’+r.profile_photo_url+’" alt="’+r.author_name+’" loading="lazy" decoding="async" onerror="this.style.display=\’none\’;this.nextElementSibling.style.display=\’flex\’">’
+           + ‘<div class="’+av+’" style="background:’+color+’;display:none">’+init+’</div>’;
+    }
+    return ‘<div class="’+av+’" style="background:’+color+’">’+init+’</div>’;
+  }
+  function render(reviews){
+    var feat = document.getElementById(‘rvFeatured’);
+    var grid = document.getElementById(‘rvGrid’);
+    if(!feat||!grid) return;
+    // Featured — first review
+    var f = reviews[0];
+    feat.innerHTML =
+      ‘<div class="rv-f-photo-wrap">’+avatarHtml(f,0,true)+’</div>’
+      +’<div class="rv-f-body">’
+        +’<div class="rv-f-header"><span class="rv-f-name">’+f.author_name+’</span><span class="rv-f-date">’+f.relative_time_description+’</span></div>’
+        +’<div class="rv-f-stars">’+stars(f.rating)+’</div>’
+        +’<p class="rv-f-text"><span class="rv-f-quote">“</span>’+f.text.replace(/\n/g,’<br>’)+’</p>’
+      +’</div>’;
+    // Grid — remaining reviews
+    grid.innerHTML = reviews.slice(1).map(function(r,i){
+      return ‘<div class="rv-card">’
+        +’<div class="rv-c-header">’+avatarHtml(r,i+1,false)
+        +’<div class="rv-c-meta"><div class="rv-c-name">’+r.author_name+’</div><div class="rv-c-date">’+r.relative_time_description+’</div></div>’
+        +’</div>’
+        +’<div class="rv-c-stars">’+stars(r.rating)+’</div>’
+        +’<p class="rv-c-text">’+r.text.replace(/\n/g,’<br>’)+’</p>’
+        +’</div>’;
+    }).join(‘’);
+  }
+  fetch(‘/.netlify/functions/reviews’)
+    .then(function(r){ return r.json(); })
+    .then(function(d){ render(d.reviews&&d.reviews.length?d.reviews:FALLBACK); })
+    .catch(function(){ render(FALLBACK); });
+})();
+</script>
 </body>
 </html>

@@ -1,5 +1,11 @@
 # ── Netlify configuration ──────────────────────────────────────────────────────
 
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"
+
 # HTML: always revalidate (so deploys go live instantly)
 [[headers]]
   for = "/*.html"
