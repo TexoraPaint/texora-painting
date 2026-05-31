@@ -243,9 +243,9 @@ function gtag(){dataLayer.push(arguments);}
   <p>Our website uses the following third-party services:</p>
   <ul>
     <li><strong>FormSubmit</strong> — processes quote form submissions and delivers them to our email inbox. Form data is transmitted securely.</li>
-    <li><strong>Elfsight</strong> — displays our Google Reviews widget. Elfsight may set its own cookies when the widget loads.</li>
+    <li><strong>Google Places API</strong> — retrieves Google Reviews data via our own Netlify serverless function. No third-party scripts are loaded; data is fetched server-side and no Google cookies are set by this integration.</li>
     <li><strong>Google Fonts</strong> — loads typefaces from Google's servers. Google may collect basic request data (IP address, browser type).</li>
-    <li><strong>Netlify</strong> — hosts this website. Netlify may log standard server access data (IP address, browser type, pages visited) for security and performance purposes.</li>
+    <li><strong>Netlify</strong> — hosts this website and processes serverless functions. Netlify may log standard server access data (IP address, browser type, pages visited) for security and performance purposes.</li>
   </ul>
 
   <h2>Data Retention</h2>
