@@ -13,7 +13,7 @@ function gtag(){dataLayer.push(arguments);}
     fbq('init','1503091811834061');fbq('track','PageView');
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-H03RYY12LT';document.head.appendChild(s);
     gtag('js',new Date());gtag('config','G-H03RYY12LT');
-
+  }
   ['mousedown','mousemove','keydown','touchstart','scroll'].forEach(function(e){
     document.addEventListener(e,loadTracking,{once:true,passive:true});
   });
@@ -40,7 +40,7 @@ function gtag(){dataLayer.push(arguments);}
 <style>
   :root{--blue:#1a3a6e;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;}
+  body{font-family:'Open Sans',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden;}
   nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:transparent;transition:padding .35s;}
 
 
@@ -55,7 +55,7 @@ function gtag(){dataLayer.push(arguments);}
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
   .nav-links.open{display:flex;}
-  .blog-hero{background:linear-gradient(110deg,rgba(10,32,90,.95) 0%,rgba(26,58,110,.85) 100%);padding:130px 5% 80px;text-align:center;}
+  .blog-hero{background:linear-gradient(110deg,rgba(10,32,90,.92) 0%,rgba(22,58,120,.80) 100%),url('../img/hero-bg.webp') center/cover no-repeat;padding:130px 5% 80px;text-align:center;}
   .blog-hero .cat-tag{display:inline-block;background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:16px;}
   .blog-hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(26px,4vw,46px);color:#fff;line-height:1.1;max-width:760px;margin:0 auto 20px;}
   .blog-hero .meta{color:rgba(255,255,255,.65);font-size:14px;}
@@ -72,7 +72,7 @@ function gtag(){dataLayer.push(arguments);}
   .article-cta{background:var(--blue);border-radius:14px;padding:36px;text-align:center;margin:48px 0;}
   .article-cta h3{font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;color:#fff;margin-bottom:10px;}
   .article-cta p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:20px;}
-  .btn-cta{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;border-radius:8px;transition:background .2s,transform .15s;}
+  .btn-cta{display:inline-flex;align-items:center;gap:8px;background:#a85000;color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;border-radius:8px;transition:background .2s,transform .15s;}
   .btn-cta:hover{background:var(--orange-dark);transform:translateY(-2px);}
   .compare-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:14px;}
   .compare-table th{background:var(--blue);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;padding:12px 16px;text-align:left;}
@@ -91,7 +91,7 @@ function gtag(){dataLayer.push(arguments);}
     .compare-table th,.compare-table td{padding:9px 10px;}
   }
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:transparent;transition:background .35s ease,box-shadow .35s ease,padding .35s ease;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:transform;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);transition:background .35s ease,box-shadow .35s ease,padding .35s ease;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:transform;}
   nav.scrolled{background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);box-shadow:none;padding:8px 5%;}
   nav.scrolled .logo img{height:72px;}
   .logo img{height:96px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));transition:height .35s ease;}
@@ -118,7 +118,7 @@ function gtag(){dataLayer.push(arguments);}
   .footer-email,.footer-profile{color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;font-weight:600;transition:color .2s;}
   .footer-email:hover,.footer-profile:hover{color:var(--orange);}
   .footer-sep{color:rgba(255,255,255,.25);font-size:13px;}
-  .footer-copy{font-size:12px;color:rgba(255,255,255,.35);}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,.65);}
   .footer-social{display:inline-flex;align-items:center;opacity:.8;transition:opacity .2s,transform .2s;}
   .footer-social:hover{opacity:1;transform:translateY(-2px);}
   img{max-width:100%;height:auto;}
@@ -162,7 +162,7 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://texorapainting.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://texorapainting.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"Interior vs Exterior Paint","item":"https://texorapainting.com/blog/interior-vs-exterior-paint.html"}]}</script>
 </head>
 <body>
-<nav>
+<nav id="mainNav">
   <a class="logo" href="../index.html" aria-label="Texora Painting home"><picture><source srcset="../img/logo.webp" type="image/webp"><img src="../img/logo.png" alt="Texora Painting" width="160" height="107"></picture></a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
         <ul class="nav-links" id="navLinks">
@@ -174,6 +174,7 @@ function gtag(){dataLayer.push(arguments);}
   </ul>
 </nav>
 
+<main>
 <section class="blog-hero">
   <span class="cat-tag">Paint Types</span>
   <h1>Interior vs. Exterior Paint: What's the Difference?</h1>
@@ -287,8 +288,9 @@ function gtag(){dataLayer.push(arguments);}
 
 </div>
 
+</main>
 <footer class="footer-bar">
-  <a class="footer-call" href="tel:+16044176483" aria-label="Call Texora Painting at (604) 417-6483">
+  <a class="footer-call" href="tel:+16044176483">
     <div class="call-icon">📞</div>
     <div>
       <div class="footer-call-text">Prefer to talk? Call us directly!</div>
@@ -307,7 +309,7 @@ function gtag(){dataLayer.push(arguments);}
     <a class="footer-social" href="https://www.facebook.com/people/Texora-Painting/61577587997631/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><rect width="22" height="22" rx="5" fill="#1877F2"/><path d="M14.5 11.5h-2.2V18H9.7v-6.5H8V9.2h1.7V7.8C9.7 6 10.6 5 12.6 5H14.5v2.3h-1.2c-.9 0-1.1.4-1.1 1v1h2.2l-.4 2.2z" fill="white"/></svg></a>
     <a class="footer-social" href="https://www.instagram.com/texora.painting/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><defs><linearGradient id="igGf" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="22" height="22" rx="5" fill="url(#igGf)"/><rect x="5.5" y="5.5" width="11" height="11" rx="3" fill="none" stroke="white" stroke-width="1.6"/><circle cx="11" cy="11" r="2.8" fill="none" stroke="white" stroke-width="1.6"/><circle cx="15" cy="7" r="0.9" fill="white"/></svg></a>
   </div>
-  <div class="footer-copy">© 2025 Texora Painting. All rights reserved. | <a href="../privacy-policy.html" style="color:rgba(255,255,255,.45);text-decoration:none;">Privacy Policy</a></div>
+  <div class="footer-copy">© 2025 Texora Painting. All rights reserved. | <a href="../privacy-policy.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Privacy Policy</a></div>
 </footer>
 
 <button id="scrollTop" aria-label="Back to top">

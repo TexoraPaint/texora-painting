@@ -13,7 +13,7 @@ function gtag(){dataLayer.push(arguments);}
     fbq('init','1503091811834061');fbq('track','PageView');
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-H03RYY12LT';document.head.appendChild(s);
     gtag('js',new Date());gtag('config','G-H03RYY12LT');
-
+  }
   ['mousedown','mousemove','keydown','touchstart','scroll'].forEach(function(e){
     document.addEventListener(e,loadTracking,{once:true,passive:true});
   });
@@ -22,7 +22,7 @@ function gtag(){dataLayer.push(arguments);}
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preload" as="image" href="img/about-bg.webp" type="image/webp" fetchpriority="high" >
+<link rel="preload" as="image" href="img/about-bg.webp" type="image/webp" fetchpriority="high">
 <title>About Texora Painting | Delta's #1 Painters — Tsawwassen & Ladner</title>
 <meta name="description" content="Family-run painting & drywall company based in Tsawwassen, BC. 5-star rated for house painting, drywall repair & installation across Delta, Ladner &.">
 <meta name="robots" content="index, follow">
@@ -117,7 +117,7 @@ function gtag(){dataLayer.push(arguments);}
 <style>
   :root{--blue:#1a3a6e;--blue-mid:#1e4fa0;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;--light-gray:#e5e9f2;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Open Sans',sans-serif;color:var(--dark);overflow-x:hidden;overscroll-behavior-y:none;}
+  body{font-family:'Open Sans',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden;overscroll-behavior-y:none;}
 
 
 
@@ -139,32 +139,27 @@ function gtag(){dataLayer.push(arguments);}
 
   /* ABOUT US */
   .about-section{
-    padding:160px 5% 100px;
+    padding:140px 5% 90px;
     position:relative; overflow:hidden;
-    background:url('img/about-bg.webp') center center / cover no-repeat;
+    background:url('img/about-bg.webp') right center / cover no-repeat;
+    background-color:#06122d;
   }
   .about-section::before{
     content:''; position:absolute; inset:0;
     background:linear-gradient(to right,
-      rgba(4,12,45,.82) 0%,
-      rgba(6,18,58,.72) 32%,
-      rgba(5,14,48,.30) 58%,
-      transparent 100%
+      rgba(4,8,28,.78) 0%, rgba(4,10,40,.70) 30%,
+      rgba(4,10,40,.38) 54%, rgba(4,8,28,.08) 72%, transparent 86%
     );
   }
-  .about-inner{max-width:620px;margin:0;position:relative;z-index:1;}
-  .about-section .section-label{color:rgba(255,255,255,.75);}
+  .about-inner{max-width:600px;margin:0;position:relative;z-index:1;}
+  .about-section .section-label{color:var(--orange);}
   .about-section .section-title{color:var(--white);}
   .about-section .section-title em{color:var(--orange);}
-  .about-text p{color:rgba(255,255,255,.85);font-size:15px;line-height:1.85;margin-bottom:16px;}
-  .about-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
-  .stat-box{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);border-radius:12px;padding:22px 16px;text-align:center;border-bottom:3px solid var(--orange);}
-  .stat-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:28px;color:var(--white);display:block;margin-bottom:4px;}
-  .stat-label{font-size:11px;color:rgba(255,255,255,.75);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+  .about-text p{color:rgba(255,255,255,.88);font-size:15px;line-height:1.85;margin-bottom:16px;}
   .values-list{list-style:none;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:8px 32px;}
-  .values-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.85);line-height:1.6;}
+  .values-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.88);line-height:1.6;}
   .values-list li::before{content:'✓';color:var(--orange);font-weight:900;font-size:16px;flex-shrink:0;margin-top:1px;}
-  .btn-about-mobile{display:none;} /* shown only in mobile CSS below */
+  .btn-about-mobile{display:none;}
 
   /* VALUES / EMBLEMS */
   .values-section{background:var(--white);padding:44px 5%;border-top:3px solid var(--light-gray);}
@@ -176,7 +171,7 @@ function gtag(){dataLayer.push(arguments);}
   .emblem-2{background-position:-265px -176px;}  /* people  */
   .emblem-3{background-position:-459px -178px;}  /* house   */
   .emblem-4{background-position:-631px -179px;}  /* roller  */
-  .value-item h3{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--blue);margin:0;}
+  .value-item h2,.value-item h3{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--blue);margin:0;}
   .value-item p{font-size:12px;color:var(--gray);line-height:1.7;margin:0;max-width:180px;}
   @media(max-width:900px){.values-row{grid-template-columns:repeat(2,1fr);gap:28px;}}
 
@@ -192,7 +187,7 @@ function gtag(){dataLayer.push(arguments);}
 
   /* FAQ */
   .faq-section{background:var(--white);padding:80px 5%;}
-  .faq-section .section-label,.faq-section .section-title{text-align:center;}
+  .faq-section .section-label,.faq-section .section-title{text-align:center;}.faq-section .section-label{color:#a85000;}.faq-section .section-title em{color:#a85000;}
   .faq-list{max-width:780px;margin:40px auto 0;}
   .faq-item{border-bottom:1px solid var(--light-gray);background:var(--off-white);margin-bottom:4px;border-radius:8px;}
   .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--dark);gap:16px;}
@@ -205,7 +200,64 @@ function gtag(){dataLayer.push(arguments);}
   .cta-bar{background:var(--blue);padding:60px 5%;text-align:center;}
   .cta-bar h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(22px,3vw,34px);color:#fff;margin-bottom:12px;}
   .cta-bar p{color:rgba(255,255,255,.8);margin-bottom:28px;}
-  .btn-cta{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:16px 36px;border-radius:8px;box-shadow:0 6px 24px rgba(244,123,32,.5);}
+  .btn-cta{display:inline-block;background:#a85000;color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:16px 36px;border-radius:8px;box-shadow:0 6px 24px rgba(244,123,32,.5);}
+
+  /* ── MEET THE TEAM ── */
+  .team-section{
+    padding:100px 5% 90px;
+    position:relative;overflow:hidden;
+    background:url('img/ruslan-hero.webp') right center / cover no-repeat;
+    background-color:#06122d;
+    min-height:520px;
+  }
+  .team-section::before{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to right,
+      rgba(4,8,28,.96) 0%,
+      rgba(6,14,50,.90) 32%,
+      rgba(4,10,38,.55) 58%,
+      rgba(4,8,28,.15) 80%,
+      transparent 100%
+    );
+  }
+  .team-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+  .team-content{max-width:560px;}
+  .team-name-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 20px;}
+  .team-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(36px,5vw,54px);color:#fff;line-height:1;}
+  .team-owner-badge{
+    background:var(--orange);color:#fff;
+    font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    padding:6px 18px;border-radius:20px;white-space:nowrap;align-self:center;
+    box-shadow:0 4px 16px rgba(244,123,32,.5);}
+  .team-section .section-label{color:rgba(255,255,255,.7);}
+  .team-quote{font-size:16px;font-style:italic;color:rgba(255,255,255,.95);line-height:1.75;margin-bottom:22px;padding:14px 18px;border-left:4px solid var(--orange);background:rgba(255,255,255,.07);border-radius:0 8px 8px 0;}
+  .team-bio p{color:rgba(255,255,255,.80);font-size:14.5px;line-height:1.9;margin-bottom:14px;}
+  .team-bio p:last-child{margin-bottom:0;}
+  /* Mobile: stack, darken right side so text stays readable */
+  @media(max-width:860px){
+    .team-section{
+      background-position:center top;
+      padding:72px 5% 64px;
+      min-height:0;
+    }
+    .team-section::before{
+      background:linear-gradient(to bottom,
+        rgba(4,8,28,.92) 0%,
+        rgba(6,14,50,.88) 40%,
+        rgba(4,10,38,.82) 100%
+      );
+    }
+    .team-content{max-width:100%;}
+    .team-name-row{justify-content:center;}
+    .team-name{text-align:center;}
+    .team-quote{text-align:left;}
+    .team-bio p{text-align:left;}
+    .team-section .section-label{display:block;text-align:center;}
+  }
+  @media(max-width:480px){
+    .team-section{padding:60px 5% 52px;}
+    .team-name{font-size:clamp(30px,8vw,42px);}
+  }
   
   
   
@@ -228,59 +280,14 @@ function gtag(){dataLayer.push(arguments);}
   /* ── MOBILE ── */
   @media(max-width:900px){
 
-    /* ABOUT HERO — pan right so house/workers appear centre-right, clear fixed nav */
-    .about-section {
-      padding:130px 5% 60px;
-      background-position:68% center;
-    }
-    /* Semi-transparent blue — slightly more opaque to keep all text readable */
-    .about-section::before {
-      background:rgba(5,14,52,.60);
-    }
-    /* Text shadow for readability over photo */
-    .about-section .section-label,
-    .about-section .section-title { text-shadow:0 2px 8px rgba(0,0,0,.55); }
-    .about-inner { max-width:100%; }
-
-    /* All paragraphs visible — mobile-optimised sizing */
-    .about-text p {
-      font-size:13.5px;
-      line-height:1.72;
-      margin-bottom:14px;
-      color:rgba(255,255,255,.9);
-      text-shadow:0 1px 5px rgba(0,0,0,.45);
-    }
-
-    /* Compact 2×2 badge grid */
-    .values-list { grid-template-columns:1fr 1fr; gap:8px; margin-top:18px; }
-    .values-list li {
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:8px;
-      padding:9px 10px 9px 12px;
-      font-size:12px;
-      line-height:1.4;
-      text-shadow:0 1px 4px rgba(0,0,0,.4);
-    }
-    /* 5th item spans full width so grid stays balanced */
-    .values-list li:nth-child(5) { grid-column:1/-1; }
-
-    /* Mobile CTA — visible only on mobile */
-    .btn-about-mobile {
-      display:inline-block;
-      margin-top:24px;
-      background:var(--orange);
-      color:#fff;
-      text-decoration:none;
-      font-family:'Montserrat',sans-serif;
-      font-weight:800;
-      font-size:13px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      padding:14px 28px;
-      border-radius:8px;
-      box-shadow:0 4px 16px rgba(244,123,32,.45);
-    }
+    .about-section{padding:110px 5% 56px;background-position:65% top;}
+    .about-section::before{background:linear-gradient(to bottom,rgba(4,8,28,.28) 0%,rgba(4,8,28,.50) 22%,rgba(4,8,28,.86) 44%,rgba(4,8,28,.96) 100%);}
+    .about-inner{max-width:100%;}
+    .about-section .section-label,.about-section .section-title{text-shadow:0 2px 10px rgba(0,0,0,.7);}
+    .about-text p{font-size:13.5px;line-height:1.72;margin-bottom:14px;color:rgba(255,255,255,.9);text-shadow:0 1px 5px rgba(0,0,0,.45);}
+    .values-list{grid-template-columns:1fr;gap:6px;margin-top:18px;}
+    .values-list li{font-size:13.5px;line-height:1.55;text-shadow:0 1px 4px rgba(0,0,0,.5);}
+    .btn-about-mobile{display:inline-block;margin-top:24px;background:var(--orange);color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;border-radius:8px;box-shadow:0 4px 16px rgba(244,123,32,.45);}
 
     /* EMBLEMS — 2×2 grid, all same size, contained — no overflow */
     .values-section { padding:44px 5% 40px; border-top:3px solid var(--light-gray); overflow:hidden; }
@@ -327,8 +334,8 @@ function gtag(){dataLayer.push(arguments);}
     .area-card { padding:20px 16px; }
   }
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:transparent;transition:background .35s ease,box-shadow .35s ease,padding .35s ease;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:transform;}
-  nav.scrolled{background:rgba(10,24,70,.97);box-shadow:0 2px 20px rgba(0,0,0,.25);padding:8px 5%;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);transition:background .35s ease,box-shadow .35s ease,padding .35s ease;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:transform;}
+  nav.scrolled{background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);box-shadow:none;padding:8px 5%;}
   nav.scrolled .logo img{height:72px;}
   .logo img{height:96px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));transition:height .35s ease;}
   .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
@@ -354,7 +361,7 @@ function gtag(){dataLayer.push(arguments);}
   .footer-email,.footer-profile{color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;font-weight:600;transition:color .2s;}
   .footer-email:hover,.footer-profile:hover{color:var(--orange);}
   .footer-sep{color:rgba(255,255,255,.25);font-size:13px;}
-  .footer-copy{font-size:12px;color:rgba(255,255,255,.35);}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,.65);}
   .footer-social{display:inline-flex;align-items:center;opacity:.8;transition:opacity .2s,transform .2s;}
   .footer-social:hover{opacity:1;transform:translateY(-2px);}
   img{max-width:100%;height:auto;}
@@ -380,7 +387,7 @@ function gtag(){dataLayer.push(arguments);}
 
   /* ── NetBridge hub ── */
   .netbridge-hub { background:#fff; padding:72px 5%; }
-  .netbridge-hub .sec-label { display:inline-block; background:var(--orange); color:#fff; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:4px 14px; border-radius:20px; margin-bottom:14px; }
+  .netbridge-hub .sec-label { display:inline-block; background:#a85000; color:#fff; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; padding:4px 14px; border-radius:20px; margin-bottom:14px; }
   .netbridge-hub .sec-title { font-size:clamp(24px,3.5vw,36px); font-weight:800; color:var(--dark); margin:0 0 10px; }
   .netbridge-hub .sec-sub { color:var(--gray); font-size:15px; max-width:600px; margin:0 auto 44px; line-height:1.7; }
   .nb-columns { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; max-width:1100px; margin:0 auto; }
@@ -411,13 +418,14 @@ function gtag(){dataLayer.push(arguments);}
     <li><a href="index.html#quote" class="btn-nav">Get Free Quote</a></li>
   </ul>
 </nav>
+<main>
 
 <!-- ABOUT US -->
 <section class="about-section">
   <div class="about-inner">
     <div class="about-text">
       <span class="section-label">About Us</span>
-      <h1 class="section-title">Painting with <em>Pride</em> Since Day One</h1>
+      <h1 class="section-title">Painting with <em>Pride</em><br>Since Day One</h1>
       <p>Texora Painting is a family-run residential painting company based in Tsawwassen, BC. We transform homes across Metro Vancouver — one room, one house, one neighbourhood at a time.</p>
       <p>We started small, with a simple belief: do excellent work, treat every homeowner with respect, and never cut corners. That mindset earned us 5-star reviews, repeat customers, and referrals that keep our calendar full.</p>
       <p>Every project — whether it's a single room refresh or a full exterior repaint — gets the same care and attention. We show up on time, clean up after ourselves, and don't leave until you're happy.</p>
@@ -438,23 +446,42 @@ function gtag(){dataLayer.push(arguments);}
   <div class="values-row">
     <div class="value-item">
       <div class="emblem-icon emblem-1"></div>
-      <h3>Quality First</h3>
+      <h2 class="value-heading">Quality First</h2>
       <p>We use premium products and proven techniques for lasting results you can count on.</p>
     </div>
     <div class="value-item">
       <div class="emblem-icon emblem-2"></div>
-      <h3>Honest &amp; Reliable</h3>
+      <h2 class="value-heading">Honest &amp; Reliable</h2>
       <p>We show up on time, communicate clearly, and stand behind our work.</p>
     </div>
     <div class="value-item">
       <div class="emblem-icon emblem-3"></div>
-      <h3>Locally Owned</h3>
+      <h2 class="value-heading">Locally Owned</h2>
       <p>We're proud to be part of the community and treat every home like our own.</p>
     </div>
     <div class="value-item">
       <div class="emblem-icon emblem-4"></div>
-      <h3>Detail Driven</h3>
+      <h2 class="value-heading">Detail Driven</h2>
       <p>From prep to final touch, we pay attention to the details that make the difference.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MEET THE TEAM -->
+<section class="team-section" id="team">
+  <div class="team-inner">
+    <div class="team-content">
+      <span class="section-label">Meet the Team</span>
+      <div class="team-name-row">
+        <h2 class="team-name">Ruslan</h2>
+        <span class="team-owner-badge">Owner</span>
+      </div>
+      <p class="team-quote">"I started Texora Painting because I believe every homeowner deserves honest, quality work — the kind you'd be proud to do on your own home."</p>
+      <div class="team-bio">
+        <p>Growing up with a passion for craftsmanship, I built Texora Painting from the ground up with one simple goal: show up, do the job right, and leave every client genuinely happy. What drives me every single day is the look on a homeowner's face when they see their space transformed.</p>
+        <p>Every project gets my personal attention because, at the end of the day, we're working in people's homes — and that means everything to me.</p>
+        <p>When I'm not on the job, you'll find me exploring BC's beautiful outdoors with my wife and our dog — hiking trails, road-tripping along the coast, and discovering new corners of this incredible province.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -526,7 +553,7 @@ function gtag(){dataLayer.push(arguments);}
 
   </div>
   <p style="text-align:center;margin-top:36px;color:var(--gray);font-size:14px;">
-    Don't see your neighbourhood? <strong><a href="tel:+16044176483" style="color:var(--orange);">Call (604) 417-6483</a></strong> — we likely cover your area.
+    Don't see your neighbourhood? <strong><a href="tel:+16044176483" style="color:#a85000;">Call (604) 417-6483</a></strong> — we likely cover your area.
   </p>
 </section>
 
@@ -550,8 +577,9 @@ function gtag(){dataLayer.push(arguments);}
   <a href="index.html#quote" class="btn-cta">Request Your Free Quote →</a>
 </section>
 
+</main>
 <footer class="footer-bar">
-  <a class="footer-call" href="tel:+16044176483" aria-label="Call Texora Painting at (604) 417-6483">
+  <a class="footer-call" href="tel:+16044176483">
     <div class="call-icon">📞</div>
     <div>
       <div class="footer-call-text">Prefer to talk? Call us directly!</div>
@@ -570,7 +598,7 @@ function gtag(){dataLayer.push(arguments);}
     <a class="footer-social" href="https://www.facebook.com/people/Texora-Painting/61577587997631/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><rect width="22" height="22" rx="5" fill="#1877F2"/><path d="M14.5 11.5h-2.2V18H9.7v-6.5H8V9.2h1.7V7.8C9.7 6 10.6 5 12.6 5H14.5v2.3h-1.2c-.9 0-1.1.4-1.1 1v1h2.2l-.4 2.2z" fill="white"/></svg></a>
     <a class="footer-social" href="https://www.instagram.com/texora.painting/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><defs><linearGradient id="igGf" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="22" height="22" rx="5" fill="url(#igGf)"/><rect x="5.5" y="5.5" width="11" height="11" rx="3" fill="none" stroke="white" stroke-width="1.6"/><circle cx="11" cy="11" r="2.8" fill="none" stroke="white" stroke-width="1.6"/><circle cx="15" cy="7" r="0.9" fill="white"/></svg></a>
   </div>
-  <div class="footer-copy">© 2025 Texora Painting. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,.45);text-decoration:none;">Privacy Policy</a></div>
+  <div class="footer-copy">© 2025 Texora Painting. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Privacy Policy</a></div>
 </footer>
 
 <button id="scrollTop" aria-label="Back to top">
