@@ -1,10 +1,16 @@
 // Netlify serverless function — Google Business Profile API + Places API photo merge
 // Business Profile API → ALL reviews (full text, all reviewers)
-// Places API v1     → photo URLs for up to 5 most recent reviewers
-// Merged result     → all reviews with real photos where available
+// Places API v1       → real profile photo URLs for recent reviewers
 // Cache: 1 hour fresh, 24 hour stale-while-revalidate
 
 const PLACE_ID = 'ChIJu3iPLkznhVQRcRSyA-anoYY';
+
+// Clean photo URL — strip any existing size suffix, apply =s76-c
+function cleanPhotoUrl(url) {
+  if (!url) return null;
+  // Remove anything after the last = that looks like a size/crop param chain
+  return url.replace(/=[^/]*$/, '') + '=s76-c';
+}
 
 async function getAccessToken() {
   const res = await fetch('https://oauth2.googleapis.com/token', {
@@ -18,7 +24,7 @@ async function getAccessToken() {
     })
   });
   const data = await res.json();
-  if (!data.access_token) throw new Error('Failed to get access token: ' + JSON.stringify(data));
+  if (!data.access_token) throw new Error('Token error: ' + JSON.stringify(data));
   return data.access_token;
 }
 
@@ -27,15 +33,15 @@ async function getAccountAndLocation(accessToken) {
     headers: { Authorization: `Bearer ${accessToken}` }
   });
   const accountsData = await accountsRes.json();
-  if (!accountsData.accounts?.length) throw new Error('No accounts: ' + JSON.stringify(accountsData));
+  if (!accountsData.accounts?.length) throw new Error('No accounts — API may not be enabled. Response: ' + JSON.stringify(accountsData));
 
   const accountName  = accountsData.accounts[0].name;
   const locationsRes = await fetch(
     `https://mybusinessbusinessinformation.googleapis.com/v1/${accountName}/locations?readMask=name,title`,
-    { headers: { Authorization: `Bearer ${accessToken}` } }
+    { headers: { Authorization: `Bearer ${accountsData}` } }
   );
   const locationsData = await locationsRes.json();
-  if (!locationsData.locations?.length) throw new Error('No locations: ' + JSON.stringify(locationsData));
+  if (!locationsData.locations?.length) throw new Error('No locations — API may not be enabled. Response: ' + JSON.stringify(locationsData));
 
   return { locationName: locationsData.locations[0].name };
 }
@@ -45,22 +51,23 @@ async function getBusinessReviews(accessToken, locationName) {
     `https://mybusiness.googleapis.com/v4/${locationName}/reviews?pageSize=50`,
     { headers: { Authorization: `Bearer ${accessToken}` } }
   );
-  return await res.json();
+  const data = await res.json();
+  if (data.error) throw new Error('Reviews API error: ' + JSON.stringify(data.error));
+  return data;
 }
 
-// Fetch photo URLs from Places API v1 — returns up to 5 most-recent reviewer photos
+// Fetch photo URLs from Places API v1 (up to 5 most-recent reviewers)
 async function getPlacesPhotos(key) {
   try {
     const res  = await fetch(`https://places.googleapis.com/v1/places/${PLACE_ID}?key=${key}`, {
       headers: { 'X-Goog-FieldMask': 'reviews' }
     });
     const data = await res.json();
-    // Build a name → photoUrl map
-    const map = {};
+    const map  = {};
     (data.reviews || []).forEach(r => {
       const name  = r.authorAttribution?.displayName;
       const photo = r.authorAttribution?.photoUri;
-      if (name && photo) map[name] = photo + '=s76-c';
+      if (name && photo) map[name] = cleanPhotoUrl(photo);
     });
     return map;
   } catch (_) {
@@ -77,9 +84,9 @@ exports.handler = async () => {
   }
 
   try {
-    // Run Business Profile API + Places photo fetch in parallel
-    const accessToken           = await getAccessToken();
-    const { locationName }      = await getAccountAndLocation(accessToken);
+    const accessToken      = await getAccessToken();
+    const { locationName } = await getAccountAndLocation(accessToken);
+
     const [reviewsData, photos] = await Promise.all([
       getBusinessReviews(accessToken, locationName),
       key ? getPlacesPhotos(key) : Promise.resolve({})
@@ -94,12 +101,11 @@ exports.handler = async () => {
     const reviews = reviewsData.reviews
       .filter(r => r.comment)
       .map(r => {
-        const name = r.reviewer?.displayName || 'Google User';
-        // Use Places photo if available for this reviewer, otherwise Business Profile photo
-        const photo = photos[name] || r.reviewer?.profilePhotoUrl || null;
+        const name      = r.reviewer?.displayName || 'Google User';
+        const rawPhoto  = photos[name] || r.reviewer?.profilePhotoUrl || null;
         return {
           author_name:               name,
-          profile_photo_url:         photo,
+          profile_photo_url:         cleanPhotoUrl(rawPhoto),
           rating:                    starMap[r.starRating] || 5,
           relative_time_description: r.relativeTimeDescription || '',
           text:                      r.comment || ''
@@ -114,14 +120,21 @@ exports.handler = async () => {
       },
       body: JSON.stringify({
         reviews,
-        rating: reviewsData.averageRating   || 5.0,
+        rating: reviewsData.averageRating    || 5.0,
         total:  reviewsData.totalReviewCount || reviews.length
       })
     };
 
   } catch (err) {
     console.error('Business Profile API error:', err.message);
-    if (key) return await fallbackToPlacesAPI(key);
+    // Return error details + fallback so we can diagnose
+    const fallback = key ? await fallbackToPlacesAPI(key) : null;
+    if (fallback) {
+      // Inject debug info into response header for diagnosis
+      const parsed = JSON.parse(fallback.body);
+      parsed._debug = err.message;
+      return { ...fallback, body: JSON.stringify(parsed) };
+    }
     return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
   }
 };
@@ -136,9 +149,7 @@ async function fallbackToPlacesAPI(key) {
 
     const reviews = data.reviews.map(r => ({
       author_name:               r.authorAttribution?.displayName || '',
-      profile_photo_url:         r.authorAttribution?.photoUri
-                                   ? r.authorAttribution.photoUri + '=s76-c'
-                                   : null,
+      profile_photo_url:         cleanPhotoUrl(r.authorAttribution?.photoUri),
       rating:                    r.rating ?? 5,
       relative_time_description: r.relativePublishTimeDescription || '',
       text:                      r.text?.text || r.originalText?.text || ''
