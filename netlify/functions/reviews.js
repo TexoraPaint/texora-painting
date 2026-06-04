@@ -1,6 +1,7 @@
-// Netlify serverless function — Google Business Profile API
-// Uses OAuth2 refresh token to fetch ALL reviews with real photos
-// API keys/secrets live only in Netlify env vars, never in code
+// Netlify serverless function — Google Business Profile API + Places API photo merge
+// Business Profile API → ALL reviews (full text, all reviewers)
+// Places API v1     → photo URLs for up to 5 most recent reviewers
+// Merged result     → all reviews with real photos where available
 // Cache: 1 hour fresh, 24 hour stale-while-revalidate
 
 const PLACE_ID = 'ChIJu3iPLkznhVQRcRSyA-anoYY';
@@ -22,29 +23,24 @@ async function getAccessToken() {
 }
 
 async function getAccountAndLocation(accessToken) {
-  // List accounts
-  const accountsRes = await fetch('https://mybusinessaccountmanagement.googleapis.com/v1/accounts', {
+  const accountsRes  = await fetch('https://mybusinessaccountmanagement.googleapis.com/v1/accounts', {
     headers: { Authorization: `Bearer ${accessToken}` }
   });
   const accountsData = await accountsRes.json();
-  if (!accountsData.accounts?.length) throw new Error('No accounts found: ' + JSON.stringify(accountsData));
+  if (!accountsData.accounts?.length) throw new Error('No accounts: ' + JSON.stringify(accountsData));
 
-  const accountName = accountsData.accounts[0].name; // e.g. "accounts/123456"
-
-  // List locations for this account
+  const accountName  = accountsData.accounts[0].name;
   const locationsRes = await fetch(
     `https://mybusinessbusinessinformation.googleapis.com/v1/${accountName}/locations?readMask=name,title`,
     { headers: { Authorization: `Bearer ${accessToken}` } }
   );
   const locationsData = await locationsRes.json();
-  if (!locationsData.locations?.length) throw new Error('No locations found: ' + JSON.stringify(locationsData));
+  if (!locationsData.locations?.length) throw new Error('No locations: ' + JSON.stringify(locationsData));
 
-  // Pick the first location (Tsawwassen)
-  const location = locationsData.locations[0];
-  return { accountName, locationName: location.name };
+  return { locationName: locationsData.locations[0].name };
 }
 
-async function getReviews(accessToken, locationName) {
+async function getBusinessReviews(accessToken, locationName) {
   const res = await fetch(
     `https://mybusiness.googleapis.com/v4/${locationName}/reviews?pageSize=50`,
     { headers: { Authorization: `Bearer ${accessToken}` } }
@@ -52,10 +48,28 @@ async function getReviews(accessToken, locationName) {
   return await res.json();
 }
 
-exports.handler = async () => {
-  const key = process.env.GOOGLE_PLACES_KEY;
+// Fetch photo URLs from Places API v1 — returns up to 5 most-recent reviewer photos
+async function getPlacesPhotos(key) {
+  try {
+    const res  = await fetch(`https://places.googleapis.com/v1/places/${PLACE_ID}?key=${key}`, {
+      headers: { 'X-Goog-FieldMask': 'reviews' }
+    });
+    const data = await res.json();
+    // Build a name → photoUrl map
+    const map = {};
+    (data.reviews || []).forEach(r => {
+      const name  = r.authorAttribution?.displayName;
+      const photo = r.authorAttribution?.photoUri;
+      if (name && photo) map[name] = photo + '=s76-c';
+    });
+    return map;
+  } catch (_) {
+    return {};
+  }
+}
 
-  // Check all required env vars
+exports.handler = async () => {
+  const key     = process.env.GOOGLE_PLACES_KEY;
   const missing = ['GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', 'GOOGLE_REFRESH_TOKEN']
     .filter(v => !process.env[v]);
   if (missing.length) {
@@ -63,32 +77,34 @@ exports.handler = async () => {
   }
 
   try {
-    // Step 1: Get fresh access token via refresh token
-    const accessToken = await getAccessToken();
-
-    // Step 2: Find the account + location
-    const { locationName } = await getAccountAndLocation(accessToken);
-
-    // Step 3: Fetch all reviews
-    const reviewsData = await getReviews(accessToken, locationName);
+    // Run Business Profile API + Places photo fetch in parallel
+    const accessToken           = await getAccessToken();
+    const { locationName }      = await getAccountAndLocation(accessToken);
+    const [reviewsData, photos] = await Promise.all([
+      getBusinessReviews(accessToken, locationName),
+      key ? getPlacesPhotos(key) : Promise.resolve({})
+    ]);
 
     if (!reviewsData.reviews?.length) {
       return await fallbackToPlacesAPI(key);
     }
 
-    // Normalize reviews to the shape the front-end expects
+    const starMap = { ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5 };
+
     const reviews = reviewsData.reviews
       .filter(r => r.comment)
-      .map(r => ({
-        author_name:               r.reviewer?.displayName || 'Google User',
-        profile_photo_url:         r.reviewer?.profilePhotoUrl || null,
-        rating:                    { ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5 }[r.starRating] || 5,
-        relative_time_description: r.relativeTimeDescription || '',
-        text:                      r.comment || ''
-      }));
-
-    const totalReviews = reviewsData.totalReviewCount || reviews.length;
-    const avgRating    = reviewsData.averageRating || 5.0;
+      .map(r => {
+        const name = r.reviewer?.displayName || 'Google User';
+        // Use Places photo if available for this reviewer, otherwise Business Profile photo
+        const photo = photos[name] || r.reviewer?.profilePhotoUrl || null;
+        return {
+          author_name:               name,
+          profile_photo_url:         photo,
+          rating:                    starMap[r.starRating] || 5,
+          relative_time_description: r.relativeTimeDescription || '',
+          text:                      r.comment || ''
+        };
+      });
 
     return {
       statusCode: 200,
@@ -96,11 +112,14 @@ exports.handler = async () => {
         'Content-Type':  'application/json',
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400'
       },
-      body: JSON.stringify({ reviews, rating: avgRating, total: totalReviews })
+      body: JSON.stringify({
+        reviews,
+        rating: reviewsData.averageRating   || 5.0,
+        total:  reviewsData.totalReviewCount || reviews.length
+      })
     };
 
   } catch (err) {
-    // Fallback to Places API v1 if Business Profile API fails
     console.error('Business Profile API error:', err.message);
     if (key) return await fallbackToPlacesAPI(key);
     return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
@@ -109,8 +128,7 @@ exports.handler = async () => {
 
 async function fallbackToPlacesAPI(key) {
   try {
-    const url = `https://places.googleapis.com/v1/places/${PLACE_ID}?key=${key}`;
-    const res  = await fetch(url, {
+    const res  = await fetch(`https://places.googleapis.com/v1/places/${PLACE_ID}?key=${key}`, {
       headers: { 'X-Goog-FieldMask': 'reviews,rating,userRatingCount' }
     });
     const data = await res.json();
