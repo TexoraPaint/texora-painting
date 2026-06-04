@@ -38,7 +38,7 @@ async function getAccountAndLocation(accessToken) {
   const accountName  = accountsData.accounts[0].name;
   const locationsRes = await fetch(
     `https://mybusinessbusinessinformation.googleapis.com/v1/${accountName}/locations?readMask=name,title`,
-    { headers: { Authorization: `Bearer ${accountsData}` } }
+    { headers: { Authorization: `Bearer ${accessToken}` } }
   );
   const locationsData = await locationsRes.json();
   if (!locationsData.locations?.length) throw new Error('No locations — API may not be enabled. Response: ' + JSON.stringify(locationsData));
@@ -99,7 +99,6 @@ exports.handler = async () => {
     const starMap = { ONE: 1, TWO: 2, THREE: 3, FOUR: 4, FIVE: 5 };
 
     const reviews = reviewsData.reviews
-      .filter(r => r.comment)
       .map(r => {
         const name      = r.reviewer?.displayName || 'Google User';
         const rawPhoto  = photos[name] || r.reviewer?.profilePhotoUrl || null;
