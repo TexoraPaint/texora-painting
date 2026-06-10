@@ -8,13 +8,6 @@
       "port": 4500,
       "cwd": "/Users/illiafominykh/Downloads/Texora Painting/texora-painting",
       "env": {}
-    },
-    {
-      "name": "texora-bg",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["/tmp/texora_server.py"],
-      "port": 4501,
-      "cwd": "/Users/illiafominykh/Downloads/Texora Painting/texora-painting"
     }
   ]
 }
