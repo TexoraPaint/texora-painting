@@ -481,6 +481,20 @@ function gtag(){dataLayer.push(arguments);}
     });
   })();
 
+  // Conversion tracking — phone clicks + form submit (zero extra scripts, uses existing gtag stub)
+  (function(){
+    if(window._phoneInit)return;window._phoneInit=true;
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a[href^="tel:"]');
+      if(a){gtag('event','phone_call_click',{event_category:'engagement',event_label:'phone_tap'});}
+    },{passive:true});
+    var f=document.querySelector('form.form-grid');
+    if(f){f.addEventListener('submit',function(){
+      gtag('event','generate_lead',{event_category:'form',event_label:'quote_request'});
+      if(window.fbq)fbq('track','Lead');
+    });}
+  })();
+
   // FAQ accordion
   function toggleFaq(btn) {
     var answer = btn.nextElementSibling;

@@ -206,7 +206,7 @@ function gtag(){dataLayer.push(arguments);}
   .team-section{
     padding:100px 5% 90px;
     position:relative;overflow:hidden;
-    background:url('img/ruslan-hero.webp') right center / cover no-repeat;
+    background:url('img/ruslan-hero.webp') right 15% / cover no-repeat;
     background-color:#06122d;
     min-height:520px;
   }
@@ -233,30 +233,36 @@ function gtag(){dataLayer.push(arguments);}
   .team-quote{font-size:16px;font-style:italic;color:rgba(255,255,255,.95);line-height:1.75;margin-bottom:22px;padding:14px 18px;border-left:4px solid var(--orange);background:rgba(255,255,255,.07);border-radius:0 8px 8px 0;}
   .team-bio p{color:rgba(255,255,255,.80);font-size:14.5px;line-height:1.9;margin-bottom:14px;}
   .team-bio p:last-child{margin-bottom:0;}
-  /* Mobile: stack, darken right side so text stays readable */
+  /* Mobile: text left, photo visible right */
   @media(max-width:860px){
     .team-section{
-      background-position:center top;
-      padding:72px 5% 64px;
-      min-height:0;
+      background-position:78% top;
+      background-size:cover;
+      padding:64px 5% 60px;
+      min-height:580px;
     }
     .team-section::before{
-      background:linear-gradient(to bottom,
-        rgba(4,8,28,.92) 0%,
-        rgba(6,14,50,.88) 40%,
-        rgba(4,10,38,.82) 100%
+      background:linear-gradient(to right,
+        rgba(4,8,28,.98) 0%,
+        rgba(4,8,28,.96) 42%,
+        rgba(4,8,28,.65) 60%,
+        rgba(4,8,28,.15) 80%,
+        transparent 100%
       );
     }
-    .team-content{max-width:100%;}
-    .team-name-row{justify-content:center;}
-    .team-name{text-align:center;}
-    .team-quote{text-align:left;}
-    .team-bio p{text-align:left;}
-    .team-section .section-label{display:block;text-align:center;}
+    .team-content{max-width:58%;}
+    .team-name-row{justify-content:flex-start;}
+    .team-name{text-align:left;}
+    .team-quote{font-size:14px;line-height:1.65;}
+    .team-bio p{font-size:13.5px;line-height:1.8;}
+    .team-section .section-label{display:block;text-align:left;}
   }
   @media(max-width:480px){
-    .team-section{padding:60px 5% 52px;}
-    .team-name{font-size:clamp(30px,8vw,42px);}
+    .team-section{padding:56px 5% 52px;min-height:520px;background-position:80% top;background-size:cover;}
+    .team-content{max-width:62%;}
+    .team-name{font-size:clamp(28px,8vw,38px);}
+    .team-quote{font-size:13px;}
+    .team-bio p{font-size:13px;}
   }
   
   
@@ -280,9 +286,9 @@ function gtag(){dataLayer.push(arguments);}
   /* ── MOBILE ── */
   @media(max-width:900px){
 
-    .about-section{padding:110px 5% 56px;background-position:65% top;}
-    .about-section::before{background:linear-gradient(to bottom,rgba(4,8,28,.28) 0%,rgba(4,8,28,.50) 22%,rgba(4,8,28,.86) 44%,rgba(4,8,28,.96) 100%);}
-    .about-inner{max-width:100%;}
+    .about-section{padding:110px 5% 56px;background-position:85% top;background-size:cover;min-height:600px;}
+    .about-section::before{background:linear-gradient(to right,rgba(4,8,28,.98) 0%,rgba(4,8,28,.96) 42%,rgba(4,8,28,.65) 60%,rgba(4,8,28,.15) 80%,transparent 100%);}
+    .about-inner{max-width:58%;}
     .about-section .section-label,.about-section .section-title{text-shadow:0 2px 10px rgba(0,0,0,.7);}
     .about-text p{font-size:13.5px;line-height:1.72;margin-bottom:14px;color:rgba(255,255,255,.9);text-shadow:0 1px 5px rgba(0,0,0,.45);}
     .values-list{grid-template-columns:1fr;gap:6px;margin-top:18px;}
@@ -659,13 +665,12 @@ function gtag(){dataLayer.push(arguments);}
 </button>
 <script>
   function toggleFaq(btn){var a=btn.nextElementSibling,open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false');});if(!open){a.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');}}
-  (function(){var btn=document.getElementById('navToggle'),menu=document.getElementById('navLinks');if(!btn||!menu)return;btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');});menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
-  
   // Sticky nav gradient on scroll
   
 
 (function(){var nav=document.querySelector('nav');function s(){nav.classList.toggle('scrolled',window.scrollY>60);}window.addEventListener('scroll',s,{passive:true});s();})();
 (function(){if(window._navInit)return;window._navInit=true;var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!b||!l)return;b.addEventListener('click',function(){var o=l.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});document.addEventListener('click',function(e){if(!b.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+(function(){if(window._phoneInit)return;window._phoneInit=true;document.addEventListener("click",function(e){var a=e.target.closest('a[href^="tel:"]');if(a){gtag("event","phone_call_click",{event_category:"engagement",event_label:"phone_tap"});}},{passive:true});})();
 (function(){var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer'),t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);if(footer){var ft=footer.getBoundingClientRect().top;btn.style.bottom=ft<window.innerHeight?(window.innerHeight-ft+8)+'px':'28px';}t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
 function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');x.previousElementSibling.classList.remove('open');});if(!o){a.classList.add('open');b.classList.add('open');}}
 </script>
