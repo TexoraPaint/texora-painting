@@ -322,7 +322,6 @@ function gtag(){dataLayer.push(arguments);}
   var btn=document.getElementById('navToggle');
   var links=document.getElementById('navLinks');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>50);});
-  btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
 })();
 
 (function(){var nav=document.querySelector('nav');function s(){nav.classList.toggle('scrolled',window.scrollY>60);}window.addEventListener('scroll',s,{passive:true});s();})();

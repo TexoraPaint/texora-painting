@@ -434,21 +434,6 @@ function closeShowcaseLb(){var lb=document.getElementById('showcaseLightbox');if
 <script>
   function toggleFaq(btn){var a=btn.nextElementSibling,isOpen=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');});document.querySelectorAll('.faq-q').forEach(function(x){x.classList.remove('open');});if(!isOpen){a.classList.add('open');btn.classList.add('open');}}
   (function(){
-    var btn=document.getElementById('navToggle'),menu=document.getElementById('navLinks');
-    if(!btn||!menu)return;
-    btn.addEventListener('click',function(){
-      var open=menu.classList.toggle('open');
-      btn.classList.toggle('open',open);
-      btn.setAttribute('aria-expanded',open?'true':'false');
-    });
-    menu.addEventListener('click',function(e){
-      if(e.target.tagName==='A'){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}
-    });
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}
-    });
-  })();
-  (function(){
     var btn=document.getElementById('scrollTop');
     var footer=document.querySelector('footer');
     var footerVisible=false;

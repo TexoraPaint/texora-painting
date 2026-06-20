@@ -30,6 +30,10 @@ function gtag(){dataLayer.push(arguments);}
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Preload LCP image (moved early so it's discovered before JSON-LD parsing) -->
+<link rel="preload" as="image" href="img/hero-main.webp" type="image/webp" fetchpriority="high" media="(min-width:600px)">
+<link rel="preload" as="image" href="img/hero-main-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width:599px)">
+
 <!-- Favicons -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -143,9 +147,6 @@ function gtag(){dataLayer.push(arguments);}
 }
 </script>
 
-<!-- Preload LCP image -->
-<link rel="preload" as="image" href="img/hero-main.webp" type="image/webp" fetchpriority="high" media="(min-width:600px)">
-<link rel="preload" as="image" href="img/hero-main-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width:599px)">
 <!-- Preconnect for Google reviewer photos -->
 <!-- Preconnect for Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,6 +161,45 @@ function gtag(){dataLayer.push(arguments);}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Texora Painting","telephone":"+1-604-417-6483","url":"https://texorapainting.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"5","bestRating":"5"}}</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://texorapainting.com/"}]}</script>
+
+<!-- Brand entity graph: Organization + WebSite (strengthens branded search / Knowledge Panel) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://texorapainting.com/#organization",
+      "name": "Texora Painting",
+      "url": "https://texorapainting.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://texorapainting.com/img/logo.png"
+      },
+      "image": "https://texorapainting.com/og-image.png",
+      "email": "info@texorapainting.com",
+      "telephone": "+1-604-417-6483",
+      "areaServed": ["Tsawwassen", "Ladner", "Delta", "Port Coquitlam", "Port Moody"],
+      "sameAs": [
+        "https://share.google/ktiq1kINB0cnvunmX",
+        "https://share.google/zObcI4I178kQJ2OV8",
+        "https://www.facebook.com/people/Texora-Painting/61577587997631/",
+        "https://www.instagram.com/texora.painting/",
+        "https://www.homestars.com/profile/texora",
+        "https://yelp.com/biz/texora-painting-delta"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://texorapainting.com/#website",
+      "url": "https://texorapainting.com/",
+      "name": "Texora Painting",
+      "publisher": { "@id": "https://texorapainting.com/#organization" },
+      "inLanguage": "en-CA"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 

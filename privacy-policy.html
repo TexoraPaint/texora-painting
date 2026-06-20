@@ -307,13 +307,6 @@ function gtag(){dataLayer.push(arguments);}
 
 <script>
   (function(){
-    var btn=document.getElementById('navToggle'),menu=document.getElementById('navLinks');
-    if(!btn||!menu)return;
-    btn.addEventListener('click',function(){var open=menu.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');});
-    menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');btn.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
-  })();
-  (function(){
     var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer');
     function u(){btn.classList.toggle('visible',window.scrollY>300);if(footer){var ft=footer.getBoundingClientRect().top,vh=window.innerHeight;btn.style.bottom=ft<vh?(vh-ft+8)+'px':'28px';}}
     window.addEventListener('scroll',u,{passive:true});

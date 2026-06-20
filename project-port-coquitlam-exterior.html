@@ -408,8 +408,6 @@ const nav=document.getElementById('nav');
 const scrollTopBtn=document.getElementById('scrollTop');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);scrollTopBtn.classList.toggle('visible',window.scrollY>300);},{passive:true});
 scrollTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-document.getElementById('navToggle').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('open');});
-
 (function(){var nav=document.querySelector('nav');function s(){nav.classList.toggle('scrolled',window.scrollY>60);}window.addEventListener('scroll',s,{passive:true});s();})();
 (function(){if(window._navInit)return;window._navInit=true;var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!b||!l)return;b.addEventListener('click',function(){var o=l.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});document.addEventListener('click',function(e){if(!b.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
 (function(){if(window._phoneInit)return;window._phoneInit=true;document.addEventListener("click",function(e){var a=e.target.closest('a[href^="tel:"]');if(a){gtag("event","phone_call_click",{event_category:"engagement",event_label:"phone_tap"});}},{passive:true});})();
