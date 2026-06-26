@@ -29,9 +29,6 @@ function gtag(){dataLayer.push(arguments);}
 <meta property="og:title" content="Tsawwassen Deck Refinishing — Coastal Weather Protection | Texora Painting">
 <meta property="og:image" content="https://texorapainting.com/img/ba-deck-after.webp">
 <meta name="theme-color" content="#1a3a6e">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;600&display=optional" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -40,6 +37,13 @@ function gtag(){dataLayer.push(arguments);}
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://texorapainting.com/"},{"@type":"ListItem","position":2,"name":"Projects","item":"https://texorapainting.com/projects.html"},{"@type":"ListItem","position":3,"name":"Tsawwassen Deck Refinishing"}]}
   ]
 }</script>
+<!-- Self-hosted variable fonts: correct on first paint, no CDN round-trip -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/opensans-latin.woff2" crossorigin>
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 900;font-display:optional;src:url('/fonts/montserrat-latin.woff2') format('woff2')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400 700;font-display:optional;src:url('/fonts/opensans-latin.woff2') format('woff2')}
+</style>
 <style>
 :root{--blue:#1a3a6e;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;}
 *{margin:0;padding:0;box-sizing:border-box;}

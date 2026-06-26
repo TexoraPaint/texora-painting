@@ -37,11 +37,7 @@ function gtag(){dataLayer.push(arguments);}
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="img/hero-bg.webp" type="image/webp" fetchpriority="high" >
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Texora Painting","telephone":"+1-604-417-6483","url":"https://texorapainting.com","sameAs":["https://share.google/ktiq1kINB0cnvunmX","https://share.google/zObcI4I178kQJ2OV8","https://www.homestars.com/profile/texora"],"areaServed":"Vancouver, BC","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"5","bestRating":"5"}}</script>
 <script type="application/ld+json">
@@ -51,6 +47,13 @@ function gtag(){dataLayer.push(arguments);}
     {"@type":"Question","name":"How do I get a quote for painting my Vancouver home?","acceptedAnswer":{"@type":"Answer","text":"Fill out our quote form or call (604) 417-6483. We typically respond same day and can arrange an on-site visit within a few days. Written quotes are provided at no charge and with no obligation."}},
     {"@type":"Question","name":"Do you do exterior painting in Vancouver's rainy season?","acceptedAnswer":{"@type":"Answer","text":"We monitor weather windows carefully and plan exterior jobs around dry stretches. Vancouver's rain patterns are predictable enough to schedule around — we never apply exterior coatings in rain or when temperatures drop below 10°C."}}
 ]}</script>
+<!-- Self-hosted variable fonts: correct on first paint, no CDN round-trip -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/opensans-latin.woff2" crossorigin>
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 900;font-display:optional;src:url('/fonts/montserrat-latin.woff2') format('woff2')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400 700;font-display:optional;src:url('/fonts/opensans-latin.woff2') format('woff2')}
+</style>
 <style>
   :root{--blue:#1a3a6e;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;}
   *{margin:0;padding:0;box-sizing:border-box;}

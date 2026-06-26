@@ -36,11 +36,7 @@ function gtag(){dataLayer.push(arguments);}
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="img/hero-bg.webp" type="image/webp" fetchpriority="high" >
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Texora Painting","telephone":"+1-604-417-6483","url":"https://texorapainting.com","sameAs":["https://share.google/ktiq1kINB0cnvunmX","https://share.google/zObcI4I178kQJ2OV8"],"areaServed":"Ladner, BC","description":"Drywall Installation in Ladner, BC"}</script>
 <script type="application/ld+json">
@@ -56,6 +52,13 @@ function gtag(){dataLayer.push(arguments);}
   {"@type":"Question","name":"Can you replace old plaster walls with drywall in a Ladner heritage home?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Many older homes in Ladner still have original lath-and-plaster walls that have cracked, bubbled, or deteriorated beyond repair. We can remove the old plaster and lath, install new drywall, tape and mud to a smooth Level 4 or Level 5 finish, and leave the walls ready for paint — dramatically improving the look and insulting performance of the room."}},
   {"@type":"Question","name":"What drywall finish level do you provide for new installations in Ladner?","acceptedAnswer":{"@type":"Answer","text":"We typically finish new drywall to a Level 4 standard, which is the industry norm for painted walls — all joints, screws, and corners are taped, mudded, and feathered smooth. For walls receiving flat or matte paint, or for high-end projects, we can finish to Level 5 (skim coat over the entire surface) for a perfectly uniform result under any lighting."}}
 ]}</script>
+<!-- Self-hosted variable fonts: correct on first paint, no CDN round-trip -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/opensans-latin.woff2" crossorigin>
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 900;font-display:optional;src:url('/fonts/montserrat-latin.woff2') format('woff2')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400 700;font-display:optional;src:url('/fonts/opensans-latin.woff2') format('woff2')}
+</style>
 <style>
   :root{--blue:#1a3a6e;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;}
   *{margin:0;padding:0;box-sizing:border-box;}

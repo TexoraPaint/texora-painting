@@ -36,11 +36,7 @@ function gtag(){dataLayer.push(arguments);}
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="img/hero-bg.webp" type="image/webp" fetchpriority="high" >
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Texora Painting","telephone":"+1-604-417-6483","url":"https://texorapainting.com","sameAs":["https://share.google/ktiq1kINB0cnvunmX","https://share.google/zObcI4I178kQJ2OV8"],"areaServed":"Ladner, BC","description":"Exterior Painting in Ladner, BC"}</script>
 <script type="application/ld+json">
@@ -56,6 +52,13 @@ function gtag(){dataLayer.push(arguments);}
   {"@type":"Question","name":"How do you prepare the exterior of a heritage home in Ladner before painting?","acceptedAnswer":{"@type":"Answer","text":"Heritage homes in Ladner often have multiple layers of old paint, peeling wood, and gaps in caulking around windows and trim. Our prep process includes power washing, hand scraping loose paint, sanding rough edges, spot-priming bare wood, and re-caulking all joints and penetrations. This prep work is what separates a 3-year paint job from a 10-year one."}},
   {"@type":"Question","name":"When is the best time of year to paint the exterior of my Ladner home?","acceptedAnswer":{"@type":"Answer","text":"The ideal exterior painting window in Ladner is late spring through early fall — roughly May through September — when temperatures are consistently above 10°C and rain is less frequent. We monitor weather carefully and never apply paint in wet or cold conditions, which would compromise adhesion and finish quality."}}
 ]}</script>
+<!-- Self-hosted variable fonts: correct on first paint, no CDN round-trip -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/montserrat-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/opensans-latin.woff2" crossorigin>
+<style>
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400 900;font-display:optional;src:url('/fonts/montserrat-latin.woff2') format('woff2')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400 700;font-display:optional;src:url('/fonts/opensans-latin.woff2') format('woff2')}
+</style>
 <style>
   :root{--blue:#1a3a6e;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;}
   *{margin:0;padding:0;box-sizing:border-box;}
