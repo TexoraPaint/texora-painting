@@ -313,60 +313,307 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 
 <!-- PORTFOLIO -->
-<section class="portfolio" id="work">
-  <p class="section-label reveal">See Our Work</p>
-  <h2 class="section-title reveal reveal-delay-1">Clean Lines. Smooth Finishes.</h2>
-  <div class="before-after-grid">
-    <div class="ba-pair">
-      <div class="ba-slot before" style="padding:0;overflow:hidden;">
-        <picture>
-          <source srcset="img/ba-deck-before.webp" type="image/webp">
-          <img loading="lazy" src="img/ba-deck-before.jpg" alt="Deck railing before painting" width="640" height="480" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </picture>
-        <div class="ba-label">Before</div>
-      </div>
-      <div class="ba-slot after" style="padding:0;overflow:hidden;">
-        <picture>
-          <source srcset="img/ba-deck-after.webp" type="image/webp">
-          <img loading="lazy" src="img/ba-deck-after.jpg" alt="Deck railing after painting" width="640" height="480" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </picture>
-        <div class="ba-label">After</div>
-      </div>
-    </div>
-    <div class="ba-pair">
-      <div class="ba-slot before" style="padding:0;overflow:hidden;">
-        <picture>
-          <source srcset="img/ba-bathroom-before.webp" type="image/webp">
-          <img loading="lazy" src="img/ba-bathroom-before.jpg" alt="Bathroom before renovation and painting" width="640" height="480" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </picture>
-        <div class="ba-label">Before</div>
-      </div>
-      <div class="ba-slot after" style="padding:0;overflow:hidden;">
-        <picture>
-          <source srcset="img/ba-bathroom-after.webp" type="image/webp">
-          <img loading="lazy" src="img/ba-bathroom-after.jpg" alt="Bathroom after renovation and painting" width="800" height="600" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </picture>
-        <div class="ba-label">After</div>
-      </div>
-    </div>
-    <div class="ba-pair">
-      <div class="ba-slot before" style="padding:0;overflow:hidden;">
-        <picture>
-          <source srcset="img/ba-interior-before.webp" type="image/webp">
-          <img loading="lazy" src="img/ba-interior-before.jpg" alt="Basement interior before painting" width="800" height="600" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </picture>
-        <div class="ba-label">Before</div>
-      </div>
-      <div class="ba-slot after" style="padding:0;overflow:hidden;">
-        <picture>
-          <source srcset="img/ba-interior-after.webp" type="image/webp">
-          <img loading="lazy" src="img/ba-interior-after.jpg" alt="Basement interior after painting" width="800" height="600" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </picture>
-        <div class="ba-label">After</div>
-      </div>
-    </div>
+<style>
+  /* ===== SEE OUR WORK — 3D before/after carousel ===== */
+  .pf{background:var(--off-white);padding:80px 5% 88px;overflow-x:clip;}
+  .pf-head{text-align:center;max-width:640px;margin:0 auto 44px;}
+  .pf-eyebrow{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;}
+  .pf-title{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(28px,4vw,44px);color:var(--blue);line-height:1.08;margin-bottom:12px;}
+  .pf-title span{color:var(--orange);}
+  .pf-sub{color:var(--gray);font-size:15px;line-height:1.6;}
+  /* Stage */
+  .pf-stage{position:relative;max-width:1120px;margin:0 auto;perspective:1700px;display:flex;justify-content:center;align-items:center;}
+  .pf-card{position:relative;z-index:5;width:min(600px,60%);background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 24px 60px -18px rgba(16,32,70,.30),0 6px 18px -8px rgba(16,32,70,.18);opacity:0;transform:translateY(22px) scale(.985);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;}
+  .pf.in .pf-card{opacity:1;transform:none;}
+  .pf-card:hover{box-shadow:0 30px 70px -18px rgba(16,32,70,.36),0 8px 22px -8px rgba(16,32,70,.2);}
+  .pf-card.swap{opacity:0;}
+  /* Comparison */
+  .pf-ba{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:#e9edf4;touch-action:pan-y;cursor:ew-resize;user-select:none;-webkit-user-select:none;}
+  .pf-ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+  .pf-ba-before{z-index:2;}
+  .pf-ba-beforewrap{position:absolute;inset:0;z-index:2;clip-path:inset(0 50% 0 0);will-change:clip-path;}
+  .pf-ba-after{z-index:1;}
+  .pf-divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);z-index:4;box-shadow:0 0 0 1px rgba(16,32,70,.06);will-change:left;pointer-events:none;}
+  .pf-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;border:none;z-index:5;box-shadow:0 4px 14px rgba(16,32,70,.28);display:flex;align-items:center;justify-content:center;cursor:ew-resize;touch-action:none;color:var(--orange);}
+  .pf-handle:focus-visible{outline:3px solid var(--orange);outline-offset:3px;}
+  .pf-handle svg{width:22px;height:22px;display:block;}
+  .pf-lab{position:absolute;top:14px;z-index:3;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.5px;color:#fff;padding:5px 12px;border-radius:20px;pointer-events:none;}
+  .pf-lab-b{left:14px;background:rgba(10,20,45,.72);backdrop-filter:blur(2px);}
+  .pf-lab-a{right:14px;background:var(--orange);}
+  /* Info */
+  .pf-info{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 22px;}
+  .pf-info-l{display:flex;align-items:center;gap:14px;min-width:0;text-align:left;}
+  .pf-ico{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:rgba(244,123,32,.12);display:flex;align-items:center;justify-content:center;color:var(--orange);}
+  .pf-ico svg{width:22px;height:22px;}
+  .pf-info h3{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:17px;color:var(--blue);line-height:1.2;margin-bottom:3px;}
+  .pf-info p{color:var(--gray);font-size:12.5px;line-height:1.5;}
+  .pf-loc{flex-shrink:0;display:flex;align-items:center;gap:5px;color:var(--blue);font-weight:700;font-size:13px;white-space:nowrap;}
+  .pf-loc svg{width:15px;height:15px;color:var(--orange);}
+  /* Side cards */
+  .pf-side{position:absolute;top:50%;z-index:2;width:40%;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:#dfe5f0;border:none;padding:0;cursor:pointer;box-shadow:0 16px 34px -16px rgba(16,32,70,.3);opacity:0;transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);}
+  .pf.in .pf-side{opacity:.92;}
+  .pf-side img{width:100%;height:100%;object-fit:cover;display:block;}
+  .pf-side-prev{left:0;transform-origin:right center;transform:translateY(-50%) translateX(4%) scale(.86) rotateY(7deg);}
+  .pf-side-next{right:0;transform-origin:left center;transform:translateY(-50%) translateX(-4%) scale(.86) rotateY(-7deg);}
+  .pf.in .pf-side-prev{transform:translateY(-50%) translateX(-2%) scale(.84) rotateY(7deg);transition-delay:.08s;}
+  .pf.in .pf-side-next{transform:translateY(-50%) translateX(2%) scale(.84) rotateY(-7deg);transition-delay:.08s;}
+  .pf-side:hover{opacity:1;}
+  .pf-side-prev:hover{transform:translateY(-50%) translateX(0) scale(.86) rotateY(6deg);}
+  .pf-side-next:hover{transform:translateY(-50%) translateX(0) scale(.86) rotateY(-6deg);}
+  .pf-side-lab{position:absolute;top:10px;left:10px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:9px;letter-spacing:1px;color:#fff;padding:3px 9px;border-radius:14px;background:rgba(10,20,45,.6);}
+  /* Nav */
+  .pf-nav{display:flex;align-items:center;justify-content:center;gap:26px;margin:34px auto 0;}
+  .pf-arrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--light-gray);color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:0 16px;height:44px;border-radius:24px;cursor:pointer;box-shadow:0 2px 8px rgba(16,32,70,.06);transition:background .2s,color .2s,transform .15s;}
+  .pf-arrow:hover{background:var(--blue);color:#fff;}
+  .pf-arrow:hover svg circle{fill:rgba(255,255,255,.15);}
+  .pf-arrow svg{width:26px;height:26px;}
+  .pf-arrow:focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
+  .pf-dots{display:flex;align-items:center;gap:9px;}
+  .pf-dot{width:9px;height:9px;border-radius:50%;background:#c8d0de;border:none;padding:0;cursor:pointer;transition:background .25s,width .25s;}
+  .pf-dot.on{background:var(--orange);width:26px;border-radius:5px;}
+  .pf-dot:focus-visible{outline:2px solid var(--orange);outline-offset:2px;}
+  .pf-counter{text-align:center;margin-top:18px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;color:var(--gray);}
+  .pf-counter b{color:var(--blue);}
+  .pf-viewall{display:inline-flex;align-items:center;gap:8px;margin:22px auto 0;color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:3px;transition:color .2s;}
+  .pf-viewall svg{width:16px;height:16px;transition:transform .2s;}
+  .pf-viewall:hover{color:var(--orange);}
+  .pf-viewall:hover svg{transform:translateX(4px);}
+  .pf-viewall-wrap{text-align:center;}
+  /* Tablet */
+  @media(max-width:1000px){
+    .pf-card{width:min(560px,74%);}
+    .pf-side{width:32%;}
+    .pf-side-prev,.pf.in .pf-side-prev{transform:translateY(-50%) translateX(-6%) scale(.8) rotateY(5deg);}
+    .pf-side-next,.pf.in .pf-side-next{transform:translateY(-50%) translateX(6%) scale(.8) rotateY(-5deg);}
+  }
+  /* Mobile */
+  @media(max-width:680px){
+    .pf{padding:52px 0 60px;}
+    .pf-head{padding:0 6%;margin-bottom:30px;}
+    .pf-stage{perspective:1200px;overflow:visible;}
+    .pf-card{width:84vw;max-width:420px;border-radius:18px;}
+    .pf-ba{aspect-ratio:4/5;}
+    .pf-side{width:20vw;aspect-ratio:3/5;top:44%;}
+    .pf-side img{width:auto;height:100%;max-width:none;}
+    .pf-side-prev,.pf.in .pf-side-prev{left:-10vw;transform:translateY(-50%) scale(.92) rotateY(10deg);}
+    .pf-side-next,.pf.in .pf-side-next{right:-10vw;transform:translateY(-50%) scale(.92) rotateY(-10deg);}
+    .pf-side-lab{display:none;}
+    .pf-info{padding:15px 18px;}
+    .pf-info h3{font-size:16px;}
+    .pf-loc{font-size:12px;}
+    .pf-nav{gap:14px;}
+    .pf-arrow span{display:none;}
+    .pf-arrow{padding:0;width:44px;justify-content:center;}
+  }
+  @media(max-width:360px){
+    .pf-card{width:88vw;}
+    .pf-title{font-size:26px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .pf-card,.pf-side{transition:opacity .2s ease !important;transform:none !important;}
+    .pf.in .pf-side-prev,.pf.in .pf-side-next{transform:translateY(-50%) scale(.84) !important;}
+    .pf-ba-beforewrap{will-change:auto;}
+  }
+</style>
+
+<section class="pf" id="work" aria-roledescription="carousel" aria-label="Before and after project showcase">
+  <div class="pf-head">
+    <p class="pf-eyebrow">See Our Work</p>
+    <h2 class="pf-title">See What Changed<span>.</span></h2>
+    <p class="pf-sub">Real transformations. Quality that lasts.</p>
   </div>
+
+  <div class="pf-stage" id="pfStage">
+    <button class="pf-side pf-side-prev" id="pfSidePrev" aria-label="Previous project">
+      <img alt="" width="480" height="360" decoding="async" loading="lazy">
+      <span class="pf-side-lab">Before</span>
+    </button>
+
+    <div class="pf-card" id="pfCard">
+      <div class="pf-ba" id="pfBa">
+        <img class="pf-ba-after" id="pfAfter" alt="" width="640" height="480" decoding="async" loading="lazy">
+        <div class="pf-ba-beforewrap" id="pfBeforeWrap"><img class="pf-ba-before" id="pfBefore" alt="" width="640" height="480" decoding="async" loading="lazy"></div>
+        <span class="pf-lab pf-lab-b">BEFORE</span>
+        <span class="pf-lab pf-lab-a">AFTER</span>
+        <div class="pf-divider" id="pfDivider"></div>
+        <button class="pf-handle" id="pfHandle" type="button" aria-label="Drag to compare before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" role="slider">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>
+        </button>
+      </div>
+      <div class="pf-info">
+        <div class="pf-info-l">
+          <span class="pf-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01"/></svg></span>
+          <div>
+            <h3 id="pfTitle">Deck Restoration</h3>
+            <p id="pfDesc">Weathered and worn deck revived with sanding, staining and protection.</p>
+          </div>
+        </div>
+        <a class="pf-loc" id="pfLoc" href="projects.html" aria-label="Project location"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span id="pfLocText">Tsawwassen, BC</span></a>
+      </div>
+    </div>
+
+    <button class="pf-side pf-side-next" id="pfSideNext" aria-label="Next project">
+      <img alt="" width="480" height="360" decoding="async" loading="lazy">
+      <span class="pf-side-lab">After</span>
+    </button>
+  </div>
+
+  <div class="pf-nav">
+    <button class="pf-arrow" id="pfPrev" aria-label="Previous project"><svg viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12.5" fill="none" stroke="currentColor" stroke-opacity=".18"/><path d="M15 8l-5 5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Prev</span></button>
+    <div class="pf-dots" id="pfDots" role="tablist"></div>
+    <button class="pf-arrow" id="pfNext" aria-label="Next project"><span>Next</span><svg viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12.5" fill="none" stroke="currentColor" stroke-opacity=".18"/><path d="M11 8l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+  <div class="pf-counter"><b id="pfCur">01</b> / <span id="pfTot">06</span></div>
+  <div class="pf-viewall-wrap"><a class="pf-viewall" href="projects.html">View All Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </section>
+
+<script>
+(function(){
+  var stage=document.getElementById('pfStage'); if(!stage) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var PROJECTS=[
+    {t:'Deck Restoration',d:'Weathered and worn deck revived with sanding, staining and protection.',loc:'Tsawwassen, BC',b:'img/ba-deck-before.jpg',a:'img/ba-deck-after.jpg',url:'deck-building.html'},
+    {t:'Bathroom Refresh',d:'A dated bathroom brought back to life with fresh drywall and paint.',loc:'Delta, BC',b:'img/ba-bathroom-before.webp',a:'img/ba-bathroom-after.webp',url:'bathroom-refresh.html'},
+    {t:'Exterior Repaint',d:'Faded siding restored to a crisp, weather-ready finish.',loc:'Ladner, BC',b:'img/ba-exterior-before.webp',a:'img/ba-exterior-after.webp',url:'exterior-painting.html'},
+    {t:'Basement Makeover',d:'A dark basement transformed into a bright, modern living space.',loc:'Delta, BC',b:'img/ba-interior-before.webp',a:'img/ba-interior-after.webp',url:'interior-painting.html'},
+    {t:'Kitchen Cabinets',d:'Tired cabinets refinished to a smooth, factory-like finish.',loc:'Tsawwassen, BC',b:'img/ba-kitchen-before.webp',a:'img/ba-kitchen-after.webp',url:'cabinet-painting.html'},
+    {t:'Drywall Repair',d:'Damaged drywall patched and repainted to a seamless finish.',loc:'Ladner, BC',b:'img/ba-drywall-before.webp',a:'img/ba-drywall-after.webp',url:'drywall-repair.html'}
+  ];
+  var N=PROJECTS.length, idx=0, pos=50;
+  var introRan=false, userTouched=false, introRAF=0, animating=false;
+
+  var card=document.getElementById('pfCard'), ba=document.getElementById('pfBa');
+  var afterImg=document.getElementById('pfAfter'), beforeImg=document.getElementById('pfBefore');
+  var beforeWrap=document.getElementById('pfBeforeWrap'), divider=document.getElementById('pfDivider'), handle=document.getElementById('pfHandle');
+  var titleEl=document.getElementById('pfTitle'), descEl=document.getElementById('pfDesc'), locEl=document.getElementById('pfLocText'), locLink=document.getElementById('pfLoc');
+  var sPrev=document.getElementById('pfSidePrev'), sNext=document.getElementById('pfSideNext');
+  var sPrevImg=sPrev.querySelector('img'), sNextImg=sNext.querySelector('img');
+  var dotsWrap=document.getElementById('pfDots'), curEl=document.getElementById('pfCur'), totEl=document.getElementById('pfTot');
+
+  function pad(n){return (n<10?'0':'')+n;}
+  totEl.textContent=pad(N);
+
+  // dots
+  for(var i=0;i<N;i++){(function(i){var b=document.createElement('button');b.className='pf-dot';b.setAttribute('role','tab');b.setAttribute('aria-label','Project '+(i+1));b.addEventListener('click',function(){go(i);});dotsWrap.appendChild(b);})(i);}
+  var dots=dotsWrap.querySelectorAll('.pf-dot');
+
+  function setDivider(p,anim){
+    pos=p<0?0:(p>100?100:p);
+    if(anim){beforeWrap.style.transition='clip-path .5s cubic-bezier(.22,1,.36,1)';divider.style.transition='left .5s cubic-bezier(.22,1,.36,1)';}
+    else{beforeWrap.style.transition='none';divider.style.transition='none';}
+    beforeWrap.style.clipPath='inset(0 '+(100-pos)+'% 0 0)';
+    divider.style.left=pos+'%';
+    handle.style.left=pos+'%';
+    handle.setAttribute('aria-valuenow',Math.round(pos));
+  }
+  handle.style.position='absolute';handle.style.top='50%';
+
+  function render(){
+    var p=PROJECTS[idx];
+    afterImg.src=p.a; afterImg.alt='After — '+p.t+', '+p.loc;
+    beforeImg.src=p.b; beforeImg.alt='Before — '+p.t+', '+p.loc;
+    titleEl.textContent=p.t; descEl.textContent=p.d; locEl.textContent=p.loc; locLink.href=p.url;
+    var pv=PROJECTS[(idx-1+N)%N], nx=PROJECTS[(idx+1)%N];
+    sPrevImg.src=pv.a; sPrevImg.alt=pv.t+' — after'; sNextImg.src=nx.b; sNextImg.alt=nx.t+' — before';
+    curEl.textContent=pad(idx+1);
+    for(var i=0;i<N;i++){dots[i].classList.toggle('on',i===idx);dots[i].setAttribute('aria-selected',i===idx?'true':'false');}
+    setDivider(50,false);
+  }
+
+  function go(n,dir){
+    n=(n%N+N)%N; if(n===idx||animating) return;
+    dir=dir||(n>idx?1:-1);
+    if(reduce){idx=n;render();return;}
+    animating=true;
+    card.style.transition='opacity .22s ease, transform .22s ease';
+    card.style.opacity='0'; card.style.transform='translateY(0) translateX('+(dir*-34)+'px)';
+    setTimeout(function(){
+      idx=n; render();
+      card.style.transition='none'; card.style.transform='translateX('+(dir*34)+'px)';
+      // reflow
+      void card.offsetWidth;
+      card.style.transition='opacity .34s cubic-bezier(.22,1,.36,1), transform .42s cubic-bezier(.22,1,.36,1)';
+      card.style.opacity='1'; card.style.transform='translateX(0)';
+      setTimeout(function(){animating=false;},300);
+    },230);
+  }
+  function next(){go(idx+1,1);} function prev(){go(idx-1,-1);}
+
+  document.getElementById('pfNext').addEventListener('click',function(){userTouched=true;stopIntro();next();});
+  document.getElementById('pfPrev').addEventListener('click',function(){userTouched=true;stopIntro();prev();});
+  sNext.addEventListener('click',function(){userTouched=true;stopIntro();next();});
+  sPrev.addEventListener('click',function(){userTouched=true;stopIntro();prev();});
+  dotsWrap.addEventListener('click',function(){userTouched=true;stopIntro();});
+
+  // keyboard
+  stage.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){userTouched=true;stopIntro();prev();}else if(e.key==='ArrowRight'){userTouched=true;stopIntro();next();}});
+  stage.tabIndex=0; stage.setAttribute('aria-label','Use left and right arrow keys to browse projects');
+
+  // ---- divider drag (pointer) ----
+  var dragging=false;
+  function pctFromX(clientX){var r=ba.getBoundingClientRect();return (clientX-r.left)/r.width*100;}
+  function startDrag(e){userTouched=true;stopIntro();dragging=true;setDivider(pctFromX(e.clientX),false);if(ba.setPointerCapture&&e.pointerId!=null){try{ba.setPointerCapture(e.pointerId);}catch(_){} }}
+  function moveDrag(e){if(!dragging)return;setDivider(pctFromX(e.clientX),false);e.preventDefault();}
+  function endDrag(){dragging=false;}
+  handle.addEventListener('pointerdown',function(e){e.stopPropagation();startDrag(e);});
+  // desktop: allow grabbing anywhere on image with a mouse
+  ba.addEventListener('pointerdown',function(e){if(e.pointerType==='mouse'){startDrag(e);}});
+  ba.addEventListener('pointermove',moveDrag);
+  window.addEventListener('pointerup',endDrag);
+  handle.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){userTouched=true;stopIntro();setDivider(pos-4,false);e.preventDefault();}else if(e.key==='ArrowRight'){userTouched=true;stopIntro();setDivider(pos+4,false);e.preventDefault();}});
+
+  // ---- touch: distinguish handle-drag vs carousel swipe ----
+  var tStartX=0,tStartY=0,tMode='',tActive=false;
+  stage.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1)return;
+    var t=e.touches[0]; tStartX=t.clientX; tStartY=t.clientY; tMode=''; tActive=true;
+    var hr=handle.getBoundingClientRect();
+    var near=t.clientX>=hr.left-26&&t.clientX<=hr.right+26&&t.clientY>=hr.top-26&&t.clientY<=hr.bottom+26;
+    var inBa=false;var br=ba.getBoundingClientRect();if(t.clientX>=br.left&&t.clientX<=br.right&&t.clientY>=br.top&&t.clientY<=br.bottom)inBa=true;
+    if(near){tMode='drag';userTouched=true;stopIntro();}
+    else{tMode= inBa? 'maybe' : 'swipe';}
+  },{passive:true});
+  stage.addEventListener('touchmove',function(e){
+    if(!tActive||e.touches.length!==1)return;
+    var t=e.touches[0], dx=t.clientX-tStartX, dy=t.clientY-tStartY;
+    if(tMode==='drag'){setDivider(pctFromX(t.clientX),false);e.preventDefault();return;}
+    if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>8){ // horizontal intent -> swipe carousel
+      tMode='swipe'; e.preventDefault();
+    } else if(Math.abs(dy)>Math.abs(dx)&&Math.abs(dy)>8){ tActive=false; } // vertical scroll, release
+  },{passive:false});
+  stage.addEventListener('touchend',function(e){
+    if(!tActive)return; tActive=false;
+    if(tMode==='swipe'){var dx=(e.changedTouches[0].clientX)-tStartX;if(Math.abs(dx)>44){userTouched=true;stopIntro();dx<0?next():prev();}}
+  });
+
+  // ---- intro demo (once, on first view) ----
+  function stopIntro(){if(introRAF){cancelAnimationFrame(introRAF);introRAF=0;}}
+  function runIntro(){
+    if(introRan||userTouched||reduce)return; introRan=true;
+    var start=null,dur=1500;
+    // 22 -> 74 -> 50 eased
+    function frame(ts){
+      if(userTouched){setDivider(50,true);return;}
+      if(!start)start=ts; var t=(ts-start)/dur; if(t>1)t=1;
+      var e=t<.5?(2*t*t):(1-Math.pow(-2*t+2,2)/2); // easeInOut
+      var v; if(t<.6){v=22+(74-22)*(e/ .84);} else {v=74+(50-74)*((t-.6)/.4);}
+      setDivider(v,false);
+      if(t<1){introRAF=requestAnimationFrame(frame);} else {setDivider(50,false);introRAF=0;}
+    }
+    introRAF=requestAnimationFrame(frame);
+  }
+
+  // ---- reveal on view ----
+  var section=document.getElementById('work');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){section.classList.add('in');setTimeout(runIntro,650);io.disconnect();}});},{threshold:.25});
+    io.observe(section);
+  } else { section.classList.add('in'); }
+
+  render();
+  window.addEventListener('resize',function(){setDivider(pos,false);});
+})();
+</script>
 
 <!-- HOW IT WORKS -->
 <section class="how" id="how">
