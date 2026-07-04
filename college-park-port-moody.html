@@ -200,11 +200,42 @@ function gtag(){dataLayer.push(arguments);}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://texorapainting.com/"},{"@type":"ListItem","position":2,"name":"Service Areas","item":"https://texorapainting.com/service-areas.html"},{"@type":"ListItem","position":3,"name":"College Park Port Moody","item":"https://texorapainting.com/college-park-port-moody.html"}]}</script>
+<style>
+/* Mobile/tablet action header — authoritative nav <=900px; desktop (>900) untouched */
+.nav-actions{display:none;}
+@media(max-width:900px){
+  nav{background:#0f2050 !important;box-shadow:0 2px 12px rgba(0,0,0,.14) !important;padding-top:calc(10px + env(safe-area-inset-top)) !important;padding-bottom:10px !important;}
+  nav .logo img,nav.scrolled .logo img{height:54px !important;}
+  nav .nav-links{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,32,90,.98);margin:0;padding:8px 0;border-radius:0 0 12px 12px;box-shadow:0 12px 32px rgba(0,0,0,.35);}
+  nav .nav-links.open{display:flex;}
+  nav .nav-links li{width:100%;list-style:none;}
+  nav .nav-links a{display:block;padding:14px 22px;font-size:14px;opacity:1;border-bottom:1px solid rgba(255,255,255,.08);}
+  nav .nav-links li:last-child a{border-bottom:none;}
+  nav .nav-links .btn-nav{margin:10px 16px 6px;text-align:center;border-radius:8px;}
+  nav .nav-actions{display:flex;align-items:center;gap:7px;flex-shrink:0;}
+  nav .nav-phone{display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:#fff;text-decoration:none;flex-shrink:0;border-radius:8px;-webkit-tap-highlight-color:transparent;}
+  nav .nav-phone svg{width:23px;height:23px;display:block;}
+  nav .nav-phone:active{opacity:.65;}
+  nav .nav-actions .nav-toggle{display:flex !important;width:44px;height:44px;margin:0;flex-shrink:0;}
+  nav .nav-cta-m{display:inline-flex;align-items:center;justify-content:center;min-height:44px;width:141px;padding:0 8px;background:var(--orange,#f47b20);color:#fff;font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;text-decoration:none;border-radius:9px;white-space:nowrap;flex-shrink:0;line-height:1;-webkit-tap-highlight-color:transparent;}
+  nav .nav-cta-m:active{background:var(--orange-dark,#d96a10);}
+}
+@media(max-width:400px){
+  nav .nav-actions{gap:4px;}
+  nav .nav-cta-m{width:137px;font-size:12px;letter-spacing:.3px;}
+  nav .nav-phone{width:40px;}
+  nav .logo img,nav.scrolled .logo img{height:48px !important;}
+}
+@media(max-width:340px){
+  nav .nav-cta-m{width:132px;font-size:11.5px;}
+  nav .nav-phone{width:36px;}
+}
+</style>
 </head>
 <body>
 <nav id="mainNav">
   <a class="logo" href="index.html" aria-label="Texora Painting home"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Texora Painting" width="160" height="107"></picture></a>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="nav-actions"><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.55.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.55 1 1 0 0 1-.24 1.05z"/></svg></a><button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button><a class="nav-cta-m" href="index.html#quote">Get Free Quote</a></div>
         <ul class="nav-links" id="navLinks">
     <li><a href="index.html#services">Services</a></li>
     <li><a href="gallery.html">Gallery</a></li>
