@@ -756,6 +756,10 @@ function gtag(){dataLayer.push(arguments);}
       </ul>
       <div class="trust-logos">
         <picture><source srcset="worksafe-bc.webp" type="image/webp"><img loading="lazy" decoding="async" src="worksafe-bc.jpg" alt="WorkSafe BC" class="trust-logo" width="177" height="34"></picture>
+        <div class="trust-logo-pair" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+          <picture><source srcset="img/sherwin-williams.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/sherwin-williams.png" alt="Sherwin-Williams paints" class="trust-logo" width="240" height="120" style="height:54px;"></picture>
+          <picture><source srcset="img/sherwin-pro.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/sherwin-pro.png" alt="Sherwin-Williams PRO+" class="trust-logo" width="140" height="120" style="height:54px;"></picture>
+        </div>
         <picture><source srcset="img/texora-wordmark.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/texora-wordmark.png" alt="Texora Painting" class="trust-logo" width="480" height="164" style="height:54px;"></picture>
       </div>
     </div>
@@ -767,7 +771,7 @@ function gtag(){dataLayer.push(arguments);}
       <input type="text" name="_honey" style="display:none">
       <div class="form-row">
         <input type="text" name="Full Name" placeholder="Full Name" required>
-        <input type="tel" name="Phone Number" placeholder="Phone Number" required>
+        <input type="tel" name="Phone Number" id="phoneInput" inputmode="tel" maxlength="14" autocomplete="tel" placeholder="(604) 417-6483" required>
       </div>
       <div class="form-row">
         <input type="email" name="Email" placeholder="Email" required>
@@ -854,6 +858,20 @@ function gtag(){dataLayer.push(arguments);}
       var m=e.target.closest('a[href^="mailto:"]');
       if(m){gtag('event','email_click',{event_category:'engagement',event_label:'email_tap'});}
     },{passive:true});
+  })();
+
+  // Phone field — auto-format digits to (604) 417-6483 style as the user types
+  (function(){
+    var el=document.getElementById('phoneInput');
+    if(!el) return;
+    el.addEventListener('input',function(){
+      var d=el.value.replace(/\D/g,'').slice(0,10), p=[];
+      if(d.length>0) p.push('('+d.slice(0,3));
+      if(d.length>=3) p[0]='('+d.slice(0,3)+')';
+      if(d.length>3) p.push(' '+d.slice(3,6));
+      if(d.length>6) p.push('-'+d.slice(6,10));
+      el.value=p.join('');
+    });
   })();
 
   // FAQ accordion
