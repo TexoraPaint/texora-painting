@@ -203,40 +203,123 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 
 <!-- SERVICES -->
+<style>
+/* Services v3 — title top, buttons bottom row, hover reveal + staggered scroll reveal */
+.svc2-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;margin:0 auto}
+.svc2-card{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#12244a;isolation:isolate;box-shadow:0 6px 22px rgba(0,0,0,.12)}
+.svc2-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1);z-index:0}
+.svc2-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,14,36,.72) 0%,rgba(6,14,36,.12) 26%,rgba(6,14,36,.1) 54%,rgba(6,14,36,.86) 100%);z-index:1}
+.svc2-ov{position:absolute;inset:0;background:linear-gradient(150deg,rgba(244,123,32,.94),rgba(217,106,16,.95));opacity:0;transition:opacity .4s ease;z-index:2}
+.svc2-card:hover .svc2-bg,.svc2-card:focus-within .svc2-bg{transform:scale(1.07)}
+.svc2-card:hover .svc2-ov,.svc2-card:focus-within .svc2-ov{opacity:1}
+.svc2-cover{position:absolute;inset:0;z-index:3}
+.svc2-top{position:absolute;top:0;left:0;right:0;padding:20px 20px 0;z-index:4;pointer-events:none;text-align:left}
+.svc2-title{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:clamp(18px,1.5vw,22px);color:#fff;margin:0;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+.svc2-desc{color:#fff;font-size:13.5px;line-height:1.55;margin:0;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,.61,.36,1),opacity .35s ease,margin .45s ease}
+.svc2-card:hover .svc2-desc,.svc2-card:focus-within .svc2-desc{max-height:130px;opacity:1;margin:10px 0 0}
+.svc2-btns{position:absolute;bottom:0;left:0;right:0;padding:0 20px 20px;z-index:4;display:flex;gap:10px;flex-wrap:nowrap;align-items:center}
+.svc2-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.2px;text-decoration:none;padding:10px 14px;border-radius:9px;transition:background .2s,color .2s,box-shadow .2s,transform .15s;white-space:nowrap}
+.svc2-btn:active{transform:translateY(1px)}
+.svc2-quote{background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(244,123,32,.45)}
+.svc2-quote:hover{background:var(--orange-dark)}
+.svc2-card:hover .svc2-quote,.svc2-card:focus-within .svc2-quote{background:#fff;color:var(--orange-dark)}
+.svc2-more{background:rgba(255,255,255,.95);color:var(--dark)}
+.svc2-more:hover{background:#fff}
+.svc2-card:hover .svc2-more,.svc2-card:focus-within .svc2-more{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.9)}
+.svc2-card.reveal{opacity:0;transform:translateY(34px) scale(.965);transition:opacity .65s cubic-bezier(.22,.61,.36,1),transform .65s cubic-bezier(.22,.61,.36,1)}
+.svc2-card.reveal.visible{opacity:1;transform:none}
+.svc2-card.reveal:nth-child(1){transition-delay:.04s}
+.svc2-card.reveal:nth-child(2){transition-delay:.12s}
+.svc2-card.reveal:nth-child(3){transition-delay:.20s}
+.svc2-card.reveal:nth-child(4){transition-delay:.28s}
+.svc2-card.reveal:nth-child(5){transition-delay:.36s}
+.svc2-card.reveal:nth-child(6){transition-delay:.44s}
+@media(max-width:900px){.svc2-grid{grid-template-columns:repeat(2,1fr);gap:16px}.svc2-top{padding:16px 16px 0}.svc2-btns{padding:0 16px 16px}}
+@media(max-width:560px){.svc2-grid{grid-template-columns:1fr;gap:16px}.svc2-card{aspect-ratio:16/10}}
+@media(prefers-reduced-motion:reduce){.svc2-bg,.svc2-ov,.svc2-desc,.svc2-btn{transition:none}.svc2-card.reveal{opacity:1;transform:none;transition:none}}
+</style>
 <section class="services" id="services">
-  <p class="section-label reveal">Our Services</p>
-  <h2 class="section-title reveal reveal-delay-1">Quality Work. Every Time.</h2>
-  <div class="services-grid">
-    <a class="service-card reveal reveal-delay-1" href="interior-painting.html">
-      <picture><source srcset="img/svc-icon-1.webp" type="image/webp"><img loading="lazy" decoding="async" class="svc-icon" src="img/svc-icon-1.png" alt="Interior Painting" width="128" height="128"></picture>
-      <h3>Interior Painting</h3>
-      <span class="svc-learn">Learn more →</span>
-    </a>
-    <a class="service-card reveal reveal-delay-2" href="exterior-painting.html">
-      <picture><source srcset="img/svc-icon-2.webp" type="image/webp"><img loading="lazy" decoding="async" class="svc-icon" src="img/svc-icon-2.png" alt="Exterior Painting" width="128" height="128"></picture>
-      <h3>Exterior Painting</h3>
-      <span class="svc-learn">Learn more →</span>
-    </a>
-    <a class="service-card reveal reveal-delay-3" href="cabinet-painting.html">
-      <picture><source srcset="img/svc-icon-3.webp" type="image/webp"><img loading="lazy" decoding="async" class="svc-icon" src="img/svc-icon-3.png" alt="Cabinet Painting" width="128" height="128"></picture>
-      <h3>Cabinet Painting</h3>
-      <span class="svc-learn">Learn more →</span>
-    </a>
-    <a class="service-card reveal reveal-delay-4" href="drywall-repair.html">
-      <picture><source srcset="img/svc-icon-4.webp" type="image/webp"><img loading="lazy" decoding="async" class="svc-icon" src="img/svc-icon-4.png" alt="Drywall Repair" width="128" height="128"></picture>
-      <h3>Drywall Repair &amp; Mudding</h3>
-      <span class="svc-learn">Learn more →</span>
-    </a>
-    <a class="service-card reveal reveal-delay-5" href="trim-doors-ceilings.html">
-      <picture><source srcset="img/svc-icon-5.webp" type="image/webp"><img loading="lazy" decoding="async" class="svc-icon" src="img/svc-icon-5.png" alt="Trim Doors Ceilings" width="128" height="128"></picture>
-      <h3>Trim, Doors &amp; Ceilings</h3>
-      <span class="svc-learn">Learn more →</span>
-    </a>
-    <a class="service-card reveal reveal-delay-6" href="full-home-repaint.html">
-      <picture><source srcset="img/svc-icon-6.webp" type="image/webp"><img loading="lazy" decoding="async" class="svc-icon" src="img/svc-icon-6.png" alt="Full Home Repaints" width="128" height="128"></picture>
-      <h3>Full Home Repaints</h3>
-      <span class="svc-learn">Learn more →</span>
-    </a>
+  <p class="section-label reveal">What We Offer</p>
+  <h2 class="section-title reveal reveal-delay-1">Our Services</h2>
+  <div class="svc2-grid">
+    <article class="svc2-card reveal">
+      <img class="svc2-bg" src="img/svc-interior.webp" alt="Interior painting by Texora Painting in Delta, BC" loading="lazy" decoding="async" width="728" height="1100">
+      <div class="svc2-ov"></div>
+      <a class="svc2-cover" href="interior-painting.html" aria-label="Interior Painting — more info"></a>
+      <div class="svc2-top">
+        <h3 class="svc2-title">Interior Painting</h3>
+        <p class="svc2-desc">Walls, ceilings &amp; trim finished clean, on time, and built to last.</p>
+      </div>
+      <div class="svc2-btns">
+        <a class="svc2-btn svc2-quote" href="#quote">Get a Quote</a>
+        <a class="svc2-btn svc2-more" href="interior-painting.html">More Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+    <article class="svc2-card reveal">
+      <img class="svc2-bg" src="img/svc-exterior.webp" alt="Exterior house painting by Texora Painting in Delta, BC" loading="lazy" decoding="async" width="1100" height="728">
+      <div class="svc2-ov"></div>
+      <a class="svc2-cover" href="exterior-painting.html" aria-label="Exterior Painting — more info"></a>
+      <div class="svc2-top">
+        <h3 class="svc2-title">Exterior Painting</h3>
+        <p class="svc2-desc">Long-lasting exterior coatings built for BC's coastal weather.</p>
+      </div>
+      <div class="svc2-btns">
+        <a class="svc2-btn svc2-quote" href="#quote">Get a Quote</a>
+        <a class="svc2-btn svc2-more" href="exterior-painting.html">More Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+    <article class="svc2-card reveal">
+      <img class="svc2-bg" src="img/svc-cabinet.webp" alt="Cabinet spray painting by Texora Painting in Delta, BC" loading="lazy" decoding="async" width="733" height="1100">
+      <div class="svc2-ov"></div>
+      <a class="svc2-cover" href="cabinet-painting.html" aria-label="Cabinet Painting — more info"></a>
+      <div class="svc2-top">
+        <h3 class="svc2-title">Cabinet Painting</h3>
+        <p class="svc2-desc">Sprayed, factory-smooth cabinet finishes — a kitchen refresh without the reno.</p>
+      </div>
+      <div class="svc2-btns">
+        <a class="svc2-btn svc2-quote" href="#quote">Get a Quote</a>
+        <a class="svc2-btn svc2-more" href="cabinet-painting.html">More Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+    <article class="svc2-card reveal">
+      <img class="svc2-bg" src="img/svc-drywall.webp" alt="Drywall repair and mudding by Texora Painting in Delta, BC" loading="lazy" decoding="async" width="825" height="1100">
+      <div class="svc2-ov"></div>
+      <a class="svc2-cover" href="drywall-repair.html" aria-label="Drywall Repair and Mudding — more info"></a>
+      <div class="svc2-top">
+        <h3 class="svc2-title">Drywall Repair &amp; Mudding</h3>
+        <p class="svc2-desc">Holes, cracks &amp; water damage patched to a flawless, paint-ready finish.</p>
+      </div>
+      <div class="svc2-btns">
+        <a class="svc2-btn svc2-quote" href="#quote">Get a Quote</a>
+        <a class="svc2-btn svc2-more" href="drywall-repair.html">More Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+    <article class="svc2-card reveal">
+      <img class="svc2-bg" src="img/svc-trim.webp" alt="Trim, doors and ceilings painting by Texora Painting in Delta, BC" loading="lazy" decoding="async" width="729" height="1100">
+      <div class="svc2-ov"></div>
+      <a class="svc2-cover" href="trim-doors-ceilings.html" aria-label="Trim, Doors and Ceilings — more info"></a>
+      <div class="svc2-top">
+        <h3 class="svc2-title">Trim, Doors &amp; Ceilings</h3>
+        <p class="svc2-desc">Crisp detail work on baseboards, casings, doors &amp; ceilings.</p>
+      </div>
+      <div class="svc2-btns">
+        <a class="svc2-btn svc2-quote" href="#quote">Get a Quote</a>
+        <a class="svc2-btn svc2-more" href="trim-doors-ceilings.html">More Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+    <article class="svc2-card reveal">
+      <img class="svc2-bg" src="img/svc-fullhome.webp" alt="Full home exterior repaint by Texora Painting in Delta, BC" loading="lazy" decoding="async" width="733" height="1100">
+      <div class="svc2-ov"></div>
+      <a class="svc2-cover" href="full-home-repaint.html" aria-label="Full Home Repaints — more info"></a>
+      <div class="svc2-top">
+        <h3 class="svc2-title">Full Home Repaints</h3>
+        <p class="svc2-desc">Whole-home interior &amp; exterior transformations, start to finish.</p>
+      </div>
+      <div class="svc2-btns">
+        <a class="svc2-btn svc2-quote" href="#quote">Get a Quote</a>
+        <a class="svc2-btn svc2-more" href="full-home-repaint.html">More Info <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
   </div>
 </section>
 
