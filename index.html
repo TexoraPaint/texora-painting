@@ -135,6 +135,20 @@ function gtag(){dataLayer.push(arguments);}
   nav .nav-cta-m{width:132px;font-size:11.5px;}
   nav .nav-phone{width:36px;}
 }
+/* Home only: hide header Get Free Quote + phone until you scroll past the hero (hero already has them) */
+@media(min-width:901px){
+  nav .nav-li-quote,nav .nav-li-call{display:none;}
+  nav:not(.show-cta) .nav-links{margin-left:auto;margin-right:auto;}
+  nav.show-cta .nav-li-quote{display:block;animation:navCtaIn .4s ease both;}
+  nav.show-cta .nav-li-call{display:flex;align-items:center;animation:navCtaIn .4s ease both;}
+}
+@media(max-width:900px){
+  nav .nav-cta-m,nav .nav-actions .nav-phone{display:none;}
+  nav.show-cta .nav-cta-m{display:inline-flex;animation:navCtaIn .4s ease both;}
+  nav.show-cta .nav-actions .nav-phone{display:flex;animation:navCtaIn .4s ease both;}
+}
+@keyframes navCtaIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){nav.show-cta .nav-li-quote,nav.show-cta .nav-li-call,nav.show-cta .nav-cta-m,nav.show-cta .nav-actions .nav-phone{animation:none;}}
 </style>
 </head>
 <body>
@@ -153,7 +167,7 @@ function gtag(){dataLayer.push(arguments);}
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="blog/index.html">Blog</a></li>
     <li><a href="service-areas.html">About Us</a></li>
-    <li><a href="#quote" class="btn-nav">Get Free Quote</a></li><li class="nav-li-call"><a class="nav-phone-d" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a></li>
+    <li class="nav-li-quote"><a href="#quote" class="btn-nav">Get Free Quote</a></li><li class="nav-li-call"><a class="nav-phone-d" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a></li>
   </ul>
 </nav>
 
@@ -1029,6 +1043,16 @@ function gtag(){dataLayer.push(arguments);}
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+
+  // Home only: reveal header CTA + phone once the hero's buttons scroll out of view
+  (function(){
+    var nav=document.querySelector('nav'), heroCta=document.querySelector('.hero-cta-row');
+    if(!nav||!heroCta||!('IntersectionObserver' in window)){ if(nav) nav.classList.add('show-cta'); return; }
+    var io=new IntersectionObserver(function(entries){
+      nav.classList.toggle('show-cta', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    io.observe(heroCta);
   })();
 
   // Scroll-reveal
