@@ -67,6 +67,9 @@ function gtag(){dataLayer.push(arguments);}
   .ty-links{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
   .ty-links a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:14px;border-bottom:2px solid var(--orange);padding-bottom:2px;}
   .ty-links a:hover{color:#fff;}
+  .ty-trust{margin:34px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.15);width:100%;max-width:340px;}
+  .ty-trust-label{color:rgba(255,255,255,.78);font-size:14px;line-height:1.6;margin-bottom:14px;}
+  .ty-trust .trustpilot-widget a{color:rgba(255,255,255,.85);}
 </style>
 </head>
 <body>
@@ -97,6 +100,14 @@ function gtag(){dataLayer.push(arguments);}
         <a href="gallery.html">See our work →</a>
         <a href="index.html">Back to home →</a>
       </div>
+      <div class="ty-trust">
+        <p class="ty-trust-label">Already worked with us? We'd love your feedback.</p>
+        <!-- TrustBox widget - Review Collector -->
+        <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6aa1d445185a678d38da2b11" data-style-height="52px" data-style-width="100%" data-token="5e736e16-a8be-4645-b5d2-dec775943096">
+          <a href="https://www.trustpilot.com/review/texorapainting.com" target="_blank" rel="noopener">Trustpilot</a>
+        </div>
+        <!-- End TrustBox widget -->
+      </div>
     </div>
   </div>
 </main>
@@ -111,5 +122,7 @@ function gtag(){dataLayer.push(arguments);}
     if(typeof gtag==='function'){fire();} else {setTimeout(fire,3600);}
   })();
 </script>
+<!-- Trustpilot widget bootstrap (async, non-blocking) -->
+<script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 </body>
 </html>
