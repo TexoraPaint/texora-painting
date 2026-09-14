@@ -45,31 +45,70 @@ function gtag(){dataLayer.push(arguments);}
 <style>
   :root{--blue:#1a3a6e;--orange:#f47b20;--orange-dark:#d96a10;--white:#fff;--off-white:#f4f7fb;--dark:#111827;--gray:#6b7280;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Open Sans','Open Sans Fallback',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden;}
+  body{font-family:'Open Sans','Open Sans Fallback',sans-serif;color:var(--dark);background:#0d2050;overflow-x:hidden;}
   nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:linear-gradient(to bottom,rgba(15,32,80,.97) 0%,rgba(22,50,105,.92) 55%,transparent 100%);}
   .logo img{height:80px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));}
   .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
   .nav-links a{color:#fff;text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.9;}
   .nav-links a:hover{opacity:1;}
-  .btn-nav{background:var(--orange);color:#fff !important;padding:12px 22px;border-radius:6px;opacity:1 !important;}
-  @media(max-width:768px){.nav-links{display:none;}}
-  .ty-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:130px 5% 70px;background:linear-gradient(150deg,#06122d 0%,#1a3a6e 60%,#0d2050 100%);text-align:center;}
-  .ty-card{max-width:600px;}
-  .ty-check{width:88px;height:88px;margin:0 auto 28px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(244,123,32,.5);}
-  .ty-card h1{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(30px,5vw,46px);color:#fff;line-height:1.1;margin-bottom:16px;}
-  .ty-card h1 em{color:var(--orange);font-style:normal;}
-  .ty-card .lead{color:rgba(255,255,255,.9);font-size:17px;line-height:1.7;margin-bottom:14px;}
-  .ty-card .sub{color:rgba(255,255,255,.7);font-size:15px;line-height:1.7;margin-bottom:34px;}
-  .ty-actions{display:flex;flex-direction:column;align-items:center;gap:16px;}
-  .ty-call{display:inline-flex;align-items:center;gap:12px;background:var(--orange);color:#fff;text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:18px;letter-spacing:.5px;padding:16px 34px;border-radius:10px;box-shadow:0 6px 24px rgba(244,123,32,.5);transition:background .2s,transform .15s;}
-  .ty-call:hover{background:var(--orange-dark);transform:translateY(-2px);}
-  .ty-callnote{color:rgba(255,255,255,.6);font-size:13px;}
-  .ty-links{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-  .ty-links a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:14px;border-bottom:2px solid var(--orange);padding-bottom:2px;}
+  .btn-nav{background:var(--orange);color:#fff !important;padding:12px 22px;border-radius:6px;opacity:1 !important;box-shadow:0 4px 14px rgba(244,123,32,.4);}
+  @media(max-width:768px){.nav-links li:not(.nav-cta-li){display:none;}}
+
+  .ty-hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:130px 5% 70px;background:linear-gradient(150deg,#06122d 0%,#1a3a6e 60%,#0d2050 100%);text-align:center;overflow:hidden;}
+  .ty-hero::before{content:'';position:absolute;top:-160px;right:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(244,123,32,.14) 0%,transparent 65%);pointer-events:none;}
+  .ty-hero::after{content:'';position:absolute;bottom:-200px;left:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(45,107,207,.35) 0%,transparent 70%);pointer-events:none;}
+
+  .ty-card{position:relative;z-index:1;margin-block:auto;max-width:640px;width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:52px 48px;box-shadow:0 30px 80px rgba(0,0,0,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);animation:tyCardIn .6s cubic-bezier(.22,.61,.36,1) both;}
+  @keyframes tyCardIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+  .ty-check{position:relative;width:92px;height:92px;margin:0 auto 30px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 34px rgba(244,123,32,.55);animation:tyPop .5s cubic-bezier(.34,1.56,.64,1) .15s both;}
+  .ty-check::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(244,123,32,.55);animation:tyRing 1.8s ease-out .5s 3;}
+  @keyframes tyPop{0%{transform:scale(0)}100%{transform:scale(1)}}
+  @keyframes tyRing{0%{transform:scale(.92);opacity:.7}100%{transform:scale(1.55);opacity:0}}
+  .ty-check svg path{stroke-dasharray:30;stroke-dashoffset:30;animation:tyCheck .5s ease .5s forwards;}
+  @keyframes tyCheck{to{stroke-dashoffset:0}}
+
+  .ty-card h1{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(30px,5vw,46px);color:#fff;line-height:1.12;margin-bottom:16px;}
+  .ty-card h1 em{display:block;color:var(--orange);font-style:normal;}
+  .ty-card .lead{color:rgba(255,255,255,.9);font-size:16.5px;line-height:1.7;margin:0 auto 32px;max-width:490px;}
+  .ty-card .lead strong{color:#fff;}
+
+  .ty-steps{display:flex;gap:14px;margin:0 0 32px;}
+  .ty-step{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 12px;}
+  .ty-step-ic{width:44px;height:44px;margin:0 auto 10px;border-radius:50%;background:rgba(244,123,32,.16);display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .ty-step-t{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;color:#fff;margin-bottom:4px;}
+  .ty-step-d{font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.6);}
+
+  .ty-divider{height:1px;background:rgba(255,255,255,.12);margin:0 0 26px;}
+  .ty-sub{color:rgba(255,255,255,.72);font-size:14.5px;line-height:1.65;margin:0 auto 20px;max-width:440px;}
+  .ty-actions{display:flex;flex-direction:column;align-items:center;gap:14px;}
+  .ty-call{display:inline-flex;align-items:center;gap:12px;background:var(--orange);color:#fff;text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:18px;letter-spacing:.5px;padding:16px 34px;border-radius:10px;box-shadow:0 6px 24px rgba(244,123,32,.5);transition:background .2s,transform .15s,box-shadow .2s;}
+  .ty-call:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 10px 30px rgba(244,123,32,.6);}
+  .ty-callnote{color:rgba(255,255,255,.55);font-size:13px;}
+  .ty-links{margin-top:14px;display:flex;gap:22px;flex-wrap:wrap;justify-content:center;}
+  .ty-links a{color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:14px;border-bottom:2px solid var(--orange);padding-bottom:2px;transition:color .2s;}
   .ty-links a:hover{color:#fff;}
-  .ty-trust{margin:34px auto 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.15);width:100%;max-width:340px;}
-  .ty-trust-label{color:rgba(255,255,255,.78);font-size:14px;line-height:1.6;margin-bottom:14px;}
+  .ty-explore{margin-top:24px;width:100%;}
+  .ty-explore-h{color:rgba(255,255,255,.85);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:13px;letter-spacing:.4px;margin-bottom:14px;}
+  .ty-explore-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+  .ty-ebtn{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:13.5px;padding:12px 18px;border-radius:10px;transition:background .2s,transform .15s,border-color .2s,box-shadow .2s;}
+  .ty-ebtn:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.3);transform:translateY(-2px);}
+  .ty-ebtn-reviews{background:#fff;color:#1f2937;border-color:#fff;}
+  .ty-ebtn-reviews:hover{background:#f4f7fb;color:#1f2937;box-shadow:0 8px 22px rgba(0,0,0,.25);}
+  .ty-stars{color:#fbbc04;font-style:normal;letter-spacing:1px;font-size:12px;}
+  .ty-home{display:inline-block;margin-top:18px;color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:1px;transition:color .2s;}
+  .ty-home:hover{color:#fff;}
+  .ty-trust{margin:30px auto 0;padding-top:26px;border-top:1px solid rgba(255,255,255,.12);width:100%;max-width:360px;}
+  .ty-trust-label{color:rgba(255,255,255,.7);font-size:13.5px;line-height:1.6;margin-bottom:14px;}
   .ty-trust .trustpilot-widget a{color:rgba(255,255,255,.85);}
+
+  @media(max-width:600px){
+    .ty-card{padding:40px 22px;border-radius:20px;}
+    .ty-steps{flex-direction:column;gap:10px;}
+    .ty-step{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;}
+    .ty-step-ic{margin:0;flex-shrink:0;}
+  }
+  @media(prefers-reduced-motion:reduce){.ty-card,.ty-check,.ty-check::after,.ty-check svg path{animation:none!important;stroke-dashoffset:0!important;opacity:1!important;transform:none!important;}}
 </style>
 </head>
 <body>
@@ -87,18 +126,35 @@ function gtag(){dataLayer.push(arguments);}
     <div class="ty-check">
       <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
     </div>
-    <h1>Thank You!<em>Your request is in.</em></h1>
-    <p class="lead">Thanks for reaching out to Texora Painting. We've received your quote request and a member of our team will get back to you <strong style="color:#fff">within 24 hours</strong> — usually the same day.</p>
-    <p class="sub">Prefer to talk right now? Give us a call and we'll answer your questions on the spot.</p>
+    <h1>Thank you! <em>Your request is in.</em></h1>
+    <p class="lead">Thanks for reaching out to Texora Painting. We've received your quote request — a member of our team will get back to you <strong>within 24 hours</strong>, usually the same day.</p>
+    <div class="ty-steps">
+      <div class="ty-step"><div class="ty-step-ic">✅</div><div class="ty-step-txt"><div class="ty-step-t">Request received</div><div class="ty-step-d">We've got your details</div></div></div>
+      <div class="ty-step"><div class="ty-step-ic">📞</div><div class="ty-step-txt"><div class="ty-step-t">We'll reach out</div><div class="ty-step-d">Within 24 hours</div></div></div>
+      <div class="ty-step"><div class="ty-step-ic">🏠</div><div class="ty-step-txt"><div class="ty-step-t">Free estimate</div><div class="ty-step-d">On-site, no obligation</div></div></div>
+    </div>
+    <div class="ty-divider"></div>
+    <p class="ty-sub">Prefer to talk right now? Give us a call and we'll answer your questions on the spot.</p>
     <div class="ty-actions">
       <a class="ty-call" href="tel:+16044176483">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24 11.36 11.36 0 003.55.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.24 1.05l-2.21 2.19z"/></svg>
         (604) 417-6483
       </a>
       <span class="ty-callnote">Mon–Sat, 8am–8pm</span>
-      <div class="ty-links">
-        <a href="gallery.html">See our work →</a>
-        <a href="index.html">Back to home →</a>
+      <div class="ty-explore">
+        <p class="ty-explore-h">While you wait, see why homeowners choose us</p>
+        <div class="ty-explore-btns">
+          <a class="ty-ebtn ty-ebtn-reviews" href="https://share.google/ktiq1kINB0cnvunmX" target="_blank" rel="noopener" aria-label="Read Texora Painting reviews on Google">
+            <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+            <span>Read our Google reviews</span>
+            <em class="ty-stars">★★★★★</em>
+          </a>
+          <a class="ty-ebtn" href="gallery.html">
+            <span>See our recent work</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <a class="ty-home" href="index.html">Back to home</a>
       </div>
       <div class="ty-trust">
         <p class="ty-trust-label">Already worked with us? We'd love your feedback.</p>
