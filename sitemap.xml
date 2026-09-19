@@ -310,6 +310,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://texorapainting.com/about.html</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://texorapainting.com/service-areas.html</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -406,10 +412,10 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://texorapainting.com/privacy-policy.html</loc>
-    <lastmod>2026-06-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.2</priority>
+    <loc>https://texorapainting.com/warranty.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://texorapainting.com/painters-port-coquitlam.html</loc>

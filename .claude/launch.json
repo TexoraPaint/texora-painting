@@ -3,11 +3,8 @@
   "configurations": [
     {
       "name": "texora-preview",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["/Users/illiafominykh/Downloads/Texora Painting/texora-painting/.claude/serve.py"],
-      "port": 4500,
-      "cwd": "/Users/illiafominykh/Downloads/Texora Painting/texora-painting",
-      "env": {}
+      "url": "http://localhost:4578",
+      "port": 4578
     }
   ]
 }

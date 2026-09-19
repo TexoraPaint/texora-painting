@@ -7,7 +7,7 @@ window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 (function(){
   var done=false;
-  function loadTracking(){if(!/(^|\.)texorapainting\.com$/.test(location.hostname))return;
+  function loadTracking(){if(!/(^|\.)texorapainting\.com$/.test(location.hostname))return;try{if(localStorage.getItem("txa_cookie")==="declined")return;}catch(e){}
     if(done)return; done=true;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init','1503091811834061');fbq('track','PageView');
@@ -126,7 +126,7 @@ function gtag(){dataLayer.push(arguments);}
     .footer-bar{flex-direction:column;align-items:flex-start;gap:12px;}
   }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Deck Building and Restoration","description":"Deck building, rebuilding & restoration in Tsawwassen, Ladner & Delta BC. New decks, board & railing replacement, sanding, staining & sealing. Free quotes.","provider":{"@type":"LocalBusiness","name":"Texora Painting","telephone":"+1-604-417-6483","url":"https://texorapainting.com","sameAs":["https://share.google/ktiq1kINB0cnvunmX","https://share.google/zObcI4I178kQJ2OV8","https://www.facebook.com/people/Texora-Painting/61577587997631/","https://www.instagram.com/texora.painting/","https://www.youtube.com/@TexoraPainting","https://www.tiktok.com/@texora.painting","https://x.com/texorapainting","https://www.homestars.com/profile/texora","https://yelp.com/biz/texora-painting-delta","https://www.trustpilot.com/review/texorapainting.com"],"areaServed":"Tsawwassen, Ladner & Delta, BC","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"37","bestRating":"5"},"address":{"@type":"PostalAddress","streetAddress":"1299 56 St","addressLocality":"Delta","addressRegion":"BC","postalCode":"V4L 2A6","addressCountry":"CA"},"hasMap":"https://maps.app.goo.gl/GEf9oTRDp4MH99Bp7"},"url":"https://texorapainting.com/deck-building.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Deck Building and Restoration","description":"Deck building, rebuilding & restoration in Tsawwassen, Ladner & Delta BC. New decks, board & railing replacement, sanding, staining & sealing. Free quotes.","provider":{"@type":"LocalBusiness","name":"Texora Painting","telephone":"+1-604-417-6483","url":"https://texorapainting.com","sameAs":["https://share.google/ktiq1kINB0cnvunmX","https://share.google/zObcI4I178kQJ2OV8","https://www.facebook.com/people/Texora-Painting/61577587997631/","https://www.instagram.com/texora.painting/","https://www.youtube.com/@TexoraPainting","https://www.tiktok.com/@texora.painting","https://x.com/texorapainting","https://www.homestars.com/profile/texora","https://yelp.com/biz/texora-painting-delta","https://www.trustpilot.com/review/texorapainting.com"],"areaServed":"Tsawwassen, Ladner & Delta, BC","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"42","bestRating":"5"},"address":{"@type":"PostalAddress","streetAddress":"1299 56 St","addressLocality":"Delta","addressRegion":"BC","postalCode":"V4L 2A6","addressCountry":"CA"},"hasMap":"https://maps.app.goo.gl/GEf9oTRDp4MH99Bp7"},"url":"https://texorapainting.com/deck-building.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you build new decks or only refinish existing ones?","acceptedAnswer":{"@type":"Answer","text":"Both. We build brand-new decks, rebuild and repair existing structures (boards, railings, stairs), and refinish weathered decks with sanding, staining, and sealing. Tell us what you need during your free quote."}},{"@type":"Question","name":"How much does a deck project cost in Delta?","acceptedAnswer":{"@type":"Answer","text":"It varies widely — a sand-and-restain typically runs a few hundred to a couple thousand dollars, while new construction or a full rebuild is quoted based on size, materials, and design. We provide a detailed free written quote after seeing the deck."}},{"@type":"Question","name":"What's the difference between deck building and deck staining?","acceptedAnswer":{"@type":"Answer","text":"Deck building and restoration covers the structure — construction, board and railing replacement, and repairs. Deck staining is the finishing step — sanding and applying protective stain or sealer. We offer both, and many decks need a bit of each."}},{"@type":"Question","name":"When is the best time to build or refinish a deck in BC?","acceptedAnswer":{"@type":"Answer","text":"Spring through early fall is ideal, when the wood is dry and temperatures suit staining and sealing. We book up in peak season, so reach out early to lock in your spot."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://texorapainting.com/"},{"@type":"ListItem","position":2,"name":"Deck Building & Restoration","item":"https://texorapainting.com/deck-building.html"}]}</script>
 <style>
@@ -172,7 +172,7 @@ function gtag(){dataLayer.push(arguments);}
     <li><a href="index.html#services">Services</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="blog/index.html">Blog</a></li>
-    <li><a href="service-areas.html">About Us</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="index.html#quote" class="btn-nav">Get Free Quote</a></li><li class="nav-li-call"><a class="nav-phone-d" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a></li>
   </ul>
 </nav>
@@ -255,7 +255,7 @@ function gtag(){dataLayer.push(arguments);}
     <a class="footer-social" href="https://www.facebook.com/people/Texora-Painting/61577587997631/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><rect width="22" height="22" rx="5" fill="#1877F2"/><path d="M14.5 11.5h-2.2V18H9.7v-6.5H8V9.2h1.7V7.8C9.7 6 10.6 5 12.6 5H14.5v2.3h-1.2c-.9 0-1.1.4-1.1 1v1h2.2l-.4 2.2z" fill="white"/></svg></a>
     <a class="footer-social" href="https://www.instagram.com/texora.painting/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><defs><linearGradient id="igGf" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="22" height="22" rx="5" fill="url(#igGf)"/><rect x="5.5" y="5.5" width="11" height="11" rx="3" fill="none" stroke="white" stroke-width="1.6"/><circle cx="11" cy="11" r="2.8" fill="none" stroke="white" stroke-width="1.6"/><circle cx="15" cy="7" r="0.9" fill="white"/></svg></a><a class="footer-social" href="https://www.youtube.com/@TexoraPainting" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><rect width="22" height="22" rx="5" fill="#FF0000"/><path d="M9.2 7.4l6 3.6-6 3.6z" fill="#fff"/></svg></a><a class="footer-social" href="https://www.tiktok.com/@texora.painting" target="_blank" rel="noopener" aria-label="TikTok"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><rect width="22" height="22" rx="5" fill="#010101"/><path d="M15.4 8.5a3.7 3.7 0 01-2.2-.73v3.4a3.35 3.35 0 11-3.35-3.35c.14 0 .28.01.42.03v1.7a1.66 1.66 0 00-.42-.06 1.68 1.68 0 101.68 1.68V5h1.65a2.2 2.2 0 002.2 2.02z" fill="#fff"/></svg></a><a class="footer-social" href="https://x.com/texorapainting" target="_blank" rel="noopener" aria-label="X"><svg width="22" height="22" viewBox="0 0 22 22" style="display:block"><rect width="22" height="22" rx="5" fill="#000"/><path transform="translate(3.7 3.7) scale(.61)" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="#fff"/></svg></a>
   </div>
-  <div class="footer-copy">© 2026 Texora Painting. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Privacy Policy</a></div>
+  <div class="footer-copy">© 2026 Texora Painting. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Privacy Policy</a> | <a href="terms.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Terms</a> | <a href="cookie-policy.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Cookie Policy</a> | <a href="warranty.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Warranty</a> | <a href="service-areas.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Service Areas</a></div>
 </footer>
 <button id="scrollTop" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -266,6 +266,45 @@ function gtag(){dataLayer.push(arguments);}
 (function(){if(window._phoneInit)return;window._phoneInit=true;document.addEventListener("click",function(e){var a=e.target.closest('a[href^="tel:"]');if(a){gtag("event","phone_call_click",{event_category:"engagement",event_label:"phone_tap"});return;}var m=e.target.closest('a[href^="mailto:"]');if(m){gtag("event","email_click",{event_category:"engagement",event_label:"email_tap"});}},{passive:true});})();
 (function(){var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer'),t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);if(footer){var ft=footer.getBoundingClientRect().top;btn.style.bottom=ft<window.innerHeight?(window.innerHeight-ft+8)+'px':'28px';}t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
 function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');x.previousElementSibling.classList.remove('open');});if(!o){a.classList.add('open');b.classList.add('open');}}
+</script>
+<!-- COOKIE CONSENT (branded, dismissible, remembers choice) -->
+<style>
+ #txaCookie{position:fixed;left:20px;bottom:20px;z-index:3000;max-width:380px;width:calc(100% - 40px);
+   background:linear-gradient(160deg,#12244f 0%,#0d1c40 100%);color:#fff;border:1px solid rgba(255,255,255,.12);
+   border-radius:16px;padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.45);
+   font-family:'Open Sans','Open Sans Fallback',Arial,sans-serif;transform:translateY(160%);opacity:0;
+   transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .5s;}
+ #txaCookie.cc-show{transform:none;opacity:1;}
+ #txaCookie .cc-h{display:flex;align-items:center;gap:9px;font-family:'Montserrat','Montserrat Fallback',Arial,sans-serif;font-weight:800;font-size:16px;margin-bottom:8px;}
+ #txaCookie .cc-emoji{font-size:20px;line-height:1;}
+ #txaCookie p{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 16px;}
+ #txaCookie a{color:#f9b25a;font-weight:700;text-decoration:underline;}
+ #txaCookie .cc-btns{display:flex;gap:10px;}
+ #txaCookie .cc-accept{flex:1;background:#f47b20;color:#fff;border:none;font-family:'Montserrat','Montserrat Fallback',Arial,sans-serif;font-weight:800;font-size:14px;padding:12px 16px;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(244,123,32,.4);transition:background .2s,transform .12s;}
+ #txaCookie .cc-accept:hover{background:#d96a10;} #txaCookie .cc-accept:active{transform:scale(.98);}
+ #txaCookie .cc-decline{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.28);font-family:'Montserrat','Montserrat Fallback',Arial,sans-serif;font-weight:700;font-size:14px;padding:12px 18px;border-radius:10px;cursor:pointer;transition:background .2s,color .2s;}
+ #txaCookie .cc-decline:hover{background:rgba(255,255,255,.08);color:#fff;}
+ #txaCookie:focus-within{outline:none;}
+ @media(max-width:480px){#txaCookie{left:12px;right:12px;bottom:12px;width:auto;max-width:none;}}
+ @media(prefers-reduced-motion:reduce){#txaCookie{transition:opacity .3s ease;transform:none;}}
+</style>
+<div id="txaCookie" role="dialog" aria-label="Cookie notice" aria-live="polite" hidden>
+  <div class="cc-h"><span class="cc-emoji" aria-hidden="true">🍪</span> Cookie Settings</div>
+  <p>We use cookies to improve your experience and understand our traffic. See our <a href="/privacy-policy.html">Privacy Policy</a> &amp; <a href="/cookie-policy.html">Cookie Policy</a>.</p>
+  <div class="cc-btns">
+    <button class="cc-accept" type="button">Accept All</button>
+    <button class="cc-decline" type="button">Decline</button>
+  </div>
+</div>
+<script>
+(function(){var K="txa_cookie",el=document.getElementById("txaCookie");if(!el)return;
+ var v=null;try{v=localStorage.getItem(K);}catch(e){}
+ if(v){el.parentNode&&el.parentNode.removeChild(el);return;}
+ el.hidden=false;setTimeout(function(){el.classList.add("cc-show");},1200);
+ function done(val){try{localStorage.setItem(K,val);}catch(e){}el.classList.remove("cc-show");setTimeout(function(){el.parentNode&&el.parentNode.removeChild(el);},480);}
+ el.querySelector(".cc-accept").addEventListener("click",function(){done("accepted");});
+ el.querySelector(".cc-decline").addEventListener("click",function(){try{window["ga-disable-G-H03RYY12LT"]=true;}catch(e){}done("declined");});
+})();
 </script>
 </body>
 </html>

@@ -9,5 +9,44 @@
 window.location.replace('https://texorapainting.com/?utm_source=qr_code&utm_medium=qr&utm_campaign=flyer#quote');
 </script>
 </head>
-<body></body>
+<body><!-- COOKIE CONSENT (branded, dismissible, remembers choice) -->
+<style>
+ #txaCookie{position:fixed;left:20px;bottom:20px;z-index:3000;max-width:380px;width:calc(100% - 40px);
+   background:linear-gradient(160deg,#12244f 0%,#0d1c40 100%);color:#fff;border:1px solid rgba(255,255,255,.12);
+   border-radius:16px;padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.45);
+   font-family:'Open Sans','Open Sans Fallback',Arial,sans-serif;transform:translateY(160%);opacity:0;
+   transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .5s;}
+ #txaCookie.cc-show{transform:none;opacity:1;}
+ #txaCookie .cc-h{display:flex;align-items:center;gap:9px;font-family:'Montserrat','Montserrat Fallback',Arial,sans-serif;font-weight:800;font-size:16px;margin-bottom:8px;}
+ #txaCookie .cc-emoji{font-size:20px;line-height:1;}
+ #txaCookie p{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 16px;}
+ #txaCookie a{color:#f9b25a;font-weight:700;text-decoration:underline;}
+ #txaCookie .cc-btns{display:flex;gap:10px;}
+ #txaCookie .cc-accept{flex:1;background:#f47b20;color:#fff;border:none;font-family:'Montserrat','Montserrat Fallback',Arial,sans-serif;font-weight:800;font-size:14px;padding:12px 16px;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(244,123,32,.4);transition:background .2s,transform .12s;}
+ #txaCookie .cc-accept:hover{background:#d96a10;} #txaCookie .cc-accept:active{transform:scale(.98);}
+ #txaCookie .cc-decline{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.28);font-family:'Montserrat','Montserrat Fallback',Arial,sans-serif;font-weight:700;font-size:14px;padding:12px 18px;border-radius:10px;cursor:pointer;transition:background .2s,color .2s;}
+ #txaCookie .cc-decline:hover{background:rgba(255,255,255,.08);color:#fff;}
+ #txaCookie:focus-within{outline:none;}
+ @media(max-width:480px){#txaCookie{left:12px;right:12px;bottom:12px;width:auto;max-width:none;}}
+ @media(prefers-reduced-motion:reduce){#txaCookie{transition:opacity .3s ease;transform:none;}}
+</style>
+<div id="txaCookie" role="dialog" aria-label="Cookie notice" aria-live="polite" hidden>
+  <div class="cc-h"><span class="cc-emoji" aria-hidden="true">🍪</span> Cookie Settings</div>
+  <p>We use cookies to improve your experience and understand our traffic. See our <a href="/privacy-policy.html">Privacy Policy</a> &amp; <a href="/cookie-policy.html">Cookie Policy</a>.</p>
+  <div class="cc-btns">
+    <button class="cc-accept" type="button">Accept All</button>
+    <button class="cc-decline" type="button">Decline</button>
+  </div>
+</div>
+<script>
+(function(){var K="txa_cookie",el=document.getElementById("txaCookie");if(!el)return;
+ var v=null;try{v=localStorage.getItem(K);}catch(e){}
+ if(v){el.parentNode&&el.parentNode.removeChild(el);return;}
+ el.hidden=false;setTimeout(function(){el.classList.add("cc-show");},1200);
+ function done(val){try{localStorage.setItem(K,val);}catch(e){}el.classList.remove("cc-show");setTimeout(function(){el.parentNode&&el.parentNode.removeChild(el);},480);}
+ el.querySelector(".cc-accept").addEventListener("click",function(){done("accepted");});
+ el.querySelector(".cc-decline").addEventListener("click",function(){try{window["ga-disable-G-H03RYY12LT"]=true;}catch(e){}done("declined");});
+})();
+</script>
+</body>
 </html>
