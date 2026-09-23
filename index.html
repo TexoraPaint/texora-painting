@@ -29,6 +29,9 @@ function gtag(){dataLayer.push(arguments);}
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://featurable.com" crossorigin>
+<link rel="dns-prefetch" href="https://featurable.com">
+<link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
 
 <!-- Preload LCP image (moved early so it's discovered before JSON-LD parsing) -->
 <link rel="preload" as="image" href="img/hero-main.webp" type="image/webp" fetchpriority="high" media="(min-width:600px)">
@@ -431,7 +434,7 @@ function gtag(){dataLayer.push(arguments);}
     </article>
   </div>
   <p class="svc2-commercial" style="max-width:1120px;margin:26px auto 0;text-align:center;font-size:14.5px;color:var(--gray);line-height:1.7;">
-    Beyond homes, we also handle <a href="warehouse-painting.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Warehouse &amp; Industrial Painting</a> and <a href="strata-painting.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Strata &amp; Multi-Unit Painting</a> across Metro Vancouver.
+    We also specialize in <a href="brick-staining.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Brick Staining</a>, <a href="heritage-home-restoration.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Heritage Home Restoration</a>, <a href="warehouse-painting.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Warehouse &amp; Industrial Painting</a> and <a href="strata-painting.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Strata &amp; Multi-Unit Painting</a> across Metro Vancouver.
   </p>
 </section>
 
@@ -922,7 +925,15 @@ function gtag(){dataLayer.push(arguments);}
       <h2>What Our <em>Customers</em> Say</h2>
     </div>
     <!-- Live Google reviews (all reviews + real avatars) via Featurable, lazy-loaded -->
+    <style>
+      .rv-featurable{position:relative;}
+      .rv-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;color:rgba(255,255,255,.7);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:14px;letter-spacing:.3px;}
+      .rv-spin{width:22px;height:22px;border:3px solid rgba(255,255,255,.25);border-top-color:var(--orange);border-radius:50%;animation:rvSpin .8s linear infinite;}
+      @keyframes rvSpin{to{transform:rotate(360deg)}}
+      @media(prefers-reduced-motion:reduce){.rv-spin{animation:none}}
+    </style>
     <div class="rv-featurable" style="max-width:1180px;margin:0 auto;padding:0 5%;min-height:340px;">
+      <div class="rv-loading"><span class="rv-spin"></span> Loading Google reviews…</div>
       <div id="featurable-09383729-6718-4e94-a185-6c34c016e461" data-featurable-async></div>
     </div>
     <!-- Footer -->
@@ -937,18 +948,32 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 <script>
 (function(){
-  var sec=document.getElementById('reviews'); if(!sec) return;
-  var target=document.querySelector('.rv-featurable')||sec, loaded=false;
+  var loaded=false, wrap=document.querySelector('.rv-featurable');
   function loadFeaturable(){
     if(loaded) return; loaded=true;
     var s=document.createElement('script');
     s.src='https://featurable.com/assets/bundle.js'; s.defer=true; s.charset='UTF-8';
     document.body.appendChild(s);
+    // hide the loading placeholder once the widget renders
+    var host=document.getElementById('featurable-09383729-6718-4e94-a185-6c34c016e461');
+    if(host && 'MutationObserver' in window){
+      var mo=new MutationObserver(function(){
+        if(host.children.length){ var ld=wrap&&wrap.querySelector('.rv-loading'); if(ld) ld.style.display='none'; mo.disconnect(); }
+      });
+      mo.observe(host,{childList:true,subtree:true});
+    }
   }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ loadFeaturable(); io.disconnect(); } }, {rootMargin:'350px'});
-    io.observe(target);
-  } else { loadFeaturable(); }
+  // Start loading on the first user interaction (they scroll long before reaching reviews),
+  // so it's ready by the time the section is on screen — without blocking initial paint.
+  ['scroll','pointerdown','touchstart','keydown','mousemove'].forEach(function(e){
+    window.addEventListener(e, loadFeaturable, {once:true, passive:true});
+  });
+  // Fallback: load when the section gets within ~1.4 screens, or after a short idle.
+  if(wrap && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ loadFeaturable(); io.disconnect(); } }, {rootMargin:'1400px'});
+    io.observe(wrap);
+  }
+  setTimeout(loadFeaturable, 4000);
 })();
 </script>
 <!-- QUOTE FORM -->
