@@ -468,6 +468,12 @@ function gtag(){dataLayer.push(arguments);}
   .pf-ico svg{width:22px;height:22px;}
   .pf-info h3{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:17px;color:var(--blue);line-height:1.2;margin-bottom:3px;}
   .pf-info p{color:var(--gray);font-size:12.5px;line-height:1.5;}
+  .pf-title-link{color:inherit;text-decoration:none;transition:color .18s;}
+  .pf-title-link:hover{color:var(--orange);text-decoration:underline;}
+  .pf-story{display:inline-block;margin-top:7px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:.4px;color:var(--orange);text-decoration:none;transition:transform .15s;}
+  .pf-story span{display:inline-block;transition:transform .18s;}
+  .pf-story:hover{text-decoration:underline;}
+  .pf-story:hover span{transform:translateX(3px);}
   .pf-loc{flex-shrink:0;display:flex;align-items:center;gap:5px;color:var(--blue);font-weight:700;font-size:13px;white-space:nowrap;}
   .pf-loc svg{width:15px;height:15px;color:var(--orange);}
   /* Side cards */
@@ -593,11 +599,11 @@ function gtag(){dataLayer.push(arguments);}
   var stage=document.getElementById('pfStage'); if(!stage) return;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var PROJECTS=[
+    {t:'Garage & Trim Repaint',d:'A dated garage door and trim reborn in a bold, modern black.',loc:'Tsawwassen, BC',b:'img/garage-door-before-tsawwassen-bc.webp',a:'img/garage-door-after-tsawwassen-bc.webp',url:'/projects/garage-door-painting-tsawwassen-bc/'},
+    {t:'Exterior Repaint',d:'Faded siding restored to a crisp, weather-ready finish — with a fresh olive-green door.',loc:'Tsawwassen, BC',b:'img/ba-house-repaint-before.webp',a:'img/ba-house-repaint-after.webp',url:'/projects/exterior-house-painting-tsawwassen-bc/'},
     {t:'Deck Restoration',d:'Weathered and worn deck revived with sanding, staining and protection.',loc:'Tsawwassen, BC',b:'img/ba-deck-before.jpg',a:'img/ba-deck-after.jpg',url:'deck-building.html'},
     {t:'Bathroom Refresh',d:'A dated bathroom brought back to life with fresh drywall and paint.',loc:'Delta, BC',b:'img/ba-bathroom-before.webp',a:'img/ba-bathroom-after.webp',url:'bathroom-refresh.html'},
-    {t:'Exterior Repaint',d:'Faded siding restored to a crisp, weather-ready finish.',loc:'Ladner, BC',b:'img/ba-exterior-before.webp',a:'img/ba-exterior-after.webp',url:'exterior-painting.html'},
     {t:'Basement Makeover',d:'A dark basement transformed into a bright, modern living space.',loc:'Delta, BC',b:'img/ba-interior-before.webp',a:'img/ba-interior-after.webp',url:'interior-painting.html'},
-    {t:'Kitchen Cabinets',d:'Tired cabinets refinished to a smooth, factory-like finish.',loc:'Tsawwassen, BC',b:'img/ba-kitchen-before.webp',a:'img/ba-kitchen-after.webp',url:'cabinet-painting.html'},
     {t:'Drywall Repair',d:'Damaged drywall patched and repainted to a seamless finish.',loc:'Ladner, BC',b:'img/ba-drywall-before.webp',a:'img/ba-drywall-after.webp',url:'drywall-repair.html'}
   ];
   var N=PROJECTS.length, idx=0, pos=50;
@@ -610,6 +616,7 @@ function gtag(){dataLayer.push(arguments);}
   var sPrev=document.getElementById('pfSidePrev'), sNext=document.getElementById('pfSideNext');
   var sPrevImg=sPrev.querySelector('img'), sNextImg=sNext.querySelector('img');
   var dotsWrap=document.getElementById('pfDots'), curEl=document.getElementById('pfCur'), totEl=document.getElementById('pfTot');
+  var storyLink=document.createElement('a'); storyLink.className='pf-story'; storyLink.innerHTML='Read the full story <span aria-hidden="true">&rarr;</span>'; if(descEl&&descEl.parentNode){descEl.parentNode.appendChild(storyLink);}
 
   function pad(n){return (n<10?'0':'')+n;}
   totEl.textContent=pad(N);
@@ -633,7 +640,7 @@ function gtag(){dataLayer.push(arguments);}
     var p=PROJECTS[idx];
     afterImg.src=p.a; afterImg.alt='After — '+p.t+', '+p.loc;
     beforeImg.src=p.b; beforeImg.alt='Before — '+p.t+', '+p.loc;
-    titleEl.textContent=p.t; descEl.textContent=p.d; locEl.textContent=p.loc; locLink.href=p.url;
+    titleEl.innerHTML='<a href="'+p.url+'" class="pf-title-link">'+p.t+'</a>'; descEl.textContent=p.d; locEl.textContent=p.loc; locLink.href=p.url; if(storyLink){storyLink.href=p.url;}
     var pv=PROJECTS[(idx-1+N)%N], nx=PROJECTS[(idx+1)%N];
     sPrevImg.src=pv.a; sPrevImg.alt=pv.t+' — after'; sNextImg.src=nx.b; sNextImg.alt=nx.t+' — before';
     curEl.textContent=pad(idx+1);
