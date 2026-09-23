@@ -82,6 +82,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://texorapainting.com/warehouse-painting.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://texorapainting.com/strata-painting.html</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://texorapainting.com/drywall-repair.html</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>

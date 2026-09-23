@@ -319,7 +319,7 @@ function gtag(){dataLayer.push(arguments);}
 .svc2-card{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#12244a;isolation:isolate;box-shadow:0 6px 22px rgba(0,0,0,.12)}
 .svc2-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1);z-index:0}
 .svc2-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(6,14,36,.72) 0%,rgba(6,14,36,.12) 26%,rgba(6,14,36,.1) 54%,rgba(6,14,36,.86) 100%);z-index:1}
-.svc2-ov{position:absolute;inset:0;background:linear-gradient(150deg,rgba(244,123,32,.94),rgba(217,106,16,.95));opacity:0;transition:opacity .4s ease;z-index:2}
+.svc2-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,14,36,.9) 0%,rgba(6,14,36,.5) 42%,rgba(6,14,36,.12) 100%);opacity:0;transition:opacity .45s ease;z-index:2}
 .svc2-card:hover .svc2-bg,.svc2-card:focus-within .svc2-bg{transform:scale(1.07)}
 .svc2-card:hover .svc2-ov,.svc2-card:focus-within .svc2-ov{opacity:1}
 .svc2-cover{position:absolute;inset:0;z-index:3}
@@ -332,7 +332,6 @@ function gtag(){dataLayer.push(arguments);}
 .svc2-btn:active{transform:translateY(1px)}
 .svc2-quote{background:var(--orange);color:#fff;box-shadow:0 6px 16px rgba(244,123,32,.45)}
 .svc2-quote:hover{background:var(--orange-dark)}
-.svc2-card:hover .svc2-quote,.svc2-card:focus-within .svc2-quote{background:#fff;color:var(--orange-dark)}
 .svc2-more{background:rgba(255,255,255,.95);color:var(--dark)}
 .svc2-more:hover{background:#fff}
 .svc2-card:hover .svc2-more,.svc2-card:focus-within .svc2-more{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.9)}
@@ -431,6 +430,9 @@ function gtag(){dataLayer.push(arguments);}
       </div>
     </article>
   </div>
+  <p class="svc2-commercial" style="max-width:1120px;margin:26px auto 0;text-align:center;font-size:14.5px;color:var(--gray);line-height:1.7;">
+    Beyond homes, we also handle <a href="warehouse-painting.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Warehouse &amp; Industrial Painting</a> and <a href="strata-painting.html" style="color:var(--orange);font-weight:800;text-decoration:none;">Strata &amp; Multi-Unit Painting</a> across Metro Vancouver.
+  </p>
 </section>
 
 <!-- PORTFOLIO -->
@@ -918,19 +920,10 @@ function gtag(){dataLayer.push(arguments);}
     <div class="rv-head">
       <p class="section-label">Real Reviews</p>
       <h2>What Our <em>Customers</em> Say</h2>
-      <div class="rv-rating-badge">
-        <span class="rv-big-num">5.0</span>
-        <div class="rv-badge-sep"></div>
-        <div class="rv-badge-right">
-          <div class="rv-gold-stars">★★★★★</div>
-          <div class="rv-badge-label">Google Rating · 5-Star</div>
-        </div>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-label="Google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-      </div>
     </div>
-    <!-- Review cards — filled by JS -->
-    <div class="rv-scroll-wrap">
-      <div class="rv-cards" id="rvCards"></div>
+    <!-- Live Google reviews (all reviews + real avatars) via Featurable, lazy-loaded -->
+    <div class="rv-featurable" style="max-width:1180px;margin:0 auto;padding:0 5%;min-height:340px;">
+      <div id="featurable-09383729-6718-4e94-a185-6c34c016e461" data-featurable-async></div>
     </div>
     <!-- Footer -->
     <div class="rv-footer">
@@ -938,10 +931,26 @@ function gtag(){dataLayer.push(arguments);}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
         Leave Us a Review on Google
       </a>
-      <p class="rv-attr">Reviews sourced from Google Maps · Powered by Google Places API</p>
+      <p class="rv-attr">Live from our Google Business Profile · updated automatically</p>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var sec=document.getElementById('reviews'); if(!sec) return;
+  var target=document.querySelector('.rv-featurable')||sec, loaded=false;
+  function loadFeaturable(){
+    if(loaded) return; loaded=true;
+    var s=document.createElement('script');
+    s.src='https://featurable.com/assets/bundle.js'; s.defer=true; s.charset='UTF-8';
+    document.body.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ loadFeaturable(); io.disconnect(); } }, {rootMargin:'350px'});
+    io.observe(target);
+  } else { loadFeaturable(); }
+})();
+</script>
 <!-- QUOTE FORM -->
 <section class="quote" id="quote">
   <div class="quote-bg" style="background-image:url('img/quote-bg.webp')"></div>
