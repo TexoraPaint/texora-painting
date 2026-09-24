@@ -36,7 +36,7 @@ for (var k in hidden) {
 var f = document.querySelectorAll('input[type="hidden"][name="' + k + '"]');
 for (var j = 0; j < f.length; j++) f[j].value = String(hidden[k] || "").slice(0, 200);
 }
-var subj = document.querySelector('input[name="subject"]');
+var subj = document.querySelector('input[name="_subject"]');
 if (subj && subj.value.indexOf(" in ") < 0) subj.value = subj.value + " in " + town;
 }
 fill();
@@ -46,10 +46,11 @@ return town;
 <p class="hero-sub">Weathered decks and fences washed, stripped, sanded and stained. We book deck work in dry weather so the stain soaks in and lasts.</p></div>
 <div class="hero-form"><div class="card" id="quote">
 <h2>Book a Free On-Site Quote</h2><p class="card-sub">We call you back within 24 hours, usually the same day.</p>
-<form name="go-quote" method="POST" action="/go/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
-<input type="hidden" name="form-name" value="go-quote"><input type="hidden" name="subject" value="Google Ads lead: Deck and fence staining">
+<form name="go-quote" method="POST" action="https://formsubmit.co/info@texorapainting.com">
+<input type="hidden" name="form-name" value="go-quote"><input type="hidden" name="_subject" value="Google Ads lead: Deck and fence staining">
+<input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://texorapainting.com/go/thank-you.html">
 <input type="hidden" name="gclid" value=""><input type="hidden" name="gbraid" value=""><input type="hidden" name="wbraid" value=""><input type="hidden" name="loc_phy" value=""><input type="hidden" name="loc_int" value=""><input type="hidden" name="cid" value=""><input type="hidden" name="ag" value=""><input type="hidden" name="town" value=""><input type="hidden" name="page" value=""><input type="hidden" name="service" value="deck-staining"><input type="hidden" name="lead_id" value="">
-<p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<p class="hp"><label>Leave this empty <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
 <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
 <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" required></div>
 <div class="field"><label for="f-addr">Address or postal code</label><input id="f-addr" name="address" type="text" autocomplete="street-address" required>
