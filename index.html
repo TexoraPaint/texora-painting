@@ -297,8 +297,52 @@ function gtag(){dataLayer.push(arguments);}
 </section>
 
 <!-- TRUST STRIP -->
+<style>
+  /* Trust strip — 5 standardized emblems: BBB · 3 badges · Sherwin-Williams */
+  .trust-strip{align-items:stretch;flex-wrap:nowrap;gap:0}
+  .trust-item{display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+  a.trust-item{text-decoration:none;color:inherit}
+  a.trust-item:focus-visible{outline:2px solid var(--orange);outline-offset:4px;border-radius:8px}
+  /* media band: fixed height so every icon/logo aligns and captions share one baseline */
+  .trust-media{height:110px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .trust-logo{width:auto;display:block;object-fit:contain;transition:transform .2s ease,filter .2s ease}
+  .trust-item-bbb .trust-logo{height:80px}
+  .trust-item-sw .trust-logo{height:64px;border-radius:9px;box-shadow:0 3px 10px rgba(0,60,166,.18)}
+  a.trust-item:hover .trust-logo{transform:translateY(-3px);filter:drop-shadow(0 6px 14px rgba(26,58,110,.18))}
+  /* Tablet: keep all 5 in one clean row, scaled down, captions kept */
+  @media(max-width:900px){
+    .trust-strip{flex-wrap:nowrap;justify-content:space-evenly;gap:0}
+    .trust-item{flex:1;padding:0 8px}
+    .trust-media{height:58px;margin-bottom:8px}
+    .trust-media .trust-icon{width:58px;height:58px;margin:0}
+    .trust-item-bbb .trust-logo{height:42px}
+    .trust-item-sw .trust-logo{height:36px}
+  }
+  /* Mobile: one line, logos/icons only, no captions */
+  @media(max-width:600px){
+    .trust-strip{padding:18px 3%}
+    .trust-item{padding:0 5px}
+    .trust-item h2,.trust-item p{display:none}
+    .trust-media{height:40px;margin-bottom:0}
+    .trust-media .trust-icon{width:36px;height:36px;margin:0}
+    .trust-item-bbb .trust-logo{height:30px}
+    .trust-item-sw .trust-logo{height:26px}
+  }
+  @media(max-width:380px){
+    .trust-item{padding:0 3px}
+    .trust-media .trust-icon{width:30px;height:30px}
+    .trust-item-bbb .trust-logo{height:25px}
+    .trust-item-sw .trust-logo{height:22px}
+  }
+</style>
 <section class="trust-strip">
-  <div class="trust-item reveal-scale">
+  <!-- BBB Accredited (left) — links to BBB profile. NOTE: swap href to the exact profile URL once accreditation goes live (~2026-09-25) -->
+  <a class="trust-item trust-item-bbb reveal-scale" href="https://www.bbb.org/search?find_country=CAN&amp;find_loc=Delta%2C%20BC&amp;find_text=Texora%20Painting" target="_blank" rel="noopener" aria-label="Texora Painting — BBB Accredited Business profile">
+    <div class="trust-media"><picture><source srcset="img/badge-bbb.webp" type="image/webp"><img loading="lazy" decoding="async" class="trust-logo" src="img/badge-bbb.png" alt="BBB Accredited Business" width="814" height="360"></picture></div>
+    <h2>BBB Accredited</h2>
+    <p>The sign of a better business.</p>
+  </a>
+  <div class="trust-item reveal-scale reveal-scale-delay-1">
     <picture><source srcset="img/trust-icon-1.webp" type="image/webp"><img loading="lazy" decoding="async" class="trust-icon" src="img/trust-icon-1.png" alt="100% Satisfaction Guarantee" width="110" height="110"></picture>
     <h2>100% Satisfaction Guarantee</h2>
     <p>We stand behind every job.</p>
@@ -312,6 +356,12 @@ function gtag(){dataLayer.push(arguments);}
     <picture><source srcset="img/trust-icon-3.webp" type="image/webp"><img loading="lazy" decoding="async" class="trust-icon" src="img/trust-icon-3.png" alt="Locally Owned" width="110" height="110"></picture>
     <h2>Locally Owned &amp; Operated</h2>
     <p>Proudly serving our community.</p>
+  </div>
+  <!-- Sherwin-Williams (right) — brand chip; auto-hides if the image is missing -->
+  <div class="trust-item trust-item-sw reveal-scale reveal-scale-delay-2">
+    <div class="trust-media"><picture><source srcset="img/badge-sherwin-williams.webp" type="image/webp"><img loading="lazy" decoding="async" class="trust-logo" src="img/badge-sherwin-williams.png" alt="Sherwin-Williams paints" width="321" height="160" onerror="this.closest('.trust-item').style.display='none'"></picture></div>
+    <h2>Premium Paints</h2>
+    <p>We use Sherwin-Williams.</p>
   </div>
 </section>
 
