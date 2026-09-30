@@ -44,6 +44,7 @@ function gtag(){dataLayer.push(arguments);}
 <meta property="og:title" content="Drywall Taping & Finishing Delta BC | Texora Painting">
 <meta property="og:description" content="Professional drywall taping and finishing in Delta BC. Three-coat mudding, Level 3 to Level 5 finish, sanding, and priming. Flawless walls ready for paint. Free quotes.">
 <meta property="og:url" content="https://texorapainting.com/drywall-taping-finishing.html">
+<meta property="og:site_name" content="Texora Painting">
 <meta property="og:image" content="https://texorapainting.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Drywall Taping & Finishing Delta BC | Texora Painting">
@@ -340,7 +341,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 @media(prefers-reduced-motion:reduce){.tx-area-dropdown{scroll-behavior:auto}}
 </style>
 <!-- TX SERVICE AREA NAV STYLE END -->
-<script src="/js/service-quote-tracking.js" defer></script>
+<script src="/js/service-quote-tracking.js?v=2" defer></script>
 
 <style id="tx-checklist-contrast">
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
@@ -348,15 +349,17 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 </style>
 
 <!-- TEXORA PHOTO TEXT STYLES --><link rel="stylesheet" href="/css/photo-text-layout.css">
+<link rel="stylesheet" href="/css/bb-structure.css?v=74509f2e2c">
 </head>
-<body>
+<body class="bb" data-page-type="service">
+<a class="skip" href="#main">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLK55T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav id="mainNav">
   <a class="logo" href="index.html" aria-label="Texora Painting home"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Texora Painting" width="160" height="107"></picture></a>
-  <div class="nav-actions"><a class="nav-cta-m" href="index.html#quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
+  <div class="nav-actions"><a class="nav-cta-m" href="#service-quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
         <ul class="nav-links" id="navLinks">
     <li><a href="index.html#services">Services</a></li>
     <!-- TX SERVICE AREA MENU START -->
@@ -365,24 +368,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="blog/index.html">Blog</a></li>
     <li><a href="about.html">About Us</a></li>
-    <li><a href="index.html#quote" class="btn-nav">Get Free Quote</a></li><li class="nav-li-call"><a class="nav-phone-d" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a></li>
+    <li><a href="#service-quote" class="btn-nav">Get Free Quote</a></li><li class="nav-li-call"><a class="nav-phone-d" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a></li>
   </ul>
 </nav>
+<div class="trust-bar" data-section="proof-strip" data-proof="nav-strip"><a href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener"><span class="bb-stars" aria-hidden="true">★★★★★</span><span class="bb-proof-label">Rated 5.0 on Google</span><span class="bb-proof-count" data-review-count="45">45 reviews</span></a></div>
 
-<main>
-<section class="city-hero tx-conversion-hero">
+<main id="main">
+<section class="city-hero tx-conversion-hero" data-section="hero">
 <div class="tx-hero-layout">
   <div class="city-hero-content">
+    <div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="drywall-repair.html">Drywall Services</a> &rsaquo; <span aria-current="page">Drywall Taping &amp; Finishing</span></div>
     <span class="city-badge">Texora Painting — Drywall Finishing</span>
-    <h1>Drywall Taping &amp; Finishing<em>for Walls in Delta</em></h1>
+    <h1>Drywall Taping &amp; Finishing <em>for Walls in Delta</em></h1>
     <p>Taping and finishing is the most labour-intensive phase of any drywall project — and the most visible. Done right, it's invisible. Done wrong, every seam shows. Texora Painting delivers flawless finishes across Delta, Tsawwassen, and Ladner.</p>
+    <ul class="hero-chips"><li data-proof="hero-rating-chip"><span class="bb-star" aria-hidden="true">★</span>Rated 5.0 on Google</li><li>Free written quotes</li><li>Workmanship warranty in writing</li></ul>
     <a href="#service-quote" class="btn-hero">Get a Free Finishing Quote</a>
   </div>
 
   <form id="service-quote" class="tx-hero-form" action="https://formsubmit.co/info@texorapainting.com" method="POST" aria-labelledby="service-quote-heading">
     <h2 id="service-quote-heading">Get Your Free Quote</h2>
     <p class="tx-form-intro">Tell us about your project. Name, phone and email are required.</p>
-    <a class="tx-form-proof" href="reviews.html">Read customer reviews</a>
+    <div class="tx-form-proof-row" data-proof="form-strip"><span class="bb-stars" aria-hidden="true">★★★★★</span><span>5.0 on Google Reviews</span><a class="tx-form-proof" href="reviews.html">Read customer reviews</a></div>
     <input type="hidden" name="_subject" value="New Quote Request from Texora Website">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
@@ -403,13 +409,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
-<!-- TEXORA PHOTO TEXT BAND 1 -->
-<section class="tx-layout-band tx-layout-band-1" data-photo-text-layout="1"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>What Is Drywall Taping and Finishing?</h2>
+<section class="tx-layout-band tx-layout-band-1" data-photo-text-layout="1" data-section="explainer"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>What Is Drywall Taping and Finishing?</h2>
   <p>After drywall sheets are hung, you have a surface covered with seams, fastener holes, corner bead transitions, and raw edges. Taping and finishing is the multi-stage process that transforms this raw surface into a smooth, paint-ready wall. It is the single most skill-dependent part of interior drywall work — and it's where the quality difference between a professional finish and an amateur one becomes unmistakably visible once paint goes on.</p>
   <p>The taping and finishing process involves embedding joint tape at all seams, applying and feathering multiple coats of joint compound (commonly called mud), sanding to a smooth surface between coats, and finally priming before paint. Each coat must dry completely before the next is applied — typically 24 hours per coat under normal conditions in Delta's climate. The total process takes a minimum of 3–5 days and cannot be safely rushed without compromising the final result.</p></div><figure class="tx-layout-photo"><img src="/img/client-photos/interior-wall-roller-480.webp" srcset="/img/client-photos/interior-wall-roller-480.webp 480w, /img/client-photos/interior-wall-roller-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1220px) calc(42vw - 32px), 481px" width="960" height="1440" alt="Texora painter rolling paint onto an interior wall below a window" loading="lazy" decoding="async"><figcaption>Rolling an interior wall · Interior paintwork supplied by Texora.</figcaption></figure></div></section>
-<!-- END TEXORA PHOTO TEXT BAND 1 -->
-<!-- TEXORA PHOTO TEXT BAND 2 -->
-<section class="tx-layout-band tx-layout-band-2" data-photo-text-layout="2"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>Levels of Drywall Finish</h2>
+
+<section class="tx-layout-band tx-layout-band-2" data-photo-text-layout="2" data-section="detail"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>Levels of Drywall Finish</h2>
   <p>The construction industry defines five levels of drywall finish. Understanding which level is right for your project is important because it directly affects the cost and the outcome under different lighting and paint conditions.</p>
   <div class="level-cards">
     <div class="level-card">
@@ -433,23 +437,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h3>Why Level 5 Finish Matters for Interior Painting</h3>
     <p>When a wall with standard Level 3 or 4 finish receives semi-gloss or high-sheen paint, seams and fastener locations often become visible — not as ridges, but as subtle variations in how light reflects off the surface. This phenomenon, called "photographing," happens because the drywall face paper and the joint compound absorb and reflect paint differently. A full Level 5 skim coat eliminates this by creating a single, uniform substrate across the entire surface. Texora Painting always discusses finish levels with clients before starting work on spaces where higher-sheen paints will be used.</p>
   </div></div><figure class="tx-layout-photo"><img src="/img/client-photos/interior-brushwork-480.webp" srcset="/img/client-photos/interior-brushwork-480.webp 480w, /img/client-photos/interior-brushwork-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1220px) calc(42vw - 32px), 481px" width="960" height="1485" alt="Texora painter brushing paint onto an interior wall panel" loading="lazy" decoding="async"><figcaption>Interior brushwork · Interior paintwork supplied by Texora.</figcaption></figure></div></section>
-<!-- END TEXORA PHOTO TEXT BAND 2 -->
-<div class="page-body">
-  <!-- INTRO COPY REHOUSED IN THE PRECEDING PHOTO BAND -->
 
-  <h2>The Three-Coat Finishing Process</h2>
-  <h3>Coat 1 — Embedding (Base Coat)</h3>
-  <p>The first coat serves two purposes: it embeds the joint tape into wet compound at all seams and butt joints, and it fills the fastener dimples. Paper tape is pressed into the wet compound along every seam and smoothed flat with a 6" knife. At corner beads, compound is applied flush to the bead. This coat is relatively thin and tight — its job is adhesion and tape embedding, not filling. Setting compound (hot mud) is often used at butt joints for its superior hardness.</p>
+<section class="page-body bb-prose" data-section="detail-2">
+<h2>The Three-Coat Finishing Process</h2>
 
-  <h3>Coat 2 — Fill Coat</h3>
-  <p>Once the base coat is fully dry and hard, the fill coat is applied with a wider knife (8"–10"). This coat extends further from the seam in both directions, beginning the feathering process. Fastener dimples receive a second fill coat. The goal is to build up the slight hollow at seam locations so the surface begins to flatten out. Mistakes made here — inconsistent width, uneven edges — will show in the finish coat.</p>
+<h3>Coat 1 — Embedding (Base Coat)</h3>
 
-  <h3>Coat 3 — Finish Coat</h3>
-  <p>The finish coat is the most critical and the widest. Applied with a 10"–12" or wider knife, it extends the feathered zone so the seam transitions gradually into the surrounding surface over a distance of 12–18 inches on each side. The compound is mixed to a creamy consistency and applied in the thinnest possible layer. No ridges, no tool marks. Once dry, this surface is sanded to a glass-smooth finish ready for primer.</p>
+<p>The first coat serves two purposes: it embeds the joint tape into wet compound at all seams and butt joints, and it fills the fastener dimples. Paper tape is pressed into the wet compound along every seam and smoothed flat with a 6" knife. At corner beads, compound is applied flush to the bead. This coat is relatively thin and tight — its job is adhesion and tape embedding, not filling. Setting compound (hot mud) is often used at butt joints for its superior hardness.</p>
 
-  <!-- TEXORA COPY REHOUSED IN SECOND PHOTO BAND -->
+<h3>Coat 2 — Fill Coat</h3>
 
-  <!-- texora-photo-expansion:band:start -->
+<p>Once the base coat is fully dry and hard, the fill coat is applied with a wider knife (8"–10"). This coat extends further from the seam in both directions, beginning the feathering process. Fastener dimples receive a second fill coat. The goal is to build up the slight hollow at seam locations so the surface begins to flatten out. Mistakes made here — inconsistent width, uneven edges — will show in the finish coat.</p>
+
+<h3>Coat 3 — Finish Coat</h3>
+
+<p>The finish coat is the most critical and the widest. Applied with a 10"–12" or wider knife, it extends the feathered zone so the seam transitions gradually into the surrounding surface over a distance of 12–18 inches on each side. The compound is mixed to a creamy consistency and applied in the thinnest possible layer. No ridges, no tool marks. Once dry, this surface is sanded to a glass-smooth finish ready for primer.</p>
+
 <section class="tx-photo-band tx-photo-band--light" aria-labelledby="tx-supplied-photo-drywall-taping-finishing">
   <h2 id="tx-supplied-photo-drywall-taping-finishing">Interior Paintwork</h2>
   <p class="tx-photo-band__intro">Interior wall painting and bathroom surfaces from Texora’s supplied photos.</p>
@@ -464,73 +467,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </figure>
   </div>
 </section>
-<!-- texora-photo-expansion:band:end -->
 
 <h2>Related Services</h2>
-  <div class="services-grid">
+
+<div class="services-grid">
     <div class="svc-card">
       <h3>Drywall Installation</h3>
       <p>Complete new drywall installation for Delta homes.</p>
-      <a href="drywall-installation.html">Learn More &rarr;</a>
+      <a href="drywall-installation.html">Drywall Installation services &rarr;</a>
     </div>
     <div class="svc-card">
       <h3>Drywall Repair</h3>
       <p>Holes, cracks, and damage repair throughout Delta.</p>
-      <a href="drywall-repair.html">Learn More &rarr;</a>
+      <a href="drywall-repair.html">Drywall Repair services &rarr;</a>
     </div>
     <div class="svc-card">
       <h3>Texture Matching</h3>
       <p>Seamless texture repairs for any wall or ceiling finish.</p>
-      <a href="texture-matching.html">Learn More &rarr;</a>
+      <a href="texture-matching.html">Texture Matching services &rarr;</a>
     </div>
     <div class="svc-card">
       <h3>Interior Painting</h3>
       <p>Complete interior painting once finishing is done.</p>
-      <a href="interior-painting.html">Learn More &rarr;</a>
-    </div>
-  </div>
-</div>
-
-<section class="faq-section">
-  <div class="faq-inner">
-    <h2>Drywall Taping &amp; Finishing — FAQs</h2>
-    <div class="faq-item"><button class="faq-q open" onclick="toggleFaq(this)" type="button" aria-expanded="true" aria-controls="tx-faq-answer-1">What is drywall finishing?</button><div class="faq-a open" id="tx-faq-answer-1"><p>Drywall finishing is the complete process of embedding tape at seams, applying multiple coats of joint compound, sanding smooth, and priming — turning raw hung drywall into a flawless surface ready for paint. It is the most time-consuming and skill-dependent phase of any drywall project. The quality of the finish is what determines how the final painted surface looks and performs for years to come.</p></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-2">How many coats of mud are needed?</button><div class="faq-a" id="tx-faq-answer-2" hidden><p>A standard finish requires three coats: a base (embedding) coat, a fill coat, and a finish coat. Each coat gets progressively thinner and wider — feathering the seam transition so it disappears into the flat wall surface. Some projects (Level 5 finish) require a fourth skim coat over the entire surface. Each coat requires a full 24-hour dry time under normal conditions.</p></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-3">What is Level 5 drywall finish?</button><div class="faq-a" id="tx-faq-answer-3" hidden><p>Level 5 is the premium finish standard — a standard three-coat finish plus a final thin skim coat applied across the entire wall surface, not just at seams. This creates perfect uniformity from edge to edge. It is required for any wall receiving semi-gloss or gloss paint, and recommended for any space with critical raking light such as rooms with large windows or recessed linear lighting. It costs more but eliminates the "photographing" effect where seams ghost through high-sheen paint.</p></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-4">How long does taping and finishing take?</button><div class="faq-a" id="tx-faq-answer-4" hidden><p>A minimum of 3–5 working days for a standard three-coat finish: one day per coat (each requiring 24 hours to dry), plus a final day for sanding and priming. In Delta's fall and winter months, cooler temperatures and higher humidity extend drying times. We account for this in our project timelines and never rush the process.</p></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-5">Can I paint over freshly taped drywall?</button><div class="faq-a" id="tx-faq-answer-5" hidden><p>No — raw drywall and joint compound must be primed before painting. Without primer, paint soaks into the compound and drywall face paper at different rates, creating visible blotchiness (called "flashing") even with multiple coats of paint. A coat of drywall PVA primer seals both surfaces to a uniform porosity, ensuring even paint absorption and professional results.</p></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-6">How do you fix banding on drywall?</button><div class="faq-a" id="tx-faq-answer-6" hidden><p>Banding — visible ridges, shadows, or lines at seam locations — results from mud coats that weren't feathered wide enough or that were applied too thick at the seam centre. The fix requires re-working the affected seams: skim the area flat, add wider feathering passes, let dry, re-sand, re-prime, and repaint. Simply painting over banding with additional coats does not fix it — the structural cause in the compound must be corrected.</p></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-7">What is the difference between joint compound and setting compound?</button><div class="faq-a" id="tx-faq-answer-7" hidden><p>Regular joint compound (all-purpose, lightweight, or topping compound) dries by moisture evaporation — it stays workable for an extended time but takes 24 hours to fully cure. Setting compound (hot mud) dries by chemical reaction — it sets in 20–90 minutes and becomes extremely hard. We use setting compound at butt joints and repairs for its superior strength, and regular compound for second and third coats where smoothness and workability matter most.</p></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-8">How do you prepare drywall for painting?</button><div class="faq-a" id="tx-faq-answer-8" hidden><p>The correct preparation sequence is: complete all three mud coats and let cure fully; sand all seams, fastener dimples, corner bead transitions, and any ridges smooth; vacuum and wipe all dust from surfaces; apply one full coat of drywall PVA primer or quality drywall primer-sealer; let primer dry completely; lightly sand any raised grain or dust nibs; then apply topcoat paint. Skipping any step — particularly the primer — will result in a noticeably inferior paint finish.</p></div></div>
-  </div>
-</section>
-
-<section class="reviews-strip">
-  <h2>Delta Homeowners Count on Texora for Flawless Walls</h2>
-  <p>5-star rated for precision, craftsmanship, and lasting results.</p>
-  <div class="review-cards">
-    <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-text">"Absolutely amazing work! The attention to detail and professionalism really stood out, and the final result completely exceeded expectations."</p><div class="rev-author">Dominic Brayton</div></div>
-    <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-text">"Great service, amazing people!"</p><div class="rev-author">Anton Kolomiiets</div></div>
-    <div class="rev-card"><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-text">"They do know what they are doing. Highly recommend."</p><div class="rev-author">Arta Manian</div></div>
-  </div>
-</section>
-
-<section class="internal-links">
-  <div class="internal-links-inner">
-    <h3>Related Services</h3>
-    <div class="link-chips">
-      <a class="link-chip" href="drywall-installation.html">Drywall Installation Delta</a>
-      <a class="link-chip" href="drywall-repair.html">Drywall Repair Delta</a>
-      <a class="link-chip" href="texture-matching.html">Texture Matching</a>
-      <a class="link-chip" href="interior-painting.html">Interior Painting</a>
-      <a class="link-chip" href="ceiling-drywall-repair.html">Ceiling Drywall Repair</a>
+      <a href="interior-painting.html">Interior Painting services &rarr;</a>
     </div>
   </div>
 </section>
 
-
-<!-- ── PHOTO SHOWCASE ── -->
-<section class="showcase-section">
+<section class="showcase-section" data-section="our-work">
   <div class="showcase-inner">
     <p class="sec-label">Our Work</p>
     <h2 class="sec-title">See the Results</h2>
@@ -557,10 +521,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="gallery.html" class="showcase-gallery-link">View full gallery &rarr;</a>
   </div>
 </section>
+
 <div id="showcaseLightbox" onclick="if(event.target===this)closeShowcaseLb()">
   <button id="showcaseLbClose" onclick="closeShowcaseLb()" aria-label="Close">&times;</button>
   <img id="showcaseLbImg" src="" alt="Project photo">
 </div>
+
 <script>
 (function(){
   // Load Google Business photos into strip
@@ -587,12 +553,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 function closeShowcaseLb(){var lb=document.getElementById('showcaseLightbox');if(lb)lb.classList.remove('open');}
 </script>
 
-<section class="cta-bar">
-  <h2>Want Walls That Look Perfect Under Any Light?</h2>
-  <p>Get a free, no-obligation quote from Texora Painting. We serve Delta, Tsawwassen, Ladner, and the wider Lower Mainland.</p>
-  <a href="index.html#quote" class="btn-hero">Get Your Free Quote</a>
+<section class="bb-band bb-reviews" data-section="reviews" aria-labelledby="bb-reviews-title">
+<p class="bb-kicker">Customer reviews</p>
+<h2 class="bb-h2" id="bb-reviews-title">Delta Homeowners Count on Texora for Flawless Walls</h2>
+<p class="bb-reviews-rating"><span class="bb-stars" aria-hidden="true">★★★★★</span><span>Rated 5.0 on Google</span></p>
+<p class="bb-reviews-lead">5-star rated for precision, craftsmanship, and lasting results.</p>
+<div class="bb-review-grid" data-cards="5">
+<figure class="review-card"><blockquote>&ldquo;Absolutely amazing work! The attention to detail and professionalism really stood out, and the final result completely exceeded expectations&rdquo;</blockquote><figcaption>Dominic Brayton, Google review, April 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;Great service, amazing people!&rdquo;</blockquote><figcaption>Anton Kolomiiets, Google review, April 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;They do know what they are doing Highly recommend 🙏🏼&rdquo;</blockquote><figcaption>Arta Manian, Google review, February 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;Excellent work. Personable and professional. I am very pleased and recommend their work,&rdquo;</blockquote><figcaption>Barbara Helmer, Google review, September 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;Great friendly people easy to work with, I am very pleased with the patch and paint job the did to my bathroom. Looks fresh! Thank you! I will look to them for future projects.&rdquo;</blockquote><figcaption>Taylor Watalla, Google review, September 2026</figcaption></figure>
+</div>
+<div class="bb-reviews-foot"><a class="review-cta" href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener">Read all reviews on Google</a></div>
 </section>
 
+<section class="faq-section" data-section="faq">
+  <div class="faq-inner">
+    <h2>Drywall Taping &amp; Finishing — FAQs</h2>
+    <div class="faq-item"><button class="faq-q open" onclick="toggleFaq(this)" type="button" aria-expanded="true" aria-controls="tx-faq-answer-1">What is drywall finishing?</button><div class="faq-a open" id="tx-faq-answer-1"><p>Drywall finishing is the complete process of embedding tape at seams, applying multiple coats of joint compound, sanding smooth, and priming — turning raw hung drywall into a flawless surface ready for paint. It is the most time-consuming and skill-dependent phase of any drywall project. The quality of the finish is what determines how the final painted surface looks and performs for years to come.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-2">How many coats of mud are needed?</button><div class="faq-a" id="tx-faq-answer-2" hidden><p>A standard finish requires three coats: a base (embedding) coat, a fill coat, and a finish coat. Each coat gets progressively thinner and wider — feathering the seam transition so it disappears into the flat wall surface. Some projects (Level 5 finish) require a fourth skim coat over the entire surface. Each coat requires a full 24-hour dry time under normal conditions.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-3">What is Level 5 drywall finish?</button><div class="faq-a" id="tx-faq-answer-3" hidden><p>Level 5 is the premium finish standard — a standard three-coat finish plus a final thin skim coat applied across the entire wall surface, not just at seams. This creates perfect uniformity from edge to edge. It is required for any wall receiving semi-gloss or gloss paint, and recommended for any space with critical raking light such as rooms with large windows or recessed linear lighting. It costs more but eliminates the "photographing" effect where seams ghost through high-sheen paint.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-4">How long does taping and finishing take?</button><div class="faq-a" id="tx-faq-answer-4" hidden><p>A minimum of 3–5 working days for a standard three-coat finish: one day per coat (each requiring 24 hours to dry), plus a final day for sanding and priming. In Delta's fall and winter months, cooler temperatures and higher humidity extend drying times. We account for this in our project timelines and never rush the process.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-5">Can I paint over freshly taped drywall?</button><div class="faq-a" id="tx-faq-answer-5" hidden><p>No — raw drywall and joint compound must be primed before painting. Without primer, paint soaks into the compound and drywall face paper at different rates, creating visible blotchiness (called "flashing") even with multiple coats of paint. A coat of drywall PVA primer seals both surfaces to a uniform porosity, ensuring even paint absorption and professional results.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-6">How do you fix banding on drywall?</button><div class="faq-a" id="tx-faq-answer-6" hidden><p>Banding — visible ridges, shadows, or lines at seam locations — results from mud coats that weren't feathered wide enough or that were applied too thick at the seam centre. The fix requires re-working the affected seams: skim the area flat, add wider feathering passes, let dry, re-sand, re-prime, and repaint. Simply painting over banding with additional coats does not fix it — the structural cause in the compound must be corrected.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-7">What is the difference between joint compound and setting compound?</button><div class="faq-a" id="tx-faq-answer-7" hidden><p>Regular joint compound (all-purpose, lightweight, or topping compound) dries by moisture evaporation — it stays workable for an extended time but takes 24 hours to fully cure. Setting compound (hot mud) dries by chemical reaction — it sets in 20–90 minutes and becomes extremely hard. We use setting compound at butt joints and repairs for its superior strength, and regular compound for second and third coats where smoothness and workability matter most.</p></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-8">How do you prepare drywall for painting?</button><div class="faq-a" id="tx-faq-answer-8" hidden><p>The correct preparation sequence is: complete all three mud coats and let cure fully; sand all seams, fastener dimples, corner bead transitions, and any ridges smooth; vacuum and wipe all dust from surfaces; apply one full coat of drywall PVA primer or quality drywall primer-sealer; let primer dry completely; lightly sand any raised grain or dust nibs; then apply topcoat paint. Skipping any step — particularly the primer — will result in a noticeably inferior paint finish.</p></div></div>
+  </div>
+</section>
+
+<section class="internal-links" data-section="related-links">
+  <div class="internal-links-inner">
+    <h3>Related Services</h3>
+    <div class="link-chips">
+      <a class="link-chip" href="drywall-installation.html">Drywall Installation Delta</a>
+      <a class="link-chip" href="drywall-repair.html">Drywall Repair Delta</a>
+      <a class="link-chip" href="texture-matching.html">Texture Matching</a>
+      <a class="link-chip" href="interior-painting.html">Interior Painting</a>
+      <a class="link-chip" href="ceiling-drywall-repair.html">Ceiling Drywall Repair</a>
+    </div>
+  </div>
+</section>
+
+<section class="bb-band bb-areas" data-section="service-areas" aria-labelledby="bb-areas-title">
+<h2 class="bb-h2" id="bb-areas-title">Service areas across Delta and the Tri-Cities</h2>
+<p class="bb-lead">Texora works in Ladner and Tsawwassen, across Delta, and in Coquitlam, Port Coquitlam and Port Moody.</p>
+<ul class="bb-pills"><li><a class="area-card" href="painters-ladner.html">Painters in Ladner</a></li><li><a class="area-card" href="painters-tsawwassen.html">Painters in Tsawwassen</a></li><li><a class="area-card" href="painters-delta.html">Painters in Delta</a></li><li><a class="area-card" href="painters-coquitlam.html">Painters in Coquitlam</a></li><li><a class="area-card" href="painters-port-coquitlam.html">Painters in Port Coquitlam</a></li><li><a class="area-card" href="painters-port-moody.html">Painters in Port Moody</a></li><li><a class="area-card" href="service-areas.html">All service areas</a></li></ul>
+<div class="bb-listing" data-proof="cid-card">
+<div class="bb-listing-copy">
+<h3>Texora on Google</h3>
+<a class="bb-listing-rating" href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener"><span class="bb-stars" aria-hidden="true">★★★★★</span><span>5.0 on Google</span></a>
+<p>Read customer reviews or open the verified Texora Painting &amp; Drywall business profile.</p>
+<a class="bb-listing-link" href="https://www.google.com/maps?cid=9701219678679078001" target="_blank" rel="noopener">Open Texora's Google profile</a>
+</div>
+<iframe src="https://maps.google.com/maps?cid=9701219678679078001&amp;output=embed" title="Texora Painting &amp; Drywall on Google Maps" loading="lazy" width="560" height="300" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<p class="bb-note">The map is provided by Google Maps. Google may receive your IP address and use its own cookies.</p>
+</section>
+
+<section class="cta-bar" data-section="cta">
+  <h2>Want Walls That Look Perfect Under Any Light?</h2>
+  <p>Get a free, no-obligation quote from Texora Painting. We serve Delta, Tsawwassen, Ladner, and the wider Lower Mainland.</p>
+  <div class="bb-cta-actions"><a href="#service-quote" class="btn-hero">Get Your Free Quote</a><a class="bb-btn-call" href="tel:+16044176483">Call (604) 417-6483</a></div>
+</section>
 </main>
 <footer class="footer-bar">
   <a class="footer-call" href="tel:+16044176483">
