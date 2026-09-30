@@ -143,7 +143,8 @@ function gtag(){dataLayer.push(arguments);}
   .faq-q::after{content:'+';font-size:22px;color:var(--orange);flex-shrink:0;transition:transform .2s;}
   .faq-q.open::after{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-  .faq-a.open{max-height:400px;}
+  .faq-a.open{max-height:none;}
+  .faq-a[hidden]{display:none;}
   .faq-a p{padding:0 24px 20px;color:var(--gray);font-size:14px;line-height:1.85;}
 
   .cta-bar{background:var(--blue);padding:80px 5%;text-align:center;}
@@ -630,24 +631,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-inner">
     <h2>Drywall Repair &amp; Installation FAQ — Tsawwassen</h2>
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How much does drywall repair cost in Tsawwassen?</button>
-      <div class="faq-a"><p>Small patch repairs in Tsawwassen typically run $150–$350. Larger repairs (water damage, multiple holes) range from $400–$900+. Full drywall installation for a room starts from $800. We provide free, written quotes with no obligation.</p></div>
+      <button class="faq-q open" aria-expanded="true" onclick="toggleFaq(this)" type="button" aria-controls="tx-faq-answer-1">How much does drywall repair cost in Tsawwassen?</button>
+      <div class="faq-a open" id="tx-faq-answer-1"><p>Small patch repairs in Tsawwassen typically run $150–$350. Larger repairs (water damage, multiple holes) range from $400–$900+. Full drywall installation for a room starts from $800. We provide free, written quotes with no obligation.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can you repair water-damaged drywall?</button>
-      <div class="faq-a"><p>Yes — water damage repair is one of our most common drywall services in Tsawwassen. We remove damaged sections, treat for moisture, install new drywall, tape, mud, sand to a smooth finish, and prime ready for paint.</p></div>
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button" aria-controls="tx-faq-answer-2">Can you repair water-damaged drywall?</button>
+      <div class="faq-a" id="tx-faq-answer-2" hidden><p>Yes — water damage repair is one of our most common drywall services in Tsawwassen. We remove damaged sections, treat for moisture, install new drywall, tape, mud, sand to a smooth finish, and prime ready for paint.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Do you install new drywall for renovations?</button>
-      <div class="faq-a"><p>Yes — we handle full drywall installations for room additions, basement finishing, and renovation projects across Tsawwassen and Delta. We also do Level 4 and Level 5 finishes for high-end homes.</p></div>
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button" aria-controls="tx-faq-answer-3">Do you install new drywall for renovations?</button>
+      <div class="faq-a" id="tx-faq-answer-3" hidden><p>Yes — we handle full drywall installations for room additions, basement finishing, and renovation projects across Tsawwassen and Delta. We also do Level 4 and Level 5 finishes for high-end homes.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">How long does drywall repair take?</button>
-      <div class="faq-a"><p>Most small to medium drywall repairs take 1–2 days including drying time. Larger installations or full-room drywall work typically takes 2–4 days. We give you a clear timeline before we start.</p></div>
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button" aria-controls="tx-faq-answer-4">How long does drywall repair take?</button>
+      <div class="faq-a" id="tx-faq-answer-4" hidden><p>Most small to medium drywall repairs take 1–2 days including drying time. Larger installations or full-room drywall work typically takes 2–4 days. We give you a clear timeline before we start.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Do you paint after the drywall repair?</button>
-      <div class="faq-a"><p>Yes — as a full-service painting and drywall company, we can paint the repaired area to match your existing walls, or complete a full room repaint as part of the same project. One team, one visit.</p></div>
+      <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)" type="button" aria-controls="tx-faq-answer-5">Do you paint after the drywall repair?</button>
+      <div class="faq-a" id="tx-faq-answer-5" hidden><p>Yes — as a full-service painting and drywall company, we can paint the repaired area to match your existing walls, or complete a full room repaint as part of the same project. One team, one visit.</p></div>
     </div>
   </div>
 </section>
@@ -809,7 +810,7 @@ function closeShowcaseLb(){var lb=document.getElementById('showcaseLightbox');if
 (function(){if(window._navInit)return;window._navInit=true;var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!b||!l)return;b.addEventListener('click',function(){var o=l.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});document.addEventListener('click',function(e){if(!b.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
 (function(){if(window._phoneInit)return;window._phoneInit=true;document.addEventListener("click",function(e){var a=e.target.closest('a[href^="tel:"]');if(a){gtag("event","phone_call_click",{event_category:"engagement",event_label:"phone_tap"});return;}var m=e.target.closest('a[href^="mailto:"]');if(m){gtag("event","email_click",{event_category:"engagement",event_label:"email_tap"});}},{passive:true});})();
 (function(){var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer'),t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);if(footer){var ft=footer.getBoundingClientRect().top;btn.style.bottom=ft<window.innerHeight?(window.innerHeight-ft+8)+'px':'28px';}t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
-function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');x.previousElementSibling.classList.remove('open');});if(!o){a.classList.add('open');b.classList.add('open');}}
+function toggleFaq(b){var a=b.nextElementSibling,o=b.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q').forEach(function(q){var x=q.nextElementSibling;q.classList.remove('open');q.setAttribute('aria-expanded','false');x.classList.remove('open');x.hidden=true;});if(!o){b.classList.add('open');b.setAttribute('aria-expanded','true');a.classList.add('open');a.hidden=false;}}
 </script>
 <!-- COOKIE CONSENT (branded, dismissible, remembers choice) -->
 <style>

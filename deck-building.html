@@ -116,7 +116,8 @@ function gtag(){dataLayer.push(arguments);}
   .faq-q::after{content:'+';font-size:22px;color:var(--orange);flex-shrink:0;transition:transform .2s;}
   .faq-q.open::after{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-  .faq-a.open{max-height:400px;}
+  .faq-a.open{max-height:none;}
+  .faq-a[hidden]{display:none;}
   .faq-a p{padding:0 24px 20px;color:var(--gray);font-size:14px;line-height:1.85;}
   .cta-bar{background:var(--blue);padding:80px 5%;text-align:center;}
   .cta-bar h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:12px;}
@@ -264,20 +265,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="faq-section"><div class="faq-inner">
   <h2>Deck Building & Restoration — FAQs</h2>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Do you build new decks or only refinish existing ones?</button>
-    <div class="faq-a"><p>Both. We build brand-new decks, rebuild and repair existing structures (boards, railings, stairs), and refinish weathered decks with sanding, staining, and sealing. Tell us what you need during your free quote.</p></div>
+    <button class="faq-q open" onclick="toggleFaq(this)" type="button" aria-expanded="true" aria-controls="tx-faq-answer-1">Do you build new decks or only refinish existing ones?</button>
+    <div class="faq-a open" id="tx-faq-answer-1"><p>Both. We build brand-new decks, rebuild and repair existing structures (boards, railings, stairs), and refinish weathered decks with sanding, staining, and sealing. Tell us what you need during your free quote.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">How much does a deck project cost in Delta?</button>
-    <div class="faq-a"><p>It varies widely — a sand-and-restain typically runs a few hundred to a couple thousand dollars, while new construction or a full rebuild is quoted based on size, materials, and design. We provide a detailed free written quote after seeing the deck.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-2">How much does a deck project cost in Delta?</button>
+    <div class="faq-a" id="tx-faq-answer-2" hidden><p>It varies widely — a sand-and-restain typically runs a few hundred to a couple thousand dollars, while new construction or a full rebuild is quoted based on size, materials, and design. We provide a detailed free written quote after seeing the deck.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">What's the difference between deck building and deck staining?</button>
-    <div class="faq-a"><p>Deck building and restoration covers the structure — construction, board and railing replacement, and repairs. Deck staining is the finishing step — sanding and applying protective stain or sealer. We offer both, and many decks need a bit of each.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-3">What's the difference between deck building and deck staining?</button>
+    <div class="faq-a" id="tx-faq-answer-3" hidden><p>Deck building and restoration covers the structure — construction, board and railing replacement, and repairs. Deck staining is the finishing step — sanding and applying protective stain or sealer. We offer both, and many decks need a bit of each.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">When is the best time to build or refinish a deck in BC?</button>
-    <div class="faq-a"><p>Spring through early fall is ideal, when the wood is dry and temperatures suit staining and sealing. We book up in peak season, so reach out early to lock in your spot.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-4">When is the best time to build or refinish a deck in BC?</button>
+    <div class="faq-a" id="tx-faq-answer-4" hidden><p>Spring through early fall is ideal, when the wood is dry and temperatures suit staining and sealing. We book up in peak season, so reach out early to lock in your spot.</p></div>
   </div>
 </div></section>
 <section class="cta-bar">
@@ -318,7 +319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){if(window._navInit)return;window._navInit=true;var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!b||!l)return;b.addEventListener('click',function(){var o=l.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});document.addEventListener('click',function(e){if(!b.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
 (function(){if(window._phoneInit)return;window._phoneInit=true;document.addEventListener("click",function(e){var a=e.target.closest('a[href^="tel:"]');if(a){gtag("event","phone_call_click",{event_category:"engagement",event_label:"phone_tap"});return;}var m=e.target.closest('a[href^="mailto:"]');if(m){gtag("event","email_click",{event_category:"engagement",event_label:"email_tap"});}},{passive:true});})();
 (function(){var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer'),t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);if(footer){var ft=footer.getBoundingClientRect().top;btn.style.bottom=ft<window.innerHeight?(window.innerHeight-ft+8)+'px':'28px';}t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
-function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');x.previousElementSibling.classList.remove('open');});if(!o){a.classList.add('open');b.classList.add('open');}}
+function toggleFaq(b){var a=b.nextElementSibling,o=b.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q').forEach(function(q){var x=q.nextElementSibling;q.classList.remove('open');q.setAttribute('aria-expanded','false');x.classList.remove('open');x.hidden=true;});if(!o){b.classList.add('open');b.setAttribute('aria-expanded','true');a.classList.add('open');a.hidden=false;}}
 </script>
 <!-- COOKIE CONSENT (branded, dismissible, remembers choice) -->
 <style>

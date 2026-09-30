@@ -116,7 +116,8 @@ function gtag(){dataLayer.push(arguments);}
   .faq-q::after{content:'+';font-size:22px;color:var(--orange);flex-shrink:0;transition:transform .2s;}
   .faq-q.open::after{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-  .faq-a.open{max-height:400px;}
+  .faq-a.open{max-height:none;}
+  .faq-a[hidden]{display:none;}
   .faq-a p{padding:0 24px 20px;color:var(--gray);font-size:14px;line-height:1.85;}
   .cta-bar{background:var(--blue);padding:80px 5%;text-align:center;}
   .cta-bar h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:12px;}
@@ -371,24 +372,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="faq-section"><div class="faq-inner">
   <h2>Wood Rot & Fascia Repair — FAQs</h2>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Do you replace rotten fascia boards?</button>
-    <div class="faq-a"><p>Yes — replacing rotten or damaged fascia is one of our most common exterior repairs. We remove the affected boards, install new wood, then prime and paint to match the rest of your home's trim. It's often done alongside an exterior repaint.</p></div>
+    <button class="faq-q open" onclick="toggleFaq(this)" type="button" aria-expanded="true" aria-controls="tx-faq-answer-1">Do you replace rotten fascia boards?</button>
+    <div class="faq-a open" id="tx-faq-answer-1"><p>Yes — replacing rotten or damaged fascia is one of our most common exterior repairs. We remove the affected boards, install new wood, then prime and paint to match the rest of your home's trim. It's often done alongside an exterior repaint.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Can you fix a rotten window sill or exterior trim?</button>
-    <div class="faq-a"><p>Absolutely. Rotten window sills, door casings, corner boards, and other exterior trim are all repairable. Depending on the damage we fill and rebuild the wood or replace the section, then finish it paint-ready.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-2">Can you fix a rotten window sill or exterior trim?</button>
+    <div class="faq-a" id="tx-faq-answer-2" hidden><p>Absolutely. Rotten window sills, door casings, corner boards, and other exterior trim are all repairable. Depending on the damage we fill and rebuild the wood or replace the section, then finish it paint-ready.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Do you repair the peaks and corners of fascia and soffit?</button>
-    <div class="faq-a"><p>Yes — the peaks, corners, and joints of fascia and soffit are where water and rot usually start. We repair or replace those sections, seal them properly, and repaint so the problem doesn't come straight back.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-3">Do you repair the peaks and corners of fascia and soffit?</button>
+    <div class="faq-a" id="tx-faq-answer-3" hidden><p>Yes — the peaks, corners, and joints of fascia and soffit are where water and rot usually start. We repair or replace those sections, seal them properly, and repaint so the problem doesn't come straight back.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Is wood repair done before painting?</button>
-    <div class="faq-a"><p>Almost always. Painting over rotten or soft wood just hides the problem. We fix the wood first — replace, fill, sand, and prime — so the finish lasts and the repair is invisible once painted.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-4">Is wood repair done before painting?</button>
+    <div class="faq-a" id="tx-faq-answer-4" hidden><p>Almost always. Painting over rotten or soft wood just hides the problem. We fix the wood first — replace, fill, sand, and prime — so the finish lasts and the repair is invisible once painted.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Do you do major structural or framing work?</button>
-    <div class="faq-a"><p>We handle minor exterior wood repair — fascia, soffit, trim, sills, corners, and peaks — as part of getting a home paint-ready. For major structural or framing work we'll point you to the right trade, but small rot and trim repair is squarely what we do.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-5">Do you do major structural or framing work?</button>
+    <div class="faq-a" id="tx-faq-answer-5" hidden><p>We handle minor exterior wood repair — fascia, soffit, trim, sills, corners, and peaks — as part of getting a home paint-ready. For major structural or framing work we'll point you to the right trade, but small rot and trim repair is squarely what we do.</p></div>
   </div>
 </div></section>
 <section class="cta-bar">
@@ -429,7 +430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){if(window._navInit)return;window._navInit=true;var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!b||!l)return;b.addEventListener('click',function(){var o=l.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});document.addEventListener('click',function(e){if(!b.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
 (function(){if(window._phoneInit)return;window._phoneInit=true;document.addEventListener("click",function(e){var a=e.target.closest('a[href^="tel:"]');if(a){gtag("event","phone_call_click",{event_category:"engagement",event_label:"phone_tap"});return;}var m=e.target.closest('a[href^="mailto:"]');if(m){gtag("event","email_click",{event_category:"engagement",event_label:"email_tap"});}},{passive:true});})();
 (function(){var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer'),t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);if(footer){var ft=footer.getBoundingClientRect().top;btn.style.bottom=ft<window.innerHeight?(window.innerHeight-ft+8)+'px':'28px';}t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
-function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');x.previousElementSibling.classList.remove('open');});if(!o){a.classList.add('open');b.classList.add('open');}}
+function toggleFaq(b){var a=b.nextElementSibling,o=b.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q').forEach(function(q){var x=q.nextElementSibling;q.classList.remove('open');q.setAttribute('aria-expanded','false');x.classList.remove('open');x.hidden=true;});if(!o){b.classList.add('open');b.setAttribute('aria-expanded','true');a.classList.add('open');a.hidden=false;}}
 </script>
 <!-- COOKIE CONSENT (branded, dismissible, remembers choice) -->
 <style>
