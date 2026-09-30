@@ -9,7 +9,20 @@ function gtag(){dataLayer.push(arguments);}
   var done=false;
   function loadTracking(){if(!/(^|\.)texorapainting\.com$/.test(location.hostname))return;try{if(localStorage.getItem("txa_cookie")==="declined")return;}catch(e){}
     if(done)return; done=true;
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    !function(f,b,e,v,n,t,s){
+      n=f.fbq;
+      if(n&&typeof n.callMethod==='function')return;
+      if(!n||!Array.isArray(n.queue)||n.version!=='2.0'){
+        var queued=Array.isArray(f._fbq)?f._fbq:(n&&Array.isArray(n.queue)?n.queue:[]);
+        n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=queued.slice();f._fbq=n;
+      }
+      var scripts=b.getElementsByTagName(e);
+      for(var i=0;i<scripts.length;i++){
+        if(/^https:\/\/connect\.facebook\.net\/[^/]+\/fbevents\.js(?:[?#].*)?$/.test(scripts[i].src||''))return;
+      }
+      t=b.createElement(e);t.async=!0;t.src=v;s=scripts[0];s.parentNode.insertBefore(t,s);
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init','1503091811834061');fbq('track','PageView');
     var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-H03RYY12LT';document.head.appendChild(s);
     /* Google Tag Manager */(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MDBLK55T');/* End Google Tag Manager */
