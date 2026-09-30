@@ -128,6 +128,11 @@
 .bb .review-cta:hover{background:#ff9440}
 .bb .review-cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
+/* the Google photos feed returns no photos: hide its "Loading photos" placeholder and the line that promises live photos.
+   Both come back on their own when the feed has photos again. */
+.bb .gphoto-strip.gphoto-strip-none{display:none}
+.bb .showcase-inner:has(.gphoto-strip-none) .sec-sub{display:none}
+
 /* FAQ */
 .bb main>.faq-section .faq-item{border:1px solid var(--bb-line);box-shadow:none}
 
