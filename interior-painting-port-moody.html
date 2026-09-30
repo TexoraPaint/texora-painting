@@ -283,6 +283,31 @@ function gtag(){dataLayer.push(arguments);}
 </style>
 <!-- callrail swap.js (bloomview 2026-09-27) -->
 <script>(function(){if(!/(^|\.)texorapainting\.com$/.test(location.hostname))return;var s=document.createElement('script');s.async=1;s.src='https://cdn.callrail.com/companies/964140765/4482de884bd82f9e5505/12/swap.js';(document.head||document.documentElement).appendChild(s);})();</script>
+
+<!-- Service hero conversion layout: existing site styles remain intact. -->
+<style id="texora-service-hero-form-style">
+.tx-conversion-hero{width:100%;padding:140px 5% 64px;box-sizing:border-box}
+.tx-hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:48px;align-items:center;width:100%;max-width:1200px;margin:0 auto}
+.tx-hero-copy{min-width:0}
+.tx-hero-form{box-sizing:border-box;width:100%;min-width:0;padding:28px;background:#fff;border:1px solid #e0e7ef;border-radius:16px;box-shadow:0 16px 48px rgba(8,25,54,.22);color:#1a3a6e;text-align:left;scroll-margin-top:100px}
+.tx-hero-form h2{margin:0 0 8px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:24px;line-height:1.25;color:#1a3a6e}
+.tx-hero-form .tx-form-intro{margin:0 0 12px;max-width:none;color:#46546a;font-size:14px;line-height:1.5}
+.tx-hero-form .tx-form-proof{display:inline-block;margin:0 0 16px;color:#1a3a6e;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.tx-form-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
+.tx-form-field{min-width:0}
+.tx-form-field-wide{grid-column:1/-1}
+.tx-form-field label{display:block;margin:0 0 6px;color:#253a57;font-size:13px;font-weight:700;line-height:1.4}
+.tx-form-field input,.tx-form-field textarea{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid #b8c5d5;border-radius:7px;background:#fff;color:#172d4c;font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
+.tx-form-field input:focus,.tx-form-field textarea:focus{outline:3px solid rgba(244,123,32,.3);outline-offset:1px;border-color:#1a3a6e}
+.tx-form-field textarea{min-height:82px;resize:vertical}
+.tx-form-submit{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;min-height:50px;margin:18px 0 0;padding:13px 16px;border:0;border-radius:8px;background:#f47b20;color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:15px;font-weight:800;line-height:1.4;cursor:pointer}
+.tx-form-submit:hover{background:#d96a10}
+.tx-form-submit:focus-visible,.tx-form-proof:focus-visible{outline:3px solid #1a3a6e;outline-offset:3px}
+.tx-hero-form .tx-form-note{margin:12px 0 0;max-width:none;color:#526174;font-size:12px;line-height:1.5}
+.tx-form-note a{color:#1a3a6e;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:960px){.tx-hero-layout{grid-template-columns:1fr;gap:32px;max-width:700px}.tx-hero-form{max-width:560px}.tx-conversion-hero{padding:132px 5% 56px}}
+@media(max-width:600px){.tx-conversion-hero{padding:118px 20px 44px}.tx-hero-layout{gap:24px}.tx-hero-form{padding:22px 18px}.tx-hero-form h2{font-size:22px}.tx-form-fields{grid-template-columns:1fr;gap:12px}.tx-form-field-wide{grid-column:auto}}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -305,13 +330,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="index.html">Home</a> &rsaquo; <a href="painters-port-moody.html">Port Moody</a> &rsaquo; <span>Interior Painting</span>
 </div>
 
-<section class="city-hero">
+<section class="city-hero tx-conversion-hero">
+<div class="tx-hero-layout">
   <div class="city-hero-content">
     <span class="city-badge">Texora Painting — Port Moody, BC</span>
     <h1>Interior Painting<em>Port Moody, BC</em></h1>
     <p>From craftsman heritage homes in Pleasantside to Westcoast Modern properties overlooking Burrard Inlet, we bring precision interior painting to every corner of Port Moody's "City of the Arts." 5-star rated. Free quotes across V3H.</p>
-    <a href="index.html#quote" class="btn-hero">Get Your Free Quote &rarr;</a>
+    <a href="#service-quote" class="btn-hero">Get Your Free Quote &rarr;</a>
   </div>
+
+  <form id="service-quote" class="tx-hero-form" action="https://formsubmit.co/info@texorapainting.com" method="POST" aria-labelledby="service-quote-heading">
+    <h2 id="service-quote-heading">Get Your Free Quote</h2>
+    <p class="tx-form-intro">Tell us about your project. Name, phone and email are required.</p>
+    <a class="tx-form-proof" href="reviews.html">Read customer reviews</a>
+    <input type="hidden" name="_subject" value="New Quote Request from Texora Website">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://texorapainting.com/thank-you.html">
+    <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="hidden" name="Service Needed" value="Interior Painting">
+    <input type="hidden" name="Source Page" value="https://texorapainting.com/interior-painting-port-moody.html">
+    <div class="tx-form-fields">
+      <div class="tx-form-field"><label for="quote-name">Full name</label><input id="quote-name" type="text" name="Full Name" autocomplete="name" required></div>
+      <div class="tx-form-field"><label for="quote-phone">Phone number</label><input id="quote-phone" type="tel" name="Phone Number" autocomplete="tel" inputmode="tel" required></div>
+      <div class="tx-form-field"><label for="quote-email">Email</label><input id="quote-email" type="email" name="Email" autocomplete="email" required></div>
+      <div class="tx-form-field"><label for="quote-address">Property address <span>(optional)</span></label><input id="quote-address" type="text" name="Address" autocomplete="street-address"></div>
+      <div class="tx-form-field tx-form-field-wide"><label for="quote-details">Project details <span>(optional)</span></label><textarea id="quote-details" name="Project Details" rows="3"></textarea></div>
+    </div>
+    <button class="tx-form-submit" type="submit">Get My Free Quote <span aria-hidden="true">&nbsp;→</span></button>
+    <p class="tx-form-note">We’ll use your details to respond to your quote request. By requesting a quote, you agree to be contacted about your request. <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms.html">Terms</a>.</p>
+  </form>
+</div>
 </section>
 
 <div class="page-content">
