@@ -1,3 +1,6 @@
+# Internal project instructions are not public website content.
+/CLAUDE.md  /404.html  404!
+
 # www → non-www
 https://www.texorapainting.com/* https://texorapainting.com/:splat 301!
 http://www.texorapainting.com/*  https://texorapainting.com/:splat 301!
