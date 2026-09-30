@@ -291,6 +291,37 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
 .showcase-section .sec-label{color:#a74a08}
 </style>
+<!-- TEXORA LOCAL AREA MAPS HEAD START -->
+<style id="tx-local-area-map-styles">
+.tx-local-area-maps{padding:64px 24px;background:#f7f8fa;color:#24334a}
+.tx-local-area-maps .tx-map-inner{max-width:1120px;margin:0 auto}
+.tx-local-area-maps h2{font-family:'Montserrat',sans-serif;font-size:clamp(25px,3vw,34px);line-height:1.2;color:#1a3a6e;margin:0 0 16px}
+.tx-local-area-maps .tx-map-intro{max-width:780px;line-height:1.7;margin:0 0 24px}
+.tx-local-area-maps .tx-map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.tx-local-area-maps .tx-map-card{margin:0;min-width:0;background:#fff;border:1px solid #dce2e9;border-radius:10px;overflow:hidden}
+.tx-local-area-maps .tx-map-frame{position:relative;height:260px;background:#eef2f6}
+.tx-local-area-maps iframe{display:block;width:100%;height:260px;border:0}
+.tx-local-area-maps .tx-map-gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;background:#eef2f6}
+.tx-local-area-maps .tx-map-gate[hidden]{display:none}
+.tx-local-area-maps .tx-map-gate p{margin:0;font-size:14px;line-height:1.6;max-width:340px}
+.tx-local-area-maps .tx-map-load{font:inherit;font-weight:700;background:#1a3a6e;color:#fff;border:0;border-radius:6px;padding:13px 19px;cursor:pointer;min-height:44px;max-width:100%;line-height:1.4}
+.tx-local-area-maps .tx-map-load:hover{background:#12294d}
+.tx-local-area-maps button:focus-visible,.tx-local-area-maps a:focus-visible{outline:3px solid #f47b20;outline-offset:3px}
+.tx-local-area-maps figcaption{padding:16px 18px;font-size:15px;line-height:1.6}
+.tx-local-area-maps figcaption strong{display:block;color:#1a3a6e;font-size:17px}
+.tx-local-area-maps a{color:#1a3a6e;text-decoration:underline;text-underline-offset:3px}
+.tx-local-area-maps .tx-map-note{font-size:14px;line-height:1.6;margin:18px 0 28px}
+.tx-local-area-maps .tx-route-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.tx-local-area-maps .tx-route{padding:22px;background:#fff;border:1px solid #dce2e9;border-radius:10px}
+.tx-local-area-maps h3{font-family:'Montserrat',sans-serif;color:#1a3a6e;font-size:20px;line-height:1.4;margin:0 0 14px}
+.tx-local-area-maps dl{margin:0 0 18px;line-height:1.65}
+.tx-local-area-maps dt{font-weight:700;margin-top:10px}
+.tx-local-area-maps dd{margin:2px 0 0}
+.tx-local-area-maps .tx-map-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:680px){.tx-local-area-maps{padding:44px 18px}.tx-local-area-maps .tx-map-grid,.tx-local-area-maps .tx-route-grid{grid-template-columns:minmax(0,1fr)}.tx-local-area-maps .tx-route{padding:20px}}
+</style>
+<script src="/js/local-area-maps.js" defer></script>
+<!-- TEXORA LOCAL AREA MAPS HEAD END -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -486,6 +517,55 @@ function closeShowcaseLb(){var lb=document.getElementById('showcaseLightbox');if
   <a href="index.html#quote" class="btn-hero">Request Your Free Quote &rarr;</a>
 </section>
 
+<!-- TEXORA LOCAL AREA MAPS SECTION START -->
+<section class="tx-local-area-maps" id="local-area-maps" aria-labelledby="tx-local-area-title"><div class="tx-map-inner">
+<h2 id="tx-local-area-title">Port Moody and nearby service areas</h2>
+<p class="tx-map-intro">Public area maps for Port Moody, Coquitlam and Port Coquitlam.</p>
+<p class="tx-map-note" id="tx-map-privacy">Load a map to connect to Google Maps. Google may receive your IP address and use its own cookies.</p>
+<div class="tx-map-grid">
+<figure class="tx-map-card" data-tx-map-kind="geographic">
+  <div class="tx-map-frame">
+    <iframe id="tx-area-map-1" data-tx-map-src="https://maps.google.com/maps?q=49.2821981,-122.8293554&amp;z=13&amp;hl=en&amp;output=embed" title="Port Moody — Google Maps" loading="lazy" width="560" height="260" referrerpolicy="no-referrer" aria-hidden="true"></iframe>
+    <div class="tx-map-gate"><button type="button" class="tx-map-load" data-tx-map-load aria-describedby="tx-map-privacy" aria-controls="tx-area-map-1">Load Port Moody map</button></div>
+    <span class="tx-map-status" role="status" aria-live="polite"></span>
+  </div>
+  <figcaption><strong>Port Moody</strong><a href="https://maps.google.com/maps?q=49.2821981,-122.8293554&amp;z=13&amp;hl=en&amp;output=embed" target="_blank" rel="noopener noreferrer">Open this map on Google Maps</a></figcaption>
+</figure>
+<figure class="tx-map-card" data-tx-map-kind="geographic">
+  <div class="tx-map-frame">
+    <iframe id="tx-area-map-2" data-tx-map-src="https://maps.google.com/maps?q=49.2842958,-122.7932810&amp;z=13&amp;hl=en&amp;output=embed" title="Coquitlam — Google Maps" loading="lazy" width="560" height="260" referrerpolicy="no-referrer" aria-hidden="true"></iframe>
+    <div class="tx-map-gate"><button type="button" class="tx-map-load" data-tx-map-load aria-describedby="tx-map-privacy" aria-controls="tx-area-map-2">Load Coquitlam map</button></div>
+    <span class="tx-map-status" role="status" aria-live="polite"></span>
+  </div>
+  <figcaption><strong>Coquitlam</strong><a href="https://maps.google.com/maps?q=49.2842958,-122.7932810&amp;z=13&amp;hl=en&amp;output=embed" target="_blank" rel="noopener noreferrer">Open this map on Google Maps</a></figcaption>
+</figure>
+<figure class="tx-map-card" data-tx-map-kind="geographic">
+  <div class="tx-map-frame">
+    <iframe id="tx-area-map-3" data-tx-map-src="https://maps.google.com/maps?q=49.2621643,-122.7805420&amp;z=13&amp;hl=en&amp;output=embed" title="Port Coquitlam — Google Maps" loading="lazy" width="560" height="260" referrerpolicy="no-referrer" aria-hidden="true"></iframe>
+    <div class="tx-map-gate"><button type="button" class="tx-map-load" data-tx-map-load aria-describedby="tx-map-privacy" aria-controls="tx-area-map-3">Load Port Coquitlam map</button></div>
+    <span class="tx-map-status" role="status" aria-live="polite"></span>
+  </div>
+  <figcaption><strong>Port Coquitlam</strong><a href="https://maps.google.com/maps?q=49.2621643,-122.7805420&amp;z=13&amp;hl=en&amp;output=embed" target="_blank" rel="noopener noreferrer">Open this map on Google Maps</a></figcaption>
+</figure>
+<figure class="tx-map-card" data-tx-map-kind="listing">
+  <div class="tx-map-frame">
+    <iframe id="tx-area-map-4" data-tx-map-src="https://maps.google.com/maps?cid=9701219678679078001&amp;output=embed" title="Texora Painting &amp; Drywall listing — Google Maps" loading="lazy" width="560" height="260" referrerpolicy="no-referrer" aria-hidden="true"></iframe>
+    <div class="tx-map-gate"><button type="button" class="tx-map-load" data-tx-map-load aria-describedby="tx-map-privacy" aria-controls="tx-area-map-4">Load Texora Painting &amp; Drywall listing map</button></div>
+    <span class="tx-map-status" role="status" aria-live="polite"></span>
+  </div>
+  <figcaption><strong>Texora Painting &amp; Drywall listing</strong><a href="https://maps.google.com/maps?cid=9701219678679078001&amp;output=embed" target="_blank" rel="noopener noreferrer">Open this map on Google Maps</a></figcaption>
+</figure>
+</div>
+<p class="tx-map-note"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>. Roads checked 2026-09-30. Distances are straight-line between the mapped area reference points, not a drive time.</p>
+<h2>Road connections between service areas</h2>
+<div class="tx-route-grid">
+<article class="tx-route"><h3>Port Moody to Coquitlam</h3><dl><dt>Mapped connecting roads</dt><dd>Guildford Way, Pinetree Way, Ioco Road</dd>
+<dt>Straight-line distance</dt><dd>About 2.6 km (1.6 miles) between the mapped area reference points, not a drive time.</dd></dl><a href="painters-coquitlam.html">Coquitlam painters</a></article>
+<article class="tx-route"><h3>Port Moody to Port Coquitlam</h3><dl><dt>Mapped connecting roads</dt><dd>Barnet Highway, Lougheed Highway, Ioco Road</dd>
+<dt>Straight-line distance</dt><dd>About 4.2 km (2.6 miles) between the mapped area reference points, not a drive time.</dd></dl><a href="painters-port-coquitlam.html">Port Coquitlam painters</a></article>
+</div>
+</div></section>
+<!-- TEXORA LOCAL AREA MAPS SECTION END -->
 </main>
 <footer class="footer-bar">
   <a class="footer-call" href="tel:+16044176483">
