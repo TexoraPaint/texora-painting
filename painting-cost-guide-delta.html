@@ -110,7 +110,8 @@ function gtag(){dataLayer.push(arguments);}
   .faq-q::after{content:'+';font-size:22px;color:var(--orange);flex-shrink:0;transition:transform .2s;}
   .faq-q.open::after{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-  .faq-a.open{max-height:500px;}
+  .faq-a.open{max-height:none;}
+  .faq-a[hidden]{display:none;}
   .faq-a p{padding:0 24px 20px;color:var(--gray);font-size:14px;line-height:1.85;}
   .cta-bar{background:var(--blue);padding:70px 5%;text-align:center;}
   .cta-bar h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:12px;}
@@ -284,28 +285,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="faq-inner">
     <h2>Painting Cost — Frequently Asked Questions</h2>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">How much does it cost to paint a house interior in Delta?</button>
-    <div class="faq-a"><p>For an average 2,000–2,500 sq ft home in Delta, Tsawwassen, or Ladner, a full interior repaint typically runs $6,000–$14,000. Single rooms are usually $300–$600 each. Price depends on square footage, ceiling height, number of colours, and how much prep and patching is needed.</p></div>
+    <button class="faq-q open" onclick="toggleFaq(this)" type="button" aria-expanded="true" aria-controls="tx-faq-answer-1">How much does it cost to paint a house interior in Delta?</button>
+    <div class="faq-a open" id="tx-faq-answer-1"><p>For an average 2,000–2,500 sq ft home in Delta, Tsawwassen, or Ladner, a full interior repaint typically runs $6,000–$14,000. Single rooms are usually $300–$600 each. Price depends on square footage, ceiling height, number of colours, and how much prep and patching is needed.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">How much does exterior house painting cost in Tsawwassen or Ladner?</button>
-    <div class="faq-a"><p>Exterior repaints for a standard Delta-area home generally range from $5,000–$12,000. Coastal BC homes often need extra prep — power washing, scraping, and priming bare wood — which affects the final price. We quote every exterior in person after assessing the siding condition.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-2">How much does exterior house painting cost in Tsawwassen or Ladner?</button>
+    <div class="faq-a" id="tx-faq-answer-2" hidden><p>Exterior repaints for a standard Delta-area home generally range from $5,000–$12,000. Coastal BC homes often need extra prep — power washing, scraping, and priming bare wood — which affects the final price. We quote every exterior in person after assessing the siding condition.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">How much does cabinet painting cost?</button>
-    <div class="faq-a"><p>Kitchen cabinet painting typically costs $1,800–$4,500 for a full kitchen, depending on the number of doors and drawer fronts. That's a fraction of $15,000–$40,000+ for new custom cabinets, which is why cabinet refinishing is one of the best-value upgrades.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-3">How much does cabinet painting cost?</button>
+    <div class="faq-a" id="tx-faq-answer-3" hidden><p>Kitchen cabinet painting typically costs $1,800–$4,500 for a full kitchen, depending on the number of doors and drawer fronts. That's a fraction of $15,000–$40,000+ for new custom cabinets, which is why cabinet refinishing is one of the best-value upgrades.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">What affects the price of a paint job the most?</button>
-    <div class="faq-a"><p>The three biggest factors are (1) surface preparation — patching, sanding, priming; (2) square footage and ceiling height; and (3) the number of coats and colours. Cheap quotes almost always cut prep, which is why the paint fails early. We price proper prep into every quote.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-4">What affects the price of a paint job the most?</button>
+    <div class="faq-a" id="tx-faq-answer-4" hidden><p>The three biggest factors are (1) surface preparation — patching, sanding, priming; (2) square footage and ceiling height; and (3) the number of coats and colours. Cheap quotes almost always cut prep, which is why the paint fails early. We price proper prep into every quote.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Do you charge for quotes or estimates?</button>
-    <div class="faq-a"><p>No — all quotes are 100% free and no-obligation. We come to your home in Delta, Tsawwassen, Ladner, Port Coquitlam, or Port Moody, assess the work, and give you a detailed written price before anything begins.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-5">Do you charge for quotes or estimates?</button>
+    <div class="faq-a" id="tx-faq-answer-5" hidden><p>No — all quotes are 100% free and no-obligation. We come to your home in Delta, Tsawwassen, Ladner, Port Coquitlam, or Port Moody, assess the work, and give you a detailed written price before anything begins.</p></div>
   </div>
   <div class="faq-item">
-    <button class="faq-q" onclick="toggleFaq(this)">Is it cheaper to paint in winter?</button>
-    <div class="faq-a"><p>Interior painting is year-round and priced the same in any season. Exterior painting in the Lower Mainland is weather-dependent and mostly done spring through fall — booking exterior work early in the season often means better scheduling flexibility.</p></div>
+    <button class="faq-q" onclick="toggleFaq(this)" type="button" aria-expanded="false" aria-controls="tx-faq-answer-6">Is it cheaper to paint in winter?</button>
+    <div class="faq-a" id="tx-faq-answer-6" hidden><p>Interior painting is year-round and priced the same in any season. Exterior painting in the Lower Mainland is weather-dependent and mostly done spring through fall — booking exterior work early in the season often means better scheduling flexibility.</p></div>
   </div>
   </div>
 </section>
@@ -348,7 +349,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){if(window._navInit)return;window._navInit=true;var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!b||!l)return;b.addEventListener('click',function(){var o=l.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});document.addEventListener('click',function(e){if(!b.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
 (function(){if(window._phoneInit)return;window._phoneInit=true;document.addEventListener("click",function(e){var a=e.target.closest('a[href^="tel:"]');if(a){gtag("event","phone_call_click",{event_category:"engagement",event_label:"phone_tap"});return;}var m=e.target.closest('a[href^="mailto:"]');if(m){gtag("event","email_click",{event_category:"engagement",event_label:"email_tap"});}},{passive:true});})();
 (function(){var btn=document.getElementById('scrollTop'),footer=document.querySelector('footer'),t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){btn.classList.toggle('visible',window.scrollY>400);if(footer){var ft=footer.getBoundingClientRect().top;btn.style.bottom=ft<window.innerHeight?(window.innerHeight-ft+8)+'px':'28px';}t=false;});t=true;}},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
-function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');x.previousElementSibling.classList.remove('open');});if(!o){a.classList.add('open');b.classList.add('open');}}
+function toggleFaq(b){var a=b.nextElementSibling,o=b.getAttribute('aria-expanded')==='true';document.querySelectorAll('.faq-q').forEach(function(q){var x=q.nextElementSibling;q.classList.remove('open');q.setAttribute('aria-expanded','false');x.classList.remove('open');x.hidden=true;});if(!o){b.classList.add('open');b.setAttribute('aria-expanded','true');a.classList.add('open');a.hidden=false;}}
 </script>
 <!-- COOKIE CONSENT (branded, dismissible, remembers choice) -->
 <style>
