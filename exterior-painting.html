@@ -43,6 +43,7 @@ function gtag(){dataLayer.push(arguments);}
 <meta property="og:title" content="Exterior Painting Tsawwassen, Ladner & Delta BC | Texora Painting">
 <meta property="og:description" content="Expert exterior painting in Tsawwassen, Ladner & Delta built for BC's climate. We paint siding, trim, soffits, decks & more with weather-rated coatings. Free quote. 5-star rated.">
 <meta property="og:url" content="https://texorapainting.com/exterior-painting.html">
+<meta property="og:site_name" content="Texora Painting">
 <meta property="og:image" content="https://texorapainting.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Exterior Painting Tsawwassen, Ladner & Delta BC | Texora Painting">
@@ -353,7 +354,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 @media(prefers-reduced-motion:reduce){.tx-area-dropdown{scroll-behavior:auto}}
 </style>
 <!-- TX SERVICE AREA NAV STYLE END -->
-<script src="/js/service-quote-tracking.js" defer></script>
+<script src="/js/service-quote-tracking.js?v=2" defer></script>
 
 <style id="tx-checklist-contrast">
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
@@ -361,15 +362,17 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 </style>
 
 <!-- TEXORA PHOTO TEXT STYLES --><link rel="stylesheet" href="/css/photo-text-layout.css">
+<link rel="stylesheet" href="/css/bb-structure.css?v=74509f2e2c">
 </head>
-<body>
+<body class="bb" data-page-type="service">
+<a class="skip" href="#main">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLK55T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav id="mainNav">
   <a class="logo" href="index.html" aria-label="Texora Painting home"><picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Texora Painting" width="160" height="107"></picture></a>
-  <div class="nav-actions"><a class="nav-cta-m" href="index.html#quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
+  <div class="nav-actions"><a class="nav-cta-m" href="#service-quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
         <ul class="nav-links" id="navLinks">
     <li><a href="index.html#services">Services</a></li>
     <!-- TX SERVICE AREA MENU START -->
@@ -378,24 +381,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="blog/index.html">Blog</a></li>
     <li><a href="about.html">About Us</a></li>
-    <li><a href="index.html#quote" class="btn-nav">Get Free Quote</a></li><li class="nav-li-call"><a class="nav-phone-d" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a></li>
+    <li><a href="#service-quote" class="btn-nav">Get Free Quote</a></li><li class="nav-li-call"><a class="nav-phone-d" href="tel:+16044176483" aria-label="Call Texora Painting">📞</a></li>
   </ul>
 </nav>
+<div class="trust-bar" data-section="proof-strip" data-proof="nav-strip"><a href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener"><span class="bb-stars" aria-hidden="true">★★★★★</span><span class="bb-proof-label">Rated 5.0 on Google</span><span class="bb-proof-count" data-review-count="45">45 reviews</span></a></div>
 
-<main>
-<section class="svc-hero tx-conversion-hero">
+<main id="main">
+<section class="svc-hero tx-conversion-hero" data-section="hero">
 <div class="tx-hero-layout">
   <div class="svc-hero-content">
+    <div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="index.html#services">Services</a> &rsaquo; <span aria-current="page">Exterior Painting</span></div>
     <span class="svc-badge">Texora Painting — Tsawwassen & Ladner</span>
-    <h1>Exterior Painting<em>Built for BC's Climate.</em></h1>
+    <h1>Exterior Painting <em>Built for BC's Climate.</em></h1>
     <p>Weather-rated coatings, proper prep, and a finish that protects your home through Delta BC's wet winters and dry summers.</p>
+    <ul class="hero-chips"><li data-proof="hero-rating-chip"><span class="bb-star" aria-hidden="true">★</span>Rated 5.0 on Google</li><li>Free written quotes</li><li>Workmanship warranty in writing</li></ul>
     <a href="#service-quote" class="btn-hero">Get Your Free Quote &rarr;</a>
   </div>
 
   <form id="service-quote" class="tx-hero-form" action="https://formsubmit.co/info@texorapainting.com" method="POST" aria-labelledby="service-quote-heading">
     <h2 id="service-quote-heading">Get Your Free Quote</h2>
     <p class="tx-form-intro">Tell us about your project. Name, phone and email are required.</p>
-    <a class="tx-form-proof" href="reviews.html">Read customer reviews</a>
+    <div class="tx-form-proof-row" data-proof="form-strip"><span class="bb-stars" aria-hidden="true">★★★★★</span><span>5.0 on Google Reviews</span><a class="tx-form-proof" href="reviews.html">Read customer reviews</a></div>
     <input type="hidden" name="_subject" value="New Quote Request from Texora Website">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
@@ -416,47 +422,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
-<!-- TEXORA PHOTO TEXT BAND 1 -->
-<section class="tx-layout-band tx-layout-band-1" data-photo-text-layout="1"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>Professional Exterior Painting in Tsawwassen, Ladner & Delta</h2>
+<section class="bb-band bb-highlights bb-tight" data-section="why-us">
+<ul class="svc-highlights"><li>✔ Pressure washing & full surface prep</li><li>✔ Weather-rated exterior paints</li><li>✔ Siding, trim, soffits & fascia</li><li>✔ Decks, fences & outbuildings</li><li>✔ Caulking & minor repairs included</li><li>✔ 5-year workmanship guarantee</li></ul>
+</section>
+
+<section class="tx-layout-band tx-layout-band-1" data-photo-text-layout="1" data-section="explainer"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>Professional Exterior Painting in Tsawwassen, Ladner & Delta</h2>
   <p>Exterior painting in Tsawwassen, Ladner & Delta is not just cosmetic — it's one of the most important layers of protection your home has against BC's relentless rain, humidity, UV, and freeze-thaw cycles. The wrong paint, applied to a poorly prepped surface, fails within 2–3 years. A properly prepared and coated exterior, done right, should last 8–12 years. We make sure you're in that second category.</p>
 <p>Texora Painting serves homeowners across Tsawwassen, Ladner & Delta including Vancouver, Burnaby, Coquitlam, Delta, Tsawwassen, Ladner, North Vancouver, Surrey, Richmond, and New Westminster. Our crews are experienced with the full range of exterior materials found in BC homes — wood siding, Hardie board, stucco, vinyl siding, cedar, and more.</p>
 <p>We monitor weather windows carefully and never start an exterior job when rain is in the short-term forecast. Paint needs specific temperature and humidity conditions to bond and cure correctly — we've learned what works in the Lower Mainland through years of experience, not guesswork.</p></div><figure class="tx-layout-photo"><img src="/img/client-photos/exterior-window-protection-480.webp" srcset="/img/client-photos/exterior-window-protection-480.webp 480w, /img/client-photos/exterior-window-protection-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1220px) calc(42vw - 32px), 481px" width="960" height="640" alt="Texora painter masking a window before exterior painting" loading="lazy" decoding="async"><figcaption>Protecting windows before painting · Exterior paintwork supplied by Texora.</figcaption></figure></div></section>
-<!-- END TEXORA PHOTO TEXT BAND 1 -->
-<!-- TEXORA PHOTO TEXT BAND 2 -->
-<section class="tx-layout-band tx-layout-band-2" data-photo-text-layout="2"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>What exterior prep actually involves</h2>
+
+<section class="tx-layout-band tx-layout-band-2" data-photo-text-layout="2" data-section="detail"><div class="tx-layout-inner"><div class="tx-layout-copy"><h2>What exterior prep actually involves</h2>
 <p>As already noted above, exterior prep here means pressure washing, scraping and sanding loose paint, filling cracks and gaps with exterior-grade caulk, spot-priming bare wood, and masking windows and fixtures before any paint goes on. The order matters as much as the individual steps: washing has to happen, and the surface has to dry, before scraping makes sense, and caulking and spot-priming only make sense once you can see which joints have opened up and which patches are down to bare wood.</p>
 <p>If you're comparing quotes from more than one painter, "full prep" is worth asking about directly, since it can mean different things between contractors. It's reasonable to ask what actually gets scraped versus painted over, whether old caulk gets replaced rather than just added to, and whether bare wood gets primed before the topcoat goes on or painted straight over.</p></div><figure class="tx-layout-photo"><img src="/img/client-photos/exterior-window-trim-480.webp" srcset="/img/client-photos/exterior-window-trim-480.webp 480w, /img/client-photos/exterior-window-trim-960.webp 960w" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1220px) calc(42vw - 32px), 481px" width="960" height="640" alt="Texora painter brushing paint onto exterior window trim" loading="lazy" decoding="async"><figcaption>Brushing exterior window trim · Exterior paintwork supplied by Texora.</figcaption></figure></div></section>
-<!-- END TEXORA PHOTO TEXT BAND 2 -->
-<div class="svc-intro">
-  <!-- INTRO COPY REHOUSED IN THE PRECEDING PHOTO BAND -->
-  <ul class="svc-highlights"><li>✔ Pressure washing & full surface prep</li><li>✔ Weather-rated exterior paints</li><li>✔ Siding, trim, soffits & fascia</li><li>✔ Decks, fences & outbuildings</li><li>✔ Caulking & minor repairs included</li><li>✔ 5-year workmanship guarantee</li></ul>
-</div>
 
-<div class="svc-intro tx-add">
-<!-- bv-depth-2026-09-28 -->
-<!-- TEXORA COPY REHOUSED IN SECOND PHOTO BAND -->
-<h2>Deciding what's in scope before your quote</h2>
-<p>It helps to think through a few things before a quote visit: whether you're painting the whole exterior or one elevation, whether the trim needs a different colour than the siding, and whether there are sections you already know need attention, like fascia or soffits with visible damage. The site's FAQ above already covers the weather side of things: exterior work happens in the late-spring-through-early-fall window described there, and painting is avoided in rain or ahead of frost since it stops the coating from bonding properly.</p>
-<ul class="tx-list">
-<li>Which surfaces are in scope: siding, trim, doors and fascia</li>
-<li>Whether trim and siding will be different colours</li>
-<li>Any sections you've noticed peeling, staining, or soft wood</li>
-<li>Roughly how old the current paint job is</li>
-<li>Whether you want the full exterior done or just one side</li>
-</ul>
-<h2>Older homes and lead paint</h2>
-<p>If your home was built before 1990, it's worth knowing what you're dealing with before anyone starts scraping. Health Canada notes that homes built before 1960 probably contain lead-based paint, and homes built between 1960 and 1990 may still have lead in the exterior paint, with smaller amounts sometimes present on interior surfaces. Homes built after 1990 shouldn't have lead paint at all. The guidance is straightforward: don't sand it, run a heat gun over it, or strip it with a blowlamp, since any of those releases lead dust or fumes into the air. Isolating the work area with plastic sheeting over doorways and vents is standard practice when an older exterior is being opened up. We'll talk this through with you if your home's age puts it in that window.</p>
-<h2>The warranty in plain terms</h2>
-<p>Every exterior job comes with a written estimate stating the workmanship warranty period, one, two, or three years depending on the scope. In plain terms, that covers failures caused by how the work was prepped or applied: paint peeling, blistering, or losing adhesion, caulking that fails, or carpentry we installed coming loose. It doesn't cover normal wear, fading from sun exposure, moisture getting in through the building envelope, settlement, or damage from someone else's work. There's also a satisfaction guarantee built into every project: we walk the finished exterior with you before we call the job done, and anything in the agreed scope that isn't right gets fixed first. If anything comes up with the exterior after we've left, call us before anyone else touches it, so it stays covered.</p>
-<h2>Related work</h2>
-<p>Exterior painting often overlaps with a few other services. Soft or rotten siding and trim is <a href="wood-rot-fascia-repair.html">wood rot and fascia repair</a>, not just paint. Brick surfaces need a different approach, covered on our <a href="brick-staining.html">brick staining</a> page. And if you're doing the outside, it's common to bundle in <a href="trim-doors-ceilings.html">trim and door painting</a> or a <a href="full-home-repaint.html">full home repaint</a> that covers the interior at the same time.</p>
-<h2>From our Google reviews</h2>
-<figure class="tx-review"><blockquote>&ldquo;Excellent work, very professional. Entire exterior of our house look's like new. They kept to the schedule and completed in a timely fashion. Great price along with a great job. Well done and thanks for all your hard work. Shane&rdquo;</blockquote><figcaption>Shane Tuckey, Google review, July 2026</figcaption></figure>
-<figure class="tx-review"><blockquote>&ldquo;Texora painted the exterior of our house in Tsawwassen and did a superb job! We are very happy with their performance and professionalism. Both partners were extremely nice and easy to deal with. We highly recommend Texora for any painting job.&rdquo;</blockquote><figcaption>Marianela Pita, Google review, July 2026</figcaption></figure>
-<figure class="tx-review"><blockquote>&ldquo;Texora Painting &amp; Drywall did an excellent job for us! They were efficient, punctual, friendly, and incredibly detail-oriented throughout the project. They painted our garage door and made sure everything looked perfect before finishing. We were so happy with the results that we’re already planning to have them back to paint our fences. Highly recommend Texora Painting &amp; Drywall for anyone looking for professional painting services&rdquo;</blockquote><figcaption>Emmett Morton, Google review, August 2026</figcaption></figure>
-</div>
-
-<section class="client-photos" aria-labelledby="client-photos-exterior-painting">
+<section class="client-photos" aria-labelledby="client-photos-exterior-painting" data-section="photos">
   <h2 id="client-photos-exterior-painting">Exterior Preparation and Painting</h2>
   <p class="client-photos-intro">Window protection, careful trim work and exterior surfaces.</p>
   <div class="client-photo-grid">
@@ -505,7 +484,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<section class="process-section">
+<section class="bb-band bb-topics" data-section="guidance">
+<div class="bb-topic-grid">
+<article class="bb-topic">
+<h2>Deciding what's in scope before your quote</h2>
+<p>It helps to think through a few things before a quote visit: whether you're painting the whole exterior or one elevation, whether the trim needs a different colour than the siding, and whether there are sections you already know need attention, like fascia or soffits with visible damage. The site's FAQ above already covers the weather side of things: exterior work happens in the late-spring-through-early-fall window described there, and painting is avoided in rain or ahead of frost since it stops the coating from bonding properly.</p>
+<ul class="tx-list">
+<li>Which surfaces are in scope: siding, trim, doors and fascia</li>
+<li>Whether trim and siding will be different colours</li>
+<li>Any sections you've noticed peeling, staining, or soft wood</li>
+<li>Roughly how old the current paint job is</li>
+<li>Whether you want the full exterior done or just one side</li>
+</ul>
+</article>
+<article class="bb-topic">
+<h2>Older homes and lead paint</h2>
+<p>If your home was built before 1990, it's worth knowing what you're dealing with before anyone starts scraping. Health Canada notes that homes built before 1960 probably contain lead-based paint, and homes built between 1960 and 1990 may still have lead in the exterior paint, with smaller amounts sometimes present on interior surfaces. Homes built after 1990 shouldn't have lead paint at all. The guidance is straightforward: don't sand it, run a heat gun over it, or strip it with a blowlamp, since any of those releases lead dust or fumes into the air. Isolating the work area with plastic sheeting over doorways and vents is standard practice when an older exterior is being opened up. We'll talk this through with you if your home's age puts it in that window.</p>
+</article>
+<article class="bb-topic">
+<h2>The warranty in plain terms</h2>
+<p>Every exterior job comes with a written estimate stating the workmanship warranty period, one, two, or three years depending on the scope. In plain terms, that covers failures caused by how the work was prepped or applied: paint peeling, blistering, or losing adhesion, caulking that fails, or carpentry we installed coming loose. It doesn't cover normal wear, fading from sun exposure, moisture getting in through the building envelope, settlement, or damage from someone else's work. There's also a satisfaction guarantee built into every project: we walk the finished exterior with you before we call the job done, and anything in the agreed scope that isn't right gets fixed first. If anything comes up with the exterior after we've left, call us before anyone else touches it, so it stays covered.</p>
+</article>
+<article class="bb-topic">
+<h2>Related work</h2>
+<p>Exterior painting often overlaps with a few other services. Soft or rotten siding and trim is <a href="wood-rot-fascia-repair.html">wood rot and fascia repair</a>, not just paint. Brick surfaces need a different approach, covered on our <a href="brick-staining.html">brick staining</a> page. And if you're doing the outside, it's common to bundle in <a href="trim-doors-ceilings.html">trim and door painting</a> or a <a href="full-home-repaint.html">full home repaint</a> that covers the interior at the same time.</p>
+</article>
+</div>
+</section>
+
+<section class="process-section" data-section="how-it-works">
   <h2>Our Painting Process — Step by Step</h2>
   <div class="process-steps">
 <div class="process-step"><div class="step-num">1</div><div class="step-body"><h3>Free On-Site Quote</h3><p>We visit your home, assess the scope, and provide a detailed written quote — no surprise charges.</p></div></div>
@@ -518,7 +525,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="faq-section">
+<section class="showcase-section" data-section="our-work">
+  <div class="showcase-inner">
+    <p class="sec-label">Our Work</p>
+    <h2 class="sec-title">See the Results</h2>
+    <p class="sec-sub">Live photos from our Google Business page — updated automatically as we add more projects.</p>
+    <div id="gphotoStrip" class="gphoto-strip"></div>
+    <div class="ba-showcase-grid">
+    <div class="ba-showcase-card">
+      <div class="ba-showcase-imgs">
+        <img src="img/ba-exterior-before.webp" alt="Before — Exterior Repaint" loading="lazy" decoding="async" width="640" height="480">
+        <img src="img/ba-exterior-after.webp" alt="After — Exterior Repaint" loading="lazy" decoding="async" width="640" height="480">
+      </div>
+      <div class="ba-showcase-divider">BEFORE &nbsp;→&nbsp; AFTER</div>
+      <div class="ba-showcase-label">Exterior Repaint</div>
+    </div>
+    <div class="ba-showcase-card">
+      <div class="ba-showcase-imgs">
+        <img src="img/ba-deck-before.webp" alt="Before — Deck Refinishing" loading="lazy" decoding="async" width="800" height="1066">
+        <img src="img/ba-deck-after.webp" alt="After — Deck Refinishing" loading="lazy" decoding="async" width="800" height="1066">
+      </div>
+      <div class="ba-showcase-divider">BEFORE &nbsp;→&nbsp; AFTER</div>
+      <div class="ba-showcase-label">Deck Refinishing</div>
+    </div>
+    </div>
+    <a href="gallery.html" class="showcase-gallery-link">View full gallery &rarr;</a>
+  </div>
+</section>
+
+<div id="showcaseLightbox" onclick="if(event.target===this)closeShowcaseLb()">
+  <button id="showcaseLbClose" onclick="closeShowcaseLb()" aria-label="Close">&times;</button>
+  <img id="showcaseLbImg" src="" alt="Project photo">
+</div>
+
+<script>
+(function(){
+  // Load Google Business photos into strip
+  var strip = document.getElementById('gphotoStrip');
+  if(!strip) return;
+  fetch('/.netlify/functions/photos')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var photos = d.photos||[];
+      if(!photos.length){strip.classList.add('gphoto-strip-none');strip.textContent='';return;}
+      strip.innerHTML = photos.slice(0,8).map(function(p,i){
+        return '<div class="gphoto-item" onclick="openShowcaseLb(\'' + (p.url||p) + '\')"><img src="'+(p.url||p)+'" alt="Texora Painting project photo" loading="'+(i<3?'eager':'lazy')+'" decoding="async" onerror="this.parentNode.style.display=\'none\'"></div>';
+      }).join('');
+    })
+    .catch(function(){strip.textContent='';strip.style.display='none';});
+  // Lightbox
+  window.openShowcaseLb = function(src){
+    var lb=document.getElementById('showcaseLightbox');
+    var img=document.getElementById('showcaseLbImg');
+    if(lb&&img){img.src=src;lb.classList.add('open');};
+  };
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShowcaseLb();});
+})();
+function closeShowcaseLb(){var lb=document.getElementById('showcaseLightbox');if(lb)lb.classList.remove('open');}
+</script>
+
+<section class="bb-band bb-reviews" data-section="reviews" aria-labelledby="bb-reviews-title">
+<p class="bb-kicker">Customer reviews</p>
+<h2 class="bb-h2" id="bb-reviews-title">From our Google reviews</h2>
+<p class="bb-reviews-rating"><span class="bb-stars" aria-hidden="true">★★★★★</span><span>Rated 5.0 on Google</span></p>
+<div class="bb-review-grid" data-cards="3">
+<figure class="review-card"><blockquote>&ldquo;Excellent work, very professional. Entire exterior of our house look's like new. They kept to the schedule and completed in a timely fashion. Great price along with a great job. Well done and thanks for all your hard work. Shane&rdquo;</blockquote><figcaption>Shane Tuckey, Google review, July 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;Texora painted the exterior of our house in Tsawwassen and did a superb job! We are very happy with their performance and professionalism. Both partners were extremely nice and easy to deal with. We highly recommend Texora for any painting job.&rdquo;</blockquote><figcaption>Marianela Pita, Google review, July 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;Texora Painting &amp; Drywall did an excellent job for us! They were efficient, punctual, friendly, and incredibly detail-oriented throughout the project. They painted our garage door and made sure everything looked perfect before finishing. We were so happy with the results that we’re already planning to have them back to paint our fences. Highly recommend Texora Painting &amp; Drywall for anyone looking for professional painting services&rdquo;</blockquote><figcaption>Emmett Morton, Google review, August 2026</figcaption></figure>
+</div>
+<div class="bb-reviews-foot"><a class="review-cta" href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener">Read all reviews on Google</a></div>
+</section>
+
+<section class="faq-section" data-section="faq">
   <div class="faq-inner">
     <h2>Frequently Asked Questions</h2>
   <div class="faq-item">
@@ -548,71 +626,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="svc-cta">
+<section class="bb-band bb-areas" data-section="service-areas" aria-labelledby="bb-areas-title">
+<h2 class="bb-h2" id="bb-areas-title">Service areas across Delta and the Tri-Cities</h2>
+<p class="bb-lead">Texora works in Ladner and Tsawwassen, across Delta, and in Coquitlam, Port Coquitlam and Port Moody.</p>
+<ul class="bb-pills"><li><a class="area-card" href="exterior-painting-tsawwassen.html">Exterior Painting in Tsawwassen</a></li><li><a class="area-card" href="exterior-painting-ladner.html">Exterior Painting in Ladner</a></li><li><a class="area-card" href="exterior-painting-port-coquitlam.html">Exterior Painting in Port Coquitlam</a></li><li><a class="area-card" href="exterior-painting-port-moody.html">Exterior Painting in Port Moody</a></li><li><a class="area-card" href="service-areas.html">All service areas</a></li></ul>
+<div class="bb-listing" data-proof="cid-card">
+<div class="bb-listing-copy">
+<h3>Texora on Google</h3>
+<a class="bb-listing-rating" href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener"><span class="bb-stars" aria-hidden="true">★★★★★</span><span>5.0 on Google</span></a>
+<p>Read customer reviews or open the verified Texora Painting &amp; Drywall business profile.</p>
+<a class="bb-listing-link" href="https://www.google.com/maps?cid=9701219678679078001" target="_blank" rel="noopener">Open Texora's Google profile</a>
+</div>
+<iframe src="https://maps.google.com/maps?cid=9701219678679078001&amp;output=embed" title="Texora Painting &amp; Drywall on Google Maps" loading="lazy" width="560" height="300" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<p class="bb-note">The map is provided by Google Maps. Google may receive your IP address and use its own cookies.</p>
+</section>
+
+<section class="svc-cta" data-section="cta">
   <h2>Protect and Beautify Your Home's Exterior</h2>
   <p>Free quotes available across Tsawwassen, Ladner & Delta.</p>
-  <a href="index.html#quote" class="btn-hero">Request Your Free Quote &rarr;</a>
+  <div class="bb-cta-actions"><a href="#service-quote" class="btn-hero">Request Your Free Quote &rarr;</a><a class="bb-btn-call" href="tel:+16044176483">Call (604) 417-6483</a></div>
 </section>
-
-
-<!-- ── PHOTO SHOWCASE ── -->
-<section class="showcase-section">
-  <div class="showcase-inner">
-    <p class="sec-label">Our Work</p>
-    <h2 class="sec-title">See the Results</h2>
-    <p class="sec-sub">Live photos from our Google Business page — updated automatically as we add more projects.</p>
-    <div id="gphotoStrip" class="gphoto-strip"></div>
-    <div class="ba-showcase-grid">
-    <div class="ba-showcase-card">
-      <div class="ba-showcase-imgs">
-        <img src="img/ba-exterior-before.webp" alt="Before — Exterior Repaint" loading="lazy" decoding="async" width="640" height="480">
-        <img src="img/ba-exterior-after.webp" alt="After — Exterior Repaint" loading="lazy" decoding="async" width="640" height="480">
-      </div>
-      <div class="ba-showcase-divider">BEFORE &nbsp;→&nbsp; AFTER</div>
-      <div class="ba-showcase-label">Exterior Repaint</div>
-    </div>
-    <div class="ba-showcase-card">
-      <div class="ba-showcase-imgs">
-        <img src="img/ba-deck-before.webp" alt="Before — Deck Refinishing" loading="lazy" decoding="async" width="800" height="1066">
-        <img src="img/ba-deck-after.webp" alt="After — Deck Refinishing" loading="lazy" decoding="async" width="800" height="1066">
-      </div>
-      <div class="ba-showcase-divider">BEFORE &nbsp;→&nbsp; AFTER</div>
-      <div class="ba-showcase-label">Deck Refinishing</div>
-    </div>
-    </div>
-    <a href="gallery.html" class="showcase-gallery-link">View full gallery &rarr;</a>
-  </div>
-</section>
-<div id="showcaseLightbox" onclick="if(event.target===this)closeShowcaseLb()">
-  <button id="showcaseLbClose" onclick="closeShowcaseLb()" aria-label="Close">&times;</button>
-  <img id="showcaseLbImg" src="" alt="Project photo">
-</div>
-<script>
-(function(){
-  // Load Google Business photos into strip
-  var strip = document.getElementById('gphotoStrip');
-  if(!strip) return;
-  fetch('/.netlify/functions/photos')
-    .then(function(r){return r.json();})
-    .then(function(d){
-      var photos = d.photos||[];
-      if(!photos.length){strip.classList.add('gphoto-strip-none');strip.textContent='';return;}
-      strip.innerHTML = photos.slice(0,8).map(function(p,i){
-        return '<div class="gphoto-item" onclick="openShowcaseLb(\'' + (p.url||p) + '\')"><img src="'+(p.url||p)+'" alt="Texora Painting project photo" loading="'+(i<3?'eager':'lazy')+'" decoding="async" onerror="this.parentNode.style.display=\'none\'"></div>';
-      }).join('');
-    })
-    .catch(function(){strip.textContent='';strip.style.display='none';});
-  // Lightbox
-  window.openShowcaseLb = function(src){
-    var lb=document.getElementById('showcaseLightbox');
-    var img=document.getElementById('showcaseLbImg');
-    if(lb&&img){img.src=src;lb.classList.add('open');};
-  };
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShowcaseLb();});
-})();
-function closeShowcaseLb(){var lb=document.getElementById('showcaseLightbox');if(lb)lb.classList.remove('open');}
-</script>
-
 </main>
 <footer class="footer-bar">
   <a class="footer-call" href="tel:+16044176483">
