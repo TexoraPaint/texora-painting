@@ -210,3 +210,6 @@
   .bb .review-cta{width:100%;box-sizing:border-box;justify-content:center}
   .bb .bb-review-grid,.bb .bb-review-grid[data-cards="4"]{grid-template-columns:minmax(0,1fr)}
 }
+
+/* highlight bullets: the tick is drawn here so the list items hold only their words */
+.bb .svc-highlights li::before{content:"\2713";margin-right:8px;font-weight:800}
