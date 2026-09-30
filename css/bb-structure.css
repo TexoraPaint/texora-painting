@@ -20,7 +20,7 @@
 
 /* 2. hero: copy left, quote form right */
 .bb .city-hero,.bb .svc-hero{display:block;box-sizing:border-box;width:100%;min-height:0;padding:clamp(32px,4.4vw,58px) max(var(--bb-gutter),calc((100% - var(--bb-max))/2)) clamp(44px,5.4vw,74px)}
-.bb .tx-hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:clamp(28px,4vw,56px);align-items:center;width:100%;max-width:none;margin:0}
+.bb .tx-hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:clamp(28px,4vw,56px);align-items:start;width:100%;max-width:none;margin:0}
 .bb .city-hero-content,.bb .svc-hero-content{min-width:0;max-width:640px}
 .bb .city-hero h1,.bb .svc-hero h1{overflow-wrap:break-word}
 .bb .city-hero-content>p,.bb .svc-hero-content>p{margin-bottom:20px}
