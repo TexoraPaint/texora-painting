@@ -804,7 +804,8 @@ function gtag(){dataLayer.push(arguments);}
   .how{background:var(--off-white);padding:78px 5% 82px;text-align:center;overflow-x:clip;}
   .hw-head{margin-bottom:14px;}
   .hw-eyebrow{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:10px;opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease;}
-  .hw-title{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(26px,3.5vw,40px);color:var(--dark);opacity:0;transform:translateY(12px);transition:opacity .5s ease .08s,transform .5s ease .08s;}
+  .hw-title{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(26px,3.5vw,40px);color:var(--dark);opacity:0;transform:translateY(12px);transition:opacity .5s ease .08s,transform .5s ease .08s;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.04em .28em;line-height:1.1;}
+  .hw-title .hw-brand{height:clamp(52px,8.5vw,86px);width:auto;display:inline-block;vertical-align:middle;}
   .how.in .hw-eyebrow,.how.in .hw-title{opacity:1;transform:none;}
   .hw-wrap{position:relative;max-width:1000px;margin:38px auto 0;}
   .hw-svg{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none;}
@@ -864,7 +865,7 @@ function gtag(){dataLayer.push(arguments);}
 <section class="how" id="how">
   <div class="hw-head">
     <p class="hw-eyebrow">Simple Process</p>
-    <h2 class="hw-title">How It Works</h2>
+    <h2 class="hw-title">How <picture><source srcset="img/texora-text.webp" type="image/webp"><img class="hw-brand" loading="lazy" decoding="async" src="img/texora-text.png" alt="Texora Painting" width="497" height="260"></picture> Works</h2>
   </div>
   <div class="hw-wrap" id="hwWrap">
     <svg class="hw-svg" id="hwSvg" aria-hidden="true" preserveAspectRatio="none">
@@ -1070,7 +1071,7 @@ function gtag(){dataLayer.push(arguments);}
           <picture><source srcset="img/sherwin-williams.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/sherwin-williams.png" alt="Sherwin-Williams paints" class="trust-logo" width="240" height="120" style="height:54px;"></picture>
           <picture><source srcset="img/sherwin-pro.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/sherwin-pro.png" alt="Sherwin-Williams PRO+" class="trust-logo" width="140" height="120" style="height:54px;"></picture>
         </div>
-        <picture><source srcset="img/texora-wordmark.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/texora-wordmark.png" alt="Texora Painting" class="trust-logo" width="459" height="240" style="height:78px;"></picture>
+        <picture><source srcset="img/texora-text.webp" type="image/webp"><img loading="lazy" decoding="async" src="img/texora-text.png" alt="Texora Painting" class="trust-logo" width="497" height="260" style="height:78px;"></picture>
       </div>
     </div>
     <form class="form-grid" action="https://formsubmit.co/info@texorapainting.com" method="POST">
