@@ -996,8 +996,20 @@ html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck
 
 /* round 21 (37b7f28 verify): project heroes get the on-dark accent and a full-white back link (contrast >= 4.5 at 375) */
 html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero h1 em{color:var(--tx-accent-on-dark)}
-html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}</style>
-<script src="/js/tx-owner-nav.js?v=f18ef19b8d" defer></script>
+html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}
+
+/* round 23 (Dylan 2026-10-03: "make the nav bar on the home page consistent across all pages"): home shows the same
+   header as every other page from the first paint: Get Free Quote + phone at every width (the state the home script
+   used to add only after scrolling past the hero form), no floating Google pill. Home markup and script untouched. */
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-li-quote{display:block!important;animation:none!important}
+@media(min-width:901px){html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-li-call{display:flex!important;align-items:center;animation:none!important}}
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) .rvwbar{display:none!important}
+@media(max-width:900px){
+  html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-cta-m{display:inline-flex!important;animation:none!important}
+  html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-actions .nav-phone{display:flex!important;animation:none!important}
+  html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-links{margin-left:0}
+}</style>
+<script src="/js/tx-owner-nav.js?v=9da274f82a" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-62) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}}</style>
 <style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
    at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the
