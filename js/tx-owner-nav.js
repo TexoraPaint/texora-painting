@@ -82,3 +82,44 @@
     }, true);
   });
 })();
+
+/* round 11d (inner pages only; home + About keep the owner's behaviour):
+   1) Google only draws the place card in a frame >= ~400px wide and decides at load time. On narrow screens each
+      listing frame (cid=) gets a wrapper of its own, renders at 420px x 300px, is scaled down to the column and
+      reloads once at that size, so phones see name, address and rating instead of a bare pin. Desktop is untouched.
+   2) Map frames marked data-tx-src load once the visitor reaches them (coordinates stay in the markup). */
+(function () {
+  var b = document.body;
+  if (!b || !(b.classList.contains('bb') || b.classList.contains('tx-inner'))) return;
+  function fit() {
+    document.querySelectorAll('iframe[src*="cid="],iframe[data-tx-src*="cid="]').forEach(function (f) {
+      var host = f.parentElement; if (!host) return;
+      var wrapped = host.classList.contains('tx-cid-fit');
+      var col = wrapped ? host.parentElement : host;
+      var w = col.clientWidth;
+      if (w && w < 420) {
+        if (!wrapped) {
+          var cs = getComputedStyle(f), wrap = document.createElement('div');
+          wrap.className = 'tx-cid-fit'; wrap.style.marginTop = cs.marginTop; wrap.style.borderRadius = cs.borderRadius; wrap.style.overflow = 'hidden';
+          host.insertBefore(wrap, f); wrap.appendChild(f); host = wrap; f.style.marginTop = '0';
+        }
+        var k = w / 420, h = 300;
+        f.style.width = '420px'; f.style.maxWidth = 'none'; f.style.height = h + 'px';
+        f.style.transform = 'scale(' + k + ')'; f.style.transformOrigin = '0 0';
+        host.style.width = w + 'px'; host.style.height = Math.round(h * k) + 'px';
+        if (f.src && f.dataset.txFit !== '1') { f.dataset.txFit = '1'; f.src = f.src; }
+      } else if (wrapped) {
+        f.style.width = f.style.maxWidth = f.style.height = f.style.transform = f.style.transformOrigin = f.style.marginTop = '';
+        col.insertBefore(f, host); col.removeChild(host);
+      }
+    });
+  }
+  var load = function (f) { if (f.dataset.txSrc) { f.src = f.dataset.txSrc; f.removeAttribute('data-tx-src'); } };
+  var check = function () {
+    var edge = window.innerHeight + 300, left = 0;
+    document.querySelectorAll('iframe[data-tx-src]').forEach(function (f) { if (f.getBoundingClientRect().top < edge) load(f); else left++; });
+    if (!left) { window.removeEventListener('scroll', check); }
+  };
+  if (document.querySelector('iframe[data-tx-src]')) { window.addEventListener('scroll', check, { passive: true }); check(); }
+  fit(); window.addEventListener('resize', function () { fit(); check(); });
+})();
