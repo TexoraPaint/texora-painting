@@ -187,8 +187,14 @@ html:has(link[rel=canonical][href$="/projects.html"]) main>.tx-case-links{max-wi
 .footer-copy.tx-photo-credit a{color:inherit;text-decoration:underline}
 
 /* round 15 (row 283): former inline style attributes as classes */
-.tx-link-inherit{color:inherit;text-decoration:underline}
-.tx-link-blue{color:var(--blue)}
+/* !important keeps the precedence the inline style attribute had over every stylesheet rule */
+.tx-link-inherit{color:inherit!important;text-decoration:underline!important}
+.tx-link-blue{color:var(--blue)!important}
 
 /* round 16 (row 301 contrast): the headline accent on inner heroes uses the on-dark orange */
-body :is(.city-hero,.svc-hero) h1 em{color:var(--tx-accent-on-dark)}
+body:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/painting-cost-guide-delta.html"]))) :is(.city-hero,.svc-hero) h1 em{color:var(--tx-accent-on-dark)}
+
+/* round 19 (PSI CLS after the CSS inline): the top nav's own fallback face, sized to Montserrat's width
+   (measured: nav 833px on the fallback vs 832px on Montserrat at 1440), so the font swap no longer moves the nav */
+@font-face{font-family:'Tx Nav Fallback';src:local('Arial Bold'),local('Arial');font-weight:700;size-adjust:103%;ascent-override:83%;descent-override:22%;line-gap-override:0%}
+#navLinks>li>a{font-family:'Montserrat','Tx Nav Fallback',sans-serif}

@@ -232,7 +232,7 @@ function gtag(){dataLayer.push(arguments);}
     .ba-showcase-imgs img{height:120px;}
   }
 
-.tx-add a{color:var(--blue);text-decoration:underline;font-weight:600;}.tx-list{padding-left:22px;margin:0 0 20px;color:var(--gray);font-size:15px;line-height:1.9;}.tx-review{margin:0 0 16px;padding:16px 20px;border-left:4px solid var(--orange);background:#f6f8fb;border-radius:6px;}.tx-review blockquote{margin:0;color:var(--gray);font-size:15px;line-height:1.8;font-style:italic;}.tx-review figcaption{margin-top:8px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:13px;color:var(--blue);}
+.tx-add a{color:var(--blue);text-decoration:underline;font-weight:600;}.tx-list{padding-left:22px;margin:0 0 20px;color:var(--gray);font-size:15px;line-height:1.9;}.tx-review{margin:0 0 16px;padding:16px 20px;border-left:4px solid var(--orange);background:var(--tx-surface-soft);border-radius:6px;}.tx-review blockquote{margin:0;color:var(--gray);font-size:15px;line-height:1.8;font-style:italic;}.tx-review figcaption{margin-top:8px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:13px;color:var(--blue);}
 </style>
 
 <style>
@@ -925,12 +925,18 @@ html:has(link[rel=canonical][href$="/projects.html"]) main>.tx-case-links{max-wi
 .footer-copy.tx-photo-credit a{color:inherit;text-decoration:underline}
 
 /* round 15 (row 283): former inline style attributes as classes */
-.tx-link-inherit{color:inherit;text-decoration:underline}
-.tx-link-blue{color:var(--blue)}
+/* !important keeps the precedence the inline style attribute had over every stylesheet rule */
+.tx-link-inherit{color:inherit!important;text-decoration:underline!important}
+.tx-link-blue{color:var(--blue)!important}
 
 /* round 16 (row 301 contrast): the headline accent on inner heroes uses the on-dark orange */
-body :is(.city-hero,.svc-hero) h1 em{color:var(--tx-accent-on-dark)}</style>
-<script src="/js/tx-owner-nav.js?v=9e17c83852" defer></script>
+body:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/painting-cost-guide-delta.html"]))) :is(.city-hero,.svc-hero) h1 em{color:var(--tx-accent-on-dark)}
+
+/* round 19 (PSI CLS after the CSS inline): the top nav's own fallback face, sized to Montserrat's width
+   (measured: nav 833px on the fallback vs 832px on Montserrat at 1440), so the font swap no longer moves the nav */
+@font-face{font-family:'Tx Nav Fallback';src:local('Arial Bold'),local('Arial');font-weight:700;size-adjust:103%;ascent-override:83%;descent-override:22%;line-gap-override:0%}
+#navLinks>li>a{font-family:'Montserrat','Tx Nav Fallback',sans-serif}</style>
+<script src="/js/tx-owner-nav.js?v=2f40421a22" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(160deg,var(--tx-hero-navy-95) 0%,var(--tx-hero-navy-88) 100%),url('img/areas/richmond-downtown-aerial-480.webp')!important}}</style>
 </head>
 <body class="bb" data-page-type="city">
