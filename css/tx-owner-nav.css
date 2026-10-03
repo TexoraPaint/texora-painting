@@ -180,3 +180,8 @@ html:has(link[rel=canonical]:is([href$="/gallery.html"],[href$="/projects.html"]
 html:has(link[rel=canonical][href$="/blog/"]) main .blog-cta p{max-width:none}
 html:has(link[rel=canonical][href$="/projects.html"]) main>.tx-case-links{max-width:none;padding:0;margin:24px max(5%,calc((100% - 1120px)/2))}
 .review-box{background-color:var(--blue)}
+
+/* round 13: links inside the why-choose cards read as body links; town-photo credit under the footer copyright line */
+.why-item p a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.footer-copy.tx-photo-credit{margin-top:6px;font-size:12px;opacity:.85}
+.footer-copy.tx-photo-credit a{color:inherit;text-decoration:underline}
