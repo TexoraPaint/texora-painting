@@ -984,13 +984,16 @@ html:has(link[rel=canonical][href$="/projects.html"]) main>.tx-case-links{max-wi
 .tx-link-blue{color:var(--blue)!important}
 
 /* round 16 (row 301 contrast): the headline accent on inner heroes uses the on-dark orange */
-body:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/painting-cost-guide-delta.html"]))) :is(.city-hero,.svc-hero) h1 em{color:var(--tx-accent-on-dark)}
+html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/painting-cost-guide-delta.html"]))) body :is(.city-hero,.svc-hero) h1 em{color:var(--tx-accent-on-dark)}
 
 /* round 19 (PSI CLS after the CSS inline): the top nav's own fallback face, sized to Montserrat's width
    (measured: nav 833px on the fallback vs 832px on Montserrat at 1440), so the font swap no longer moves the nav */
 @font-face{font-family:'Tx Nav Fallback';src:local('Arial Bold'),local('Arial');font-weight:700;size-adjust:103%;ascent-override:83%;descent-override:22%;line-gap-override:0%}
-#navLinks>li>a{font-family:'Montserrat','Tx Nav Fallback',sans-serif}</style>
-<script src="/js/tx-owner-nav.js?v=2f40421a22" defer></script>
+#navLinks>li>a{font-family:'Montserrat','Tx Nav Fallback',sans-serif}
+
+/* round 20: text links in dark hero intros read on the navy (white, underlined); form cards and buttons keep their own colours */
+html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/project-deck-refinishing.html"],[href$="/painting-cost-guide-delta.html"]))) :is(.project-hero,.svc-hero,.city-hero) :is(p,li) a:not([class*=btn]):not(form a):not([class*=form] a){color:var(--tx-on-dark);text-decoration:underline;text-underline-offset:3px}</style>
+<script src="/js/tx-owner-nav.js?v=5abedbe1b8" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-62) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}}</style>
 </head>
 <body class="bb" data-page-type="service">
