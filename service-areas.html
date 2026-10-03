@@ -1128,8 +1128,9 @@ html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body
   .tx-pill .rvwbar-stars{color:#fbbc04;font-size:14px;letter-spacing:1px;line-height:1;}
   .tx-pill .rvwbar-count{color:rgba(255,255,255,.6);font-size:12.5px;font-weight:600;}
   @media(max-width:600px){.tx-pill.rvwbar{top:15px;}.tx-pill .rvwbar-inner{padding:5px 11px;gap:6px;}.tx-pill .rvwbar-srcs{gap:3px;}.tx-pill .rvwbar-inner svg{width:15px;height:15px;}.tx-pill .rvwbar-score{font-size:12.5px;}.tx-pill .rvwbar-stars{font-size:11px;}.tx-pill .rvwbar-count{font-size:10.5px;}}
-.trust-bar[data-proof="nav-strip"] > *{visibility:hidden!important}
-.trust-bar[data-proof="nav-strip"]{pointer-events:none}
+/* no band under the nav: the hero photo runs up behind the nav, as on home (first text 20px under the nav) */
+.trust-bar[data-proof="nav-strip"]{display:none!important}
+body.bb:has(.trust-bar[data-proof="nav-strip"]) :is(.city-hero,.svc-hero,.tx-area-hero){padding-top:calc(var(--bb-nav-h) + 20px)!important}
 nav.tx-cta-gate:not(.show-cta) li:has(>.btn-nav),nav.tx-cta-gate:not(.show-cta) .nav-li-call{display:none!important}
 nav.tx-cta-gate.show-cta li:has(>.btn-nav),nav.tx-cta-gate.show-cta .nav-li-call{animation:txNavCtaIn .4s ease both}
 @media(max-width:900px){nav.tx-cta-gate:not(.show-cta) .nav-cta-m,nav.tx-cta-gate:not(.show-cta) .nav-actions .nav-phone{display:none!important}
@@ -1139,7 +1140,7 @@ nav.tx-cta-gate.show-cta li:has(>.btn-nav),nav.tx-cta-gate.show-cta .nav-li-call
 a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
 
 @media(min-width:901px){.tx-pill.rvwbar{left:calc(50% - 205px)}}</style>
-<script src="/js/tx-owner-nav.js?v=8b6b395701" defer></script>
+<script src="/js/tx-owner-nav.js?v=8e3eb103c3" defer></script>
 <style id="tx-place-img">.place-card{overflow:hidden}.place-card .place-img{display:block;width:calc(100% + 44px);max-width:none;height:auto;aspect-ratio:3/2;object-fit:cover;margin:-26px -22px 16px}@media(max-width:600px){.place-card .place-img{width:calc(100% + 46px);margin:-23px -23px 14px}}.place-credits{max-width:1180px;margin:18px auto 0;padding-top:10px;border-top:1px solid var(--tx-line-cool);font-size:12px;line-height:1.6;color:var(--tx-copy-muted);text-align:left}.place-credits a{color:var(--tx-copy-muted);text-decoration:underline}</style>
 <style id="tx-hero-mobile">@media(max-width:767px){.tx-area .tx-area-hero{background-image:linear-gradient(90deg,var(--bb-scrim-top),var(--bb-scrim-bottom)),url('img/client-photos/exterior-window-trim-480.webp')}}@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-62) 100%),url('img/client-photos/interior-wall-roller-480.webp')!important}}.towns-h2{margin:0 0 18px}
 @media(min-width:901px){.tx-area-work{grid-template-columns:1.3fr 1fr}}
