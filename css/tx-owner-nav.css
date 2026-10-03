@@ -1,7 +1,7 @@
 /* Texora owner preview: Services + Service Areas menus inside the owner's own header. Everything else is his CSS. */
 /* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
    Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
-:root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f}
+:root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f;--tx-muted:#4b5563}
 /* round 9 (row 283): the leftover literals of the round-7/8 page-local blocks, declared once for every page that loads this
    sheet (all 88; bb-structure.css and the blog/project/gallery templates reference them). Values = the literals they replace. */
 :root{--tx-ink:#24334a;--tx-callout-ink:#243447;--tx-link:#1e4fa0;--tx-tint-deep:#e9eef6;--tx-kicker:#a74a08;--tx-copy:#374151;--tx-rule:#e5e7eb;--tx-on-orange:#081c3b;--tx-orange-hover:#e06810}
@@ -19,7 +19,7 @@ nav .txn-cols strong{display:block;margin:0 0 8px;padding:0 0 8px;border-bottom:
 nav .nav-links .txn-drop a{display:block;padding:7px 0;border:0;opacity:1;color:var(--tx-ink);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:600;font-size:14.5px;line-height:1.35;letter-spacing:0;text-transform:none;text-decoration:none}
 nav .nav-links .txn-drop a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 nav .nav-links .txn-drop .txn-all{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:0;color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px}
-nav .txn-drop-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--tx-line);color:#4b5563;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px}
+nav .txn-drop-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--tx-line);color:var(--tx-muted);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px}
 nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:900px){
   nav .nav-links li.txn-menu{flex-wrap:wrap;align-items:stretch}
@@ -48,7 +48,7 @@ nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue);font-
    bottom right (there is no call bar on these pages). Same show/hide as desktop. Bloomview inner pages only (.bb);
    home and About are owner-gated. */
 @media(max-width:900px){
-  .bb .tx-qtab,.tx-inner .tx-qtab{display:inline-flex;align-items:center;position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:998;box-sizing:border-box;min-height:44px;padding:12px 20px;border-radius:var(--r-pill);background:var(--orange);color:#081c3b;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .bb .tx-qtab,.tx-inner .tx-qtab{display:inline-flex;align-items:center;position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:998;box-sizing:border-box;min-height:44px;padding:12px 20px;border-radius:var(--r-pill);background:var(--orange);color:var(--tx-on-orange);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
   .bb .tx-qtab.is-on,.tx-inner .tx-qtab.is-on{opacity:1;pointer-events:auto}
 }
 @media(prefers-reduced-motion:reduce){.tx-qtab{transition:none}}
@@ -154,3 +154,7 @@ body .ba-section{background:var(--white)}
 
 /* round 10 contrast: navy text on the orange nav CTA and mobile quote bar on inner pages (white on #f47b20 = 2.7:1); home + About keep the owner's styles */
 body.bb #mainNav .btn-nav,body.bb #mainNav .nav-cta-m,body.bb nav .btn-nav,body.bb nav .nav-cta-m,body.bb a.mob-btn-quote{color:var(--tx-on-orange)!important}
+
+/* round 11: the quote tab hides while the cookie notice (role=dialog) is showing; the 'Last updated' line's style lives here, not inline */
+body:has(#txaCookie.cc-show) .tx-qtab{display:none!important}
+.tx-updated{font-size:13px;line-height:1.5;margin:-4px 0 14px;opacity:.85}
