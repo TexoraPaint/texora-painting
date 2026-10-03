@@ -100,7 +100,7 @@ function gtag(){dataLayer.push(arguments);}
   .nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
 
   /* HERO */
-  .page-hero{min-height:220px;display:flex;align-items:flex-end;padding:140px 5% 48px;background:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.52) 100%),url('img/client-photos/exterior-window-trim-960.webp') center/cover;}
+  .page-hero{min-height:220px;display:flex;align-items:flex-end;padding:140px 5% 48px;background:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-52) 100%),url('img/client-photos/exterior-window-trim-960.webp') center/cover;}
   .page-hero h1{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(28px,4vw,48px);color:#fff;line-height:1.1;}
   .page-hero p{color:rgba(255,255,255,.75);font-size:14px;margin-top:8px;}
 
@@ -245,7 +245,7 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area-menu>button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:40px;background:transparent;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:18px}
 .tx-area-menu>button:focus-visible,.tx-area-menu a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .tx-area-menu>button[aria-expanded="true"]{background:rgba(255,255,255,.14)}
-.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:0 14px 34px rgba(4,12,45,.24);z-index:1100}
+.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:var(--tx-shadow-card);z-index:1100}
 .tx-area-menu.is-open .tx-area-dropdown{display:block}
 .tx-area-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .tx-area-directory strong{display:block;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:12px;line-height:1.5;color:var(--blue);margin-bottom:9px}
@@ -260,12 +260,12 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <!-- TX SERVICE AREA NAV STYLE END -->
 
 <style id="tx-checklist-contrast">
-#mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
-.showcase-section .sec-label{color:#a74a08}
+#mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:var(--tx-on-orange)!important}
+.showcase-section .sec-label{color:var(--tx-kicker)}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=01f3ee064b">
-<script src="/js/tx-owner-nav.js?v=01f3ee064b" defer></script>
-<style id="tx-hero-mobile">@media(max-width:767px){.page-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.52) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}.city-hero,.svc-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.62) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}}</style>
+<link rel="stylesheet" href="/css/tx-owner-nav.css?v=da2c0a05dd">
+<script src="/js/tx-owner-nav.js?v=da2c0a05dd" defer></script>
+<style id="tx-hero-mobile">@media(max-width:767px){.page-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-52) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}.city-hero,.svc-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-62) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -304,7 +304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div></section>
 <section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>The Texora workmanship warranty</h2>
-  <p>At <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a>, we stand behind the quality of our work. Depending on the service and project scope, qualifying projects are backed by a <strong>1, 2, or 3-Year Workmanship Warranty</strong>, with the specific warranty period and coverage clearly outlined in your estimate before work begins.</p>
+  <p>At <a class="tx-link-inherit" href="/">Texora Painting</a>, we stand behind the quality of our work. Depending on the service and project scope, qualifying projects are backed by a <strong>1, 2, or 3-Year Workmanship Warranty</strong>, with the specific warranty period and coverage clearly outlined in your estimate before work begins.</p>
   <p>Every project is different, but our warranty is built around one simple principle: if something fails because of our workmanship, we take responsibility for it.</p>
 </div></section>
 <section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">

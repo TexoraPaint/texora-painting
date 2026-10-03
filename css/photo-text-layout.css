@@ -1,4 +1,3 @@
-:root{--ptl-rule:#e5e9f2}
 /* Scoped to the two authored photo/text bands; no shared site selectors.
    Tokens (--r-card, --bb-muted) are declared on .bb in bb-structure.css, which every page loading this sheet also loads. */
 .tx-layout-band{box-sizing:border-box;width:100%;padding:clamp(38px,5vw,72px) 20px;background:var(--white);color:var(--dark)}

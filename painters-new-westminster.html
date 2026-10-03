@@ -86,7 +86,7 @@ function gtag(){dataLayer.push(arguments);}
   .nav-toggle.open span:nth-child(2){opacity:0;}
   .nav-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
   .nav-links.open{display:flex;}
-  .city-hero{min-height:360px;display:flex;align-items:center;padding:140px 5% 80px;background:radial-gradient(ellipse 95% 130% at 0% 50%,rgba(10,32,90,.95) 0%,rgba(22,65,150,.84) 55%,rgba(15,65,130,.45) 100%),url('img/areas/new-westminster-albert-crescent-park-hero-960.webp') center/cover;}
+  .city-hero{min-height:360px;display:flex;align-items:center;padding:140px 5% 80px;background:radial-gradient(ellipse 95% 130% at 0% 50%,var(--tx-hero-navy-95) 0%,var(--tx-hero-blue-84) 55%,var(--tx-hero-sea-45) 100%),url('img/areas/new-westminster-albert-crescent-park-hero-960.webp') center/cover;}
   .city-hero-content{max-width:660px;}
   .city-badge{display:inline-block;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:18px;}
   .city-hero h1{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(30px,5vw,52px);color:#fff;line-height:1.08;margin-bottom:16px;}
@@ -278,7 +278,7 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area-menu>button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:40px;background:transparent;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:18px}
 .tx-area-menu>button:focus-visible,.tx-area-menu a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .tx-area-menu>button[aria-expanded="true"]{background:rgba(255,255,255,.14)}
-.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:0 14px 34px rgba(4,12,45,.24);z-index:1100}
+.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:var(--tx-shadow-card);z-index:1100}
 .tx-area-menu.is-open .tx-area-dropdown{display:block}
 .tx-area-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .tx-area-directory strong{display:block;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:12px;line-height:1.5;color:var(--blue);margin-bottom:9px}
@@ -293,12 +293,11 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <!-- TX SERVICE AREA NAV STYLE END -->
 
 <style id="tx-checklist-contrast">
-#mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
-.showcase-section .sec-label{color:#a74a08}
+#mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:var(--tx-on-orange)!important}
+.showcase-section .sec-label{color:var(--tx-kicker)}
 </style>
 
-<!-- TEXORA PHOTO TEXT STYLES --><style data-tx-inline="photo-text-layout">:root{--ptl-rule:#e5e9f2}
-/* Scoped to the two authored photo/text bands; no shared site selectors.
+<!-- TEXORA PHOTO TEXT STYLES --><style data-tx-inline="photo-text-layout">/* Scoped to the two authored photo/text bands; no shared site selectors.
    Tokens (--r-card, --bb-muted) are declared on .bb in bb-structure.css, which every page loading this sheet also loads. */
 .tx-layout-band{box-sizing:border-box;width:100%;padding:clamp(38px,5vw,72px) 20px;background:var(--white);color:var(--dark)}
 .tx-layout-band-2{background:var(--off-white);border-top:1px solid var(--ptl-rule)}
@@ -339,7 +338,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 
 /* round 12: former inline style as a class */
 .tx-layout-copy.tx-layout-col.tx-layout-col--full{grid-column:1/-1;max-width:860px}</style>
-<style data-tx-inline="bb-structure">:root{--bb-shadow-skip:rgba(0,0,0,.25);--bb-trust-bg:#10224f;--bb-on-dark-14:rgba(255,255,255,.14);--bb-on-dark-80:rgba(255,255,255,.8);--bb-on-dark-50:rgba(255,255,255,.5);--bb-on-dark-28:rgba(255,255,255,.28);--bb-on-dark-11:rgba(255,255,255,.11);--bb-form-line:#e0e7ef;--bb-form-intro:#46546a;--bb-form-label:#253a57;--bb-field-line:#b8c5d5;--bb-field-ink:#172d4c;--bb-focus-ring:rgba(244,123,32,.3);--bb-form-note:#526174;--bb-band-rule:rgba(26,58,110,.07);--bb-card-copy:#566070;--bb-kicker-on-dark:#ffc37a;--bb-cta-hover:#ff9440;--bb-area-line:#cfd8e5;--bb-area-hover:#0f2650;--bb-on-dark-90:rgba(255,255,255,.9);--bb-on-dark-12:rgba(255,255,255,.12);--bb-on-dark-22:rgba(255,255,255,.22);--bb-on-dark-82:rgba(255,255,255,.82);--bb-shadow-soft:rgba(0,0,0,.06);--bb-scrim-top:rgba(8,24,55,.91);--bb-scrim-bottom:rgba(8,24,55,.79)}
+<style data-tx-inline="bb-structure">:root{--bb-shadow-skip:rgba(0,0,0,.25);--bb-trust-bg:#10224f;--bb-on-dark-14:rgba(255,255,255,.14);--bb-on-dark-80:rgba(255,255,255,.8);--bb-on-dark-50:rgba(255,255,255,.5);--bb-on-dark-28:rgba(255,255,255,.28);--bb-on-dark-11:rgba(255,255,255,.11);--bb-band-rule:rgba(26,58,110,.07);--bb-card-copy:#566070;--bb-kicker-on-dark:#ffc37a;--bb-cta-hover:#ff9440;--bb-area-line:#cfd8e5;--bb-area-hover:#0f2650;--bb-on-dark-90:rgba(255,255,255,.9);--bb-on-dark-12:rgba(255,255,255,.12);--bb-on-dark-82:rgba(255,255,255,.82);--bb-shadow-soft:rgba(0,0,0,.06);}
 /* Texora: Bluebird page-structure layer for the service and service-area pages.
    Layout plus the added social-proof and map components only. Brand tokens
    (--blue, --orange, --orange-dark, --off-white, --dark, --gray) come from each page's own :root. */
@@ -351,9 +350,9 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
   /* type scale */
   --fs-h2:clamp(23px,2.5vw,31px);--fs-card-h:clamp(18px,1.55vw,21px);
   /* radius scale: container card, embedded tile, text panel, small chrome, pill */
-  --r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;
+  
   /* shadow ladder: tile card, raised form card, accent button */
-  --shadow-card:0 8px 26px rgba(4,12,45,.22);--shadow-raised:0 16px 48px rgba(8,25,54,.22);--shadow-cta:0 6px 20px rgba(4,12,45,.3);
+  --shadow-card:0 8px 26px rgba(4,12,45,.22);
   /* palette additions (brand --blue/--orange/--orange-dark/--off-white/--white come from each page's :root) */
   --bb-muted:#4b5563;--bb-tile-line:#dce2e9;--bb-embed-bg:#e9eef4;--bb-on-dark:rgba(255,255,255,.84);--bb-on-dark-soft:rgba(255,255,255,.74);--bb-star-light:#e08a00;--bb-on-orange:var(--tx-on-orange)}
 @media(max-width:900px){.bb{--bb-nav-h:calc(78px + env(safe-area-inset-top,0px))}}
@@ -740,7 +739,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <style data-tx-inline="tx-owner-nav">/* Texora owner preview: Services + Service Areas menus inside the owner's own header. Everything else is his CSS. */
 /* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
    Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
-:root{--tx-shadow-drop:rgba(4,12,45,.28);--tx-on-dark-12:rgba(255,255,255,.12);--tx-on-dark-60:rgba(255,255,255,.6);--tx-foot-map-bg:#16264d;--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f;--tx-muted:#4b5563;--tx-on-dark:#fff;--tx-tint:#f4f7fb;--tx-shadow-lift:0 14px 40px rgba(4,12,45,.25)}
+:root{--bb-form-line:#e0e7ef;--bb-form-intro:#46546a;--bb-form-label:#253a57;--bb-field-line:#b8c5d5;--bb-field-ink:#172d4c;--bb-focus-ring:rgba(244,123,32,.3);--bb-form-note:#526174;--bb-on-dark-22:rgba(255,255,255,.22);--bb-scrim-top:rgba(8,24,55,.91);--bb-scrim-bottom:rgba(8,24,55,.79);--shadow-raised:0 16px 48px rgba(8,25,54,.22);--ptl-rule:#e5e9f2;--tx-hero-navy-94:rgba(10,32,90,.94);--tx-hero-navy-95:rgba(10,32,90,.95);--tx-hero-navy-92:rgba(10,32,90,.92);--tx-hero-navy-86:rgba(10,32,90,.86);--tx-hero-blue-84:rgba(22,65,150,.84);--tx-hero-blue-82:rgba(22,65,150,.82);--tx-hero-blue-80:rgba(22,58,120,.80);--tx-hero-mid-88:rgba(18,52,120,.88);--tx-hero-mid-86:rgba(18,52,120,.86);--tx-hero-sea-62:rgba(15,65,130,.62);--tx-hero-sea-55:rgba(15,65,130,.55);--tx-hero-sea-52:rgba(15,65,130,.52);--tx-hero-sea-50:rgba(15,65,130,.5);--tx-hero-sea-45:rgba(15,65,130,.45);--tx-surface-soft:#f6f8fb;--tx-surface-chip:#edf2f8;--tx-surface-ice:#eef3fa;--tx-line-soft:#dce5f0;--tx-line-cool:#dce3ee;--tx-line-pale:#e5eaf0;--tx-line-steel:#bdc9dc;--tx-line-mist:#dfe5ef;--tx-copy-muted:#526176;--tx-copy-soft:#4a586a;--tx-copy-strong:#364456;--tx-focus-on-dark:#f6a55f;--tx-amber-text:#b56a00;--tx-orange-text:#c25a0a;--tx-shadow-card:0 14px 34px rgba(4,12,45,.24);--tx-shadow-soft-xs:0 5px 20px rgba(26,58,110,.05);--tx-shadow-soft-sm:0 7px 24px rgba(26,58,110,.1);--tx-shadow-soft-md:0 12px 32px rgba(26,58,110,.08);--tx-shadow-drop:rgba(4,12,45,.28);--tx-on-dark-12:rgba(255,255,255,.12);--tx-on-dark-60:rgba(255,255,255,.6);--tx-foot-map-bg:#16264d;--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f;--tx-muted:#4b5563;--tx-on-dark:#fff;--tx-tint:#f4f7fb;--tx-shadow-lift:0 14px 40px rgba(4,12,45,.25)}
 /* round 9 (row 283): the leftover literals of the round-7/8 page-local blocks, declared once for every page that loads this
    sheet (all 88; bb-structure.css and the blog/project/gallery templates reference them). Values = the literals they replace. */
 :root{--tx-ink:#24334a;--tx-callout-ink:#243447;--tx-link:#1e4fa0;--tx-tint-deep:#e9eef6;--tx-kicker:#a74a08;--tx-copy:#374151;--tx-rule:#e5e7eb;--tx-on-orange:#081c3b;--tx-orange-hover:#e06810}
@@ -923,9 +922,13 @@ html:has(link[rel=canonical][href$="/projects.html"]) main>.tx-case-links{max-wi
 /* round 13: links inside the why-choose cards read as body links; town-photo credit under the footer copyright line */
 .why-item p a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:600}
 .footer-copy.tx-photo-credit{margin-top:6px;font-size:12px;opacity:.85}
-.footer-copy.tx-photo-credit a{color:inherit;text-decoration:underline}</style>
-<script src="/js/tx-owner-nav.js?v=01f3ee064b" defer></script>
-<style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(180deg,rgba(10,32,90,.86) 0%,rgba(10,32,90,.95) 100%),url('img/areas/new-westminster-albert-crescent-park-480.webp')!important}}</style>
+.footer-copy.tx-photo-credit a{color:inherit;text-decoration:underline}
+
+/* round 15 (row 283): former inline style attributes as classes */
+.tx-link-inherit{color:inherit;text-decoration:underline}
+.tx-link-blue{color:var(--blue)}</style>
+<script src="/js/tx-owner-nav.js?v=da2c0a05dd" defer></script>
+<style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(180deg,var(--tx-hero-navy-86) 0%,var(--tx-hero-navy-95) 100%),url('img/areas/new-westminster-albert-crescent-park-480.webp')!important}}</style>
 </head>
 <body class="bb" data-page-type="city">
 <a class="skip" href="#main">Skip to content</a>
@@ -954,7 +957,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="crumbs" role="navigation" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="service-areas.html">Painting service areas</a> &rsaquo; <span aria-current="page">Painters in New Westminster BC</span></div>
     <span class="city-badge">Texora Painting · New Westminster, BC</span>
     <h1>Painters in New Westminster, BC</h1>
-    <p>We at <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting &amp; Drywall</a> do interior and exterior painting in New Westminster, BC, from Uptown and Sapperton to new builds in Queensborough. Two local partners meet every homeowner and write the estimate, and three trained crews do the work. We're rated 5.0 on Google from 45 reviews, and your written estimate names a 1, 2 or 3-year workmanship warranty.</p>
+    <p>We at <a class="tx-link-inherit" href="/">Texora Painting &amp; Drywall</a> do interior and exterior painting in New Westminster, BC, from Uptown and Sapperton to new builds in Queensborough. Two local partners meet every homeowner and write the estimate, and three trained crews do the work. We're rated 5.0 on Google from 45 reviews, and your written estimate names a 1, 2 or 3-year workmanship warranty.</p>
     <p class="tx-updated">Last updated <time datetime="2026-10-03">3 October 2026</time></p>
     <ul class="tx-tldr" aria-label="Quick answers"><li><strong>Cost:</strong> priced from a walkthrough of your home, with the scope and the paint listed in your written estimate.</li><li><strong>Time of year:</strong> interior painting goes ahead year-round; exterior work is booked for dry weather, and the written estimate gives the dates.</li><li><strong>Plaster walls:</strong> plaster repair is part of our drywall and surface repair service.</li></ul>
     <ul class="tx-triples" data-section="triples" aria-label="Texora Painting &amp; Drywall at a glance"><li>Texora Painting &amp; Drywall is a painting contractor serving New Westminster, BC, in Metro Vancouver.</li><li>Texora Painting &amp; Drywall is based at 1299 56 St, Delta, BC.</li><li>Texora Painting &amp; Drywall has been BBB Accredited since 29 September 2026, with an A- rating.</li></ul>

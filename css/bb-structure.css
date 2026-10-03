@@ -1,4 +1,4 @@
-:root{--bb-shadow-skip:rgba(0,0,0,.25);--bb-trust-bg:#10224f;--bb-on-dark-14:rgba(255,255,255,.14);--bb-on-dark-80:rgba(255,255,255,.8);--bb-on-dark-50:rgba(255,255,255,.5);--bb-on-dark-28:rgba(255,255,255,.28);--bb-on-dark-11:rgba(255,255,255,.11);--bb-form-line:#e0e7ef;--bb-form-intro:#46546a;--bb-form-label:#253a57;--bb-field-line:#b8c5d5;--bb-field-ink:#172d4c;--bb-focus-ring:rgba(244,123,32,.3);--bb-form-note:#526174;--bb-band-rule:rgba(26,58,110,.07);--bb-card-copy:#566070;--bb-kicker-on-dark:#ffc37a;--bb-cta-hover:#ff9440;--bb-area-line:#cfd8e5;--bb-area-hover:#0f2650;--bb-on-dark-90:rgba(255,255,255,.9);--bb-on-dark-12:rgba(255,255,255,.12);--bb-on-dark-22:rgba(255,255,255,.22);--bb-on-dark-82:rgba(255,255,255,.82);--bb-shadow-soft:rgba(0,0,0,.06);--bb-scrim-top:rgba(8,24,55,.91);--bb-scrim-bottom:rgba(8,24,55,.79)}
+:root{--bb-shadow-skip:rgba(0,0,0,.25);--bb-trust-bg:#10224f;--bb-on-dark-14:rgba(255,255,255,.14);--bb-on-dark-80:rgba(255,255,255,.8);--bb-on-dark-50:rgba(255,255,255,.5);--bb-on-dark-28:rgba(255,255,255,.28);--bb-on-dark-11:rgba(255,255,255,.11);--bb-band-rule:rgba(26,58,110,.07);--bb-card-copy:#566070;--bb-kicker-on-dark:#ffc37a;--bb-cta-hover:#ff9440;--bb-area-line:#cfd8e5;--bb-area-hover:#0f2650;--bb-on-dark-90:rgba(255,255,255,.9);--bb-on-dark-12:rgba(255,255,255,.12);--bb-on-dark-82:rgba(255,255,255,.82);--bb-shadow-soft:rgba(0,0,0,.06);}
 /* Texora: Bluebird page-structure layer for the service and service-area pages.
    Layout plus the added social-proof and map components only. Brand tokens
    (--blue, --orange, --orange-dark, --off-white, --dark, --gray) come from each page's own :root. */
@@ -10,9 +10,9 @@
   /* type scale */
   --fs-h2:clamp(23px,2.5vw,31px);--fs-card-h:clamp(18px,1.55vw,21px);
   /* radius scale: container card, embedded tile, text panel, small chrome, pill */
-  --r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;
+  
   /* shadow ladder: tile card, raised form card, accent button */
-  --shadow-card:0 8px 26px rgba(4,12,45,.22);--shadow-raised:0 16px 48px rgba(8,25,54,.22);--shadow-cta:0 6px 20px rgba(4,12,45,.3);
+  --shadow-card:0 8px 26px rgba(4,12,45,.22);
   /* palette additions (brand --blue/--orange/--orange-dark/--off-white/--white come from each page's :root) */
   --bb-muted:#4b5563;--bb-tile-line:#dce2e9;--bb-embed-bg:#e9eef4;--bb-on-dark:rgba(255,255,255,.84);--bb-on-dark-soft:rgba(255,255,255,.74);--bb-star-light:#e08a00;--bb-on-orange:var(--tx-on-orange)}
 @media(max-width:900px){.bb{--bb-nav-h:calc(78px + env(safe-area-inset-top,0px))}}

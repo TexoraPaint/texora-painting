@@ -219,7 +219,7 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area-menu>button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:40px;background:transparent;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:18px}
 .tx-area-menu>button:focus-visible,.tx-area-menu a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .tx-area-menu>button[aria-expanded="true"]{background:rgba(255,255,255,.14)}
-.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:0 14px 34px rgba(4,12,45,.24);z-index:1100}
+.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:var(--tx-shadow-card);z-index:1100}
 .tx-area-menu.is-open .tx-area-dropdown{display:block}
 .tx-area-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .tx-area-directory strong{display:block;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:12px;line-height:1.5;color:var(--blue);margin-bottom:9px}
@@ -234,12 +234,12 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <!-- TX SERVICE AREA NAV STYLE END -->
 
 <style id="tx-checklist-contrast">
-#mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
-.showcase-section .sec-label{color:#a74a08}
+#mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:var(--tx-on-orange)!important}
+.showcase-section .sec-label{color:var(--tx-kicker)}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=01f3ee064b">
-<script src="/js/tx-owner-nav.js?v=01f3ee064b" defer></script>
-<style id="tx-hero-mobile">@media(max-width:767px){.blog-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.92) 0%,rgba(22,58,120,.80) 100%),url('/img/hero-bg-768.webp')!important}}</style>
+<link rel="stylesheet" href="/css/tx-owner-nav.css?v=da2c0a05dd">
+<script src="/js/tx-owner-nav.js?v=da2c0a05dd" defer></script>
+<style id="tx-hero-mobile">@media(max-width:767px){.blog-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-92) 0%,var(--tx-hero-blue-80) 100%),url('/img/hero-bg-768.webp')!important}}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -269,7 +269,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <p>One of the most common mistakes homeowners make, and some contractors too, is rolling fresh paint over damaged drywall without doing the repairs first. Cracks telegraph through the new finish, tape bubbles come back within months, and water stains bleed through no matter how many coats go on.</p>
 
-  <p>At <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a> we do <a href="/drywall-repair.html">drywall repair in Delta</a>, Tsawwassen, Ladner, Port Coquitlam and Port Moody, and finishes the repairs paint-ready. This guide covers why paint telegraphs damage, which repairs matter most, and when it makes sense to call in a professional rather than DIY.</p>
+  <p>At <a class="tx-link-inherit" href="/">Texora Painting</a> we do <a href="/drywall-repair.html">drywall repair in Delta</a>, Tsawwassen, Ladner, Port Coquitlam and Port Moody, and finishes the repairs paint-ready. This guide covers why paint telegraphs damage, which repairs matter most, and when it makes sense to call in a professional rather than DIY.</p>
 <p>For help locally, see our <a href="https://texorapainting.com/drywall-repair-ladner.html">drywall repair work in Ladner</a> or <a href="https://texorapainting.com/interior-painting.html">interior painting once the walls are ready</a>.</p>
 </div></section>
 <section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
@@ -315,7 +315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Related articles</h2>
   <div class="related-grid">
     <a href="how-to-prepare-your-home-for-painting.html" class="related-card">
-      <div class="related-card-icon" style="color:var(--blue)"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></svg></div>
+      <div class="tx-link-blue related-card-icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></svg></div>
       <div class="related-card-body">
         <span class="related-card-cat">Prep Guide</span>
         <h3>Getting a room ready for interior painters</h3>
@@ -323,7 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </a>
     <a href="interior-vs-exterior-paint.html" class="related-card">
-      <div class="related-card-icon" style="color:var(--blue)"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></svg></div>
+      <div class="tx-link-blue related-card-icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></svg></div>
       <div class="related-card-body">
         <span class="related-card-cat">Paint Guide</span>
         <h3>Choosing between interior and exterior paint</h3>
@@ -331,7 +331,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </a>
     <a href="how-long-does-exterior-paint-last-bc.html" class="related-card">
-      <div class="related-card-icon" style="color:var(--blue)"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></svg></div>
+      <div class="tx-link-blue related-card-icon"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10.5" y="14" width="3" height="7" rx="1"/></svg></div>
       <div class="related-card-body">
         <span class="related-card-cat">Exterior</span>
         <h3>Exterior paint life by siding type in BC</h3>
