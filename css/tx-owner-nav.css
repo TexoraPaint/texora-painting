@@ -1,25 +1,28 @@
 /* Texora owner preview: Services + Service Areas menus inside the owner's own header. Everything else is his CSS. */
+/* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
+   Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
+:root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08)}
 nav .nav-links li.txn-menu{display:flex;align-items:center}
 nav .nav-links .txn-menu>a{padding-right:2px}
-nav .nav-links .txn-menu>button{display:inline-flex;align-items:center;justify-content:center;width:26px;height:40px;margin:0;padding:0;border:0;background:transparent;color:#fff;cursor:pointer;opacity:.9}
+nav .nav-links .txn-menu>button{display:inline-flex;align-items:center;justify-content:center;width:26px;height:40px;margin:0;padding:0;border:0;background:transparent;color:var(--white);cursor:pointer;opacity:.9}
 nav .nav-links .txn-menu>button svg{width:12px;height:12px;transition:transform .2s ease}
 nav .nav-links .txn-menu.is-open>button svg{transform:rotate(180deg)}
-nav .txn-drop{display:none;position:absolute;top:100%;left:0;right:0;z-index:5;width:min(1120px,calc(100% - 40px));margin:0 auto;padding:26px 30px 28px;border-top:3px solid var(--orange,#f47b20);border-radius:0 0 16px 16px;background:#fff;box-shadow:0 22px 50px rgba(4,12,45,.28);text-align:left}
+nav .txn-drop{display:none;position:absolute;top:100%;left:0;right:0;z-index:5;width:min(1120px,calc(100% - 40px));margin:0 auto;padding:26px 30px 28px;border-top:3px solid var(--orange);border-radius:0 0 16px 16px;background:var(--white);box-shadow:0 22px 50px rgba(4,12,45,.28);text-align:left}
 nav .txn-menu.is-open>.txn-drop{display:block;animation:txnIn .18s ease both}
 @keyframes txnIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 nav .txn-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 34px}
 nav .txn-drop-areas .txn-cols{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 22px}
-nav .txn-cols strong{display:block;margin:0 0 8px;padding:0 0 8px;border-bottom:1px solid #e3e8f0;color:var(--blue,#1a3a6e);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}
+nav .txn-cols strong{display:block;margin:0 0 8px;padding:0 0 8px;border-bottom:1px solid var(--tx-line);color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}
 nav .nav-links .txn-drop a{display:block;padding:7px 0;border:0;opacity:1;color:#24334a;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:600;font-size:14.5px;line-height:1.35;letter-spacing:0;text-transform:none;text-decoration:none}
-nav .nav-links .txn-drop a:hover{color:var(--blue,#1a3a6e);text-decoration:underline;text-underline-offset:3px}
-nav .nav-links .txn-drop .txn-all{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:0;color:var(--blue,#1a3a6e);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px}
-nav .txn-drop-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid #e3e8f0;color:#4b5563;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px}
-nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue,#1a3a6e);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+nav .nav-links .txn-drop a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+nav .nav-links .txn-drop .txn-all{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:0;color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px}
+nav .txn-drop-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--tx-line);color:#4b5563;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px}
+nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:900px){
   nav .nav-links li.txn-menu{flex-wrap:wrap;align-items:stretch}
-  nav .nav-links .txn-menu>a{flex:1 1 0;border-bottom:1px solid rgba(255,255,255,.08)}
-  nav .nav-links .txn-menu>button{width:52px;height:auto;min-height:48px;border-bottom:1px solid rgba(255,255,255,.08);border-radius:0}
-  nav .txn-drop,nav .txn-menu.is-open>.txn-drop{position:static;flex-basis:100%;width:auto;margin:0 12px 12px;padding:14px 16px 16px;border-top:0;border-radius:12px;box-shadow:none;animation:none}
+  nav .nav-links .txn-menu>a{flex:1 1 0;border-bottom:1px solid var(--tx-on-dark-hair)}
+  nav .nav-links .txn-menu>button{width:52px;height:auto;min-height:48px;border-bottom:1px solid var(--tx-on-dark-hair);border-radius:0}
+  nav .txn-drop,nav .txn-menu.is-open>.txn-drop{position:static;flex-basis:100%;width:auto;margin:0 12px 12px;padding:14px 16px 16px;border-top:0;border-radius:var(--r-tile);box-shadow:none;animation:none}
   nav .txn-cols,nav .txn-drop-areas .txn-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}
   nav .txn-cols>div{margin-bottom:10px}
   nav .nav-links .txn-drop a{padding:9px 0;font-size:14px}
@@ -34,9 +37,16 @@ nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue,#1a3a6
 /* desktop quote tab */
 .tx-qtab{display:none}
 @media(min-width:901px){
-  .tx-qtab{display:block;position:fixed;right:0;top:50%;z-index:1500;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);padding:20px 12px;border-radius:0 10px 10px 0;background:var(--orange,#f47b20);color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 20px rgba(4,12,45,.3);opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .tx-qtab{display:block;position:fixed;right:0;top:50%;z-index:1500;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);padding:20px 12px;border-radius:0 var(--r-panel) var(--r-panel) 0;background:var(--orange);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
   .tx-qtab.is-on{opacity:1;pointer-events:auto}
-  .tx-qtab:hover{background:var(--orange-dark,#d96a10)}
+  .tx-qtab:hover{background:var(--orange-dark)}
+}
+/* round 7 (row 302): below 901px the quote tab shows as a pill at the bottom left, clear of the back-to-top button at the
+   bottom right (there is no call bar on these pages). Same show/hide as desktop. Bloomview inner pages only (.bb);
+   home and About are owner-gated. */
+@media(max-width:900px){
+  .bb .tx-qtab{display:inline-flex;align-items:center;position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:998;box-sizing:border-box;min-height:44px;padding:12px 20px;border-radius:var(--r-pill);background:var(--orange);color:#081c3b;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .bb .tx-qtab.is-on{opacity:1;pointer-events:auto}
 }
 @media(prefers-reduced-motion:reduce){.tx-qtab{transition:none}}
 @media print{.tx-qtab{display:none!important}}
@@ -44,21 +54,21 @@ nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue,#1a3a6
 /* footer directory (Services / Service Areas / Company / Contact) above the owner's call + link row */
 .footer-bar .tx-foot{flex:0 0 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.3fr);gap:24px 32px;padding:10px 0 26px;margin:0 0 6px;border-bottom:1px solid rgba(255,255,255,.12);text-align:left}
 .tx-foot-col{display:flex;flex-direction:column;gap:2px;min-width:0}
-.tx-foot-h{margin:0 0 8px;color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
-.tx-foot-col a{display:block;padding:6px 0;min-height:24px;color:rgba(255,255,255,.78);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.35;text-decoration:none}
-.tx-foot-col a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
-.tx-foot-nap p{margin:0 0 4px;color:rgba(255,255,255,.78);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.5}
-.tx-foot-nap .tx-foot-name{color:#fff;font-weight:700}
+.tx-foot-h{margin:0 0 8px;color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
+.tx-foot-col a{display:block;padding:6px 0;min-height:24px;color:var(--tx-on-dark-muted);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.35;text-decoration:none}
+.tx-foot-col a:hover{color:var(--white);text-decoration:underline;text-underline-offset:3px}
+.tx-foot-nap p{margin:0 0 4px;color:var(--tx-on-dark-muted);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.5}
+.tx-foot-nap .tx-foot-name{color:var(--white);font-weight:700}
 .tx-foot-nap p a{display:inline-block;padding:4px 0}
 .tx-foot-award{font-size:12.5px!important;color:rgba(255,255,255,.6)!important}
-.tx-foot-map{display:block;width:100%;max-width:320px;height:160px;margin-top:10px;border:0;border-radius:8px;background:#16264d}
+.tx-foot-map{display:block;width:100%;max-width:320px;height:160px;margin-top:10px;border:0;border-radius:var(--r-chrome);background:#16264d}
 .footer-bar .footer-call .call-icon svg{display:block}
 .footer-bar .footer-email,.footer-bar .footer-profile,.footer-bar .footer-copy a{display:inline-block;padding:6px 0;min-height:24px}
 .footer-bar .footer-social{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 @media(max-width:900px){.footer-bar .tx-foot{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.footer-bar .tx-foot{grid-template-columns:minmax(0,1fr)}.tx-foot-map{max-width:none}}
 /* review cards: the job the review itself names */
-.review-card figcaption .review-job,.txh-rv .review-job{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--orange,#f47b20)}
+.review-card figcaption .review-job,.txh-rv .review-job{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--orange)}
 /* nav phone icon (was an emoji) */
 nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;margin:auto}
 /* phones: every two-up grid collapses to one column; grey body text clears 4.5:1 on the pale bands */
@@ -66,7 +76,7 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 @media(max-width:600px){.ba-row,.ba-showcase-imgs,.ba-imgs,.process-steps,.services-list{grid-template-columns:1fr!important}}
 
 /* service pages: one area map in the service-areas section */
-.tx-svc-map{margin:22px 0 0}.tx-svc-map iframe{display:block;width:100%;max-width:720px;height:320px;border:0;border-radius:12px}.tx-svc-map figcaption{margin-top:8px;font-size:13px;color:#636b78}
+.tx-svc-map{margin:22px 0 0}.tx-svc-map iframe{display:block;width:100%;max-width:720px;height:320px;border:0;border-radius:var(--r-tile)}.tx-svc-map figcaption{margin-top:8px;font-size:13px;color:#636b78}
 
 /* round 2: next-step and all-reviews lines, case-study links, small text links get a 24px+ hit area */
 .bb-next-step{max-width:68ch;margin:18px auto 0;font-size:16px;line-height:1.65}
@@ -75,7 +85,7 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 .showcase-gallery-link,.txh-link,.reviews-all a{display:inline-block;padding:6px 0;min-height:24px}
 /* round 2: readable contrast for the review job label; the interior comparison table stacks on phones */
 .review-card figcaption .review-job,.txh-rv .review-job{color:#b4410b}
-@media(max-width:600px){.ip-table{min-width:0!important}.ip-table thead{display:none}.ip-table tr{display:block;border-bottom:1px solid #e3e8f0;padding:10px 0}.ip-table th,.ip-table td{display:block;width:auto;border:0!important;padding:4px 14px!important}.ip-table td::before{content:attr(data-label) ": ";font-weight:700;color:#1a3a6e}}
+@media(max-width:600px){.ip-table{min-width:0!important}.ip-table thead{display:none}.ip-table tr{display:block;border-bottom:1px solid var(--tx-line);padding:10px 0}.ip-table th,.ip-table td{display:block;width:auto;border:0!important;padding:4px 14px!important}.ip-table td::before{content:attr(data-label) ": ";font-weight:700;color:var(--blue)}}
 
 /* round 3: readable line length on body copy; rating line inside the home bottom form */
 .tx-layout-copy p,.faq-a p,.bb-band p,.bb-areas p{max-width:68ch}

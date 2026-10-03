@@ -1,24 +1,25 @@
-/* Scoped to the two authored photo/text bands; no shared site selectors. */
-.tx-layout-band{box-sizing:border-box;width:100%;padding:clamp(38px,5vw,72px) 20px;background:#fff;color:#111827}
-.tx-layout-band-2{background:#f4f7fb;border-top:1px solid #e5e9f2}
+/* Scoped to the two authored photo/text bands; no shared site selectors.
+   Tokens (--r-card, --bb-muted) are declared on .bb in bb-structure.css, which every page loading this sheet also loads. */
+.tx-layout-band{box-sizing:border-box;width:100%;padding:clamp(38px,5vw,72px) 20px;background:var(--white);color:var(--dark)}
+.tx-layout-band-2{background:var(--off-white);border-top:1px solid #e5e9f2}
 .tx-layout-inner{display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:36px;align-items:center;max-width:1180px;margin:0 auto}
 .tx-layout-copy{grid-column:2;grid-row:1;min-width:0;text-align:left}
-.tx-layout-band-1 .tx-layout-copy{background:#1a3a6e;border-radius:14px;padding:clamp(22px,3vw,36px);color:#fff}
+.tx-layout-band-1 .tx-layout-copy{background:var(--blue);border-radius:var(--r-card);padding:clamp(22px,3vw,36px);color:var(--white)}
 .tx-layout-band-2 .tx-layout-inner{grid-template-columns:minmax(0,58fr) minmax(0,42fr)}
 .tx-layout-band-2 .tx-layout-copy{grid-column:1}
 .tx-layout-photo{grid-column:1;grid-row:1;min-width:0;margin:0;text-align:center}
 .tx-layout-band-2 .tx-layout-photo{grid-column:2}
-.tx-layout-photo img{display:block;width:auto;max-width:100%;height:auto;max-height:520px;margin:0 auto;border-radius:14px;object-fit:contain}
-.tx-layout-photo figcaption{color:#4b5563;font-size:12px;line-height:1.6;text-align:left;margin-top:12px}
-.tx-layout-copy h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(22px,2.5vw,32px);line-height:1.3;color:#1a3a6e;margin:0 0 20px;overflow-wrap:break-word}
-.tx-layout-copy h3{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:17px;line-height:1.45;color:#1a3a6e;margin:24px 0 12px}
+.tx-layout-photo img{display:block;width:auto;max-width:100%;height:auto;max-height:520px;margin:0 auto;border-radius:var(--r-card);object-fit:contain}
+.tx-layout-photo figcaption{color:var(--bb-muted);font-size:12px;line-height:1.6;text-align:left;margin-top:12px}
+.tx-layout-copy h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(22px,2.5vw,32px);line-height:1.3;color:var(--blue);margin:0 0 20px;overflow-wrap:break-word}
+.tx-layout-copy h3{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:17px;line-height:1.45;color:var(--blue);margin:24px 0 12px}
 .tx-layout-copy p,.tx-layout-copy li{font-size:15px;line-height:1.9;color:#374151;text-align:left;overflow-wrap:break-word}
 .tx-layout-copy p{margin:0 0 18px}
 .tx-layout-copy ul,.tx-layout-copy ol{margin:0 0 18px;padding-left:22px}
-.tx-layout-copy a{color:#1a3a6e;text-decoration:underline;text-underline-offset:3px;font-weight:600}
-.tx-layout-band-1 .tx-layout-copy h2,.tx-layout-band-1 .tx-layout-copy h3,.tx-layout-band-1 .tx-layout-copy p,.tx-layout-band-1 .tx-layout-copy li,.tx-layout-band-1 .tx-layout-copy a{color:#fff}
+.tx-layout-copy a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.tx-layout-band-1 .tx-layout-copy h2,.tx-layout-band-1 .tx-layout-copy h3,.tx-layout-band-1 .tx-layout-copy p,.tx-layout-band-1 .tx-layout-copy li,.tx-layout-band-1 .tx-layout-copy a{color:var(--white)}
 .tx-layout-copy>:is(.svc-intro,.city-intro,.page-content,.page-body,.content,.tx-add,.why-section){max-width:none;width:auto;margin:0;padding:0;background:transparent}
-.tx-layout-copy .highlight-box h3,.tx-layout-copy .highlight-box p{color:#fff}
+.tx-layout-copy .highlight-box h3,.tx-layout-copy .highlight-box p{color:var(--white)}
 .tx-layout-copy .why-inner{max-width:none;padding:0}
 .tx-layout-copy .why-inner>h2{text-align:left;margin:0 0 20px}
 .tx-layout-copy .why-grid,.tx-layout-copy .two-col,.tx-layout-copy .texture-grid,.tx-layout-copy .level-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}

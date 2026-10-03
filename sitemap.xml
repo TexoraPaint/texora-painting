@@ -495,4 +495,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://texorapainting.com/faq.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://texorapainting.com/awards.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
 </urlset>
