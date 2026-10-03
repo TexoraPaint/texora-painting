@@ -107,7 +107,12 @@
         f.style.width = '420px'; f.style.maxWidth = 'none'; f.style.height = h + 'px';
         f.style.transform = 'scale(' + k + ')'; f.style.transformOrigin = '0 0';
         host.style.width = w + 'px'; host.style.height = Math.round(h * k) + 'px';
-        if (f.src && f.dataset.txFit !== '1') { f.dataset.txFit = '1'; f.src = f.src; }
+        if (f.dataset.txFit !== '1' && f.getAttribute('src')) {
+          f.dataset.txFit = '1';
+          // only a frame already near the screen reloads now; the rest wait (no src) and load at 420px when reached
+          if (f.getBoundingClientRect().top < window.innerHeight + 300) f.src = f.getAttribute('src');
+          else { f.dataset.txSrc = f.getAttribute('src'); f.removeAttribute('src'); }
+        }
       } else if (wrapped) {
         f.style.width = f.style.maxWidth = f.style.height = f.style.transform = f.style.transformOrigin = f.style.marginTop = '';
         col.insertBefore(f, host); col.removeChild(host);
@@ -120,6 +125,7 @@
     document.querySelectorAll('iframe[data-tx-src]').forEach(function (f) { if (f.getBoundingClientRect().top < edge) load(f); else left++; });
     if (!left) { window.removeEventListener('scroll', check); }
   };
+  fit();
   if (document.querySelector('iframe[data-tx-src]')) { window.addEventListener('scroll', check, { passive: true }); check(); }
-  fit(); window.addEventListener('resize', function () { fit(); check(); });
+  window.addEventListener('resize', function () { fit(); check(); });
 })();
