@@ -1,0 +1,32 @@
+/* Texora owner preview: the quote card in the hero (copy left, white card right; stacked on phones). */
+.hero.has-form{justify-content:space-between;gap:32px}
+.hero-form{position:relative;z-index:6;flex:0 0 auto;align-self:flex-start;margin:92px 0 -56px;width:min(400px,100%);background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(4,12,45,.38);padding:18px 18px 12px;animation:fadeUp .8s ease both}
+.hf-title{margin:0 0 2px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:21px;line-height:1.15;color:var(--blue,#1a3a6e)}
+.hf-rating{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:13.5px;color:#4b5563}
+.hf-rating b{color:#111827}
+.hf-stars{color:#f5a623;font-size:15px;letter-spacing:1px}
+.hf-step{margin:0 0 6px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#6b7280}
+.hf-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:0 0 10px;padding:0;border:0;min-width:0}
+.hf-chip{position:relative;margin:0}
+.hf-chip input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
+.hf-chip span{display:flex;align-items:center;justify-content:center;min-height:34px;padding:3px 6px;border:1.5px solid #d6dde8;border-radius:8px;background:#f8fafc;color:var(--blue,#1a3a6e);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;line-height:1.2;text-align:center;transition:background .15s,border-color .15s,color .15s}
+.hf-chip:hover span{border-color:var(--blue,#1a3a6e)}
+.hf-chip input:checked+span{background:var(--blue,#1a3a6e);border-color:var(--blue,#1a3a6e);color:#fff}
+.hf-chip input:focus-visible+span{outline:2px solid var(--orange,#f47b20);outline-offset:2px}
+.hf-fields{display:grid;gap:7px;margin:0 0 10px}
+.hf-field label{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#4b5563}
+.hf-field input{width:100%;height:38px;padding:0 12px;border:1.5px solid #d6dde8;border-radius:8px;background:#fff;color:#111827;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:500;font-size:15px}
+.hf-field input:focus{border-color:var(--blue,#1a3a6e);outline:2px solid rgba(26,58,110,.25);outline-offset:0}
+.hf-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:8px;background:var(--orange,#f47b20);color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 14px rgba(244,123,32,.4);transition:background .2s,transform .15s}
+.hf-submit:hover{background:var(--orange-dark,#d96a10);transform:translateY(-1px)}
+.hf-note{margin:8px 0 0;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:11px;line-height:1.45;color:#6b7280;text-align:center}
+.hf-note a{color:var(--blue,#1a3a6e)}
+.hero-form .pv-note{margin:6px 0 0;padding:5px 8px;border-radius:8px;background:#fff4e5;color:#8a4b00;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:12px;text-align:center}
+@media(max-width:1100px){
+  .hero.has-form{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:28px}
+  .hero-form{width:100%;max-width:520px;margin:0 auto;align-self:center}
+  .hf-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:900px){.hf-chip span{min-height:44px}}
+@media(max-width:330px){.hf-chips{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.hero-form{animation:none}}
