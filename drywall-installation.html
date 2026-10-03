@@ -989,8 +989,12 @@ html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck
 #navLinks>li>a{font-family:'Montserrat','Tx Nav Fallback',sans-serif}
 
 /* round 20: text links in dark hero intros read on the navy (white, underlined); form cards and buttons keep their own colours */
-html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/project-deck-refinishing.html"],[href$="/painting-cost-guide-delta.html"]))) :is(.project-hero,.svc-hero,.city-hero) :is(p,li) a:not([class*=btn]):not(form a):not([class*=form] a){color:var(--tx-on-dark);text-decoration:underline;text-underline-offset:3px}</style>
-<script src="/js/tx-owner-nav.js?v=5abedbe1b8" defer></script>
+html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/project-deck-refinishing.html"],[href$="/painting-cost-guide-delta.html"]))) :is(.project-hero,.svc-hero,.city-hero) :is(p,li) a:not([class*=btn]):not(form a):not([class*=form] a){color:var(--tx-on-dark);text-decoration:underline;text-underline-offset:3px}
+
+/* round 21 (37b7f28 verify): project heroes get the on-dark accent and a full-white back link (contrast >= 4.5 at 375) */
+html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero h1 em{color:var(--tx-accent-on-dark)}
+html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}</style>
+<script src="/js/tx-owner-nav.js?v=f18ef19b8d" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-62) 100%),url('img/client-photos/interior-brushwork-480.webp')!important}}</style>
 </head>
 <body class="bb" data-page-type="service">
