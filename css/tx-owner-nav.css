@@ -153,4 +153,4 @@ body .ba-section{background:var(--white)}
 .tx-star,.tx-ico{vertical-align:-.125em}
 
 /* round 10 contrast: navy text on the orange nav CTA and mobile quote bar on inner pages (white on #f47b20 = 2.7:1); home + About keep the owner's styles */
-body.bb #mainNav .btn-nav,body.bb #mainNav .nav-cta-m,body.bb a.mob-btn-quote{color:#081c3b!important}
+body.bb #mainNav .btn-nav,body.bb #mainNav .nav-cta-m,body.bb nav .btn-nav,body.bb nav .nav-cta-m,body.bb a.mob-btn-quote{color:var(--tx-on-orange)!important}
