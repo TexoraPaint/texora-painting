@@ -1,3 +1,4 @@
+:root{--bb-shadow-skip:rgba(0,0,0,.25);--bb-trust-bg:#10224f;--bb-on-dark-14:rgba(255,255,255,.14);--bb-on-dark-80:rgba(255,255,255,.8);--bb-on-dark-50:rgba(255,255,255,.5);--bb-on-dark-28:rgba(255,255,255,.28);--bb-on-dark-11:rgba(255,255,255,.11);--bb-form-line:#e0e7ef;--bb-form-intro:#46546a;--bb-form-label:#253a57;--bb-field-line:#b8c5d5;--bb-field-ink:#172d4c;--bb-focus-ring:rgba(244,123,32,.3);--bb-form-note:#526174;--bb-band-rule:rgba(26,58,110,.07);--bb-card-copy:#566070;--bb-kicker-on-dark:#ffc37a;--bb-cta-hover:#ff9440;--bb-area-line:#cfd8e5;--bb-area-hover:#0f2650;--bb-on-dark-90:rgba(255,255,255,.9);--bb-on-dark-12:rgba(255,255,255,.12);--bb-on-dark-22:rgba(255,255,255,.22);--bb-on-dark-82:rgba(255,255,255,.82);--bb-shadow-soft:rgba(0,0,0,.06);--bb-scrim-top:rgba(8,24,55,.91);--bb-scrim-bottom:rgba(8,24,55,.79)}
 /* Texora: Bluebird page-structure layer for the service and service-area pages.
    Layout plus the added social-proof and map components only. Brand tokens
    (--blue, --orange, --orange-dark, --off-white, --dark, --gray) come from each page's own :root. */
@@ -18,17 +19,17 @@
 @media(max-width:400px){.bb{--bb-nav-h:calc(72px + env(safe-area-inset-top,0px))}}
 
 /* skip link */
-.bb .skip{position:absolute;left:12px;top:-90px;z-index:2000;padding:10px 16px;border-radius:6px;background:var(--white);color:var(--blue);font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.bb .skip{position:absolute;left:12px;top:-90px;z-index:2000;padding:10px 16px;border-radius:6px;background:var(--white);color:var(--blue);font-weight:700;text-decoration:none;box-shadow:0 4px 16px var(--bb-shadow-skip)}
 .bb .skip:focus{top:12px}
 
 /* 1. proof strip under the header */
-.bb .trust-bar{background:#10224f;padding:var(--bb-nav-h) var(--bb-gutter) 0}
-.bb .trust-bar a{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;box-sizing:border-box;max-width:var(--bb-max);min-height:44px;margin:0 auto;padding:9px 0;border-top:1px solid rgba(255,255,255,.14);color:var(--white);text-decoration:none;font-family:var(--bb-head);font-weight:700;font-size:13px;line-height:1.3;letter-spacing:.3px}
+.bb .trust-bar{background:var(--bb-trust-bg);padding:var(--bb-nav-h) var(--bb-gutter) 0}
+.bb .trust-bar a{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;box-sizing:border-box;max-width:var(--bb-max);min-height:44px;margin:0 auto;padding:9px 0;border-top:1px solid var(--bb-on-dark-14);color:var(--white);text-decoration:none;font-family:var(--bb-head);font-weight:700;font-size:13px;line-height:1.3;letter-spacing:.3px}
 .bb .trust-bar a:hover .bb-proof-label,.bb .trust-bar a:focus-visible .bb-proof-label{text-decoration:underline;text-underline-offset:3px}
 .bb .trust-bar a:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
 .bb .bb-stars{color:var(--bb-star);font-size:15px;line-height:1;letter-spacing:2px}
-.bb .bb-proof-count{color:rgba(255,255,255,.8);font-weight:600}
-.bb .bb-proof-count::before{content:"·";margin-right:10px;color:rgba(255,255,255,.5)}
+.bb .bb-proof-count{color:var(--bb-on-dark-80);font-weight:600}
+.bb .bb-proof-count::before{content:"·";margin-right:10px;color:var(--bb-on-dark-50)}
 
 /* 2. hero: copy left, quote form right */
 .bb .city-hero,.bb .svc-hero{display:block;box-sizing:border-box;width:100%;min-height:0;padding:clamp(32px,4.4vw,58px) max(var(--bb-gutter),calc((100% - var(--bb-max))/2)) clamp(44px,5.4vw,74px)}
@@ -40,25 +41,25 @@
 .bb .crumbs a{color:var(--white);text-decoration:underline;text-underline-offset:3px}
 .bb .crumbs span{color:var(--bb-on-dark-soft)}
 .bb .hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
-.bb .hero-chips li{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid rgba(255,255,255,.28);border-radius:var(--r-pill);background:rgba(255,255,255,.11);color:var(--white);font-family:var(--bb-head);font-weight:700;font-size:12.5px;line-height:1.2}
+.bb .hero-chips li{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid var(--bb-on-dark-28);border-radius:var(--r-pill);background:var(--bb-on-dark-11);color:var(--white);font-family:var(--bb-head);font-weight:700;font-size:12.5px;line-height:1.2}
 .bb .hero-chips .bb-star{color:var(--bb-star);font-size:14px;line-height:1}
-.bb .tx-hero-form{box-sizing:border-box;width:100%;min-width:0;padding:28px;border:1px solid #e0e7ef;border-radius:var(--r-card);background:var(--white);box-shadow:var(--shadow-raised);color:var(--blue);text-align:left;scroll-margin-top:110px}
+.bb .tx-hero-form{box-sizing:border-box;width:100%;min-width:0;padding:28px;border:1px solid var(--bb-form-line);border-radius:var(--r-card);background:var(--white);box-shadow:var(--shadow-raised);color:var(--blue);text-align:left;scroll-margin-top:110px}
 .bb .tx-hero-form h2{margin:0 0 8px;font-family:var(--bb-head);font-size:24px;line-height:1.25;color:var(--blue)}
-.bb .tx-hero-form .tx-form-intro{max-width:none;margin:0 0 12px;color:#46546a;font-size:14px;line-height:1.5}
+.bb .tx-hero-form .tx-form-intro{max-width:none;margin:0 0 12px;color:var(--bb-form-intro);font-size:14px;line-height:1.5}
 .bb .tx-form-proof-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:0 0 16px;color:var(--blue);font-size:13px;font-weight:700;line-height:1.4}
 .bb .tx-form-proof-row .bb-stars{color:var(--bb-star-light);font-size:15px;letter-spacing:1px}
 .bb .tx-hero-form .tx-form-proof-row .tx-form-proof{display:inline;margin:0 0 0 auto;color:var(--blue);font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .bb .tx-form-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}
 .bb .tx-form-field{min-width:0}
 .bb .tx-form-field-wide{grid-column:1/-1}
-.bb .tx-form-field label{display:block;margin:0 0 6px;color:#253a57;font-size:13px;font-weight:700;line-height:1.4}
-.bb .tx-form-field input,.bb .tx-form-field textarea,.bb .tx-form-field select{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid #b8c5d5;border-radius:7px;background:var(--white);color:#172d4c;font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
-.bb .tx-form-field input:focus,.bb .tx-form-field textarea:focus,.bb .tx-form-field select:focus{outline:3px solid rgba(244,123,32,.3);outline-offset:1px;border-color:var(--blue)}
+.bb .tx-form-field label{display:block;margin:0 0 6px;color:var(--bb-form-label);font-size:13px;font-weight:700;line-height:1.4}
+.bb .tx-form-field input,.bb .tx-form-field textarea,.bb .tx-form-field select{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid var(--bb-field-line);border-radius:7px;background:var(--white);color:var(--bb-field-ink);font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
+.bb .tx-form-field input:focus,.bb .tx-form-field textarea:focus,.bb .tx-form-field select:focus{outline:3px solid var(--bb-focus-ring);outline-offset:1px;border-color:var(--blue)}
 .bb .tx-form-field textarea{min-height:82px;resize:vertical}
 .bb .tx-form-submit{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;min-height:50px;margin:18px 0 0;padding:13px 16px;border:0;border-radius:var(--r-chrome);background:var(--orange);color:var(--bb-on-orange);font-family:var(--bb-head);font-size:15px;font-weight:800;line-height:1.4;cursor:pointer}
 .bb .tx-form-submit:hover{background:var(--orange-dark)}
 .bb .tx-form-submit:focus-visible,.bb .tx-form-proof:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-.bb .tx-hero-form .tx-form-note{max-width:none;margin:12px 0 0;color:#526174;font-size:12px;line-height:1.5}
+.bb .tx-hero-form .tx-form-note{max-width:none;margin:12px 0 0;color:var(--bb-form-note);font-size:12px;line-height:1.5}
 .bb .tx-form-note a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
 @media(max-width:960px){
   .bb .tx-hero-layout{grid-template-columns:minmax(0,1fr);gap:30px}
@@ -73,7 +74,7 @@
 }
 
 /* 3. one container width and one vertical rhythm for every band */
-.bb main>.tx-layout-band,.bb main>.why-section,.bb main>.faq-section,.bb main>.showcase-section,.bb main>.process-section,.bb main>.svc-details,.bb main>.svc-gallery,.bb main>.client-photos,.bb main>.internal-links,.bb main>.cta-bar,.bb main>.svc-cta,.bb main>.bb-band,.bb main>.bb-prose,.bb main>.tx-photo-band{box-sizing:border-box;width:auto;max-width:none;margin:0;padding:var(--bb-pad) max(var(--bb-gutter),calc((100% - var(--bb-max))/2));border-top:1px solid rgba(26,58,110,.07)}
+.bb main>.tx-layout-band,.bb main>.why-section,.bb main>.faq-section,.bb main>.showcase-section,.bb main>.process-section,.bb main>.svc-details,.bb main>.svc-gallery,.bb main>.client-photos,.bb main>.internal-links,.bb main>.cta-bar,.bb main>.svc-cta,.bb main>.bb-band,.bb main>.bb-prose,.bb main>.tx-photo-band{box-sizing:border-box;width:auto;max-width:none;margin:0;padding:var(--bb-pad) max(var(--bb-gutter),calc((100% - var(--bb-max))/2));border-top:1px solid var(--bb-band-rule)}
 .bb .tx-layout-inner,.bb .why-inner,.bb .faq-inner,.bb .showcase-inner,.bb .details-inner,.bb .internal-links-inner{max-width:none;margin-left:0;margin-right:0}
 .bb main>.tx-layout-band-1,.bb main>.bb-services,.bb main>.bb-topics,.bb main>.bb-process,.bb main>.process-section,.bb main>.faq-section,.bb main>.bb-directions,.bb main>.svc-gallery,.bb main>.client-photos,.bb main>.bb-photos,.bb main>.internal-links,.bb main>.bb-prose{background:var(--white)}
 .bb main>.tx-layout-band-2,.bb main>.why-section,.bb main>.showcase-section,.bb main>.svc-details,.bb main>.bb-areas,.bb main>.bb-highlights{background:var(--off-white)}
@@ -90,7 +91,7 @@
 /* services in this town */
 .bb .bb-services .services-grid,.bb .bb-services .services-list{margin:0}
 .bb .bb-services .svc-card p{margin:0}
-.bb .svc-card p,.bb .svc-item p{color:#566070}
+.bb .svc-card p,.bb .svc-item p{color:var(--bb-card-copy)}
 .bb .bb-services .svc-card a,.bb .bb-services .svc-item a{display:inline-block;margin-top:10px;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px;color:var(--tx-accent-text)}
 .bb .bb-services .svc-card a:hover,.bb .bb-services .svc-item a:hover{text-decoration-color:currentColor}
 
@@ -123,7 +124,7 @@
 
 /* 4. reviews: real Google reviews, static cards, one link out */
 .bb .bb-reviews{border-top:0;background:var(--blue);color:var(--white)}
-.bb .bb-reviews .bb-kicker{color:#ffc37a}
+.bb .bb-reviews .bb-kicker{color:var(--bb-kicker-on-dark)}
 .bb .bb-reviews .bb-h2{margin-bottom:12px;color:var(--white)}
 .bb .bb-reviews-rating{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 10px;font-family:var(--bb-head);font-weight:800;font-size:15px;color:var(--white)}
 .bb .bb-reviews-lead{max-width:760px;margin:0 0 6px;color:var(--bb-on-dark);font-size:15px;line-height:1.7}
@@ -136,7 +137,7 @@
 .bb .bb-reviews-foot p{margin:0;color:var(--bb-on-dark);font-size:15px;line-height:1.7}
 .bb .bb-reviews-foot p a{color:var(--white);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .bb .review-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:var(--r-chrome);background:var(--orange);color:var(--bb-on-orange);font-family:var(--bb-head);font-weight:800;font-size:14px;letter-spacing:.4px;text-decoration:none;box-shadow:var(--shadow-cta)}
-.bb .review-cta:hover{background:#ff9440}
+.bb .review-cta:hover{background:var(--bb-cta-hover)}
 .bb .review-cta:focus-visible{outline:3px solid var(--white);outline-offset:3px}
 
 /* the Google photos feed returns no photos: hide its "Loading photos" placeholder and the line that promises live photos.
@@ -149,8 +150,8 @@
 
 /* 5. service areas: embedded maps and the Google listing card */
 .bb .bb-pills{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px;padding:0;list-style:none}
-.bb .area-card{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:9px 17px;border:1px solid #cfd8e5;border-radius:var(--r-pill);background:var(--white);color:var(--blue);font-family:var(--bb-head);font-weight:700;font-size:13.5px;line-height:1.3;text-decoration:none}
-.bb .area-card:hover{border-color:var(--orange);color:#0f2650}
+.bb .area-card{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:9px 17px;border:1px solid var(--bb-area-line);border-radius:var(--r-pill);background:var(--white);color:var(--blue);font-family:var(--bb-head);font-weight:700;font-size:13.5px;line-height:1.3;text-decoration:none}
+.bb .area-card:hover{border-color:var(--orange);color:var(--bb-area-hover)}
 .bb .area-card:focus-visible,.bb .bb-listing a:focus-visible,.bb .dir-card a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .bb .bb-map-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:0 0 20px}
 .bb .bb-map{min-width:0;margin:0;overflow:hidden;border:1px solid var(--bb-tile-line);border-radius:var(--r-tile);background:var(--white)}
@@ -183,8 +184,8 @@
 .bb main>.cta-bar,.bb main>.svc-cta{border-top:0;background:var(--blue);text-align:center}
 .bb main>.cta-bar p,.bb main>.svc-cta p{color:var(--bb-on-dark)}
 .bb .bb-cta-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:14px}
-.bb .bb-btn-call{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:52px;padding:14px 28px;border:2px solid rgba(255,255,255,.9);border-radius:var(--r-chrome);color:var(--white);font-family:var(--bb-head);font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;text-decoration:none}
-.bb .bb-btn-call:hover{background:rgba(255,255,255,.12)}
+.bb .bb-btn-call{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:52px;padding:14px 28px;border:2px solid var(--bb-on-dark-90);border-radius:var(--r-chrome);color:var(--white);font-family:var(--bb-head);font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;text-decoration:none}
+.bb .bb-btn-call:hover{background:var(--bb-on-dark-12)}
 .bb .bb-btn-call:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 
 /* service-areas hub: strip spacing and two unstyled links */
@@ -303,8 +304,8 @@
 }
 
 /* round 7: the at-a-glance fact list in every hero (service-town pages also carry it inline) */
-.bb .tx-triples{list-style:none;margin:0 0 20px;padding:12px 0 0;border-top:1px solid rgba(255,255,255,.22);max-width:560px}
-.bb .tx-triples li{margin:0 0 4px;color:rgba(255,255,255,.82);font-size:13px;line-height:1.5}
+.bb .tx-triples{list-style:none;margin:0 0 20px;padding:12px 0 0;border-top:1px solid var(--bb-on-dark-22);max-width:560px}
+.bb .tx-triples li{margin:0 0 4px;color:var(--bb-on-dark-82);font-size:13px;line-height:1.5}
 
 /* round 8 (row 252, hub pages): on phones the trust chips and the quote button come straight after the H1 on the
    services, service-areas, FAQ and awards heroes, so both end inside the first 600px; the intro paragraph follows. */
@@ -328,7 +329,7 @@
    rule's (while the inline block stays it still wins the tie; computed values are identical either way).
    City + neighbourhood pages: <style id="tx-lane-c-r8">. */
 :where(.bb[data-page-type=city]) .city-hero-content .tx-tldr{list-style:none;margin:-8px 0 14px;padding:0;max-width:560px}
-:where(.bb[data-page-type=city]) .city-hero-content .tx-tldr li{position:relative;padding-left:16px;margin:0 0 6px;color:rgba(255,255,255,.9);font-size:14.5px;line-height:1.55}
+:where(.bb[data-page-type=city]) .city-hero-content .tx-tldr li{position:relative;padding-left:16px;margin:0 0 6px;color:var(--bb-on-dark-90);font-size:14.5px;line-height:1.55}
 :where(.bb[data-page-type=city]) .city-hero-content .tx-tldr li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
 :where(.bb[data-page-type=city]) .city-hero-content .tx-tldr strong{color:var(--white);font-weight:700}
 :where(.bb[data-page-type=city]) .tx-layout-copy .tx-permit-note{margin:0 0 16px;padding:12px 16px;max-width:68ch;border-left:4px solid var(--orange);border-radius:0 var(--r-panel) var(--r-panel) 0;background:var(--off-white);color:var(--tx-ink);font-size:15px;line-height:1.65}
@@ -354,7 +355,7 @@
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-tldr,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-tldr{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:6px}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-tldr li,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-tldr li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.55;color:var(--white);text-align:left}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-tldr li::before,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-tldr li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
-:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-triples,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-triples{list-style:none;margin:0 0 20px;padding:12px 0 0;border-top:1px solid rgba(255,255,255,.28);display:grid;gap:4px}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-triples,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-triples{list-style:none;margin:0 0 20px;padding:12px 0 0;border-top:1px solid var(--bb-on-dark-28);display:grid;gap:4px}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-triples li,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-triples li{font-size:13.5px;line-height:1.5;color:var(--white);text-align:left}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .svc-highlights{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0;margin:4px 0 18px}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .svc-highlights li{background:var(--white);color:var(--blue);padding:11px 14px;border-radius:var(--r-chrome);border-left:3px solid var(--orange);font-family:var(--bb-head);font-size:13px;font-weight:700;line-height:1.4}
@@ -365,7 +366,7 @@
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .why-item h3{color:var(--blue);margin:0 0 8px}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .why-item p{color:var(--tx-copy);line-height:1.7}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp-wrap{max-width:960px;margin:28px auto 0;overflow-x:auto}
-:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r-tile);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;font-size:14px;line-height:1.6}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r-tile);overflow:hidden;box-shadow:0 2px 12px var(--bb-shadow-soft);text-align:left;font-size:14px;line-height:1.6}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp caption{caption-side:top;text-align:left;padding:0 0 10px;font-family:var(--bb-head);font-weight:800;font-size:15px;color:var(--blue)}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp th,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp td{padding:14px 16px;border-bottom:1px solid var(--tx-rule);vertical-align:top;color:var(--tx-copy)}
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp thead th{background:var(--blue);color:var(--white);font-family:var(--bb-head);font-weight:800;font-size:13px}
@@ -374,7 +375,7 @@
 :where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp tbody th a{color:var(--blue)}
 @media(max-width:600px){:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp thead{display:none}:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp tr{display:block;border-bottom:1px solid var(--tx-line);padding:10px 0}:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp th,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp td{display:block;width:auto;border:0!important;padding:4px 14px!important}:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp td::before{content:attr(data-label) ": ";font-weight:700;color:var(--blue)}}
 /* services.html only (the two hero lines at the top of its tx-fix2-a block) */
-@media(max-width:767px){:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero{background-image:linear-gradient(90deg,rgba(8,24,55,.91),rgba(8,24,55,.79)),url('../img/client-photos/exterior-window-trim-480.webp')}}
+@media(max-width:767px){:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero{background-image:linear-gradient(90deg,var(--bb-scrim-top),var(--bb-scrim-bottom)),url('../img/client-photos/exterior-window-trim-480.webp')}}
 @media(max-width:600px){:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero{display:flex;flex-direction:column}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>*{order:3}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-crumbs,:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-kicker,:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>h1{order:1}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-kicker{align-self:center}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-chips{order:2;margin:0 0 18px}}
 /* Service x town callout: <style id="tx-r8-callout">. Row 508: the callout link outranks photo-text-layout.css's white
    link rule in the navy copy panel (it rendered white on the pale callout, 1.07:1); #1e4fa0 on #f4f7fb = 7.6:1. */
@@ -385,7 +386,7 @@
    data-key on the hero section, e.g. <section class="city-hero ..." data-key="Ladner">; without the attribute nothing
    renders. Alt-text syntax keeps the word out of the accessibility tree; the pseudo clips itself, so no overflow. */
 .bb :is(.city-hero,.svc-hero)[data-key]{position:relative;isolation:isolate}
-.bb :is(.city-hero,.svc-hero)[data-key]::before{content:attr(data-key) / "";position:absolute;z-index:-1;left:0;right:0;top:clamp(96px,14vw,180px);overflow:hidden;padding:0 max(var(--bb-gutter),calc((100% - var(--bb-max))/2));font-family:var(--bb-head);font-weight:900;font-size:clamp(64px,13vw,200px);line-height:.82;letter-spacing:-.02em;white-space:nowrap;color:rgba(255,255,255,.12);pointer-events:none;user-select:none}
+.bb :is(.city-hero,.svc-hero)[data-key]::before{content:attr(data-key) / "";position:absolute;z-index:-1;left:0;right:0;top:clamp(96px,14vw,180px);overflow:hidden;padding:0 max(var(--bb-gutter),calc((100% - var(--bb-max))/2));font-family:var(--bb-head);font-weight:900;font-size:clamp(64px,13vw,200px);line-height:.82;letter-spacing:-.02em;white-space:nowrap;color:var(--bb-on-dark-12);pointer-events:none;user-select:none}
 
 /* round 9 (row 291): the last two band-level prose columns that sat in a centred 860px column now start on the band's
    content edge like every other band: the "How a drywall repair job runs" process band (drywall-repair-ladner,

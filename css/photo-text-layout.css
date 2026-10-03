@@ -1,7 +1,8 @@
+:root{--ptl-rule:#e5e9f2}
 /* Scoped to the two authored photo/text bands; no shared site selectors.
    Tokens (--r-card, --bb-muted) are declared on .bb in bb-structure.css, which every page loading this sheet also loads. */
 .tx-layout-band{box-sizing:border-box;width:100%;padding:clamp(38px,5vw,72px) 20px;background:var(--white);color:var(--dark)}
-.tx-layout-band-2{background:var(--off-white);border-top:1px solid #e5e9f2}
+.tx-layout-band-2{background:var(--off-white);border-top:1px solid var(--ptl-rule)}
 .tx-layout-inner{display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);gap:36px;align-items:center;max-width:1180px;margin:0 auto}
 .tx-layout-copy{grid-column:2;grid-row:1;min-width:0;text-align:left}
 .tx-layout-band-1 .tx-layout-copy{background:var(--blue);border-radius:var(--r-card);padding:clamp(22px,3vw,36px);color:var(--white)}
@@ -36,3 +37,6 @@
   .tx-layout-photo img{max-height:480px}
   .tx-layout-copy .why-grid,.tx-layout-copy .two-col,.tx-layout-copy .texture-grid,.tx-layout-copy .level-cards{grid-template-columns:minmax(0,1fr)}
 }
+
+/* round 12: former inline style as a class */
+.tx-layout-copy.tx-layout-col.tx-layout-col--full{grid-column:1/-1;max-width:860px}

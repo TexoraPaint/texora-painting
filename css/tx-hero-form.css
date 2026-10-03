@@ -1,29 +1,29 @@
 /* Texora owner preview: the quote card in the hero (copy left, white card right; stacked on phones).
    Radius tokens (--r-card, --r-chrome) are declared on :root in tx-owner-nav.css, which home loads. Card colours below are declared once here (this sheet loads on home only). */
-:root{--hf-line:#d6dde8;--hf-muted:#6b7280;--hf-text:#4b5563}
+:root{--hf-shadow:rgba(4,12,45,.38);--hf-star:#f5a623;--hf-chip-bg:#f8fafc;--hf-focus:rgba(26,58,110,.25);--hf-submit-glow:rgba(244,123,32,.4);--hf-note-bg:#fff4e5;--hf-note-ink:#8a4b00;--hf-line:#d6dde8;--hf-muted:#6b7280;--hf-text:#4b5563}
 .hero.has-form{justify-content:space-between;gap:32px}
-.hero-form{position:relative;z-index:6;flex:0 0 auto;align-self:flex-start;margin:92px 0 -56px;width:min(400px,100%);background:var(--white);border-radius:var(--r-card);box-shadow:0 24px 60px rgba(4,12,45,.38);padding:18px 18px 12px;animation:fadeUp .8s ease both}
+.hero-form{position:relative;z-index:6;flex:0 0 auto;align-self:flex-start;margin:92px 0 -56px;width:min(400px,100%);background:var(--white);border-radius:var(--r-card);box-shadow:0 24px 60px var(--hf-shadow);padding:18px 18px 12px;animation:fadeUp .8s ease both}
 .hf-title{margin:0 0 2px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:21px;line-height:1.15;color:var(--blue)}
 .hf-rating{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:13.5px;color:var(--hf-text)}
 .hf-rating b{color:var(--dark)}
-.hf-stars{color:#f5a623;font-size:15px;letter-spacing:1px}
+.hf-stars{color:var(--hf-star);font-size:15px;letter-spacing:1px}
 .hf-step{margin:0 0 6px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--hf-muted)}
 .hf-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:0 0 10px;padding:0;border:0;min-width:0}
 .hf-chip{position:relative;margin:0}
 .hf-chip input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
-.hf-chip span{display:flex;align-items:center;justify-content:center;min-height:34px;padding:3px 6px;border:1.5px solid var(--hf-line);border-radius:var(--r-chrome);background:#f8fafc;color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;line-height:1.2;text-align:center;transition:background .15s,border-color .15s,color .15s}
+.hf-chip span{display:flex;align-items:center;justify-content:center;min-height:34px;padding:3px 6px;border:1.5px solid var(--hf-line);border-radius:var(--r-chrome);background:var(--hf-chip-bg);color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;line-height:1.2;text-align:center;transition:background .15s,border-color .15s,color .15s}
 .hf-chip:hover span{border-color:var(--blue)}
 .hf-chip input:checked+span{background:var(--blue);border-color:var(--blue);color:var(--white)}
 .hf-chip input:focus-visible+span{outline:2px solid var(--orange);outline-offset:2px}
 .hf-fields{display:grid;gap:7px;margin:0 0 10px}
 .hf-field label{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--hf-text)}
 .hf-field input{width:100%;height:38px;padding:0 12px;border:1.5px solid var(--hf-line);border-radius:var(--r-chrome);background:var(--white);color:var(--dark);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:500;font-size:15px}
-.hf-field input:focus{border-color:var(--blue);outline:2px solid rgba(26,58,110,.25);outline-offset:0}
-.hf-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:var(--r-chrome);background:var(--orange);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 14px rgba(244,123,32,.4);transition:background .2s,transform .15s}
+.hf-field input:focus{border-color:var(--blue);outline:2px solid var(--hf-focus);outline-offset:0}
+.hf-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:var(--r-chrome);background:var(--orange);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 14px var(--hf-submit-glow);transition:background .2s,transform .15s}
 .hf-submit:hover{background:var(--orange-dark);transform:translateY(-1px)}
 .hf-note{margin:8px 0 0;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:11px;line-height:1.45;color:var(--hf-muted);text-align:center}
 .hf-note a{color:var(--blue)}
-.hero-form .pv-note{margin:6px 0 0;padding:5px 8px;border-radius:var(--r-chrome);background:#fff4e5;color:#8a4b00;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:12px;text-align:center}
+.hero-form .pv-note{margin:6px 0 0;padding:5px 8px;border-radius:var(--r-chrome);background:var(--hf-note-bg);color:var(--hf-note-ink);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:12px;text-align:center}
 @media(max-width:1100px){
   .hero.has-form{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:28px}
   .hero-form{width:100%;max-width:520px;margin:0 auto;align-self:center}
