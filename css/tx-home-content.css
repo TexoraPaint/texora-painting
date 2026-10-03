@@ -20,7 +20,7 @@
 .txh-offer h2,.txh-offer p{color:var(--white)}
 .txh-offer .section-label{color:var(--orange)}
 .txh-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}
-.txh-card{background:var(--white);border-radius:var(--r-card);padding:26px 24px;box-shadow:0 14px 40px rgba(4,12,45,.25);text-align:left}
+.txh-card{background:var(--white);border-radius:var(--r-card);padding:26px 24px;box-shadow:var(--tx-shadow-lift);text-align:left}
 .txh-card .pill{display:inline-block;background:#fff4e5;color:#8a4b00;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;padding:5px 10px;border-radius:var(--txh-r-chip);margin-bottom:12px}
 .txh-card h3{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:19px;line-height:1.2;color:var(--blue);margin:0 0 8px}
 .txh-card p{color:var(--txh-text);font-size:15px;margin:0}
@@ -79,7 +79,7 @@
 .txh-job p{font-size:15px;margin:0 0 10px}
 .txh-job .txh-job-k{margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--txh-muted)}
 .txh-job blockquote{margin:0 0 12px;padding:0 0 0 12px;border-left:3px solid var(--orange);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:15px;line-height:1.6;color:var(--txh-ink)}
-.txh-job footer{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;color:#4b5563}
+.txh-job footer{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;color:var(--tx-muted)}
 .txh-byline{font-size:13px!important;color:var(--txh-muted)!important;border-top:1px solid var(--tx-line);padding-top:10px;margin-top:6px}
 .txh-pills span{display:inline-block;padding:8px 13px;border:1px solid rgba(255,255,255,.28);border-radius:var(--txh-r-chip);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12.5px;background:rgba(255,255,255,.06)}
 .txh-link-w{color:var(--white)!important}
@@ -92,7 +92,7 @@ body section.trust-strip{flex-wrap:wrap}
 @media(max-width:600px){.trust-facts{grid-template-columns:1fr;margin-bottom:14px}}
 /* v5: warranty table, print + failsafe for the owner's how-it-works reveal */
 .txh-table-wrap{margin:26px auto 0;max-width:900px;overflow-x:auto;padding:2px}
-.txh-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r-card);overflow:hidden;box-shadow:0 14px 40px rgba(4,12,45,.25);text-align:left}
+.txh-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--tx-shadow-lift);text-align:left}
 .txh-table caption{caption-side:top;padding:0 4px 10px;color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:15px;text-align:left}
 .txh-table th,.txh-table td{padding:14px 18px;border-bottom:1px solid var(--tx-line);vertical-align:top;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14.5px;line-height:1.55;color:var(--txh-ink)}
 .txh-table th{width:30%;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;color:var(--blue);background:var(--off-white)}

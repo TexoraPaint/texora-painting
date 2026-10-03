@@ -1,7 +1,7 @@
 /* Texora owner preview: Services + Service Areas menus inside the owner's own header. Everything else is his CSS. */
 /* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
    Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
-:root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f;--tx-muted:#4b5563}
+:root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f;--tx-muted:#4b5563;--tx-shadow-lift:0 14px 40px rgba(4,12,45,.25)}
 /* round 9 (row 283): the leftover literals of the round-7/8 page-local blocks, declared once for every page that loads this
    sheet (all 88; bb-structure.css and the blog/project/gallery templates reference them). Values = the literals they replace. */
 :root{--tx-ink:#24334a;--tx-callout-ink:#243447;--tx-link:#1e4fa0;--tx-tint-deep:#e9eef6;--tx-kicker:#a74a08;--tx-copy:#374151;--tx-rule:#e5e7eb;--tx-on-orange:#081c3b;--tx-orange-hover:#e06810}
@@ -157,4 +157,7 @@ body.bb #mainNav .btn-nav,body.bb #mainNav .nav-cta-m,body.bb nav .btn-nav,body.
 
 /* round 11: the quote tab hides while the cookie notice (role=dialog) is showing; the 'Last updated' line's style lives here, not inline */
 body:has(#txaCookie.cc-show) .tx-qtab{display:none!important}
-.tx-updated{font-size:13px;line-height:1.5;margin:-4px 0 14px;opacity:.85}
+p.tx-updated,.city-hero p.tx-updated,.svc-hero p.tx-updated,.tx-area-hero p.tx-updated{font-size:13px!important;line-height:1.5!important;margin:-4px 0 14px!important;opacity:.85}
+
+/* round 11b: links inside the dark hero copy read as white, underlined */
+.bb .city-hero-content p a,.bb .svc-hero-content p a{color:#fff;text-decoration:underline;text-underline-offset:2px}
