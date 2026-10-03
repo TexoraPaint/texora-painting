@@ -1,7 +1,7 @@
 /* Texora owner preview: Services + Service Areas menus inside the owner's own header. Everything else is his CSS. */
 /* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
    Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
-:root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08)}
+:root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f}
 nav .nav-links li.txn-menu{display:flex;align-items:center}
 nav .nav-links .txn-menu>a{padding-right:2px}
 nav .nav-links .txn-menu>button{display:inline-flex;align-items:center;justify-content:center;width:26px;height:40px;margin:0;padding:0;border:0;background:transparent;color:var(--white);cursor:pointer;opacity:.9}
@@ -45,8 +45,8 @@ nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue);font-
    bottom right (there is no call bar on these pages). Same show/hide as desktop. Bloomview inner pages only (.bb);
    home and About are owner-gated. */
 @media(max-width:900px){
-  .bb .tx-qtab{display:inline-flex;align-items:center;position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:998;box-sizing:border-box;min-height:44px;padding:12px 20px;border-radius:var(--r-pill);background:var(--orange);color:#081c3b;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
-  .bb .tx-qtab.is-on{opacity:1;pointer-events:auto}
+  .bb .tx-qtab,.tx-inner .tx-qtab{display:inline-flex;align-items:center;position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:998;box-sizing:border-box;min-height:44px;padding:12px 20px;border-radius:var(--r-pill);background:var(--orange);color:#081c3b;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .bb .tx-qtab.is-on,.tx-inner .tx-qtab.is-on{opacity:1;pointer-events:auto}
 }
 @media(prefers-reduced-motion:reduce){.tx-qtab{transition:none}}
 @media print{.tx-qtab{display:none!important}}
@@ -84,7 +84,7 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 .tx-case-links{max-width:1180px;margin:24px auto;padding:0 5%;font-size:15px}
 .showcase-gallery-link,.txh-link,.reviews-all a{display:inline-block;padding:6px 0;min-height:24px}
 /* round 2: readable contrast for the review job label; the interior comparison table stacks on phones */
-.review-card figcaption .review-job,.txh-rv .review-job{color:#b4410b}
+.review-card figcaption .review-job,.txh-rv .review-job{color:var(--tx-accent-text)}
 @media(max-width:600px){.ip-table{min-width:0!important}.ip-table thead{display:none}.ip-table tr{display:block;border-bottom:1px solid var(--tx-line);padding:10px 0}.ip-table th,.ip-table td{display:block;width:auto;border:0!important;padding:4px 14px!important}.ip-table td::before{content:attr(data-label) ": ";font-weight:700;color:var(--blue)}}
 
 /* round 3: readable line length on body copy; rating line inside the home bottom form */
@@ -95,3 +95,24 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 
 /* round 5: readable measure on project, drywall sub-service, cost guide and warranty templates */
 .project-body p,.step-content p,.highlight-box p,.dw-step p,main details p,.wrap>p,.policy-wrap p,.page-body p,.city-intro p{max-width:68ch}
+
+/* round 8 (row 508): orange category labels and links on the white blog, project and gallery cards take the darker
+   accent-text colour (5.2:1 or better on white, the pale band and the tag tint). None of these classes exist on home or About. */
+html:has(link[rel=canonical][href$="/warranty.html"]) .policy-wrap a,body .related-card-cat,body .related-card-read,body .blog-card-cat,body .project-link,body .project-tag.tag-service,body .gallery-section-inner .section-label,body .ba-inner .section-label{color:var(--tx-accent-text)}
+/* round 8 (rows 228/282, gallery): the photo grid band takes the pale tint and the before/after band below it goes
+   white, so the four light sections alternate white / pale / white into the navy CTA. Gallery-only classes. */
+body .gallery-section{background:var(--off-white)}
+body .ba-section{background:var(--white)}
+/* round 8 (row 230): on the five blog posts, the two projects/ case studies and the warranty page, a heading and the
+   text under it sit side by side from 901px up: the H2/H3 in a left column, its paragraphs, lists, tables and photos
+   in a right column on one prose edge. An H2 that opens straight onto an H3 runs full width as the section title;
+   the call-to-action, related-posts and FAQ blocks run full width. Below 901px nothing changes. Legal pages untouched. */
+@media(min-width:901px){
+  main .article-wrap,main .project-body:has(>p:first-child),html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);column-gap:44px;align-content:start;max-width:1080px}
+  main .article-wrap>*,main .project-body:has(>p:first-child)>*,html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap>*{grid-column:2;min-width:0}
+  main .article-wrap>:is(h2,h3),main .project-body:has(>p:first-child)>:is(h2,h3),html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap>:is(h2,h3){grid-column:1;margin-top:36px}
+  main .article-wrap>:is(h2,h3)+*,main .project-body:has(>p:first-child)>:is(h2,h3)+*,html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap>:is(h2,h3)+*{margin-top:36px}
+  main .article-wrap>h2:has(+h3),main .project-body:has(>p:first-child)>h2:has(+h3),main .article-wrap>:is(.article-cta,.related-section),main .project-body:has(>p:first-child)>:is(.proj-faq,.related-projects){grid-column:1/-1}
+  main .article-wrap>h2:has(+h3)+h3,main .project-body:has(>p:first-child)>h2:has(+h3)+h3{margin-top:0}
+  main .article-wrap>h2:has(+h3)+h3+*,main .project-body:has(>p:first-child)>h2:has(+h3)+h3+*{margin-top:0}
+}

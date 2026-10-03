@@ -25,6 +25,7 @@ for f in sorted(files):
     for n in ns:
         if "Service" in ty(n) and not n.get("provider"): errors.append(f"{f}: Service without provider")
         if "FAQPage" in ty(n):
+            h = re.sub(r'<p class="tx-faq-src">[\s\S]*?</p>', '', h)  # source attribution lines on faq.html are not part of the answer
             vis = {txt(q): txt(a) for q, a in re.findall(r'<button[^>]*class="faq-q[^"]*"[^>]*>([\s\S]*?)</button>\s*<div[^>]*class="faq-a[^"]*"[^>]*>([\s\S]*?)</div>', h)}
             vis.update({txt(q): txt(a) for q, a in re.findall(r"<details[^>]*>\s*<summary[^>]*>([\s\S]*?)</summary>([\s\S]*?)</details>", h)})
             for q in n.get("mainEntity", []):

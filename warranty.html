@@ -263,11 +263,23 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
 .showcase-section .sec-label{color:#a74a08}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=8293655ce7">
-<script src="/js/tx-owner-nav.js?v=8293655ce7" defer></script>
+<link rel="stylesheet" href="/css/tx-owner-nav.css?v=936e1d9ed3">
+<script src="/js/tx-owner-nav.js?v=936e1d9ed3" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.page-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.52) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}.city-hero,.svc-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.62) 100%),url('img/client-photos/exterior-window-trim-480.webp')!important}}</style>
+<style id="tx-bands">
+/* rows 228/229/230: one H2 per band, alternating tint, H3 units in a 2-column grid from 901px */
+.tx-band--a{background:#fff}
+.tx-band--b{background:#f4f7fb}
+.tx-band>.tx-band-inner{padding-top:44px;padding-bottom:44px}
+.tx-band>.tx-band-inner>:first-child{margin-top:0}
+.tx-band>.tx-band-inner>.related-section:first-child{border-top:0;padding-top:0}
+.tx-band--b .proj-chip,.tx-band--b .specs-table td:first-child,.tx-band--b .related-card-icon,.tx-band--b .compare-table tr:nth-child(even) td{background:#e9eef6}
+.tx-unit-grid{display:grid;gap:0 28px;margin:0 0 8px}
+@media(min-width:901px){.tx-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tx-unit-col>:first-child{margin-top:12px}
+</style>
 </head>
-<body>
+<body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLK55T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -276,7 +288,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <a class="logo" href="index.html" aria-label="Texora Painting home">
     <picture>
-      <source srcset="img/logo-v3-240.webp 240w, img/logo-v3.webp 333w" sizes="(max-width:900px) 82px, 150px" type="image/webp">
+      <source srcset="img/logo-v3-240.webp 240w, img/logo-v3.webp 333w" sizes="(max-width:900px) 70px, 142px" type="image/webp">
       <img src="img/logo-v3.png" alt="Texora Painting" width="333" height="220">
     </picture>
   </a>
@@ -299,16 +311,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<div class="policy-wrap">
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <span class="policy-date">Last updated: September 2026</span>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>The Texora workmanship warranty</h2>
   <p>At <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a>, we stand behind the quality of our work. Depending on the service and project scope, qualifying projects are backed by a <strong>1, 2, or 3-Year Workmanship Warranty</strong>, with the specific warranty period and coverage clearly outlined in your estimate before work begins.</p>
   <p>Every project is different, but our warranty is built around one simple principle: if something fails because of our workmanship, we take responsibility for it.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>100% satisfaction guarantee</h2>
   <p>Every project begins with our 100% Satisfaction Guarantee. Before we consider a project complete, we perform a final inspection or walkthrough with the customer. If there are reasonable workmanship-related deficiencies within the approved scope, such as missed areas, inadequate coverage, visible application defects, or required touch-ups, we correct them before the project is considered complete.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>What our workmanship warranty covers</h2>
   <p>Our warranty is designed to protect against premature failure directly caused by the work performed by Texora Painting. Depending on the service, coverage may include:</p>
   <ul>
@@ -321,7 +336,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Application or finishing deficiencies within the original contracted scope</li>
   </ul>
   <p>When a valid workmanship issue is confirmed, Texora Painting will provide the standard labour and materials necessary to correct the affected warrantable area at no additional charge.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>What the warranty does not cover</h2>
   <p>Our workmanship warranty covers our work. It is not a warranty against every condition that may affect a home or building after the project is completed. Typical exclusions include:</p>
   <ul>
@@ -341,19 +357,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Areas or services outside the original approved scope</li>
   </ul>
   <p>In simple terms: we warranty the quality of our workmanship, but we cannot warranty the underlying building, existing materials, environmental conditions, or damage caused by factors outside our control.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>How a warranty claim works</h2>
   <p>If you believe there may be a workmanship-related issue during your warranty period, contact Texora Painting <strong>before</strong> having another contractor repair or alter the affected area. We will arrange an inspection and determine the cause of the issue.</p>
   <p>If the problem is confirmed to be the result of Texora Painting's workmanship, we will correct the affected warrantable area using the necessary standard labour and materials at no additional charge. Warranty repairs apply to the affected area and do not automatically require repainting, replacing, or refinishing otherwise unaffected surfaces.</p>
   <p>To start a claim, email <a href="mailto:info@texorapainting.com">info@texorapainting.com</a> or call <a href="tel:+16044176483">(604) 417-6483</a>.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>Project-specific coverage</h2>
   <p>Painting, drywall, wood restoration, staining, cabinet refinishing, carpentry, and other services are exposed to different conditions. For that reason, warranty periods and specific coverage may vary by project.</p>
   <p>Your Texora Painting estimate will identify the applicable warranty period and any project-specific conditions or exclusions. <strong>The warranty terms contained in your approved estimate are the terms that apply to your individual project.</strong></p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>Getting your warranty term in writing</h2>
   <p>One of the two partners walks the job with you, and the written estimate names the scope and your 1, 2 or 3-year warranty term. Call <a href="tel:+16044176483">(604) 417-6483</a> to book the walkthrough.</p>
-</div>
+</div></section>
 
 </main>
 <footer class="footer-bar">

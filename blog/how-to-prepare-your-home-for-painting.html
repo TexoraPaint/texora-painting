@@ -237,17 +237,29 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
 .showcase-section .sec-label{color:#a74a08}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=8293655ce7">
-<script src="/js/tx-owner-nav.js?v=8293655ce7" defer></script>
+<link rel="stylesheet" href="/css/tx-owner-nav.css?v=936e1d9ed3">
+<script src="/js/tx-owner-nav.js?v=936e1d9ed3" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.blog-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.92) 0%,rgba(22,58,120,.80) 100%),url('/img/hero-bg-768.webp')!important}}</style>
+<style id="tx-bands">
+/* rows 228/229/230: one H2 per band, alternating tint, H3 units in a 2-column grid from 901px */
+.tx-band--a{background:#fff}
+.tx-band--b{background:#f4f7fb}
+.tx-band>.tx-band-inner{padding-top:44px;padding-bottom:44px}
+.tx-band>.tx-band-inner>:first-child{margin-top:0}
+.tx-band>.tx-band-inner>.related-section:first-child{border-top:0;padding-top:0}
+.tx-band--b .proj-chip,.tx-band--b .specs-table td:first-child,.tx-band--b .related-card-icon,.tx-band--b .compare-table tr:nth-child(even) td{background:#e9eef6}
+.tx-unit-grid{display:grid;gap:0 28px;margin:0 0 8px}
+@media(min-width:901px){.tx-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tx-unit-col>:first-child{margin-top:12px}
+</style>
 </head>
-<body>
+<body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLK55T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav id="mainNav">
-  <a class="logo" href="../index.html" aria-label="Texora Painting home"><picture><source srcset="../img/logo-v3-240.webp 240w, ../img/logo-v3.webp 333w" sizes="(max-width:900px) 82px, 150px" type="image/webp"><img src="../img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
+  <a class="logo" href="../index.html" aria-label="Texora Painting home"><picture><source srcset="../img/logo-v3-240.webp 240w, ../img/logo-v3.webp 333w" sizes="(max-width:900px) 70px, 142px" type="image/webp"><img src="../img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
   <div class="nav-actions"><a class="nav-cta-m" href="/#hero-quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg></a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
         <ul class="nav-links" id="navLinks">
     <li class="txn-menu" data-txn-menu><a href="/services.html">Services</a><button type="button" aria-label="Show all services" aria-expanded="false" aria-controls="txnServices"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button><div class="txn-drop" id="txnServices"><div class="txn-cols"><div><strong>Painting</strong><a href="/interior-painting.html">Interior Painting</a><a href="/exterior-painting.html">Exterior Painting</a><a href="/cabinet-painting.html">Cabinet Painting</a><a href="/trim-doors-ceilings.html">Trim, Doors &amp; Ceilings</a><a href="/full-home-repaint.html">Full Home Repaint</a><a href="/strata-painting.html">Strata &amp; Multi-Unit Painting</a><a href="/warehouse-painting.html">Warehouse &amp; Industrial Painting</a></div><div><strong>Drywall</strong><a href="/drywall-repair.html">Drywall Repair</a><a href="/drywall-installation.html">Drywall Installation</a><a href="/drywall-taping-finishing.html">Drywall Taping &amp; Finishing</a><a href="/texture-matching.html">Texture Matching</a><a href="/ceiling-drywall-repair.html">Ceiling Drywall Repair</a><a href="/popcorn-ceiling-repair.html">Popcorn Ceiling Repair &amp; Removal</a><a href="/water-damage-drywall-repair.html">Water Damage Drywall Repair</a></div><div><strong>Repairs &amp; restoration</strong><a href="/wood-rot-fascia-repair.html">Wood Rot &amp; Fascia Repair</a><a href="/heritage-home-restoration.html">Heritage Home Restoration</a><a href="/brick-staining.html">Brick Staining</a><a href="/bathroom-refresh.html">Bathroom Refresh</a></div></div><div class="txn-drop-foot"><span>Not sure which one you need? Tell us about the job.</span><a href="/#hero-quote">Get a free quote</a></div></div></li>
@@ -266,10 +278,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="meta">By Texora Painting &nbsp;&bull;&nbsp; May 2025 &nbsp;&bull;&nbsp; 8 min read</div>
 </section>
 
-<div class="article-wrap">
-
-  <p>A fresh coat of paint only looks right when the surface underneath is properly prepared. <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a> handles all of the prep when we do <a href="/interior-painting.html">interior painting in Delta</a>, Tsawwassen and Ladner, and how well the walls are prepped decides how long the finish lasts. Rush it and you get paint that peels, cracks showing through and drips on the trim.</p>
-
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+  <p>A fresh coat of paint only looks right when the surface underneath is properly prepared. At <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a> we handle all of the prep when we do <a href="/interior-painting.html">interior painting in Delta</a>, Tsawwassen and Ladner, and how well the walls are prepped decides how long the finish lasts. Rush it and you get paint that peels, cracks showing through and drips on the trim.</p>
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>1. Clear and protect the room</h2>
   <p>Move furniture to the centre of the room or out of it, and cover what stays with plastic sheeting or canvas drop cloths. Take down wall art, mirrors, outlet covers and switch plates, and keep the screws in a labelled bag taped to each cover, since outlet layouts in older BC homes vary room to room.</p>
 
@@ -277,25 +289,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <strong>Humidity in BC homes</strong>
     <p>In Tsawwassen, Ladner and Delta homes, indoor humidity slows drying and can make paint blister or sag. Run a dehumidifier 24 hours before painting and keep windows cracked for ventilation, even in cooler months.</p>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>2. Patch holes and repair imperfections</h2>
   <p>Walk every wall in raking light (a flashlight held at a low angle works well) and mark every crack, nail hole, dent and scuff with a pencil.</p>
 
-  <h3>Small holes and nail pops</h3>
-  <p>Fill holes up to about 15 cm in diameter with lightweight spackling compound, slightly overfilled, and sand flush with 120-grit once dry; most lightweight compounds dry in 30–60 minutes, but give it 90 in a humid BC home. For a nail pop, drive a drywall screw one inch above and below the popped nail, countersink the nail with a nail set, and cover with two thin coats of joint compound.</p>
-
-  <h3>Cracks and stress fractures</h3>
-  <p>Hairline cracks around door frames and windows move with seasonal moisture, so fill them with flexible paintable caulk rather than rigid compound. Wider cracks get opened slightly with a scraper, filled with setting-type compound and covered with mesh tape before a skim coat.</p>
-
+  <div class="tx-unit-grid"><div class="tx-unit-col"><h3>Small holes and nail pops</h3>
+  <p>Fill holes up to about 15 cm in diameter with lightweight spackling compound, slightly overfilled, and sand flush with 120-grit once dry; most lightweight compounds dry in 30–60 minutes, but give it 90 in a humid BC home. For a nail pop, drive a drywall screw one inch above and below the popped nail, countersink the nail with a nail set, and cover with two thin coats of joint compound.</p></div><div class="tx-unit-col"><h3>Cracks and stress fractures</h3>
+  <p>Hairline cracks around door frames and windows move with seasonal moisture, so fill them with flexible paintable caulk rather than rigid compound. Wider cracks get opened slightly with a scraper, filled with setting-type compound and covered with mesh tape before a skim coat.</p></div></div>
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>3. Wash and clean the walls</h2>
   <p>Paint does not bond well to the film of grease and dust on walls, especially in kitchens and near the front door. Wash top to bottom with warm water and a trisodium phosphate (TSP) substitute (TSP itself is restricted in BC), then rinse and let the walls dry for at least 4 hours, or overnight in a damp coastal climate.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>4. Sand for a smooth surface</h2>
   <p>A light sand with 150-grit gives the new paint something to grip, and over a semi-gloss or high-gloss finish, common in bathrooms and kitchens, 80-grit de-glosses it properly. Wipe the dust off with a damp tack cloth, not a dry one.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>5. Tape off trim and edges</h2>
   <p>Press painter's tape down firmly along trim, baseboards, window casings and door frames, and pull it back at a 45-degree angle while the paint is still slightly wet. If the ceiling and walls will be different colours, tape the ceiling line as well.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>6. Prime before you paint</h2>
   <p>Primer is not optional on new drywall, patched areas or walls with stains, and in BC a primer made for high humidity belongs in bathrooms, laundry rooms and cool north-side rooms. For a big colour change, say dark charcoal to pale linen, a primer tinted to a mid-tone can cut the finish coats from three to two.</p>
 
@@ -303,17 +318,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <strong>New construction drywall</strong>
     <p>New drywall in a home in Tsawwassen, Delta or elsewhere in the Lower Mainland needs a dedicated drywall primer-sealer. Without it the porous board absorbs finish paint unevenly and shows "flashing": flat, dull areas next to areas that kept their sheen.</p>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>7. Final checks before you open the paint</h2>
   <p>Check that every patch is sanded flush, the tape is pressed down tight and a fan is pointed out a window. Most interior latex paints should go on above 10°C, which an unheated older BC home may not reach in the shoulder seasons.</p>
-  <p>If you would rather hand the prep to a crew, Texora Painting handles every step of it as part of our standard service. One of the two partners walks the job with you, and the written estimate names the scope and your 1, 2 or 3-year warranty term. Call <a href="tel:+16044176483">(604) 417-6483</a>.</p>
+  <p>If you would rather hand the prep to a crew, we handle every step of it as part of our standard service. One of the two partners walks the job with you, and the written estimate names the scope and your 1, 2 or 3-year warranty term. Call <a href="tel:+16044176483">(604) 417-6483</a>.</p>
 
   <div class="article-cta">
     <h3>Get an interior painting quote</h3>
-    <p>Texora Painting handles all prep, painting, and cleanup. We serve Delta, Tsawwassen, Ladner, Port Coquitlam, and Port Moody.</p>
+    <p>We handle all prep, painting, and cleanup. Our crews work in Delta, Tsawwassen, Ladner, Port Coquitlam, and Port Moody.</p>
     <a href="../index.html#quote" class="btn-cta">Get a Free Quote</a>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <div class="related-section">
   <h2>Related articles</h2>
   <div class="related-grid">
@@ -343,8 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
   </div>
 </div>
-
-</div>
+</div></section>
 
 </main>
 <footer class="footer-bar">

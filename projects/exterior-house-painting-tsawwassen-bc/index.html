@@ -277,17 +277,29 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
 .showcase-section .sec-label{color:#a74a08}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=8293655ce7">
-<script src="/js/tx-owner-nav.js?v=8293655ce7" defer></script>
+<link rel="stylesheet" href="/css/tx-owner-nav.css?v=936e1d9ed3">
+<script src="/js/tx-owner-nav.js?v=936e1d9ed3" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.project-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.52) 100%),url('/img/hero-bg-768.webp')!important}}</style>
+<style id="tx-bands">
+/* rows 228/229/230: one H2 per band, alternating tint, H3 units in a 2-column grid from 901px */
+.tx-band--a{background:#fff}
+.tx-band--b{background:#f4f7fb}
+.tx-band>.tx-band-inner{padding-top:44px;padding-bottom:44px}
+.tx-band>.tx-band-inner>:first-child{margin-top:0}
+.tx-band>.tx-band-inner>.related-section:first-child{border-top:0;padding-top:0}
+.tx-band--b .proj-chip,.tx-band--b .specs-table td:first-child,.tx-band--b .related-card-icon,.tx-band--b .compare-table tr:nth-child(even) td{background:#e9eef6}
+.tx-unit-grid{display:grid;gap:0 28px;margin:0 0 8px}
+@media(min-width:901px){.tx-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tx-unit-col>:first-child{margin-top:12px}
+</style>
 </head>
-<body>
+<body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLK55T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav id="nav">
-  <a href="/" class="logo"><picture><source srcset="/img/logo-v3-240.webp 240w, /img/logo-v3.webp 333w" sizes="(max-width:900px) 82px, 150px" type="image/webp"><img src="/img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
+  <a href="/" class="logo"><picture><source srcset="/img/logo-v3-240.webp 240w, /img/logo-v3.webp 333w" sizes="(max-width:900px) 70px, 142px" type="image/webp"><img src="/img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
   <div class="nav-actions"><a class="nav-cta-m" href="/#hero-quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg></a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
         <ul class="nav-links" id="navLinks">
     <li class="txn-menu" data-txn-menu><a href="/services.html">Services</a><button type="button" aria-label="Show all services" aria-expanded="false" aria-controls="txnServices"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button><div class="txn-drop" id="txnServices"><div class="txn-cols"><div><strong>Painting</strong><a href="/interior-painting.html">Interior Painting</a><a href="/exterior-painting.html">Exterior Painting</a><a href="/cabinet-painting.html">Cabinet Painting</a><a href="/trim-doors-ceilings.html">Trim, Doors &amp; Ceilings</a><a href="/full-home-repaint.html">Full Home Repaint</a><a href="/strata-painting.html">Strata &amp; Multi-Unit Painting</a><a href="/warehouse-painting.html">Warehouse &amp; Industrial Painting</a></div><div><strong>Drywall</strong><a href="/drywall-repair.html">Drywall Repair</a><a href="/drywall-installation.html">Drywall Installation</a><a href="/drywall-taping-finishing.html">Drywall Taping &amp; Finishing</a><a href="/texture-matching.html">Texture Matching</a><a href="/ceiling-drywall-repair.html">Ceiling Drywall Repair</a><a href="/popcorn-ceiling-repair.html">Popcorn Ceiling Repair &amp; Removal</a><a href="/water-damage-drywall-repair.html">Water Damage Drywall Repair</a></div><div><strong>Repairs &amp; restoration</strong><a href="/wood-rot-fascia-repair.html">Wood Rot &amp; Fascia Repair</a><a href="/heritage-home-restoration.html">Heritage Home Restoration</a><a href="/brick-staining.html">Brick Staining</a><a href="/bathroom-refresh.html">Bathroom Refresh</a></div></div><div class="txn-drop-foot"><span>Not sure which one you need? Tell us about the job.</span><a href="/#hero-quote">Get a free quote</a></div></div></li>
@@ -309,12 +321,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<div class="project-body">
-
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <p>This page documents an actual <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a> project completed in Tsawwassen, part of the City of Delta, BC. The scope was a full exterior repaint, but the process and finished photographs we have primarily document the <strong>front elevation</strong>, so that's what this case study focuses on: while accurately noting it was part of a larger exterior job.</p>
-  <p>Here's what happened, in short: the stucco exterior was pressure washed and prepared. The existing exterior wood needed substantially more work: deteriorated coating was removed, imperfections were repaired, sanded, sealed where appropriate and spot primed, and some areas needed extra primer because the exposed wood absorbed the first application quickly.</p>
+  <p>The stucco exterior was pressure washed and prepared. The existing exterior wood needed substantially more work: deteriorated coating was removed, imperfections were repaired, sanded, sealed where appropriate and spot primed, and some areas needed extra primer because the exposed wood absorbed the first application quickly.</p>
   <p>New decorative exterior trim was installed to achieve the homeowner's design vision. The exterior was finished in <strong>Sherwin-Williams SuperPaint Exterior Acrylic Latex</strong>, and the front door was spray painted using a <strong>Sherwin-Williams Emerald</strong> coating.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>Project details</h2>
   <table class="specs-table">
     <tr><td>Location</td><td>Tsawwassen, Delta, BC</td></tr>
@@ -327,27 +339,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <tr><td>Application</td><td>Spray + appropriate detail work</td></tr>
     <tr><td>Contractor</td><td>Texora Painting</td></tr>
   </table>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <h2>Before: existing exterior condition</h2>
   <p>The before photo shows the front of the home in its original, faded state: tan-toned stucco and painted exterior wood that had lost its finish over the years. The stucco itself could be brought back with appropriate washing. The wood components were a different story: they needed substantially more preparation before they were ready for paint.</p>
   <p>That distinction matters. Preparing sound stucco and preparing deteriorated exterior wood are not the same process, and a repaint that lasts depends on preparing <em>each</em> surface for its actual condition rather than treating the whole house the same way.</p>
   <div class="ba-grid">
     <div class="ba-wrap"><span class="ba-label">Before</span>
-      <img src="/img/ba-house-repaint-before-800.webp" alt="Front of a house before repainting, with faded tan siding, worn trim and a red front door" class="ba-img" loading="eager" width="800" height="600"></div>
+      <img src="/img/ba-house-repaint-before-800.webp" alt="Front of a house before repainting, with faded tan siding, worn trim and a red front door" class="ba-img" loading="lazy" width="800" height="600"></div>
     <div class="ba-wrap"><span class="ba-label">After</span>
-      <img src="/img/ba-house-repaint-after-800.webp" alt="The same house front after repainting, with light walls, white trim and a green-grey front door" class="ba-img" loading="eager" width="800" height="600"></div>
+      <img src="/img/ba-house-repaint-after-800.webp" alt="The same house front after repainting, with light walls, white trim and a green-grey front door" class="ba-img" loading="lazy" width="800" height="600"></div>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>Pressure washing the stucco exterior</h2>
   <p>This stucco exterior was pressure washed before painting. We assessed the surface first and used a washing approach suited to this specific substrate and its condition: the goal was to remove surface dirt and contaminants and leave a clean base for the prep and coating that followed.</p>
   <p>Aggressive pressure isn't safe for every stucco wall, so the method is matched to what's in front of us. After washing, the exterior was left to dry properly before any coating work began.</p>
   <!-- PROCESS PHOTO SLOT: pressure-washing the stucco -> /img/tsawwassen-stucco-pressure-washing.webp -->
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <h2>Protecting windows, glass, gutters and surrounding areas</h2>
   <p>Before spraying, glass was masked, and gutters and adjacent surfaces were protected as required. Where it produced cleaner access and a better finish, downspouts were temporarily removed rather than painted around.</p>
   <p>A practical note on that: many residential downspouts are held by relatively simple fasteners, and taking one down where appropriate lets you prep and paint the wall behind it far more cleanly than working around it. If you try this yourself, photograph or mark the components first and return them to their original configuration afterward: and don't dismantle any drainage you're not confident you can reinstall correctly.</p>
   <!-- PROCESS PHOTO SLOT: masking / downspout removal -> /img/tsawwassen-house-masking-before-spraying.webp -->
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>The wood preparation was the biggest part of the job</h2>
   <p>Exterior painting quality is decided largely by what happens <em>before</em> the finish coat. On this home the deteriorated painted wood drove a multi-stage prep process:</p>
   <ol>
@@ -362,19 +378,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ol>
   <!-- PROCESS PHOTO SLOT: exterior wood preparation -> /img/exterior-wood-preparation-tsawwassen.webp -->
 
-  <h3>Faster paint removal using a wide oscillating multi-tool blade</h3>
+  <div class="tx-unit-grid"><div class="tx-unit-col"><h3>Faster paint removal using a wide oscillating multi-tool blade</h3>
   <p>One field technique our painters use when conditions allow: on certain areas of deteriorated exterior wood, instead of relying only on manual scraping, a wide blade on an oscillating multi-tool can be held at a shallow angle and carefully guided along failing coating to help lift it before sanding and further prep.</p>
   <p>This is not universally appropriate. The wrong blade angle can gouge and damage sound wood; coating that's still bonded shouldn't simply be torn off; and the operator needs real control of the tool.</p>
-  <p>Dust and debris containment plus appropriate PPE are required, and older homes and coatings may call for lead-safe procedures before any existing paint is disturbed. Used in the right spots, it's an efficient way to get failing coating off; used carelessly, it does more harm than good.</p>
-
-  <h3>Filling deeper wood defects</h3>
+  <p>Dust and debris containment plus appropriate PPE are required, and older homes and coatings may call for lead-safe procedures before any existing paint is disturbed. Used in the right spots, it's an efficient way to get failing coating off; used carelessly, it does more harm than good.</p></div><div class="tx-unit-col"><h3>Filling deeper wood defects</h3>
   <p>Deeper holes and gouges were filled with an exterior-capable wood filler (we commonly use a product like DAP Wood Pro, depending on the repair), then sanded smooth once cured. Filler is for surface defects, not structural repair: if wood is severely rotten or no longer able to hold a repair, replacement is the right answer rather than filling it.</p>
-  <!-- PROCESS PHOTO SLOT: exterior wood repair / filling -> /img/exterior-wood-repair-tsawwassen.webp -->
-
-  <h3>Sanding the repairs smooth</h3>
-  <p>Repaired and rough areas were sanded to create smooth transitions before primer and paint. This isn't only cosmetic: good sanding removes the obvious ridges and abrupt steps between intact coating, filled repairs and exposed wood, so the finish reads as one continuous surface.</p>
-
-  <h3>Sealing appropriate cracks and joints</h3>
+  <!-- PROCESS PHOTO SLOT: exterior wood repair / filling -> /img/exterior-wood-repair-tsawwassen.webp --></div><div class="tx-unit-col"><h3>Sanding the repairs smooth</h3>
+  <p>Repaired and rough areas were sanded to create smooth transitions before primer and paint. This isn't only cosmetic: good sanding removes the obvious ridges and abrupt steps between intact coating, filled repairs and exposed wood, so the finish reads as one continuous surface.</p></div><div class="tx-unit-col"><h3>Sealing appropriate cracks and joints</h3>
   <p>Where needed, appropriate joints and cracks were sealed after prep. It helps to keep four different jobs straight, because they're often confused:</p>
   <ul>
     <li><strong>Wood filler</strong>: fills appropriate surface defects in the wood</li>
@@ -382,45 +392,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>Primer</strong>: prepares and seals appropriate bare substrates for coating</li>
     <li><strong>Finish coating</strong>: the final protective and decorative layer</li>
   </ul>
-  <p>Each has its place; none is a substitute for another. Caulk isn't required over every filled repair, and ordinary painter's caulk isn't waterproof structural protection.</p>
-
-  <h3>Spot priming bare wood</h3>
-  <p>Exposed bare wood was spot primed before the finish coats. Some particularly absorbent areas drank up the first application quickly and needed a second coat of primer: a finish coat can't make up for bare wood that wasn't properly sealed first.</p>
-
-  <h3>Re-securing loose exterior wood</h3>
-  <p>Certain loose, non-structural wood pieces were mechanically re-secured before filling and finishing, using 18-gauge finish/brad fastening where the small heads leave discreet, easily-filled repair points. To be clear, an 18-gauge brad is not a structural fastener and this isn't what makes siding "last longer": it's simply a tidy way to stabilize loose trim before coating. Structural or badly deteriorated components need proper carpentry repair or replacement.</p>
-
+  <p>Each has its place; none is a substitute for another. Caulk isn't required over every filled repair, and ordinary painter's caulk isn't waterproof structural protection.</p></div><div class="tx-unit-col"><h3>Spot priming bare wood</h3>
+  <p>Exposed bare wood was spot primed before the finish coats. Some particularly absorbent areas drank up the first application quickly and needed a second coat of primer: a finish coat can't make up for bare wood that wasn't properly sealed first.</p></div><div class="tx-unit-col"><h3>Re-securing loose exterior wood</h3>
+  <p>Certain loose, non-structural wood pieces were mechanically re-secured before filling and finishing, using 18-gauge finish/brad fastening where the small heads leave discreet, easily-filled repair points. An 18-gauge brad is not a structural fastener and this isn't what makes siding "last longer": it's simply a tidy way to stabilize loose trim before coating. Structural or badly deteriorated components need proper carpentry repair or replacement.</p></div></div>
+</div></section>
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <h2>Installing new decorative exterior trim</h2>
   <p>The homeowner had a specific vision for the front elevation, and paint alone couldn't create the full architectural effect they wanted, so we installed additional decorative exterior trim, cut to fit the intended design. The material was pre-primed exterior trim suitable for the application, which meant the factory-primed faces didn't need the same bare-wood prep as raw lumber. Pre-primed isn't "zero prep," though: field-cut ends, exposed edges, any installation damage and the manufacturer's instructions all still have to be handled.</p>
   <!-- PROCESS PHOTO SLOT: decorative trim installation -> /img/decorative-trim-installation-tsawwassen.webp -->
 
-  <h3>Using PL Premium MAX construction adhesive</h3>
-  <p>The decorative trim was bonded where appropriate with <a href="https://www.homedepot.ca/product/lepage-pl-premium-max-construction-adhesive-interior-exterior-no-shrinking-266-ml/1001109976" target="_blank" rel="noopener">LePage PL Premium MAX Construction Adhesive</a>, an interior/exterior construction adhesive built for demanding bonding across common construction substrates, used per the manufacturer's instructions. (Retail pricing shifts over time, so we won't quote a figure here; the manufacturer/retailer listing has current details.)</p>
-
+  <div class="tx-unit-grid"><div class="tx-unit-col"><h3>Using PL Premium MAX construction adhesive</h3>
+  <p>The decorative trim was bonded where appropriate with <a href="https://www.homedepot.ca/product/lepage-pl-premium-max-construction-adhesive-interior-exterior-no-shrinking-266-ml/1001109976" target="_blank" rel="noopener">LePage PL Premium MAX Construction Adhesive</a>, an interior/exterior construction adhesive built for demanding bonding across common construction substrates, used per the manufacturer's instructions. (Retail pricing shifts over time, so we won't quote a figure here; the manufacturer/retailer listing has current details.)</p></div></div>
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>Why we used Sherwin-Williams SuperPaint exterior</h2>
   <p>The main exterior coating was <a href="https://www.sherwin-williams.com/homeowners/products/superpaint-exterior-acrylic-latex" target="_blank" rel="noopener">Sherwin-Williams SuperPaint Exterior Acrylic Latex</a>. Sherwin-Williams describes it as using Advanced Resin Technology and formulates it for adhesion, hide, colour retention and exterior durability, and states it's dirt- and mildew-resistant and resists frost, peeling, blistering, fading and cracking.</p>
   <p>It's a quality acrylic latex exterior paint: not a "rubber coating," not waterproofing, and not a permanent or maintenance-free finish. On the highlighted wood portions of this home, roughly <strong>three finish coats</strong> of SuperPaint were applied after the extensive prep and priming.</p>
   <p>Extra coats aren't a default: they were warranted here by the substrate condition, the colour, coverage over repaired areas and the uniformity we wanted. Another project may need fewer.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <h2>Spray painting the stucco</h2>
   <p>On textured stucco, professional spray application works well when the surface is properly prepped and conditions are right: it gets coating evenly into the texture, keeps the film consistent, and moves efficiently across a complex surface. Masking becomes especially important, and technique has to suit the texture. Spraying isn't automatically the answer on every job: the method should follow the substrate, the coating spec and the conditions.</p>
   <!-- PROCESS PHOTO SLOT: spraying the stucco -> /img/stucco-spray-painting-tsawwassen.webp -->
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>Painting the stone / masonry feature</h2>
   <p>An existing stone/masonry architectural feature on the front was also coated as part of this project: cleaned, allowed to dry appropriately, then coated with the selected exterior system. That's what we did on <em>this</em> home; it isn't a blanket recommendation to paint all stone. Natural stone, previously coated masonry and other substrates can need different coating systems and moisture considerations, so masonry is always assessed on its own terms.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <h2>Spray painting the front door</h2>
   <p>The front door was professionally spray painted using a Sherwin-Williams Emerald coating. Spraying was chosen for the smooth appearance and consistent film it gives a door: far less visible brush and roller texture, and clean detailing around the panels. The after photos show the finished door as the crisp focal point of the entry.</p>
   <!-- PROCESS PHOTO SLOT: front door spray painting -> /img/front-door-spray-painting-tsawwassen.webp -->
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>What actually goes into a professional exterior repaint?</h2>
   <p>Homeowners often ask what goes into exterior painting beyond "putting paint on the house." This project is a good answer: the visible finish is only the last step of a much longer sequence.</p>
   <p>Assessment &rarr; washing &rarr; drying &rarr; scraping &rarr; repairs &rarr; sanding &rarr; sealing &rarr; priming &rarr; masking &rarr; carpentry / detail work &rarr; finish coating &rarr; reassembly &rarr; cleanup &rarr; final inspection. Skip or rush the early steps and the paint pays for it later: most of the durability is built before the finish coat ever goes on.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <h2>Exterior house painting in Tsawwassen, BC</h2>
-  <p>This project was completed in Tsawwassen, part of the City of Delta, BC. Texora Painting works on residential exterior projects throughout Tsawwassen and the surrounding Delta communities: areas like Beach Grove, Boundary Bay, Pebble Hill, English Bluff and Tsawwassen Springs, as well as nearby <a href="/painters-ladner.html">Ladner</a>.</p>
+  <p>This project was completed in Tsawwassen, part of the City of Delta, BC. We work on residential exterior projects throughout Tsawwassen and the surrounding Delta communities: areas like Beach Grove, Boundary Bay, Pebble Hill, English Bluff and Tsawwassen Springs, as well as nearby <a href="/painters-ladner.html">Ladner</a>.</p>
   <p>Living near the water means exterior wood condition, existing coating failure and proper drying before coating all deserve attention, and each substrate gets prepared for the shape it's actually in. Explore our <a href="/exterior-painting-tsawwassen.html">exterior painting in Tsawwassen</a>, <a href="/exterior-painting.html">exterior painting</a>, <a href="/full-home-repaint.html">full-home repaints</a> and <a href="/wood-rot-fascia-repair.html">exterior wood &amp; fascia repair</a>, or see our <a href="/projects/garage-door-painting-tsawwassen-bc/">garage door repaint in Tsawwassen</a>.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>Homeowner takeaways from this Tsawwassen project</h2>
   <ul>
     <li>Preparation can take far more effort than the painting itself.</li>
@@ -434,16 +448,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Product selection matters for how the finish performs.</li>
     <li>The number of coats should follow the substrate and coverage, not an arbitrary rule.</li>
   </ul>
-
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
   <h2>Planning an exterior repaint in Tsawwassen?</h2>
-  <p>If you're weighing an exterior repaint, stucco painting, trim restoration or a full-house repaint in Tsawwassen or Ladner, Texora Painting is happy to take a look and provide an estimate.</p>
+  <p>If you're weighing an exterior repaint, stucco painting, trim restoration or a full-house repaint in Tsawwassen or Ladner, we're happy to take a look and provide an estimate.</p>
   <ul>
     <li>Phone: <a href="tel:+16044176483">(604) 417-6483</a></li>
     <li>Email: <a href="mailto:info@texorapainting.com">info@texorapainting.com</a></li>
     <li>Web: <a href="/">Texora Painting</a></li>
   </ul>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
   <h2>Exterior house painting FAQ</h2>
   <div class="proj-faq">
     <details open><summary>How do you prepare a stucco house before painting?</summary><p>On this project the stucco was assessed, then pressure washed with an approach suited to the surface to remove dirt and contaminants, and left to dry before coating. The right washing method depends on the stucco's condition: aggressive pressure isn't safe for every wall.</p></details>
@@ -462,8 +477,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/project-ladner-full-home.html" class="proj-chip">Ladner Heritage Home Full Repaint</a>
     </div>
   </div>
-
-</div>
+</div></section>
 
 <section class="cta-bar">
   <h2>Exterior repaint in Tsawwassen?</h2>

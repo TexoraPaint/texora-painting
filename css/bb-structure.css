@@ -91,7 +91,7 @@
 .bb .bb-services .services-grid,.bb .bb-services .services-list{margin:0}
 .bb .bb-services .svc-card p{margin:0}
 .bb .svc-card p,.bb .svc-item p{color:#566070}
-.bb .bb-services .svc-card a,.bb .bb-services .svc-item a{display:inline-block;margin-top:10px;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px;color:#b9530a}
+.bb .bb-services .svc-card a,.bb .bb-services .svc-item a{display:inline-block;margin-top:10px;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px;color:var(--tx-accent-text)}
 .bb .bb-services .svc-card a:hover,.bb .bb-services .svc-item a:hover{text-decoration-color:currentColor}
 
 /* highlights row (why us) */
@@ -260,7 +260,8 @@
 .bb.bb-hub .tx-area-neighbourhoods{padding:24px 0 0;border:0;border-top:1px solid var(--bb-line);border-radius:0;background:none}
 .bb.bb-hub .tx-area .tx-area-closing,.bb.bb-hub .tx-area .tx-area-cta{text-align:left}
 .bb.bb-hub .tx-area-closing>p,.bb.bb-hub .tx-area-cta h2,.bb.bb-hub .tx-area-cta p{margin-left:0;margin-right:0}
-.bb.bb-hub .tx-area-actions{justify-content:flex-start}
+/* round 8: only the closing bands' buttons sit on the content edge; the hero keeps its centred buttons */
+.bb.bb-hub .tx-area-closing .tx-area-actions,.bb.bb-hub .tx-area-cta .tx-area-actions{justify-content:flex-start}
 
 /* round 7 (row 230): a guidance card that runs several sub-headings becomes a full-width card with the sub-heading on
    the left and its text on the right, from 901px up. */
@@ -304,3 +305,20 @@
 /* round 7: the at-a-glance fact list in every hero (service-town pages also carry it inline) */
 .bb .tx-triples{list-style:none;margin:0 0 20px;padding:12px 0 0;border-top:1px solid rgba(255,255,255,.22);max-width:560px}
 .bb .tx-triples li{margin:0 0 4px;color:rgba(255,255,255,.82);font-size:13px;line-height:1.5}
+
+/* round 8 (row 252, hub pages): on phones the trust chips and the quote button come straight after the H1 on the
+   services, service-areas, FAQ and awards heroes, so both end inside the first 600px; the intro paragraph follows. */
+@media(max-width:600px){
+  .bb.bb-hub .tx-area .tx-area-hero{display:flex;flex-direction:column}
+  .bb.bb-hub .tx-area-hero>*{order:3}
+  .bb.bb-hub .tx-area-hero>:is(.tx-area-crumbs,.tx-area-kicker,h1){order:0}
+  .bb.bb-hub .tx-area-hero>h1{margin-bottom:16px}
+  .bb.bb-hub .tx-area-hero>.tx-area-chips{order:1;margin:0 0 16px;padding:0}
+  .bb.bb-hub .tx-area-hero>.tx-area-actions{order:2;margin:0 0 22px}
+}
+
+/* round 8 (row 508): orange used as TEXT on a light background takes the darker accent-text colour (5.67:1 on white,
+   5.28:1 on the pale band; the colour the review-job labels already use). On the navy hero and CTA bands the kicker
+   takes the lighter accent (5.19:1 on navy). White-on-orange buttons are unchanged (brand-colour call). */
+.bb .svc-card a,.bb .svc-card .price,.bb .tx-area-kicker{color:var(--tx-accent-text)}
+.bb .tx-area-hero .tx-area-kicker,.bb .tx-area-cta .tx-area-kicker{color:var(--tx-accent-on-dark)}

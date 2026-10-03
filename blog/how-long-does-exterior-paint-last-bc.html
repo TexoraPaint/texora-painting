@@ -240,17 +240,29 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
 .showcase-section .sec-label{color:#a74a08}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=8293655ce7">
-<script src="/js/tx-owner-nav.js?v=8293655ce7" defer></script>
+<link rel="stylesheet" href="/css/tx-owner-nav.css?v=936e1d9ed3">
+<script src="/js/tx-owner-nav.js?v=936e1d9ed3" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.blog-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.92) 0%,rgba(22,58,120,.80) 100%),url('/img/hero-bg-768.webp')!important}}</style>
+<style id="tx-bands">
+/* rows 228/229/230: one H2 per band, alternating tint, H3 units in a 2-column grid from 901px */
+.tx-band--a{background:#fff}
+.tx-band--b{background:#f4f7fb}
+.tx-band>.tx-band-inner{padding-top:44px;padding-bottom:44px}
+.tx-band>.tx-band-inner>:first-child{margin-top:0}
+.tx-band>.tx-band-inner>.related-section:first-child{border-top:0;padding-top:0}
+.tx-band--b .proj-chip,.tx-band--b .specs-table td:first-child,.tx-band--b .related-card-icon,.tx-band--b .compare-table tr:nth-child(even) td{background:#e9eef6}
+.tx-unit-grid{display:grid;gap:0 28px;margin:0 0 8px}
+@media(min-width:901px){.tx-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tx-unit-col>:first-child{margin-top:12px}
+</style>
 </head>
-<body>
+<body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLK55T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav id="mainNav">
-  <a class="logo" href="../index.html" aria-label="Texora Painting home"><picture><source srcset="../img/logo-v3-240.webp 240w, ../img/logo-v3.webp 333w" sizes="(max-width:900px) 82px, 150px" type="image/webp"><img src="../img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
+  <a class="logo" href="../index.html" aria-label="Texora Painting home"><picture><source srcset="../img/logo-v3-240.webp 240w, ../img/logo-v3.webp 333w" sizes="(max-width:900px) 70px, 142px" type="image/webp"><img src="../img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
   <div class="nav-actions"><a class="nav-cta-m" href="/#hero-quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg></a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
         <ul class="nav-links" id="navLinks">
     <li class="txn-menu" data-txn-menu><a href="/services.html">Services</a><button type="button" aria-label="Show all services" aria-expanded="false" aria-controls="txnServices"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button><div class="txn-drop" id="txnServices"><div class="txn-cols"><div><strong>Painting</strong><a href="/interior-painting.html">Interior Painting</a><a href="/exterior-painting.html">Exterior Painting</a><a href="/cabinet-painting.html">Cabinet Painting</a><a href="/trim-doors-ceilings.html">Trim, Doors &amp; Ceilings</a><a href="/full-home-repaint.html">Full Home Repaint</a><a href="/strata-painting.html">Strata &amp; Multi-Unit Painting</a><a href="/warehouse-painting.html">Warehouse &amp; Industrial Painting</a></div><div><strong>Drywall</strong><a href="/drywall-repair.html">Drywall Repair</a><a href="/drywall-installation.html">Drywall Installation</a><a href="/drywall-taping-finishing.html">Drywall Taping &amp; Finishing</a><a href="/texture-matching.html">Texture Matching</a><a href="/ceiling-drywall-repair.html">Ceiling Drywall Repair</a><a href="/popcorn-ceiling-repair.html">Popcorn Ceiling Repair &amp; Removal</a><a href="/water-damage-drywall-repair.html">Water Damage Drywall Repair</a></div><div><strong>Repairs &amp; restoration</strong><a href="/wood-rot-fascia-repair.html">Wood Rot &amp; Fascia Repair</a><a href="/heritage-home-restoration.html">Heritage Home Restoration</a><a href="/brick-staining.html">Brick Staining</a><a href="/bathroom-refresh.html">Bathroom Refresh</a></div></div><div class="txn-drop-foot"><span>Not sure which one you need? Tell us about the job.</span><a href="/#hero-quote">Get a free quote</a></div></div></li>
@@ -269,11 +281,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="meta">By Texora Painting &nbsp;&bull;&nbsp; May 2025 &nbsp;&bull;&nbsp; 8 min read</div>
 </section>
 
-<div class="article-wrap">
-
-  <p>One of the most common questions <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a> hears from homeowners across Tsawwassen, Ladner, Delta, and Port Coquitlam is: "How long should my exterior paint last?" The short answer is 7 to 10 years for a quality job, but the real answer depends on a handful of factors that are mostly within your control.</p>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+  <p>One of the most common questions we get at <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a> from homeowners across Tsawwassen, Ladner, Delta, and Port Coquitlam is: "How long should my exterior paint last?" The short answer is 7 to 10 years for a quality job, but the real answer depends on a handful of factors that are mostly within your control.</p>
   <p>If you are planning a repaint, our <a href="/exterior-painting.html">exterior painting in Delta</a> page covers what the prep involves and what is in scope before you get a quote.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>The BC climate factor</h2>
   <p>Unlike Alberta or Ontario, where the primary challenge is freeze-thaw cycling, coastal BC hits a home's exterior from several directions at once:</p>
   <ul>
@@ -282,27 +294,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>Salt air:</strong> Tsawwassen sits right on the Strait of Georgia, and salt in the air attracts and holds moisture against a home's siding.</li>
     <li><strong>UV radiation:</strong> BC summers bring intense UV on south- and west-facing walls, and UV breaks down paint binders, causing fading and chalking.</li>
   </ul>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>How long paint lasts on each surface type</h2>
 
-  <h3>Wood siding (cedar, fir, pine)</h3>
+  <div class="tx-unit-grid"><div class="tx-unit-col"><h3>Wood siding (cedar, fir, pine)</h3>
   <p>Wood is the most common siding material on older homes in Delta, Tsawwassen, and Ladner, and it's also the most demanding substrate to paint. Quality latex paint on properly prepared wood siding in BC typically lasts 5 to 8 years.</p>
-  <p>Cedar is prone to tannin bleed-through if an oil-based primer wasn't used first, and because wood swells and shrinks with moisture, flexible acrylic paints outlast oil-based coatings on it in this climate.</p>
-
-  <h3>Fibre cement siding (HardiePlank and similar)</h3>
-  <p>Fibre cement is the material of choice on many newer BC homes, and it holds paint significantly better than raw wood. A properly primed and painted fibre cement surface in the Lower Mainland can realistically hold a quality exterior finish for 10 to 15 years, particularly if a high-build acrylic formula is used.</p>
-
-  <h3>Stucco</h3>
-  <p>Stucco is porous, so it takes a breathable elastomeric coating that bridges hairline cracks and lets water vapour out while keeping liquid water out. A well-applied elastomeric coat on stucco can last 10 to 12 years in the Lower Mainland.</p>
-
-  <h3>Brick and masonry</h3>
-  <p>Painted brick and masonry holds paint longest of all: 15 to 20 years is achievable with a quality masonry paint and proper alkali-resistant primer. The caveat: once you paint brick, you need to keep painting it, as removing the paint without damaging the brick face is difficult.</p>
-
+  <p>Cedar is prone to tannin bleed-through if an oil-based primer wasn't used first, and because wood swells and shrinks with moisture, flexible acrylic paints outlast oil-based coatings on it in this climate.</p></div><div class="tx-unit-col"><h3>Fibre cement siding (HardiePlank and similar)</h3>
+  <p>Fibre cement is the material of choice on many newer BC homes, and it holds paint significantly better than raw wood. A properly primed and painted fibre cement surface in the Lower Mainland can realistically hold a quality exterior finish for 10 to 15 years, particularly if a high-build acrylic formula is used.</p></div><div class="tx-unit-col"><h3>Stucco</h3>
+  <p>Stucco is porous, so it takes a breathable elastomeric coating that bridges hairline cracks and lets water vapour out while keeping liquid water out. A well-applied elastomeric coat on stucco can last 10 to 12 years in the Lower Mainland.</p></div><div class="tx-unit-col"><h3>Brick and masonry</h3>
+  <p>Painted brick and masonry holds paint longest of all: 15 to 20 years is achievable with a quality masonry paint and proper alkali-resistant primer. The caveat: once you paint brick, you need to keep painting it, as removing the paint without damaging the brick face is difficult.</p></div></div>
   <div class="tip-box">
     <strong>South- and north-facing walls in BC</strong>
     <p>South-facing walls take heavy UV and fade sooner, while north-facing walls stay damp longer and are more prone to mold, mildew and moisture-driven peeling. A paint with UV inhibitors is worth the extra cost on south exposures; a mildew-resistant formula is the priority on north and west walls.</p>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>Signs it's time to repaint</h2>
   <p>Rather than painting on a fixed schedule, watch your home's exterior for these signs that the paint film is reaching end of life:</p>
   <ul>
@@ -313,41 +320,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>Mold or mildew:</strong> Black or green growth, especially on north and west walls or behind overhanging trees, means the paint's mildewcide additives are spent.</li>
     <li><strong>Exposed bare wood or substrate:</strong> Wood left without a paint film can absorb enough rain to start rotting within a single BC wet season.</li>
   </ul>
-
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>What makes paint last longer in BC</h2>
   <p>How long an exterior paint job lasts depends as much on process and product as on the climate.</p>
 
-  <h3>1. Proper surface preparation</h3>
-  <p>Scrape all loose paint, sand the edges smooth and replace any rotted wood before painting.</p>
-
-  <h3>2. Quality primer</h3>
-  <p>For wood siding, an oil-based or shellac primer seals tannins and provides a superior bond for the topcoat. For fibre cement and other substrates, a dedicated exterior primer is always better than relying on "self-priming" topcoats.</p>
-
-  <h3>3. Two coats of premium topcoat</h3>
-  <p>Two full coats of a premium acrylic exterior paint (Benjamin Moore Aura, Sherwin-Williams Duration or similar) give the film build BC's climate needs, which a single coat does not, however thick.</p>
-
-  <h3>4. Caulking all penetrations and joints</h3>
-  <p>Water that gets behind the paint at window trim, door frames and siding joints causes peeling from the back, so every joint gets a high-quality paintable caulk.</p>
-
-  <h3>5. Painting at the right time</h3>
-  <p>In BC, the ideal painting window is late spring through early fall (typically May through September), when daytime temperatures are consistently above 10°C and rain is less frequent. Painting in cool, damp conditions prevents proper curing and shortens lifespan.</p>
-
+  <div class="tx-unit-grid"><div class="tx-unit-col"><h3>1. Proper surface preparation</h3>
+  <p>Scrape all loose paint, sand the edges smooth and replace any rotted wood before painting.</p></div><div class="tx-unit-col"><h3>2. Quality primer</h3>
+  <p>For wood siding, an oil-based or shellac primer seals tannins and provides a superior bond for the topcoat. For fibre cement and other substrates, a dedicated exterior primer is always better than relying on "self-priming" topcoats.</p></div><div class="tx-unit-col"><h3>3. Two coats of premium topcoat</h3>
+  <p>Two full coats of a premium acrylic exterior paint (Benjamin Moore Aura, Sherwin-Williams Duration or similar) give the film build BC's climate needs, which a single coat does not, however thick.</p></div><div class="tx-unit-col"><h3>4. Caulking all penetrations and joints</h3>
+  <p>Water that gets behind the paint at window trim, door frames and siding joints causes peeling from the back, so every joint gets a high-quality paintable caulk.</p></div><div class="tx-unit-col"><h3>5. Painting at the right time</h3>
+  <p>In BC, the ideal painting window is late spring through early fall (typically May through September), when daytime temperatures are consistently above 10°C and rain is less frequent. Painting in cool, damp conditions prevents proper curing and shortens lifespan.</p></div></div>
   <div class="warning-box">
     <strong>Repaint before the paint fails</strong>
     <p>Repainting while the existing paint is fading or chalking but still intact costs far less than waiting until it peels, because water-damaged siding has to be replaced before it can be repainted.</p>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>What to expect from an exterior repaint in BC</h2>
   <p>In BC's coastal climate, expect 7 to 10 years from a quality exterior paint job using premium products and proper preparation. Homes near the water in Tsawwassen may be at the lower end of that range due to salt air; homes with good sun exposure and well-maintained gutters and caulking can hit the upper end.</p>
-  <p>Texora Painting offers free exterior assessments as part of our quote process in Delta, Tsawwassen, Ladner, Port Coquitlam and Port Moody. One of the two partners walks the job with you, and the written estimate names the scope and your 1, 2 or 3-year warranty term. Call <a href="tel:+16044176483">(604) 417-6483</a>.</p>
+  <p>Free exterior assessments are part of our quote process in Delta, Tsawwassen, Ladner, Port Coquitlam and Port Moody. One of the two partners walks the job with you, and the written estimate names the scope and your 1, 2 or 3-year warranty term. Call <a href="tel:+16044176483">(604) 417-6483</a>.</p>
 
   <div class="article-cta">
     <h3>Free exterior assessment with every quote</h3>
     <p>We'll tell you what condition your exterior is in and what it needs before the next repaint. Serving the Lower Mainland from Delta, BC.</p>
     <a href="../index.html#quote" class="btn-cta">Book a Free Quote</a>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <div class="related-section">
   <h2>Related articles</h2>
   <div class="related-grid">
@@ -377,8 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
   </div>
 </div>
-
-</div>
+</div></section>
 
 </main>
 <footer class="footer-bar">

@@ -244,17 +244,29 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 #mainNav .btn-nav,#mainNav .nav-cta-m,.btn-hero,#txaCookie .cc-accept{color:#081c3b!important}
 .showcase-section .sec-label{color:#a74a08}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=8293655ce7">
-<script src="/js/tx-owner-nav.js?v=8293655ce7" defer></script>
+<link rel="stylesheet" href="/css/tx-owner-nav.css?v=936e1d9ed3">
+<script src="/js/tx-owner-nav.js?v=936e1d9ed3" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.blog-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.92) 0%,rgba(22,58,120,.80) 100%),url('/img/hero-bg-768.webp')!important}}</style>
+<style id="tx-bands">
+/* rows 228/229/230: one H2 per band, alternating tint, H3 units in a 2-column grid from 901px */
+.tx-band--a{background:#fff}
+.tx-band--b{background:#f4f7fb}
+.tx-band>.tx-band-inner{padding-top:44px;padding-bottom:44px}
+.tx-band>.tx-band-inner>:first-child{margin-top:0}
+.tx-band>.tx-band-inner>.related-section:first-child{border-top:0;padding-top:0}
+.tx-band--b .proj-chip,.tx-band--b .specs-table td:first-child,.tx-band--b .related-card-icon,.tx-band--b .compare-table tr:nth-child(even) td{background:#e9eef6}
+.tx-unit-grid{display:grid;gap:0 28px;margin:0 0 8px}
+@media(min-width:901px){.tx-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tx-unit-col>:first-child{margin-top:12px}
+</style>
 </head>
-<body>
+<body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDBLK55T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav id="mainNav">
-  <a class="logo" href="../index.html" aria-label="Texora Painting home"><picture><source srcset="../img/logo-v3-240.webp 240w, ../img/logo-v3.webp 333w" sizes="(max-width:900px) 82px, 150px" type="image/webp"><img src="../img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
+  <a class="logo" href="../index.html" aria-label="Texora Painting home"><picture><source srcset="../img/logo-v3-240.webp 240w, ../img/logo-v3.webp 333w" sizes="(max-width:900px) 70px, 142px" type="image/webp"><img src="../img/logo-v3.png" alt="Texora Painting" width="333" height="220"></picture></a>
   <div class="nav-actions"><a class="nav-cta-m" href="/#hero-quote">Get Free Quote</a><a class="nav-phone" href="tel:+16044176483" aria-label="Call Texora Painting"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1z"/></svg></a><button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div>
         <ul class="nav-links" id="navLinks">
     <li class="txn-menu" data-txn-menu><a href="/services.html">Services</a><button type="button" aria-label="Show all services" aria-expanded="false" aria-controls="txnServices"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button><div class="txn-drop" id="txnServices"><div class="txn-cols"><div><strong>Painting</strong><a href="/interior-painting.html">Interior Painting</a><a href="/exterior-painting.html">Exterior Painting</a><a href="/cabinet-painting.html">Cabinet Painting</a><a href="/trim-doors-ceilings.html">Trim, Doors &amp; Ceilings</a><a href="/full-home-repaint.html">Full Home Repaint</a><a href="/strata-painting.html">Strata &amp; Multi-Unit Painting</a><a href="/warehouse-painting.html">Warehouse &amp; Industrial Painting</a></div><div><strong>Drywall</strong><a href="/drywall-repair.html">Drywall Repair</a><a href="/drywall-installation.html">Drywall Installation</a><a href="/drywall-taping-finishing.html">Drywall Taping &amp; Finishing</a><a href="/texture-matching.html">Texture Matching</a><a href="/ceiling-drywall-repair.html">Ceiling Drywall Repair</a><a href="/popcorn-ceiling-repair.html">Popcorn Ceiling Repair &amp; Removal</a><a href="/water-damage-drywall-repair.html">Water Damage Drywall Repair</a></div><div><strong>Repairs &amp; restoration</strong><a href="/wood-rot-fascia-repair.html">Wood Rot &amp; Fascia Repair</a><a href="/heritage-home-restoration.html">Heritage Home Restoration</a><a href="/brick-staining.html">Brick Staining</a><a href="/bathroom-refresh.html">Bathroom Refresh</a></div></div><div class="txn-drop-foot"><span>Not sure which one you need? Tell us about the job.</span><a href="/#hero-quote">Get a free quote</a></div></div></li>
@@ -273,28 +285,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="meta">By Texora Painting &nbsp;&bull;&nbsp; May 2025 &nbsp;&bull;&nbsp; 7 min read</div>
 </section>
 
-<div class="article-wrap">
-
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <p>Interior and exterior paints are engineered for completely different conditions, and using whichever can you have on hand leads to premature failure, safety issues and wasted money. Here's <a href="/" style="color:inherit;text-decoration:underline;">Texora Painting</a>'s breakdown of how they differ, and why it matters for your next project.</p>
 <p>For a room repaint, see our <a href="https://texorapainting.com/interior-painting.html">interior painting in Delta</a> service.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>The three core components of any paint</h2>
   <p>Every paint has a binder (the resin that holds the dried film together and sticks it to the surface), pigments for colour and coverage, and additives that control mildew resistance, flexibility, UV protection and dry time, and interior and exterior paints differ in how each of the three is formulated.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>Binders: the most important difference</h2>
   <p>Exterior paints use softer, more flexible binders, typically acrylic or vinyl-acrylic resins, so the dried film can expand and contract when BC temperatures swing from near-freezing on a winter morning to 25°C on a summer afternoon. Interior binders are firmer so the film is scrubbable on a kitchen wall or a busy hallway, but that hard film on an exterior surface in a BC climate will crack and peel within a season or two.</p>
 
-  <h3>Why exterior binders are not safe indoors</h3>
-  <p>Exterior paints release higher levels of volatile organic compounds (VOCs), and many include fungicides and mildewcides made for open-air application that off-gas into living space indoors and can cause headaches and respiratory irritation. Some BC municipalities have restrictions on applying certain high-VOC coatings indoors altogether.</p>
-
+  <div class="tx-unit-grid"><div class="tx-unit-col"><h3>Why exterior binders are not safe indoors</h3>
+  <p>Exterior paints release higher levels of volatile organic compounds (VOCs), and many include fungicides and mildewcides made for open-air application that off-gas into living space indoors and can cause headaches and respiratory irritation. Some BC municipalities have restrictions on applying certain high-VOC coatings indoors altogether.</p></div></div>
   <div class="tip-box">
     <strong>Never use exterior paint indoors</strong>
     <p>Exterior paints contain biocides and other additives that are not safe for enclosed living spaces, and even with good ventilation they will not give a better result inside a BC home than a quality interior product.</p>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>Pigments: coverage and UV stability</h2>
   <p>Exterior paints carry more titanium dioxide and other UV-stable pigments, and south-facing walls in BC's Lower Mainland take the full force of summer UV that would fade interior paint within a single season. Exterior pigments also have to resist leaching and colour bleed in a climate like Tsawwassen or Delta, where annual rainfall can exceed 1,000 mm.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>Additives: what's extra in each formula</h2>
   <p>Exterior paints carry additives that have no place in an interior product:</p>
   <ul>
@@ -308,7 +322,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>Scrubbability enhancers:</strong> let the finish be cleaned repeatedly without burnishing.</li>
     <li><strong>Low-VOC formulations:</strong> premium interior paints are formulated to meet BC's indoor air quality expectations.</li>
   </ul>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>Interior vs. exterior paint compared</h2>
   <table class="compare-table">
     <tr><th>Property</th><th>Interior Paint</th><th>Exterior Paint</th></tr>
@@ -319,17 +334,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <tr><td>Scrubbability</td><td>High</td><td>Moderate</td></tr>
     <tr><td>Price range (per 3.78L)</td><td>$50–$90</td><td>$60–$100+</td></tr>
   </table>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <h2>Paint brands for BC's climate</h2>
   <p>Not all paints perform equally in the Lower Mainland's wet coastal climate. These are two brands that hold up well here:</p>
 
-  <h3>Benjamin Moore</h3>
-  <p>Benjamin Moore's <em>Aura Exterior</em> and <em>Regal Select Exterior</em> lines perform well in high-moisture environments, and the Color Lock technology in Aura resists fading on the wood and fibre-cement siding common in BC. For interiors, <em>Aura Interior</em> is Benjamin Moore's premium zero-VOC line, with a finish that cleans without burnishing.</p>
-
-  <h3>Sherwin-Williams</h3>
-  <p>Sherwin-Williams' <em>Duration</em> exterior line is a thick, self-priming formula that builds more film than standard exterior paints, which suits the weathered wood siding on older Tsawwassen and Ladner homes. For interiors, <em>Emerald</em> offers mold-resistant properties suited to BC bathrooms and basements.</p>
-
-
+  <div class="tx-unit-grid"><div class="tx-unit-col"><h3>Benjamin Moore</h3>
+  <p>Benjamin Moore's <em>Aura Exterior</em> and <em>Regal Select Exterior</em> lines perform well in high-moisture environments, and the Color Lock technology in Aura resists fading on the wood and fibre-cement siding common in BC. For interiors, <em>Aura Interior</em> is Benjamin Moore's premium zero-VOC line, with a finish that cleans without burnishing.</p></div><div class="tx-unit-col"><h3>Sherwin-Williams</h3>
+  <p>Sherwin-Williams' <em>Duration</em> exterior line is a thick, self-priming formula that builds more film than standard exterior paints, which suits the weathered wood siding on older Tsawwassen and Ladner homes. For interiors, <em>Emerald</em> offers mold-resistant properties suited to BC bathrooms and basements.</p></div></div>
+</div></section>
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
   <h2>Help choosing the right paint</h2>
   <p>Not sure which product is right for your project? The Texora Painting team is happy to walk you through product selection as part of our free quote process in Delta, Tsawwassen, Ladner, Port Coquitlam and Port Moody.</p>
   <p>One of the two partners walks the job with you, and the written estimate names the scope and your 1, 2 or 3-year warranty term. Call <a href="tel:+16044176483">(604) 417-6483</a>.</p>
@@ -339,7 +353,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>We'll recommend the right products and deliver a professional finish. Serving the Lower Mainland from Delta, BC.</p>
     <a href="../index.html#quote" class="btn-cta">Get a Free Quote</a>
   </div>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
   <div class="related-section">
   <h2>Related articles</h2>
   <div class="related-grid">
@@ -369,8 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
   </div>
 </div>
-
-</div>
+</div></section>
 
 </main>
 <footer class="footer-bar">
