@@ -994,8 +994,33 @@ html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck
 
 /* round 21 (37b7f28 verify): project heroes get the on-dark accent and a full-white back link (contrast >= 4.5 at 375) */
 html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero h1 em{color:var(--tx-accent-on-dark)}
-html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}</style>
-<script src="/js/tx-owner-nav.js?v=f18ef19b8d" defer></script>
+html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}
+
+/* round 24 (Dylan 2026-10-03: the home nav on every page): every page except home gets the home header: the centred Google 5.0
+   pill (same look, links to reviews), no rating row under the nav, Get Free Quote + phone appearing once the hero quote button
+   scrolls away (home rule, Illia 00ece47). Home keeps its own markup and script. */
+.tx-pill.rvwbar{position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:1001;transition:opacity .3s ease,transform .3s ease;}
+  .tx-pill.rvwbar.rvw-hidden{opacity:0;transform:translateX(-50%) translateY(-10px);pointer-events:none;}
+  .tx-pill .rvwbar-inner{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:40px;background:rgba(18,20,26,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.16);box-shadow:0 8px 26px rgba(0,0,0,.42);cursor:pointer;transition:transform .15s;}
+  .tx-pill .rvwbar-inner:hover{transform:translateY(1px);}
+  .tx-pill .rvwbar-srcs{display:inline-flex;align-items:center;gap:4px;}
+  .tx-pill .rvwbar-inner svg{width:18px;height:18px;display:block;flex-shrink:0;}
+  .tx-pill .rvwbar-score{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:15px;color:#fff;}
+  .tx-pill .rvwbar-stars{color:#fbbc04;font-size:14px;letter-spacing:1px;line-height:1;}
+  .tx-pill .rvwbar-count{color:rgba(255,255,255,.6);font-size:12.5px;font-weight:600;}
+  @media(max-width:600px){.tx-pill.rvwbar{top:15px;}.tx-pill .rvwbar-inner{padding:5px 11px;gap:6px;}.tx-pill .rvwbar-srcs{gap:3px;}.tx-pill .rvwbar-inner svg{width:15px;height:15px;}.tx-pill .rvwbar-score{font-size:12.5px;}.tx-pill .rvwbar-stars{font-size:11px;}.tx-pill .rvwbar-count{font-size:10.5px;}}
+.trust-bar[data-proof="nav-strip"] > *{visibility:hidden!important}
+.trust-bar[data-proof="nav-strip"]{pointer-events:none}
+nav.tx-cta-gate:not(.show-cta) li:has(>.btn-nav),nav.tx-cta-gate:not(.show-cta) .nav-li-call{display:none!important}
+nav.tx-cta-gate.show-cta li:has(>.btn-nav),nav.tx-cta-gate.show-cta .nav-li-call{animation:txNavCtaIn .4s ease both}
+@media(max-width:900px){nav.tx-cta-gate:not(.show-cta) .nav-cta-m,nav.tx-cta-gate:not(.show-cta) .nav-actions .nav-phone{display:none!important}
+  nav.tx-cta-gate.show-cta .nav-cta-m,nav.tx-cta-gate.show-cta .nav-actions .nav-phone{animation:txNavCtaIn .4s ease both}}
+@keyframes txNavCtaIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){nav.tx-cta-gate.show-cta *{animation:none!important}}
+a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
+
+@media(min-width:901px){.tx-pill.rvwbar{left:calc(50% - 205px)}}</style>
+<script src="/js/tx-owner-nav.js?v=8b6b395701" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(180deg,var(--tx-hero-navy-95) 0%,var(--tx-hero-mid-86) 100%),url('img/client-photos/exterior-fascia-painting-480.webp')!important}}</style>
 <style id="tx-lane-b">
 .city-hero-content .tx-tldr{list-style:none;margin:-8px 0 14px;padding:0;max-width:560px}
