@@ -15,7 +15,7 @@ errors = []
 files = [f for f in glob.glob("**/*.html", recursive=True) if not f.startswith(SKIP_DIRS)]
 for f in sorted(files):
     h = open(f, encoding="utf-8").read()
-    raw = re.findall(r'<script type="application/ld\+json">([\s\S]*?)</script>', h)
+    raw = re.findall(r'<script\b[^>]*\btype\s*=\s*["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', h, re.I)
     if len(raw) > 1: errors.append(f"{f}: {len(raw)} JSON-LD blocks (expected one @graph)")
     ns = []
     for r in raw:
@@ -25,10 +25,12 @@ for f in sorted(files):
     for n in ns:
         if "Service" in ty(n) and not n.get("provider"): errors.append(f"{f}: Service without provider")
         if "FAQPage" in ty(n):
-            vis = [txt(q) for q in re.findall(r'<button[^>]*class="faq-q[^"]*"[^>]*>([\s\S]*?)</button>', h)] + \
-                  [txt(q) for q in re.findall(r"<summary[^>]*>([\s\S]*?)</summary>", h)]
+            vis = {txt(q): txt(a) for q, a in re.findall(r'<button[^>]*class="faq-q[^"]*"[^>]*>([\s\S]*?)</button>\s*<div[^>]*class="faq-a[^"]*"[^>]*>([\s\S]*?)</div>', h)}
+            vis.update({txt(q): txt(a) for q, a in re.findall(r"<details[^>]*>\s*<summary[^>]*>([\s\S]*?)</summary>([\s\S]*?)</details>", h)})
             for q in n.get("mainEntity", []):
-                if q.get("name") not in vis: errors.append(f"{f}: FAQPage question not visible on the page: {q.get('name')!r}")
+                name = q.get("name"); ans = (q.get("acceptedAnswer") or {}).get("text")
+                if name not in vis: errors.append(f"{f}: FAQPage question not visible on the page: {name!r}")
+                elif ans != vis[name]: errors.append(f"{f}: FAQPage answer differs from the visible answer: {name!r}")
 print(f"checked {len(files)} pages, {len(errors)} errors")
 for e in errors: print("  " + e)
 sys.exit(1 if errors else 0)

@@ -67,3 +67,12 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 
 /* service pages: one area map in the service-areas section */
 .tx-svc-map{margin:22px 0 0}.tx-svc-map iframe{display:block;width:100%;max-width:720px;height:320px;border:0;border-radius:12px}.tx-svc-map figcaption{margin-top:8px;font-size:13px;color:#636b78}
+
+/* round 2: next-step and all-reviews lines, case-study links, small text links get a 24px+ hit area */
+.bb-next-step{max-width:68ch;margin:18px auto 0;font-size:16px;line-height:1.65}
+.reviews-all{font-size:15px}
+.tx-case-links{max-width:1180px;margin:24px auto;padding:0 5%;font-size:15px}
+.showcase-gallery-link,.txh-link,.reviews-all a{display:inline-block;padding:6px 0;min-height:24px}
+/* round 2: readable contrast for the review job label; the interior comparison table stacks on phones */
+.review-card figcaption .review-job,.txh-rv .review-job{color:#b4410b}
+@media(max-width:600px){.ip-table{min-width:0!important}.ip-table thead{display:none}.ip-table tr{display:block;border-bottom:1px solid #e3e8f0;padding:10px 0}.ip-table th,.ip-table td{display:block;width:auto;border:0!important;padding:4px 14px!important}.ip-table td::before{content:attr(data-label) ": ";font-weight:700;color:#1a3a6e}}

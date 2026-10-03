@@ -1,5 +1,7 @@
 name: JSON-LD check
 on:
+  push:
+    branches: [main]
   pull_request:
     paths: ["**/*.html", "scripts/check_jsonld.py"]
 jobs:
