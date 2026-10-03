@@ -148,3 +148,9 @@ body .ba-section{background:var(--white)}
   :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-nap>:not(.tx-foot-map){grid-column:1}
   :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-map{grid-column:2;grid-row:1/span 7;max-width:none;height:300px;margin-top:0}
 }
+
+/* round 10: inline SVG star and phone icons sit on the text baseline like the glyphs they replaced */
+.tx-star,.tx-ico{vertical-align:-.125em}
+
+/* round 10 contrast: navy text on the orange nav CTA and mobile quote bar on inner pages (white on #f47b20 = 2.7:1); home + About keep the owner's styles */
+body.bb #mainNav .btn-nav,body.bb #mainNav .nav-cta-m,body.bb a.mob-btn-quote{color:#081c3b!important}
