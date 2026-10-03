@@ -67,7 +67,7 @@
 .bb main>.tx-layout-band-2,.bb main>.why-section,.bb main>.showcase-section,.bb main>.svc-details,.bb main>.bb-areas,.bb main>.bb-highlights{background:var(--off-white)}
 .bb main>.bb-tight{padding-top:clamp(24px,3vw,34px);padding-bottom:clamp(24px,3vw,34px)}
 .bb main>.faq-section{--bb-max:860px}
-.bb main>.bb-prose>*{max-width:860px}
+.bb main>.bb-prose>*{max-width:68ch}
 .bb main>.internal-links{padding-top:clamp(28px,3.4vw,40px);padding-bottom:clamp(28px,3.4vw,40px)}
 
 /* section headings share one scale */

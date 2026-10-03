@@ -82,3 +82,6 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 .form-grid .qf-rating{grid-column:1/-1;margin:0 0 4px}
 .footer-award{display:inline-block;color:inherit;text-decoration:underline;text-underline-offset:2px}
 .tx-left{text-align:left!important}
+
+/* round 5: readable measure on project, drywall sub-service, cost guide and warranty templates */
+.project-body p,.step-content p,.highlight-box p,.dw-step p,main details p,.wrap>p,.policy-wrap p,.page-body p,.city-intro p{max-width:68ch}
