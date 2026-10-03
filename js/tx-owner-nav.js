@@ -98,6 +98,10 @@
       var col = wrapped ? host.parentElement : host;
       var w = col.clientWidth;
       if (w && w < 420) {
+        // off-screen frame: take its src away BEFORE moving it into the wrapper (moving a frame with a src starts a load)
+        if (f.dataset.txFit !== '1' && f.getAttribute('src') && f.getBoundingClientRect().top >= window.innerHeight + 300) {
+          f.dataset.txFit = '1'; f.dataset.txSrc = f.getAttribute('src'); f.removeAttribute('src');
+        }
         if (!wrapped) {
           var cs = getComputedStyle(f), wrap = document.createElement('div');
           wrap.className = 'tx-cid-fit'; wrap.style.marginTop = cs.marginTop; wrap.style.borderRadius = cs.borderRadius; wrap.style.overflow = 'hidden';
