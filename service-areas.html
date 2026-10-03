@@ -1113,20 +1113,8 @@ html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck
 
 /* round 21 (37b7f28 verify): project heroes get the on-dark accent and a full-white back link (contrast >= 4.5 at 375) */
 html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero h1 em{color:var(--tx-accent-on-dark)}
-html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}
-
-/* round 23 (Dylan 2026-10-03: "make the nav bar on the home page consistent across all pages"): home shows the same
-   header as every other page from the first paint: Get Free Quote + phone at every width (the state the home script
-   used to add only after scrolling past the hero form), no floating Google pill. Home markup and script untouched. */
-html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-li-quote{display:block!important;animation:none!important}
-@media(min-width:901px){html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-li-call{display:flex!important;align-items:center;animation:none!important}}
-html:has(link[rel=canonical][href="https://texorapainting.com/"]) .rvwbar{display:none!important}
-@media(max-width:900px){
-  html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-cta-m{display:inline-flex!important;animation:none!important}
-  html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-actions .nav-phone{display:flex!important;animation:none!important}
-  html:has(link[rel=canonical][href="https://texorapainting.com/"]) nav .nav-links{margin-left:0}
-}</style>
-<script src="/js/tx-owner-nav.js?v=9da274f82a" defer></script>
+html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}</style>
+<script src="/js/tx-owner-nav.js?v=f18ef19b8d" defer></script>
 <style id="tx-place-img">.place-card{overflow:hidden}.place-card .place-img{display:block;width:calc(100% + 44px);max-width:none;height:auto;aspect-ratio:3/2;object-fit:cover;margin:-26px -22px 16px}@media(max-width:600px){.place-card .place-img{width:calc(100% + 46px);margin:-23px -23px 14px}}.place-credits{max-width:1180px;margin:18px auto 0;padding-top:10px;border-top:1px solid var(--tx-line-cool);font-size:12px;line-height:1.6;color:var(--tx-copy-muted);text-align:left}.place-credits a{color:var(--tx-copy-muted);text-decoration:underline}</style>
 <style id="tx-hero-mobile">@media(max-width:767px){.tx-area .tx-area-hero{background-image:linear-gradient(90deg,var(--bb-scrim-top),var(--bb-scrim-bottom)),url('img/client-photos/exterior-window-trim-480.webp')}}@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-62) 100%),url('img/client-photos/interior-wall-roller-480.webp')!important}}.towns-h2{margin:0 0 18px}
 @media(min-width:901px){.tx-area-work{grid-template-columns:1.3fr 1fr}}
