@@ -5,6 +5,10 @@
 https://www.texorapainting.com/* https://texorapainting.com/:splat 301!
 http://www.texorapainting.com/*  https://texorapainting.com/:splat 301!
 
+# Netlify's own hostnames serve the production site: send them to the real domain (deploy-preview-N-- hosts are unaffected)
+https://stirring-bienenstitch-9426ae.netlify.app/* https://texorapainting.com/:splat 301!
+https://main--stirring-bienenstitch-9426ae.netlify.app/* https://texorapainting.com/:splat 301!
+
 # Old pages → homepage
 /service-inquiry  /  301
 /m/account        /  301
@@ -67,6 +71,7 @@ http://www.texorapainting.com/*  https://texorapainting.com/:splat 301!
 /projects  /projects.html  301!
 /reviews  /reviews.html  301!
 /service-areas  /service-areas.html  301!
+/services  /services.html  301!
 /texture-matching  /texture-matching.html  301!
 /trim-doors-ceilings  /trim-doors-ceilings.html  301!
 /tsawwassen-springs  /tsawwassen-springs.html  301!

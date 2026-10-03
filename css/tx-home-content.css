@@ -95,3 +95,8 @@ body section.trust-strip{flex-wrap:wrap}
 .txh-table tr:last-child th,.txh-table tr:last-child td{border-bottom:0}
 @media(max-width:640px){.txh-table th,.txh-table td{display:block;width:auto}.txh-table th{border-bottom:0;padding-bottom:4px}}
 @media print{.how.js .hw-step,.how.js .hw-badge,.how.js .hw-num,.how.js .hw-info h3,.how.js .hw-info p{opacity:1!important;transform:none!important}}
+/* v6: long paragraphs left-aligned on a readable measure; on phones the quote + call buttons sit above the tagline */
+.txh-interior{text-align:left;max-width:68ch}
+.txh p{max-width:68ch}
+.txh-center p{margin-left:auto;margin-right:auto}
+@media(max-width:599px){.hero-content{display:flex;flex-direction:column}.hero-chips{order:0}.hero-content h1{order:1}.hero-cta-row{order:2;margin-bottom:18px}.hero-tagline{order:3}}

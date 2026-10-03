@@ -40,3 +40,24 @@ nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue,#1a3a6
 }
 @media(prefers-reduced-motion:reduce){.tx-qtab{transition:none}}
 @media print{.tx-qtab{display:none!important}}
+
+/* footer directory (Services / Service Areas / Company / Contact) above the owner's call + link row */
+.footer-bar .tx-foot{flex:0 0 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.3fr);gap:24px 32px;padding:10px 0 26px;margin:0 0 6px;border-bottom:1px solid rgba(255,255,255,.12);text-align:left}
+.tx-foot-col{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tx-foot-h{margin:0 0 8px;color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
+.tx-foot-col a{display:block;padding:6px 0;min-height:24px;color:rgba(255,255,255,.78);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.35;text-decoration:none}
+.tx-foot-col a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.tx-foot-nap p{margin:0 0 4px;color:rgba(255,255,255,.78);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.5}
+.tx-foot-nap .tx-foot-name{color:#fff;font-weight:700}
+.tx-foot-nap p a{display:inline-block;padding:4px 0}
+.tx-foot-award{font-size:12.5px!important;color:rgba(255,255,255,.6)!important}
+.tx-foot-map{display:block;width:100%;max-width:320px;height:160px;margin-top:10px;border:0;border-radius:8px;background:#16264d}
+.footer-bar .footer-call .call-icon svg{display:block}
+.footer-bar .footer-email,.footer-bar .footer-profile,.footer-bar .footer-copy a{display:inline-block;padding:6px 0;min-height:24px}
+.footer-bar .footer-social{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:900px){.footer-bar .tx-foot{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.footer-bar .tx-foot{grid-template-columns:minmax(0,1fr)}.tx-foot-map{max-width:none}}
+/* review cards: the job the review itself names */
+.review-card figcaption .review-job,.txh-rv .review-job{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--orange,#f47b20)}
+/* nav phone icon (was an emoji) */
+nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;margin:auto}
