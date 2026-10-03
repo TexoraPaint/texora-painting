@@ -100,3 +100,6 @@ body section.trust-strip{flex-wrap:wrap}
 .txh p{max-width:68ch}
 .txh-center p{margin-left:auto;margin-right:auto}
 @media(max-width:599px){.hero-content{display:flex;flex-direction:column}.hero-chips{order:0}.hero-content h1{order:1}.hero-cta-row{order:2;margin-bottom:18px}.hero-tagline{order:3}}
+/* v7: carousel dots get a 24px hit area; on phones the who-we-are copy sits above the partners photo */
+.pf-dot{width:24px!important;height:24px!important;padding:7.5px!important;background-clip:content-box!important;box-sizing:border-box}
+@media(max-width:1000px){.txh-who-photo{order:0}}

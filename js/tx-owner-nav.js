@@ -64,3 +64,21 @@
   window.addEventListener('scroll', update, { passive: true });
   update();
 })();
+
+/* Preview guard: on any host that is not texorapainting.com (Netlify deploy previews, the Hostinger preview),
+   quote forms do not send. A test lead from a preview would land in the client's real inbox. Production is unchanged. */
+(function () {
+  'use strict';
+  if (/(^|\.)texorapainting\.com$/.test(location.hostname)) return;
+  Array.prototype.forEach.call(document.querySelectorAll('form[action*="formsubmit.co"]'), function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); e.stopImmediatePropagation();
+      if (form.querySelector('.tx-preview-note')) return;
+      var p = document.createElement('p');
+      p.className = 'tx-preview-note'; p.setAttribute('role', 'status');
+      p.textContent = 'Preview copy of the site: this form does not send. On texorapainting.com it goes to Texora.';
+      p.style.cssText = 'margin:12px 0 0;padding:10px 12px;border-radius:8px;background:#fff4e5;color:#7a3d00;font:700 13px/1.4 "Open Sans",Arial,sans-serif;text-align:center';
+      form.appendChild(p);
+    }, true);
+  });
+})();

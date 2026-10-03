@@ -61,3 +61,9 @@ nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue,#1a3a6
 .review-card figcaption .review-job,.txh-rv .review-job{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--orange,#f47b20)}
 /* nav phone icon (was an emoji) */
 nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;margin:auto}
+/* phones: every two-up grid collapses to one column; grey body text clears 4.5:1 on the pale bands */
+:root{--gray:#636b78}
+@media(max-width:600px){.ba-row,.ba-showcase-imgs,.ba-imgs,.process-steps,.services-list{grid-template-columns:1fr!important}}
+
+/* service pages: one area map in the service-areas section */
+.tx-svc-map{margin:22px 0 0}.tx-svc-map iframe{display:block;width:100%;max-width:720px;height:320px;border:0;border-radius:12px}.tx-svc-map figcaption{margin-top:8px;font-size:13px;color:#636b78}
