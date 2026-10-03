@@ -76,3 +76,9 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 /* round 2: readable contrast for the review job label; the interior comparison table stacks on phones */
 .review-card figcaption .review-job,.txh-rv .review-job{color:#b4410b}
 @media(max-width:600px){.ip-table{min-width:0!important}.ip-table thead{display:none}.ip-table tr{display:block;border-bottom:1px solid #e3e8f0;padding:10px 0}.ip-table th,.ip-table td{display:block;width:auto;border:0!important;padding:4px 14px!important}.ip-table td::before{content:attr(data-label) ": ";font-weight:700;color:#1a3a6e}}
+
+/* round 3: readable line length on body copy; rating line inside the home bottom form */
+.tx-layout-copy p,.faq-a p,.bb-band p,.bb-areas p{max-width:68ch}
+.form-grid .qf-rating{grid-column:1/-1;margin:0 0 4px}
+.footer-award{display:inline-block;color:inherit;text-decoration:underline;text-underline-offset:2px}
+.tx-left{text-align:left!important}

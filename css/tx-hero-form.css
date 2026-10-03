@@ -1,6 +1,6 @@
 /* Texora owner preview: the quote card in the hero (copy left, white card right; stacked on phones). */
 .hero.has-form{justify-content:space-between;gap:32px}
-.hero-form{position:relative;z-index:6;flex:0 0 auto;align-self:flex-start;margin:92px 0 -56px;width:min(400px,100%);background:#fff;border-radius:16px;box-shadow:0 24px 60px rgba(4,12,45,.38);padding:18px 18px 12px;animation:fadeUp .8s ease both}
+.hero-form{position:relative;z-index:6;flex:0 0 auto;align-self:flex-start;margin:92px 0 -56px;width:min(400px,100%);background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(4,12,45,.38);padding:18px 18px 12px;animation:fadeUp .8s ease both}
 .hf-title{margin:0 0 2px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:21px;line-height:1.15;color:var(--blue,#1a3a6e)}
 .hf-rating{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:13.5px;color:#4b5563}
 .hf-rating b{color:#111827}
