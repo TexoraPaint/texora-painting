@@ -25,5 +25,11 @@ for f in sorted(glob.glob(f'{R}/*.html')):
         s, k1 = re.subn(r'<link rel="stylesheet" href="/?css/%s\.css(?:\?v=[0-9a-f]+)?">' % n, lambda m: block, s)
         s, k2 = re.subn(r'<style data-tx-inline="%s">[\s\S]*?</style>' % n, lambda m: block, s) if not k1 else (s, 0)
         assert k1 + k2 <= 1, (b, n, k1, k2)   # a page that never linked this sheet is left as it is
+    fonts = open(f'{R}/css/tx-fonts.css', encoding='utf-8').read().strip()
+    fblock = f'<style data-tx-inline="tx-fonts">{fonts}</style>'
+    # last thing in <head>, so these faces are declared after the page's own fallback faces (a tie goes to the later face)
+    s = re.sub(r'<style data-tx-inline="tx-fonts">[\s\S]*?</style>\n?', '', s)
+    i = s.find('</head>'); assert i > 0, b
+    s = s[:i] + fblock + '\n' + s[i:]
     if s != s0: open(f, 'w', encoding='utf-8').write(s); done += 1
 print('pages inlined/refreshed', done)

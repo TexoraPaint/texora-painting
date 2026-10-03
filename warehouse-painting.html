@@ -987,6 +987,25 @@ html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck
 html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero h1 em{color:var(--tx-accent-on-dark)}
 html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}</style>
 <script src="/js/tx-owner-nav.js?v=f18ef19b8d" defer></script>
+<style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
+   at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the
+   page-level fallback face for these weights. Inlined on bb pages only by scripts/inline_css.py. */
+@font-face{font-family:'Montserrat Fallback';unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+2215,U+FEFF,U+FFFD;src:local('Arial');font-weight:700;size-adjust:110.1%;ascent-override:87.92%;descent-override:22.80%;line-gap-override:0%}
+@font-face{font-family:'Montserrat Fallback';unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+2215,U+FEFF,U+FFFD;src:local('Arial');font-weight:800;size-adjust:112.2%;ascent-override:86.27%;descent-override:22.37%;line-gap-override:0%}
+@font-face{font-family:'Montserrat Fallback';unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+2215,U+FEFF,U+FFFD;src:local('Arial');font-weight:900;size-adjust:114.4%;ascent-override:84.62%;descent-override:21.94%;line-gap-override:0%}
+@font-face{font-family:'Open Sans Fallback';unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+2215,U+FEFF,U+FFFD;src:local('Arial');font-weight:400;size-adjust:105.3%;ascent-override:101.52%;descent-override:27.83%;line-gap-override:0%}
+@font-face{font-family:'Open Sans Fallback';unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+2215,U+FEFF,U+FFFD;src:local('Arial');font-weight:600;size-adjust:101.6%;ascent-override:105.22%;descent-override:28.84%;line-gap-override:0%}
+@font-face{font-family:'Open Sans Fallback';unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+2215,U+FEFF,U+FFFD;src:local('Arial');font-weight:700;size-adjust:105.2%;ascent-override:101.62%;descent-override:27.85%;line-gap-override:0%}
+/* hero chips (Montserrat 700, short labels): their own fallback, measured at 375 (3 rows, chip widths within 6px of Montserrat) */
+@font-face{font-family:'Tx Chip Fallback';unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2212,U+2215,U+FEFF,U+FFFD;src:local('Arial');font-weight:700;size-adjust:119%;ascent-override:81.34%;descent-override:21.09%;line-gap-override:0%}
+body.bb ul.hero-chips li{font-family:'Montserrat','Tx Chip Fallback',sans-serif}
+/* symbols outside the Latin range (arrows, stars, ...) keep the page's own fallback metrics at these weights */
+@font-face{font-family:'Montserrat Fallback';font-weight:700;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:141.37%;ascent-override:68.47%;descent-override:17.76%;line-gap-override:0.00%}
+@font-face{font-family:'Montserrat Fallback';font-weight:800;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:141.37%;ascent-override:68.47%;descent-override:17.76%;line-gap-override:0.00%}
+@font-face{font-family:'Montserrat Fallback';font-weight:900;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:141.37%;ascent-override:68.47%;descent-override:17.76%;line-gap-override:0.00%}
+@font-face{font-family:'Open Sans Fallback';font-weight:400;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:116.04%;ascent-override:92.11%;descent-override:25.25%;line-gap-override:0.00%}
+@font-face{font-family:'Open Sans Fallback';font-weight:600;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:116.04%;ascent-override:92.11%;descent-override:25.25%;line-gap-override:0.00%}
+@font-face{font-family:'Open Sans Fallback';font-weight:700;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:116.04%;ascent-override:92.11%;descent-override:25.25%;line-gap-override:0.00%}</style>
 </head>
 <body class="bb" data-page-type="service">
 <a class="skip" href="#main">Skip to content</a>
