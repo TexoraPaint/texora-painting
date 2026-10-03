@@ -107,3 +107,13 @@ body section.trust-strip{flex-wrap:wrap}
 /* v7: carousel dots get a 24px hit area; on phones the who-we-are copy sits above the partners photo */
 .pf-dot{width:24px!important;height:24px!important;padding:7.5px!important;background-clip:content-box!important;box-sizing:border-box}
 @media(max-width:1000px){.txh-who-photo{order:0}}
+/* round 9 (rows 228/282): the FAQ band takes the white tint, so it no longer repeats the pale tint of the owner's
+   "See What Changed" band above it (white FAQ cards keep their hairline border). */
+.txh-faq{background:var(--white)}
+/* round 9 (row 274): the three hero trust chips use the inner pages' chip look (sentence case, pill) and, while the quote
+   card sits beside the copy (1101px up), the chip row may run past the 520px copy column, but never past the left half
+   of the hero, so it stays clear of the painter in the owner's photo (his head starts just right of centre). Where the
+   three fit (about 1430px up) they sit in one row; narrower, they wrap two + one. */
+.hero-chips{gap:6px}
+.hero-chips .hero-badge{text-transform:none;letter-spacing:.2px;font-size:12.5px;line-height:1.2;padding:7px 12px;border-radius:var(--r-pill);white-space:nowrap}
+@media(min-width:1101px){.hero-chips{width:max-content;max-width:calc(45vw + 10px)}}

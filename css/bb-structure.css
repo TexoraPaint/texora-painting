@@ -13,7 +13,7 @@
   /* shadow ladder: tile card, raised form card, accent button */
   --shadow-card:0 8px 26px rgba(4,12,45,.22);--shadow-raised:0 16px 48px rgba(8,25,54,.22);--shadow-cta:0 6px 20px rgba(4,12,45,.3);
   /* palette additions (brand --blue/--orange/--orange-dark/--off-white/--white come from each page's :root) */
-  --bb-muted:#4b5563;--bb-tile-line:#dce2e9;--bb-embed-bg:#e9eef4;--bb-on-dark:rgba(255,255,255,.84);--bb-on-dark-soft:rgba(255,255,255,.74);--bb-star-light:#e08a00;--bb-on-orange:#081c3b}
+  --bb-muted:#4b5563;--bb-tile-line:#dce2e9;--bb-embed-bg:#e9eef4;--bb-on-dark:rgba(255,255,255,.84);--bb-on-dark-soft:rgba(255,255,255,.74);--bb-star-light:#e08a00;--bb-on-orange:var(--tx-on-orange)}
 @media(max-width:900px){.bb{--bb-nav-h:calc(78px + env(safe-area-inset-top,0px))}}
 @media(max-width:400px){.bb{--bb-nav-h:calc(72px + env(safe-area-inset-top,0px))}}
 
@@ -84,7 +84,7 @@
 
 /* section headings share one scale */
 .bb .bb-h2,.bb .why-inner>h2,.bb .faq-inner>h2,.bb main>.process-section>h2,.bb main>.svc-details>h2,.bb main>.svc-gallery>h2,.bb main>.client-photos>h2,.bb .showcase-section .sec-title,.bb .tx-layout-band-2 .tx-layout-copy>h2{margin:0 0 var(--space-h2);font-family:var(--bb-head);font-weight:900;font-size:var(--fs-h2);line-height:1.22;color:var(--blue);text-align:left;overflow-wrap:break-word}
-.bb .bb-kicker{margin:0 0 8px;font-family:var(--bb-head);font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#a74a08}
+.bb .bb-kicker{margin:0 0 8px;font-family:var(--bb-head);font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--tx-kicker)}
 .bb .bb-lead{max-width:68ch;margin:-8px 0 26px;color:var(--bb-muted);font-size:16px;line-height:1.75}
 
 /* services in this town */
@@ -174,7 +174,7 @@
 .bb .bb-dir-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .bb .dir-card{min-width:0;padding:24px 26px;border:1px solid var(--bb-tile-line);border-radius:var(--r-tile);background:var(--bb-card,var(--off-white))}
 .bb .dir-card h3{margin:0 0 12px;font-family:var(--bb-head);font-weight:800;font-size:19px;line-height:1.35;color:var(--blue)}
-.bb .dir-card dl{margin:0 0 16px;color:#24334a;font-size:15px;line-height:1.65}
+.bb .dir-card dl{margin:0 0 16px;color:var(--tx-ink);font-size:15px;line-height:1.65}
 .bb .dir-card dt{margin-top:10px;font-weight:700}
 .bb .dir-card dd{margin:2px 0 0}
 .bb .dir-card a{color:var(--blue);font-weight:700;text-decoration:underline;text-underline-offset:3px}
@@ -322,3 +322,75 @@
    takes the lighter accent (5.19:1 on navy). White-on-orange buttons are unchanged (brand-colour call). */
 .bb .svc-card a,.bb .svc-card .price,.bb .tx-area-kicker{color:var(--tx-accent-text)}
 .bb .tx-area-hero .tx-area-kicker,.bb .tx-area-cta .tx-area-kicker{color:var(--tx-accent-on-dark)}
+
+/* round 9 (row 283): tokenised copies of the page-local round-7/8 blocks, so those blocks can be deleted page by page.
+   Each copy is scoped with :where() to the page type that carries the block, so the selector weight equals the inline
+   rule's (while the inline block stays it still wins the tie; computed values are identical either way).
+   City + neighbourhood pages: <style id="tx-lane-c-r8">. */
+:where(.bb[data-page-type=city]) .city-hero-content .tx-tldr{list-style:none;margin:-8px 0 14px;padding:0;max-width:560px}
+:where(.bb[data-page-type=city]) .city-hero-content .tx-tldr li{position:relative;padding-left:16px;margin:0 0 6px;color:rgba(255,255,255,.9);font-size:14.5px;line-height:1.55}
+:where(.bb[data-page-type=city]) .city-hero-content .tx-tldr li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+:where(.bb[data-page-type=city]) .city-hero-content .tx-tldr strong{color:var(--white);font-weight:700}
+:where(.bb[data-page-type=city]) .tx-layout-copy .tx-permit-note{margin:0 0 16px;padding:12px 16px;max-width:68ch;border-left:4px solid var(--orange);border-radius:0 var(--r-panel) var(--r-panel) 0;background:var(--off-white);color:var(--tx-ink);font-size:15px;line-height:1.65}
+:where(.bb[data-page-type=city]) .tx-layout-copy .tx-permit-note a{color:var(--blue);font-weight:600}
+:where(.bb[data-page-type=city]) .showcase-inner>.btn-hero{margin:20px 0 0 20px}
+@media(max-width:600px){:where(.bb[data-page-type=city]) .showcase-inner>.btn-hero{margin:18px 0 0}}
+:where(.bb[data-page-type=city]) .tx-job-facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 16px;margin:16px 0;font-size:15px;line-height:1.6;color:var(--tx-ink)}
+:where(.bb[data-page-type=city]) .tx-job-facts dt{font-weight:800;color:var(--blue)}
+:where(.bb[data-page-type=city]) .tx-job-facts dd{margin:0}
+@media(max-width:600px){:where(.bb[data-page-type=city]) .tx-job-facts{grid-template-columns:minmax(0,1fr);gap:2px}:where(.bb[data-page-type=city]) .tx-job-facts dd{margin:0 0 8px}}
+.bb:where([data-page-type=city]) .bb-topic>h4{margin:20px 0 8px;font-family:var(--bb-head);font-weight:800;font-size:16px;line-height:1.4;color:var(--blue)}
+@media(min-width:901px){
+  .bb:where([data-page-type=city]) .bb-topic-grid:has(>.bb-topic>h4~h4)>.bb-topic:last-child:nth-child(odd){grid-column:auto}
+  .bb:where([data-page-type=city]) .bb-topic-grid:has(>.bb-topic>h4~h4)>.bb-topic:last-child:nth-child(odd)>*{max-width:none}
+  .bb:where([data-page-type=city]) .bb-topic:has(>h4~h4){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);column-gap:32px;align-items:start}
+  .bb:where([data-page-type=city]) .bb-topic:has(>h4~h4)>:not(h4,h4~*){grid-column:1/-1}
+  .bb:where([data-page-type=city]) .bb-topic:has(>h4~h4)>h4{grid-column:1;margin:0 0 14px;font-size:16px;line-height:1.4}
+  .bb:where([data-page-type=city]) .bb-topic:has(>h4~h4)>h4~:not(h4){grid-column:2}
+}
+/* Service pages + services.html: <style id="tx-fix2-a"> (union of its five variants). */
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-photo-band .eyebrow,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .client-photos>.eyebrow,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-gallery>.eyebrow{margin:0 0 10px;font-family:var(--bb-head);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx-kicker)}
+.bb:where([data-page-type=service]) .tx-layout-band-1 .tx-layout-copy .why-inner>h3{font-family:var(--bb-head);font-weight:900;font-size:clamp(20px,2.5vw,28px);line-height:1.22;color:var(--white);margin:24px 0 20px;text-align:left}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-tldr,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-tldr{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:6px}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-tldr li,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-tldr li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.55;color:var(--white);text-align:left}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-tldr li::before,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-tldr li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-triples,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-triples{list-style:none;margin:0 0 20px;padding:12px 0 0;border-top:1px solid rgba(255,255,255,.28);display:grid;gap:4px}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .svc-hero-content .tx-triples li,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .city-hero-content .tx-triples li{font-size:13.5px;line-height:1.5;color:var(--white);text-align:left}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .svc-highlights{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0;margin:4px 0 18px}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .svc-highlights li{background:var(--white);color:var(--blue);padding:11px 14px;border-radius:var(--r-chrome);border-left:3px solid var(--orange);font-family:var(--bb-head);font-size:13px;font-weight:700;line-height:1.4}
+@media(max-width:600px){:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .svc-highlights{grid-template-columns:1fr}}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .why-section{margin-top:8px}
+.bb:where([data-page-type=service],[data-page-type=areas-hub]) .tx-layout-band-1 .tx-layout-copy .why-inner>h2{color:var(--white)}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .why-item{background:var(--white);border-radius:var(--r-panel);padding:18px 20px}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .why-item h3{color:var(--blue);margin:0 0 8px}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-layout-band-1 .tx-layout-copy .why-item p{color:var(--tx-copy);line-height:1.7}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp-wrap{max-width:960px;margin:28px auto 0;overflow-x:auto}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r-tile);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;font-size:14px;line-height:1.6}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp caption{caption-side:top;text-align:left;padding:0 0 10px;font-family:var(--bb-head);font-weight:800;font-size:15px;color:var(--blue)}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp th,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp td{padding:14px 16px;border-bottom:1px solid var(--tx-rule);vertical-align:top;color:var(--tx-copy)}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp thead th{background:var(--blue);color:var(--white);font-family:var(--bb-head);font-weight:800;font-size:13px}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp tbody th{font-family:var(--bb-head);font-weight:800;color:var(--blue)}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp tbody tr:last-child>*{border-bottom:0}
+:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp tbody th a{color:var(--blue)}
+@media(max-width:600px){:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp thead{display:none}:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp tr{display:block;border-bottom:1px solid var(--tx-line);padding:10px 0}:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp th,:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp td{display:block;width:auto;border:0!important;padding:4px 14px!important}:where(.bb[data-page-type=service],html:has(link[rel=canonical][href$="/services.html"]) .bb) .tx-cmp td::before{content:attr(data-label) ": ";font-weight:700;color:var(--blue)}}
+/* services.html only (the two hero lines at the top of its tx-fix2-a block) */
+@media(max-width:767px){:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero{background-image:linear-gradient(90deg,rgba(8,24,55,.91),rgba(8,24,55,.79)),url('../img/client-photos/exterior-window-trim-480.webp')}}
+@media(max-width:600px){:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero{display:flex;flex-direction:column}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>*{order:3}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-crumbs,:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-kicker,:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>h1{order:1}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-kicker{align-self:center}:where(html:has(link[rel=canonical][href$="/services.html"])) .tx-area .tx-area-hero>.tx-area-chips{order:2;margin:0 0 18px}}
+/* Service x town callout: <style id="tx-r8-callout">. Row 508: the callout link outranks photo-text-layout.css's white
+   link rule in the navy copy panel (it rendered white on the pale callout, 1.07:1); #1e4fa0 on #f4f7fb = 7.6:1. */
+.bb .tx-copy-callout{margin:16px 0;padding:12px 16px;border-left:4px solid var(--tx-accent-text);background:var(--off-white);border-radius:var(--r-chrome);font-size:15px;line-height:1.65;color:var(--tx-callout-ink)}
+.bb .tx-layout-band .tx-layout-copy .tx-copy-callout a{color:var(--tx-link);text-decoration:underline}
+
+/* round 9 (row 301): a page-specific key word (the H1 town or service) set large and faint behind the hero copy. It reads
+   data-key on the hero section, e.g. <section class="city-hero ..." data-key="Ladner">; without the attribute nothing
+   renders. Alt-text syntax keeps the word out of the accessibility tree; the pseudo clips itself, so no overflow. */
+.bb :is(.city-hero,.svc-hero)[data-key]{position:relative;isolation:isolate}
+.bb :is(.city-hero,.svc-hero)[data-key]::before{content:attr(data-key) / "";position:absolute;z-index:-1;left:0;right:0;bottom:0;overflow:hidden;padding:0 max(var(--bb-gutter),calc((100% - var(--bb-max))/2));font-family:var(--bb-head);font-weight:900;font-size:clamp(64px,13vw,200px);line-height:.82;letter-spacing:-.02em;white-space:nowrap;color:rgba(255,255,255,.07);pointer-events:none;user-select:none}
+
+/* round 9 (row 291): the last two band-level prose columns that sat in a centred 860px column now start on the band's
+   content edge like every other band: the "How a drywall repair job runs" process band (drywall-repair-ladner,
+   -tsawwassen; its steps keep their 860px row) and the FAQ hub's question groups. Cards, step columns, the listing card
+   and the right-hand copy panel of the photo bands keep their own inset by design. */
+.bb main>.process-section>.process-inner{max-width:none;margin-left:0;margin-right:0}
+.bb main>.process-section>.process-inner>h2{text-align:left}
+.bb.bb-hub .tx-faq-wrap{margin-left:0;margin-right:0}

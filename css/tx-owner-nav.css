@@ -2,6 +2,9 @@
 /* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
    Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
 :root{--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f}
+/* round 9 (row 283): the leftover literals of the round-7/8 page-local blocks, declared once for every page that loads this
+   sheet (all 88; bb-structure.css and the blog/project/gallery templates reference them). Values = the literals they replace. */
+:root{--tx-ink:#24334a;--tx-callout-ink:#243447;--tx-link:#1e4fa0;--tx-tint-deep:#e9eef6;--tx-kicker:#a74a08;--tx-copy:#374151;--tx-rule:#e5e7eb;--tx-on-orange:#081c3b;--tx-orange-hover:#e06810}
 nav .nav-links li.txn-menu{display:flex;align-items:center}
 nav .nav-links .txn-menu>a{padding-right:2px}
 nav .nav-links .txn-menu>button{display:inline-flex;align-items:center;justify-content:center;width:26px;height:40px;margin:0;padding:0;border:0;background:transparent;color:var(--white);cursor:pointer;opacity:.9}
@@ -13,7 +16,7 @@ nav .txn-menu.is-open>.txn-drop{display:block;animation:txnIn .18s ease both}
 nav .txn-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 34px}
 nav .txn-drop-areas .txn-cols{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 22px}
 nav .txn-cols strong{display:block;margin:0 0 8px;padding:0 0 8px;border-bottom:1px solid var(--tx-line);color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}
-nav .nav-links .txn-drop a{display:block;padding:7px 0;border:0;opacity:1;color:#24334a;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:600;font-size:14.5px;line-height:1.35;letter-spacing:0;text-transform:none;text-decoration:none}
+nav .nav-links .txn-drop a{display:block;padding:7px 0;border:0;opacity:1;color:var(--tx-ink);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:600;font-size:14.5px;line-height:1.35;letter-spacing:0;text-transform:none;text-decoration:none}
 nav .nav-links .txn-drop a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 nav .nav-links .txn-drop .txn-all{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:0;color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px}
 nav .txn-drop-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--tx-line);color:#4b5563;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px}
@@ -76,7 +79,7 @@ nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;mar
 @media(max-width:600px){.ba-row,.ba-showcase-imgs,.ba-imgs,.process-steps,.services-list{grid-template-columns:1fr!important}}
 
 /* service pages: one area map in the service-areas section */
-.tx-svc-map{margin:22px 0 0}.tx-svc-map iframe{display:block;width:100%;max-width:720px;height:320px;border:0;border-radius:var(--r-tile)}.tx-svc-map figcaption{margin-top:8px;font-size:13px;color:#636b78}
+.tx-svc-map{margin:22px 0 0}.tx-svc-map iframe{display:block;width:100%;max-width:720px;height:320px;border:0;border-radius:var(--r-tile)}.tx-svc-map figcaption{margin-top:8px;font-size:13px;color:var(--gray)}
 
 /* round 2: next-step and all-reviews lines, case-study links, small text links get a 24px+ hit area */
 .bb-next-step{max-width:68ch;margin:18px auto 0;font-size:16px;line-height:1.65}
@@ -115,4 +118,33 @@ body .ba-section{background:var(--white)}
   main .article-wrap>h2:has(+h3),main .project-body:has(>p:first-child)>h2:has(+h3),main .article-wrap>:is(.article-cta,.related-section),main .project-body:has(>p:first-child)>:is(.proj-faq,.related-projects){grid-column:1/-1}
   main .article-wrap>h2:has(+h3)+h3,main .project-body:has(>p:first-child)>h2:has(+h3)+h3{margin-top:0}
   main .article-wrap>h2:has(+h3)+h3+*,main .project-body:has(>p:first-child)>h2:has(+h3)+h3+*{margin-top:0}
+}
+
+/* round 9 (row 283): tokenised copies of the page-local blocks on the blog, project, warranty and gallery templates
+   (<style id="tx-bands">, "tx-showcase-quote", "tx-gallery-bands"). Same selectors and specificity, same computed values;
+   while the inline blocks stay they win the tie, once they are deleted these apply. None of these classes exist on home or About. */
+.tx-band--a{background:var(--white)}
+.tx-band--b{background:var(--off-white)}
+.tx-band>.tx-band-inner{padding-top:44px;padding-bottom:44px}
+.tx-band>.tx-band-inner>:first-child{margin-top:0}
+.tx-band>.tx-band-inner>.related-section:first-child{border-top:0;padding-top:0}
+.tx-band--b .proj-chip,.tx-band--b .specs-table td:first-child,.tx-band--b .related-card-icon,.tx-band--b .compare-table tr:nth-child(even) td{background:var(--tx-tint-deep)}
+.tx-unit-grid{display:grid;gap:0 28px;margin:0 0 8px}
+@media(min-width:901px){.tx-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tx-unit-col>:first-child{margin-top:12px}
+.showcase-quote-btn{display:inline-flex;align-items:center;min-height:44px;margin:24px 0 0 20px;padding:10px 22px;border-radius:var(--r-pill);background:var(--orange);color:var(--tx-on-orange);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;text-decoration:none;vertical-align:middle}
+.showcase-quote-btn:hover{background:var(--tx-orange-hover)}
+:where(html:has(link[rel=canonical][href$="/gallery.html"])) .client-photos{padding-top:56px}
+.client-photos-cta{margin:24px 0 0}
+.client-photos-cta a{display:inline-block;min-height:24px;line-height:24px;color:var(--tx-link);font-weight:700;text-decoration:underline}
+
+/* round 9 (row 414): Google only paints the listing card (name, address, 5.0, review count) in a frame 400px+ wide
+   (tested 2026-10-03: 320x160 and every 343px frame = pin only; 400 = card, 500+ = full card). From 901px up the footer
+   Contact column runs as its own full-width row: the NAP lines on the left, the same iframe (same URL) 300px tall on the
+   right. Phones keep the small frame: no frame that fits a 375px screen paints the card. About is owner-gated, unchanged. */
+@media(min-width:901px){
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .footer-bar .tx-foot{grid-template-columns:repeat(3,minmax(0,1fr))}
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-nap{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(600px,2fr);grid-auto-rows:min-content;column-gap:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)}
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-nap>:not(.tx-foot-map){grid-column:1}
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-map{grid-column:2;grid-row:1/span 7;max-width:none;height:300px;margin-top:0}
 }

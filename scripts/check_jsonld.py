@@ -15,7 +15,7 @@ errors = []
 files = [f for f in glob.glob("**/*.html", recursive=True) if not f.startswith(SKIP_DIRS)]
 for f in sorted(files):
     h = open(f, encoding="utf-8").read()
-    raw = re.findall(r'<script\b[^>]*\btype\s*=\s*["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', h, re.I)
+    raw = re.findall(r'<script\b[^>]*\btype\s*=\s*["\']?application/ld\+json["\']?(?=[\s>])[^>]*>([\s\S]*?)</script>', h, re.I)
     if len(raw) > 1: errors.append(f"{f}: {len(raw)} JSON-LD blocks (expected one @graph)")
     ns = []
     for r in raw:
