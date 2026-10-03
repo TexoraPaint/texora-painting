@@ -385,7 +385,7 @@
    data-key on the hero section, e.g. <section class="city-hero ..." data-key="Ladner">; without the attribute nothing
    renders. Alt-text syntax keeps the word out of the accessibility tree; the pseudo clips itself, so no overflow. */
 .bb :is(.city-hero,.svc-hero)[data-key]{position:relative;isolation:isolate}
-.bb :is(.city-hero,.svc-hero)[data-key]::before{content:attr(data-key) / "";position:absolute;z-index:-1;left:0;right:0;bottom:0;overflow:hidden;padding:0 max(var(--bb-gutter),calc((100% - var(--bb-max))/2));font-family:var(--bb-head);font-weight:900;font-size:clamp(64px,13vw,200px);line-height:.82;letter-spacing:-.02em;white-space:nowrap;color:rgba(255,255,255,.12);pointer-events:none;user-select:none}
+.bb :is(.city-hero,.svc-hero)[data-key]::before{content:attr(data-key) / "";position:absolute;z-index:-1;left:0;right:0;top:clamp(96px,14vw,180px);overflow:hidden;padding:0 max(var(--bb-gutter),calc((100% - var(--bb-max))/2));font-family:var(--bb-head);font-weight:900;font-size:clamp(64px,13vw,200px);line-height:.82;letter-spacing:-.02em;white-space:nowrap;color:rgba(255,255,255,.12);pointer-events:none;user-select:none}
 
 /* round 9 (row 291): the last two band-level prose columns that sat in a centred 860px column now start on the band's
    content edge like every other band: the "How a drywall repair job runs" process band (drywall-repair-ladner,

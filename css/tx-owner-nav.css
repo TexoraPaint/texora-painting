@@ -161,3 +161,6 @@ p.tx-updated,.city-hero p.tx-updated,.svc-hero p.tx-updated,.tx-area-hero p.tx-u
 
 /* round 11b: links inside the dark hero copy read as white, underlined */
 .bb .city-hero-content p a,.bb .svc-hero-content p a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
+/* round 11c (row 229): the cost guide's sections, one band per H2, alternating tints */
+.cg-band{padding:8px 0}.cg-band--b{background:#f4f7fb}
