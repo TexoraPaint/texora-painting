@@ -1,0 +1,12 @@
+name: Link floor check
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths: ["**/*.html", "sitemap.xml", "scripts/check_linkfloor.py"]
+jobs:
+  linkfloor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_linkfloor.py

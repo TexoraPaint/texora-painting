@@ -1,0 +1,12 @@
+name: JSON-LD check
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths: ["**/*.html", "scripts/check_jsonld.py"]
+jobs:
+  jsonld:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_jsonld.py
