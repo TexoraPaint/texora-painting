@@ -962,8 +962,13 @@ nav.tx-cta-gate.show-cta li:has(>.btn-nav),nav.tx-cta-gate.show-cta .nav-li-call
 @media(prefers-reduced-motion:reduce){nav.tx-cta-gate.show-cta *{animation:none!important}}
 a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
 
-@media(min-width:901px){.tx-pill.rvwbar{left:calc(50% - 205px)}}</style>
-<script src="/js/tx-owner-nav.js?v=50760e8fd3" defer></script>
+@media(min-width:901px){.tx-pill.rvwbar{left:calc(50% - 205px)}}
+
+/* speed (Dylan 2026-10-04: 100/100): home hero keeps its slide-up but is not transparent at the start,
+   so the headline counts as painted at first paint (LCP). Same distance and timing as fadeUp. */
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-form{animation-name:txSlideUp!important}
+@keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}</style>
+<script src="/js/tx-owner-nav.js?v=deb1628c5f" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(160deg,var(--tx-hero-navy-95) 0%,var(--tx-hero-navy-88) 100%),url('img/client-photos/interior-window-brush-480.webp')!important}}</style>
 <style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
    at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the

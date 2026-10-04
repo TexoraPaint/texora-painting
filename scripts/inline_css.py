@@ -33,3 +33,15 @@ for f in sorted(glob.glob(f'{R}/*.html')):
     s = s[:i] + fblock + '\n' + s[i:]
     if s != s0: open(f, 'w', encoding='utf-8').write(s); done += 1
 print('pages inlined/refreshed', done)
+
+# Home (2026-10-04, speed): our two sheets inline on index.html too. tx-home-content.css (the owner's home styles) stays a
+# normal <link> so he can edit it directly. Idempotent like the block above.
+HOME_SHEETS = ['tx-owner-nav', 'tx-hero-form']
+hf = f'{R}/index.html'
+s = open(hf, encoding='utf-8').read(); s0 = s
+for n in HOME_SHEETS:
+    c = open(f'{R}/css/{n}.css', encoding='utf-8').read().replace("url('../img/", "url('/img/").strip()
+    block = f'<style data-tx-inline="{n}">{c}</style>'
+    s, k1 = re.subn(r'<link rel="stylesheet" href="/?css/%s\.css(?:\?v=[0-9a-f]+)?">' % n, lambda m: block, s)
+    if not k1: s = re.sub(r'<style data-tx-inline="%s">[\s\S]*?</style>' % n, lambda m: block, s)
+if s != s0: open(hf, 'w', encoding='utf-8').write(s); print('home inlined/refreshed')

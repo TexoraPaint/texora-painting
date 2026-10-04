@@ -150,9 +150,279 @@ function gtag(){dataLayer.push(arguments);}
 @keyframes navCtaIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){nav.show-cta .nav-li-quote,nav.show-cta .nav-li-call,nav.show-cta .nav-cta-m,nav.show-cta .nav-actions .nav-phone{animation:none;}}
 </style>
-<link rel="stylesheet" href="/css/tx-owner-nav.css?v=50760e8fd3">
-<script src="/js/tx-owner-nav.js?v=50760e8fd3" defer></script>
-<link rel="stylesheet" href="/css/tx-hero-form.css?v=281551e052">
+<style data-tx-inline="tx-owner-nav">/* Texora owner preview: Services + Service Areas menus inside the owner's own header. Everything else is his CSS. */
+/* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
+   Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
+:root{--tx-hero-blue-90:rgba(22,65,150,.9);--tx-hero-navy-88:rgba(10,32,90,.88);--bb-form-line:#e0e7ef;--bb-form-intro:#46546a;--bb-form-label:#253a57;--bb-field-line:#b8c5d5;--bb-field-ink:#172d4c;--bb-focus-ring:rgba(244,123,32,.3);--bb-form-note:#526174;--bb-on-dark-22:rgba(255,255,255,.22);--bb-scrim-top:rgba(8,24,55,.91);--bb-scrim-bottom:rgba(8,24,55,.79);--shadow-raised:0 16px 48px rgba(8,25,54,.22);--ptl-rule:#e5e9f2;--tx-hero-navy-94:rgba(10,32,90,.94);--tx-hero-navy-95:rgba(10,32,90,.95);--tx-hero-navy-92:rgba(10,32,90,.92);--tx-hero-navy-86:rgba(10,32,90,.86);--tx-hero-blue-84:rgba(22,65,150,.84);--tx-hero-blue-82:rgba(22,65,150,.82);--tx-hero-blue-80:rgba(22,58,120,.80);--tx-hero-mid-88:rgba(18,52,120,.88);--tx-hero-mid-86:rgba(18,52,120,.86);--tx-hero-sea-62:rgba(15,65,130,.62);--tx-hero-sea-55:rgba(15,65,130,.55);--tx-hero-sea-52:rgba(15,65,130,.52);--tx-hero-sea-50:rgba(15,65,130,.5);--tx-hero-sea-45:rgba(15,65,130,.45);--tx-surface-soft:#f6f8fb;--tx-surface-chip:#edf2f8;--tx-surface-ice:#eef3fa;--tx-line-soft:#dce5f0;--tx-line-cool:#dce3ee;--tx-line-pale:#e5eaf0;--tx-line-steel:#bdc9dc;--tx-line-mist:#dfe5ef;--tx-copy-muted:#526176;--tx-copy-soft:#4a586a;--tx-copy-strong:#364456;--tx-focus-on-dark:#f6a55f;--tx-amber-text:#b56a00;--tx-orange-text:#c25a0a;--tx-shadow-card:0 14px 34px rgba(4,12,45,.24);--tx-shadow-soft-xs:0 5px 20px rgba(26,58,110,.05);--tx-shadow-soft-sm:0 7px 24px rgba(26,58,110,.1);--tx-shadow-soft-md:0 12px 32px rgba(26,58,110,.08);--tx-shadow-drop:rgba(4,12,45,.28);--tx-on-dark-12:rgba(255,255,255,.12);--tx-on-dark-60:rgba(255,255,255,.6);--tx-foot-map-bg:#16264d;--r-card:14px;--r-tile:12px;--r-panel:10px;--r-chrome:8px;--r-pill:999px;--shadow-cta:0 6px 20px rgba(4,12,45,.3);--tx-line:#e3e8f0;--tx-on-dark-muted:rgba(255,255,255,.78);--tx-on-dark-hair:rgba(255,255,255,.08);--tx-accent-text:#b4410b;--tx-accent-on-dark:#f89a4f;--tx-muted:#4b5563;--tx-on-dark:#fff;--tx-tint:#f4f7fb;--tx-shadow-lift:0 14px 40px rgba(4,12,45,.25)}
+/* round 9 (row 283): the leftover literals of the round-7/8 page-local blocks, declared once for every page that loads this
+   sheet (all 88; bb-structure.css and the blog/project/gallery templates reference them). Values = the literals they replace. */
+:root{--tx-ink:#24334a;--tx-callout-ink:#243447;--tx-link:#1e4fa0;--tx-tint-deep:#e9eef6;--tx-kicker:#a74a08;--tx-copy:#374151;--tx-rule:#e5e7eb;--tx-on-orange:#081c3b;--tx-orange-hover:#e06810}
+nav .nav-links li.txn-menu{display:flex;align-items:center}
+nav .nav-links .txn-menu>a{padding-right:2px}
+nav .nav-links .txn-menu>button{display:inline-flex;align-items:center;justify-content:center;width:26px;height:40px;margin:0;padding:0;border:0;background:transparent;color:var(--white);cursor:pointer;opacity:.9}
+nav .nav-links .txn-menu>button svg{width:12px;height:12px;transition:transform .2s ease}
+nav .nav-links .txn-menu.is-open>button svg{transform:rotate(180deg)}
+nav .txn-drop{display:none;position:absolute;top:100%;left:0;right:0;z-index:5;width:min(1120px,calc(100% - 40px));margin:0 auto;padding:26px 30px 28px;border-top:3px solid var(--orange);border-radius:0 0 16px 16px;background:var(--white);box-shadow:0 22px 50px var(--tx-shadow-drop);text-align:left}
+nav .txn-menu.is-open>.txn-drop{display:block;animation:txnIn .18s ease both}
+@keyframes txnIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+nav .txn-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 34px}
+nav .txn-drop-areas .txn-cols{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px 22px}
+nav .txn-cols strong{display:block;margin:0 0 8px;padding:0 0 8px;border-bottom:1px solid var(--tx-line);color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.2px;text-transform:uppercase}
+nav .nav-links .txn-drop a{display:block;padding:7px 0;border:0;opacity:1;color:var(--tx-ink);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:600;font-size:14.5px;line-height:1.35;letter-spacing:0;text-transform:none;text-decoration:none}
+nav .nav-links .txn-drop a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+nav .nav-links .txn-drop .txn-all{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:0;color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px}
+nav .txn-drop-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--tx-line);color:var(--tx-muted);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px}
+nav .nav-links .txn-drop-foot a{display:inline;padding:0;color:var(--blue);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){
+  nav .nav-links li.txn-menu{flex-wrap:wrap;align-items:stretch}
+  nav .nav-links .txn-menu>a{flex:1 1 0;border-bottom:1px solid var(--tx-on-dark-hair)}
+  nav .nav-links .txn-menu>button{width:52px;height:auto;min-height:48px;border-bottom:1px solid var(--tx-on-dark-hair);border-radius:0}
+  nav .txn-drop,nav .txn-menu.is-open>.txn-drop{position:static;flex-basis:100%;width:auto;margin:0 12px 12px;padding:14px 16px 16px;border-top:0;border-radius:var(--r-tile);box-shadow:none;animation:none}
+  nav .txn-cols,nav .txn-drop-areas .txn-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}
+  nav .txn-cols>div{margin-bottom:10px}
+  nav .nav-links .txn-drop a{padding:9px 0;font-size:14px}
+}
+@media(max-width:480px){nav .txn-cols,nav .txn-drop-areas .txn-cols{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){nav .txn-drop,nav .nav-links .txn-menu>button svg{animation:none;transition:none}}
+
+/* the owner's rating pill sits beside his logo on desktop, clear of the two menus */
+/* pill centred in the gap between the logo (ends 5%+145px) and the link row (starts 95%-556px) */
+@media(min-width:901px){#rvwBar.rvwbar{left:calc(50% - 205px)}}
+
+/* desktop quote tab */
+.tx-qtab{display:none}
+@media(min-width:901px){
+  .tx-qtab{display:block;position:fixed;right:0;top:50%;z-index:1500;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);padding:20px 12px;border-radius:0 var(--r-panel) var(--r-panel) 0;background:var(--orange);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .tx-qtab.is-on{opacity:1;pointer-events:auto}
+  .tx-qtab:hover{background:var(--orange-dark)}
+}
+/* round 7 (row 302): below 901px the quote tab shows as a pill at the bottom left, clear of the back-to-top button at the
+   bottom right (there is no call bar on these pages). Same show/hide as desktop. Bloomview inner pages only (.bb);
+   home and About are owner-gated. */
+@media(max-width:900px){
+  .bb .tx-qtab,.tx-inner .tx-qtab{display:inline-flex;align-items:center;position:fixed;left:12px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:998;box-sizing:border-box;min-height:44px;padding:12px 20px;border-radius:var(--r-pill);background:var(--orange);color:var(--tx-on-orange);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-decoration:none;box-shadow:var(--shadow-cta);opacity:0;pointer-events:none;transition:opacity .25s ease}
+  .bb .tx-qtab.is-on,.tx-inner .tx-qtab.is-on{opacity:1;pointer-events:auto}
+}
+@media(prefers-reduced-motion:reduce){.tx-qtab{transition:none}}
+@media print{.tx-qtab{display:none!important}}
+
+/* footer directory (Services / Service Areas / Company / Contact) above the owner's call + link row */
+.footer-bar .tx-foot{flex:0 0 100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.3fr);gap:24px 32px;padding:10px 0 26px;margin:0 0 6px;border-bottom:1px solid var(--tx-on-dark-12);text-align:left}
+.tx-foot-col{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tx-foot-h{margin:0 0 8px;color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
+.tx-foot-col a{display:block;padding:6px 0;min-height:24px;color:var(--tx-on-dark-muted);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.35;text-decoration:none}
+.tx-foot-col a:hover{color:var(--white);text-decoration:underline;text-underline-offset:3px}
+.tx-foot-nap p{margin:0 0 4px;color:var(--tx-on-dark-muted);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:14px;line-height:1.5}
+.tx-foot-nap .tx-foot-name{color:var(--white);font-weight:700}
+.tx-foot-nap p a{display:inline-block;padding:4px 0}
+.tx-foot-award{font-size:12.5px!important;color:var(--tx-on-dark-60)!important}
+.tx-foot-map{display:block;width:100%;max-width:320px;height:160px;margin-top:10px;border:0;border-radius:var(--r-chrome);background:var(--tx-foot-map-bg)}
+.footer-bar .footer-call .call-icon svg{display:block}
+.footer-bar .footer-email,.footer-bar .footer-profile,.footer-bar .footer-copy a{display:inline-block;padding:6px 0;min-height:24px}
+.footer-bar .footer-social{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:900px){.footer-bar .tx-foot{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.footer-bar .tx-foot{grid-template-columns:minmax(0,1fr)}.tx-foot-map{max-width:none}}
+/* review cards: the job the review itself names */
+.review-card figcaption .review-job,.txh-rv .review-job{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--orange)}
+/* nav phone icon (was an emoji) */
+nav .nav-phone svg,nav .nav-phone-d svg{width:21px;height:21px;display:block;margin:auto}
+/* phones: every two-up grid collapses to one column; grey body text clears 4.5:1 on the pale bands */
+:root{--gray:#636b78}
+@media(max-width:600px){.ba-row,.ba-showcase-imgs,.ba-imgs,.process-steps,.services-list{grid-template-columns:1fr!important}}
+
+/* service pages: one area map in the service-areas section */
+.tx-svc-map{margin:22px 0 0}.tx-svc-map iframe{display:block;width:100%;max-width:720px;height:320px;border:0;border-radius:var(--r-tile)}.tx-svc-map figcaption{margin-top:8px;font-size:13px;color:var(--gray)}
+
+/* round 2: next-step and all-reviews lines, case-study links, small text links get a 24px+ hit area */
+.bb-next-step{max-width:68ch;margin:18px auto 0;font-size:16px;line-height:1.65}
+.reviews-all{font-size:15px}
+.tx-case-links{max-width:1180px;margin:24px auto;padding:0 5%;font-size:15px}
+.showcase-gallery-link,.txh-link,.reviews-all a{display:inline-block;padding:6px 0;min-height:24px}
+/* round 2: readable contrast for the review job label; the interior comparison table stacks on phones */
+.review-card figcaption .review-job,.txh-rv .review-job{color:var(--tx-accent-text)}
+@media(max-width:600px){.ip-table{min-width:0!important}.ip-table thead{display:none}.ip-table tr{display:block;border-bottom:1px solid var(--tx-line);padding:10px 0}.ip-table th,.ip-table td{display:block;width:auto;border:0!important;padding:4px 14px!important}.ip-table td::before{content:attr(data-label) ": ";font-weight:700;color:var(--blue)}}
+
+/* round 3: readable line length on body copy; rating line inside the home bottom form */
+.tx-layout-copy p,.faq-a p,.bb-band p,.bb-areas p{max-width:68ch}
+.form-grid .qf-rating{grid-column:1/-1;margin:0 0 4px}
+.footer-award{display:inline-block;color:inherit;text-decoration:underline;text-underline-offset:2px}
+.tx-left{text-align:left!important}
+
+/* round 5: readable measure on project, drywall sub-service, cost guide and warranty templates */
+.project-body p,.step-content p,.highlight-box p,.dw-step p,main details p,.wrap>p,.policy-wrap p,.page-body p,.city-intro p{max-width:68ch}
+
+/* round 8 (row 508): orange category labels and links on the white blog, project and gallery cards take the darker
+   accent-text colour (5.2:1 or better on white, the pale band and the tag tint). None of these classes exist on home or About. */
+html:has(link[rel=canonical][href$="/warranty.html"]) .policy-wrap a,body .related-card-cat,body .related-card-read,body .blog-card-cat,body .project-link,body .project-tag.tag-service,body .gallery-section-inner .section-label,body .ba-inner .section-label{color:var(--tx-accent-text)}
+/* round 8 (rows 228/282, gallery): the photo grid band takes the pale tint and the before/after band below it goes
+   white, so the four light sections alternate white / pale / white into the navy CTA. Gallery-only classes. */
+body .gallery-section{background:var(--off-white)}
+body .ba-section{background:var(--white)}
+/* round 8 (row 230): on the five blog posts, the two projects/ case studies and the warranty page, a heading and the
+   text under it sit side by side from 901px up: the H2/H3 in a left column, its paragraphs, lists, tables and photos
+   in a right column on one prose edge. An H2 that opens straight onto an H3 runs full width as the section title;
+   the call-to-action, related-posts and FAQ blocks run full width. Below 901px nothing changes. Legal pages untouched. */
+@media(min-width:901px){
+  main .article-wrap,main .project-body:has(>p:first-child),html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);column-gap:44px;align-content:start;max-width:1080px}
+  main .article-wrap>*,main .project-body:has(>p:first-child)>*,html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap>*{grid-column:2;min-width:0}
+  main .article-wrap>:is(h2,h3),main .project-body:has(>p:first-child)>:is(h2,h3),html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap>:is(h2,h3){grid-column:1;margin-top:36px}
+  main .article-wrap>:is(h2,h3)+*,main .project-body:has(>p:first-child)>:is(h2,h3)+*,html:has(link[rel=canonical][href$="/warranty.html"]) main .policy-wrap>:is(h2,h3)+*{margin-top:36px}
+  main .article-wrap>h2:has(+h3),main .project-body:has(>p:first-child)>h2:has(+h3),main .article-wrap>:is(.article-cta,.related-section),main .project-body:has(>p:first-child)>:is(.proj-faq,.related-projects){grid-column:1/-1}
+  main .article-wrap>h2:has(+h3)+h3,main .project-body:has(>p:first-child)>h2:has(+h3)+h3{margin-top:0}
+  main .article-wrap>h2:has(+h3)+h3+*,main .project-body:has(>p:first-child)>h2:has(+h3)+h3+*{margin-top:0}
+  /* round 12c (row 291): a band that opens on a heading starts its first paragraph level with that heading */
+  main .tx-band>.tx-band-inner:is(.article-wrap,.project-body,.policy-wrap)>:is(h2,h3):first-child,main .tx-band>.tx-band-inner:is(.article-wrap,.project-body,.policy-wrap)>:is(h2,h3):first-child+*{margin-top:0}
+  /* a band with no heading of its own (the intro) runs full width, so it opens on the same left edge as the section titles */
+  main .tx-band>.tx-band-inner:is(.article-wrap,.project-body:has(>p:first-child),.policy-wrap):not(:has(>:is(h2,h3)))>*{grid-column:1/-1}
+}
+
+/* round 9 (row 283): tokenised copies of the page-local blocks on the blog, project, warranty and gallery templates
+   (<style id="tx-bands">, "tx-showcase-quote", "tx-gallery-bands"). Same selectors and specificity, same computed values;
+   while the inline blocks stay they win the tie, once they are deleted these apply. None of these classes exist on home or About. */
+.tx-band--a{background:var(--white)}
+.tx-band--b{background:var(--off-white)}
+.tx-band>.tx-band-inner{padding-top:44px;padding-bottom:44px}
+.tx-band>.tx-band-inner>:first-child{margin-top:0}
+.tx-band>.tx-band-inner>.related-section:first-child{border-top:0;padding-top:0}
+.tx-band--b .proj-chip,.tx-band--b .specs-table td:first-child,.tx-band--b .related-card-icon,.tx-band--b .compare-table tr:nth-child(even) td{background:var(--tx-tint-deep)}
+.tx-unit-grid{display:grid;gap:0 28px;margin:0 0 8px}
+@media(min-width:901px){.tx-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tx-unit-col>:first-child{margin-top:12px}
+.showcase-quote-btn{display:inline-flex;align-items:center;min-height:44px;margin:24px 0 0 20px;padding:10px 22px;border-radius:var(--r-pill);background:var(--orange);color:var(--tx-on-orange);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;text-decoration:none;vertical-align:middle}
+.showcase-quote-btn:hover{background:var(--tx-orange-hover)}
+:where(html:has(link[rel=canonical][href$="/gallery.html"])) .client-photos{padding-top:56px}
+.client-photos-cta{margin:24px 0 0}
+.client-photos-cta a{display:inline-block;min-height:24px;line-height:24px;color:var(--tx-link);font-weight:700;text-decoration:underline}
+
+/* round 9 (row 414): Google only paints the listing card (name, address, 5.0, review count) in a frame 400px+ wide
+   (tested 2026-10-03: 320x160 and every 343px frame = pin only; 400 = card, 500+ = full card). From 901px up the footer
+   Contact column runs as its own full-width row: the NAP lines on the left, the same iframe (same URL) 300px tall on the
+   right. Phones keep the small frame: no frame that fits a 375px screen paints the card. About is owner-gated, unchanged. */
+@media(min-width:901px){
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .footer-bar .tx-foot{grid-template-columns:repeat(3,minmax(0,1fr))}
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-nap{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(600px,2fr);grid-auto-rows:min-content;column-gap:32px;padding-top:18px;border-top:1px solid var(--tx-on-dark-12)}
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-nap>:not(.tx-foot-map){grid-column:1}
+  :where(html:not(:has(link[rel=canonical][href$="/about.html"]))) .tx-foot-map{grid-column:2;grid-row:1/span 7;max-width:none;height:300px;margin-top:0}
+}
+
+/* round 10: inline SVG star and phone icons sit on the text baseline like the glyphs they replaced */
+.tx-star,.tx-ico{vertical-align:-.125em}
+
+/* round 10 contrast: navy text on the orange nav CTA and mobile quote bar on inner pages (white on #f47b20 = 2.7:1); home + About keep the owner's styles */
+body.bb #mainNav .btn-nav,body.bb #mainNav .nav-cta-m,body.bb nav .btn-nav,body.bb nav .nav-cta-m,body.bb a.mob-btn-quote{color:var(--tx-on-orange)!important}
+
+/* round 11: the quote tab hides while the cookie notice (role=dialog) is showing; the 'Last updated' line's style lives here, not inline */
+body:has(#txaCookie.cc-show) .tx-qtab{display:none!important}
+p.tx-updated,.city-hero p.tx-updated,.svc-hero p.tx-updated,.tx-area-hero p.tx-updated{font-size:13px!important;line-height:1.5!important;margin:-4px 0 14px!important;opacity:.85}
+
+/* round 11b: links inside the dark hero copy read as white, underlined */
+.bb .city-hero-content p a,.bb .svc-hero-content p a{color:var(--tx-on-dark);text-decoration:underline;text-underline-offset:2px}
+
+/* round 11c (row 229): the cost guide's sections, one band per H2, alternating tints */
+.cg-band{padding:8px 0}.cg-band--b{background:var(--tx-tint)}
+
+/* round 12: former inline styles as classes */
+p.tx-updated.tx-updated--hub{max-width:760px;margin:8px auto 0;text-align:left;font-size:13px;line-height:1.5;opacity:.85}
+
+/* round 12c (row 291): the gallery, projects, blog index, project and case-study templates share the service pages'
+   column (1120px, never under a 5% gutter) so every band-level heading and paragraph starts on one left edge.
+   Scoped by canonical; home, About and the deck project page are not matched. */
+html:has(link[rel=canonical]:is([href$="/gallery.html"],[href$="/projects.html"],[href$="/blog/"],[href*="/projects/"],[href*="/project-beach"],[href*="/project-heritage"],[href*="/project-ladner"],[href*="/project-port"],[href*="/project-tsawwassen"],[href$="/painting-cost-guide-delta.html"])) main :is(.cta-bar,.showcase-section,.gallery-section,.ba-section,.client-photos,.projects-section,.section-label,.blog-cta,.tx-band>.project-body.tx-band-inner,.cg-band>.wrap,.faq-section){box-sizing:border-box;max-width:none;margin-left:0;margin-right:0;padding-left:max(5%,calc((100% - 1120px)/2));padding-right:max(5%,calc((100% - 1120px)/2))}
+html:has(link[rel=canonical]:is([href$="/gallery.html"],[href$="/projects.html"],[href$="/blog/"],[href*="/projects/"],[href*="/project-beach"],[href*="/project-heritage"],[href*="/project-ladner"],[href*="/project-port"],[href*="/project-tsawwassen"],[href$="/painting-cost-guide-delta.html"])) main :is(.showcase-inner,.gallery-section-inner,.ba-inner,.ba-section-inner,.faq-inner){max-width:none;margin-left:0;margin-right:0}
+html:has(link[rel=canonical][href$="/blog/"]) main .blog-cta p{max-width:none}
+html:has(link[rel=canonical][href$="/projects.html"]) main>.tx-case-links{max-width:none;padding:0;margin:24px max(5%,calc((100% - 1120px)/2))}
+.review-box{background-color:var(--blue)}
+
+/* round 13: links inside the why-choose cards read as body links; town-photo credit under the footer copyright line */
+.why-item p a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.footer-copy.tx-photo-credit{margin-top:6px;font-size:12px;opacity:.85}
+.footer-copy.tx-photo-credit a{color:inherit;text-decoration:underline}
+
+/* round 15 (row 283): former inline style attributes as classes */
+/* !important keeps the precedence the inline style attribute had over every stylesheet rule */
+.tx-link-inherit{color:inherit!important;text-decoration:underline!important}
+.tx-link-blue{color:var(--blue)!important}
+
+/* round 16 (row 301 contrast): the headline accent on inner heroes uses the on-dark orange */
+html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/painting-cost-guide-delta.html"]))) body :is(.city-hero,.svc-hero) h1 em{color:var(--tx-accent-on-dark)}
+
+/* round 19 (PSI CLS after the CSS inline): the top nav's own fallback face, sized to Montserrat's width
+   (measured: nav 833px on the fallback vs 832px on Montserrat at 1440), so the font swap no longer moves the nav */
+@font-face{font-family:'Tx Nav Fallback';src:local('Arial Bold'),local('Arial');font-weight:700;size-adjust:103%;ascent-override:83%;descent-override:22%;line-gap-override:0%}
+#navLinks>li>a{font-family:'Montserrat','Tx Nav Fallback',sans-serif}
+
+/* round 20: text links in dark hero intros read on the navy (white, underlined); form cards and buttons keep their own colours */
+html:not(:has(link[rel=canonical]:is([href$="/deck-building.html"],[href$="/deck-staining.html"],[href$="/project-deck-refinishing.html"],[href$="/painting-cost-guide-delta.html"]))) :is(.project-hero,.svc-hero,.city-hero) :is(p,li) a:not([class*=btn]):not(form a):not([class*=form] a){color:var(--tx-on-dark);text-decoration:underline;text-underline-offset:3px}
+
+/* round 21 (37b7f28 verify): project heroes get the on-dark accent and a full-white back link (contrast >= 4.5 at 375) */
+html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero h1 em{color:var(--tx-accent-on-dark)}
+html:not(:has(link[rel=canonical][href$="/project-deck-refinishing.html"])) body .project-hero .btn-back{color:var(--tx-on-dark)}
+
+/* round 24 (Dylan 2026-10-03: the home nav on every page): every page except home gets the home header: the centred Google 5.0
+   pill (same look, links to reviews), no rating row under the nav, Get Free Quote + phone appearing once the hero quote button
+   scrolls away (home rule, Illia 00ece47). Home keeps its own markup and script. */
+.tx-pill.rvwbar{position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:1001;transition:opacity .3s ease,transform .3s ease;}
+  .tx-pill.rvwbar.rvw-hidden{opacity:0;transform:translateX(-50%) translateY(-10px);pointer-events:none;}
+  .tx-pill .rvwbar-inner{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:40px;background:rgba(18,20,26,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.16);box-shadow:0 8px 26px rgba(0,0,0,.42);cursor:pointer;transition:transform .15s;}
+  .tx-pill .rvwbar-inner:hover{transform:translateY(1px);}
+  .tx-pill .rvwbar-srcs{display:inline-flex;align-items:center;gap:4px;}
+  .tx-pill .rvwbar-inner svg{width:18px;height:18px;display:block;flex-shrink:0;}
+  .tx-pill .rvwbar-score{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:15px;color:#fff;}
+  .tx-pill .rvwbar-stars{color:#fbbc04;font-size:14px;letter-spacing:1px;line-height:1;}
+  .tx-pill .rvwbar-count{color:rgba(255,255,255,.6);font-size:12.5px;font-weight:600;}
+  @media(max-width:600px){.tx-pill.rvwbar{top:15px;}.tx-pill .rvwbar-inner{padding:5px 11px;gap:6px;}.tx-pill .rvwbar-srcs{gap:3px;}.tx-pill .rvwbar-inner svg{width:15px;height:15px;}.tx-pill .rvwbar-score{font-size:12.5px;}.tx-pill .rvwbar-stars{font-size:11px;}.tx-pill .rvwbar-count{font-size:10.5px;}}
+/* no band under the nav: the hero photo runs up behind the nav, as on home (first text 20px under the nav) */
+.trust-bar[data-proof="nav-strip"]{display:none!important}
+body.bb:has(.trust-bar[data-proof="nav-strip"]) :is(.city-hero,.svc-hero,.tx-area-hero){padding-top:calc(var(--bb-nav-h) + 20px)!important}
+nav.tx-cta-gate:not(.show-cta) li:has(>.btn-nav),nav.tx-cta-gate:not(.show-cta) .nav-li-call{display:none!important}
+nav.tx-cta-gate.show-cta li:has(>.btn-nav),nav.tx-cta-gate.show-cta .nav-li-call{animation:txNavCtaIn .4s ease both}
+@media(max-width:900px){nav.tx-cta-gate:not(.show-cta) .nav-cta-m,nav.tx-cta-gate:not(.show-cta) .nav-actions .nav-phone{display:none!important}
+  nav.tx-cta-gate.show-cta .nav-cta-m,nav.tx-cta-gate.show-cta .nav-actions .nav-phone{animation:txNavCtaIn .4s ease both}}
+@keyframes txNavCtaIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){nav.tx-cta-gate.show-cta *{animation:none!important}}
+a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
+
+@media(min-width:901px){.tx-pill.rvwbar{left:calc(50% - 205px)}}
+
+/* speed (Dylan 2026-10-04: 100/100): home hero keeps its slide-up but is not transparent at the start,
+   so the headline counts as painted at first paint (LCP). Same distance and timing as fadeUp. */
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-form{animation-name:txSlideUp!important}
+@keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}</style>
+<script src="/js/tx-owner-nav.js?v=deb1628c5f" defer></script>
+<style data-tx-inline="tx-hero-form">/* Texora owner preview: the quote card in the hero (copy left, white card right; stacked on phones).
+   Radius tokens (--r-card, --r-chrome) are declared on :root in tx-owner-nav.css, which home loads. Card colours below are declared once here (this sheet loads on home only). */
+:root{--hf-shadow:rgba(4,12,45,.38);--hf-star:#f5a623;--hf-chip-bg:#f8fafc;--hf-focus:rgba(26,58,110,.25);--hf-submit-glow:rgba(244,123,32,.4);--hf-note-bg:#fff4e5;--hf-note-ink:#8a4b00;--hf-line:#d6dde8;--hf-muted:#6b7280;--hf-text:#4b5563}
+.hero.has-form{justify-content:space-between;gap:32px}
+.hero-form{position:relative;z-index:6;flex:0 0 auto;align-self:flex-start;margin:92px 0 -56px;width:min(400px,100%);background:var(--white);border-radius:var(--r-card);box-shadow:0 24px 60px var(--hf-shadow);padding:18px 18px 12px;animation:fadeUp .8s ease both}
+.hf-title{margin:0 0 2px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:21px;line-height:1.15;color:var(--blue)}
+.hf-rating{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:13.5px;color:var(--hf-text)}
+.hf-rating b{color:var(--dark)}
+.hf-stars{color:var(--hf-star);font-size:15px;letter-spacing:1px}
+.hf-step{margin:0 0 6px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--hf-muted)}
+.hf-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:0 0 10px;padding:0;border:0;min-width:0}
+.hf-chip{position:relative;margin:0}
+.hf-chip input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer}
+.hf-chip span{display:flex;align-items:center;justify-content:center;min-height:34px;padding:3px 6px;border:1.5px solid var(--hf-line);border-radius:var(--r-chrome);background:var(--hf-chip-bg);color:var(--blue);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:12px;line-height:1.2;text-align:center;transition:background .15s,border-color .15s,color .15s}
+.hf-chip:hover span{border-color:var(--blue)}
+.hf-chip input:checked+span{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.hf-chip input:focus-visible+span{outline:2px solid var(--orange);outline-offset:2px}
+.hf-fields{display:grid;gap:7px;margin:0 0 10px}
+.hf-field label{display:block;margin:0 0 3px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:var(--hf-text)}
+.hf-field input{width:100%;height:38px;padding:0 12px;border:1.5px solid var(--hf-line);border-radius:var(--r-chrome);background:var(--white);color:var(--dark);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-weight:500;font-size:15px}
+.hf-field input:focus{border-color:var(--blue);outline:2px solid var(--hf-focus);outline-offset:0}
+.hf-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:48px;border:0;border-radius:var(--r-chrome);background:var(--orange);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;box-shadow:0 4px 14px var(--hf-submit-glow);transition:background .2s,transform .15s}
+.hf-submit:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.hf-note{margin:8px 0 0;font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:11px;line-height:1.45;color:var(--hf-muted);text-align:center}
+.hf-note a{color:var(--blue)}
+.hero-form .pv-note{margin:6px 0 0;padding:5px 8px;border-radius:var(--r-chrome);background:var(--hf-note-bg);color:var(--hf-note-ink);font-family:'Open Sans','Open Sans Fallback',sans-serif;font-size:12px;text-align:center}
+@media(max-width:1100px){
+  .hero.has-form{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:28px}
+  .hero-form{width:100%;max-width:520px;margin:0 auto;align-self:center}
+  .hf-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:900px){.hf-chip span{min-height:44px}}
+@media(max-width:330px){.hf-chips{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.hero-form{animation:none}}</style>
 <script src="/js/tx-hero-form.js?v=f7e7d63792" defer></script>
 <link rel="stylesheet" href="/css/tx-home-content.css?v=0178e9e9e4">
 <script>
@@ -1164,7 +1434,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ loadFeaturable(); io.disconnect(); } }, {rootMargin:'1400px'});
     io.observe(wrap);
   }
-  setTimeout(loadFeaturable, 4000);
+  
 })();
 </script>
 <!-- QUOTE FORM -->

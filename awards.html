@@ -1137,8 +1137,13 @@ nav.tx-cta-gate.show-cta li:has(>.btn-nav),nav.tx-cta-gate.show-cta .nav-li-call
 @media(prefers-reduced-motion:reduce){nav.tx-cta-gate.show-cta *{animation:none!important}}
 a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
 
-@media(min-width:901px){.tx-pill.rvwbar{left:calc(50% - 205px)}}</style>
-<script src="/js/tx-owner-nav.js?v=50760e8fd3" defer></script>
+@media(min-width:901px){.tx-pill.rvwbar{left:calc(50% - 205px)}}
+
+/* speed (Dylan 2026-10-04: 100/100): home hero keeps its slide-up but is not transparent at the start,
+   so the headline counts as painted at first paint (LCP). Same distance and timing as fadeUp. */
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-form{animation-name:txSlideUp!important}
+@keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}</style>
+<script src="/js/tx-owner-nav.js?v=deb1628c5f" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.tx-area-hero{background-image:linear-gradient(90deg,var(--bb-scrim-top),var(--bb-scrim-bottom)),url('img/client-photos/exterior-fascia-painting-480.webp')!important}}</style>
 <style id="tx-svc-hub">.place-card{overflow:hidden}.place-card .place-img{display:block;width:calc(100% + 44px);max-width:none;height:auto;aspect-ratio:3/2;object-fit:cover;margin:-26px -22px 16px}@media(max-width:600px){.place-card .place-img{width:calc(100% + 46px);margin:-23px -23px 14px}}.svc-card-name{font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:20px;line-height:1.2;color:var(--blue,#1a3a6e);margin:0 0 10px!important}.svc-group{font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:15px;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange,#f47b20);margin:34px 0 14px}.svc-hub-h2{margin:0 0 6px}.svc-hub-areas{margin-top:26px}</style>
 <style id="tx-awards-page">
