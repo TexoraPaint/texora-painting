@@ -388,8 +388,12 @@ a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
 /* speed (Dylan 2026-10-04: 100/100): home hero keeps its slide-up but is not transparent at the start,
    so the headline counts as painted at first paint (LCP). Same distance and timing as fadeUp. */
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-form{animation-name:txSlideUp!important}
-@keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}</style>
-<script src="/js/tx-owner-nav.js?v=deb1628c5f" defer></script>
+@keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}
+
+/* speed (home): static sections below the fold skip layout until near the screen, so their lazy images do not start
+   before first paint. Not on the carousel (.pf), reviews widget or quote form. */
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) main > :is(section.services,section.txh-offer,section.how,section.txh-jobs,section.txh-who,section.txh-areas,section.txh-faq){content-visibility:auto;contain-intrinsic-size:auto 900px}</style>
+<script src="/js/tx-owner-nav.js?v=690b18d04d" defer></script>
 <style data-tx-inline="tx-hero-form">/* Texora owner preview: the quote card in the hero (copy left, white card right; stacked on phones).
    Radius tokens (--r-card, --r-chrome) are declared on :root in tx-owner-nav.css, which home loads. Card colours below are declared once here (this sheet loads on home only). */
 :root{--hf-shadow:rgba(4,12,45,.38);--hf-star:#f5a623;--hf-chip-bg:#f8fafc;--hf-focus:rgba(26,58,110,.25);--hf-submit-glow:rgba(244,123,32,.4);--hf-note-bg:#fff4e5;--hf-note-ink:#8a4b00;--hf-line:#d6dde8;--hf-muted:#6b7280;--hf-text:#4b5563}

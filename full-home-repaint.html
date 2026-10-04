@@ -1020,8 +1020,12 @@ a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
 /* speed (Dylan 2026-10-04: 100/100): home hero keeps its slide-up but is not transparent at the start,
    so the headline counts as painted at first paint (LCP). Same distance and timing as fadeUp. */
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-form{animation-name:txSlideUp!important}
-@keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}</style>
-<script src="/js/tx-owner-nav.js?v=deb1628c5f" defer></script>
+@keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}
+
+/* speed (home): static sections below the fold skip layout until near the screen, so their lazy images do not start
+   before first paint. Not on the carousel (.pf), reviews widget or quote form. */
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) main > :is(section.services,section.txh-offer,section.how,section.txh-jobs,section.txh-who,section.txh-areas,section.txh-faq){content-visibility:auto;contain-intrinsic-size:auto 900px}</style>
+<script src="/js/tx-owner-nav.js?v=690b18d04d" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(110deg,var(--tx-hero-navy-94) 0%,var(--tx-hero-blue-82) 45%,var(--tx-hero-sea-62) 100%),url('img/client-photos/interior-wall-roller-480.webp')!important}}</style>
 <style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
    at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the
