@@ -547,7 +547,7 @@ function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');
 (function(){var K="txa_cookie",el=document.getElementById("txaCookie");if(!el)return;
  var v=null;try{v=localStorage.getItem(K);}catch(e){}
  if(v){el.parentNode&&el.parentNode.removeChild(el);return;}
- el.hidden=false;el.classList.add("cc-show");
+ el.hidden=false;var ccShow=function(){el.classList.add("cc-show");};if(document.fonts&&document.fonts.ready)document.fonts.ready.then(ccShow,ccShow);else ccShow();
  function done(val){try{localStorage.setItem(K,val);}catch(e){}el.classList.remove("cc-show");setTimeout(function(){el.parentNode&&el.parentNode.removeChild(el);},480);}
  el.querySelector(".cc-accept").addEventListener("click",function(){done("accepted");});
  el.querySelector(".cc-decline").addEventListener("click",function(){try{window["ga-disable-G-H03RYY12LT"]=true;}catch(e){}done("declined");});
