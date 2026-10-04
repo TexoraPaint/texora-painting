@@ -19,7 +19,6 @@ function gtag(){dataLayer.push(arguments);}
   ['mousedown','mousemove','keydown','touchstart','scroll'].forEach(function(e){
     document.addEventListener(e,loadTracking,{once:true,passive:true});
   });
-  setTimeout(loadTracking,3500);
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
