@@ -34,9 +34,9 @@ for f in sorted(glob.glob(f'{R}/*.html')):
     if s != s0: open(f, 'w', encoding='utf-8').write(s); done += 1
 print('pages inlined/refreshed', done)
 
-# Home (2026-10-04, speed): our two sheets inline on index.html too. tx-home-content.css (the owner's home styles) stays a
-# normal <link> so he can edit it directly. Idempotent like the block above.
-HOME_SHEETS = ['tx-owner-nav', 'tx-hero-form']
+# Home (2026-10-04, speed / Dylan's 100/100 goal): these sheets are inlined on index.html too, including
+# tx-home-content.css (the owner's home styles). EDIT THE .css FILE, THEN RUN THIS SCRIPT - the page uses the inline copy.
+HOME_SHEETS = ['tx-owner-nav', 'tx-hero-form', 'tx-home-content']
 hf = f'{R}/index.html'
 s = open(hf, encoding='utf-8').read(); s0 = s
 for n in HOME_SHEETS:
