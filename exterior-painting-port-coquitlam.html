@@ -283,7 +283,7 @@ function gtag(){dataLayer.push(arguments);}
 }
 </style>
 <!-- callrail swap.js (bloomview 2026-09-27) -->
-<script>(function(){if(!/(^|\.)texorapainting\.com$/.test(location.hostname))return;var s=document.createElement('script');s.async=1;s.src='https://cdn.callrail.com/companies/964140765/4482de884bd82f9e5505/12/swap.js';(document.head||document.documentElement).appendChild(s);})();</script>
+<script>(function(){if(!/(^|\.)texorapainting\.com$/.test(location.hostname))return;var s=document.createElement('script');s.async=1;s.src='https://cdn.callrail.com/companies/964140765/4482de884bd82f9e5505/12/swap.js';var go=function(){(document.head||document.documentElement).appendChild(s);};if(document.readyState==='complete')go();else window.addEventListener('load',go,{once:true});})();</script>
 
 <!-- Service hero conversion layout: existing site styles remain intact. -->
 <style id="texora-service-hero-form-style">
@@ -1245,7 +1245,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   // Load Google Business photos into strip
   var strip = document.getElementById('gphotoStrip');
   if(!strip) return;
-  fetch('/.netlify/functions/photos')
+  new Promise(function(r){if(document.readyState==='complete')r();else window.addEventListener('load',function(){r();},{once:true});}).then(function(){return fetch('/.netlify/functions/photos');})
     .then(function(r){return r.json();})
     .then(function(d){
       var photos = d.photos||[];
