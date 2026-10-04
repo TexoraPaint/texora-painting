@@ -44,4 +44,8 @@ for n in HOME_SHEETS:
     block = f'<style data-tx-inline="{n}">{c}</style>'
     s, k1 = re.subn(r'<link rel="stylesheet" href="/?css/%s\.css(?:\?v=[0-9a-f]+)?">' % n, lambda m: block, s)
     if not k1: s = re.sub(r'<style data-tx-inline="%s">[\s\S]*?</style>' % n, lambda m: block, s)
+fonts = open(f'{R}/css/tx-fonts.css', encoding='utf-8').read().strip()
+fblock = f'<style data-tx-inline="tx-fonts">{fonts}</style>'
+s = re.sub(r'<style data-tx-inline="tx-fonts">[\s\S]*?</style>\n?', '', s)
+i = s.find('</head>'); s = s[:i] + fblock + '\n' + s[i:]
 if s != s0: open(hf, 'w', encoding='utf-8').write(s); print('home inlined/refreshed')
