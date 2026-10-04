@@ -1045,7 +1045,10 @@ body.bb ul.hero-chips li{font-family:'Montserrat','Tx Chip Fallback',sans-serif}
 @font-face{font-family:'Montserrat Fallback';font-weight:900;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:141.37%;ascent-override:68.47%;descent-override:17.76%;line-gap-override:0.00%}
 @font-face{font-family:'Open Sans Fallback';font-weight:400;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:116.04%;ascent-override:92.11%;descent-override:25.25%;line-gap-override:0.00%}
 @font-face{font-family:'Open Sans Fallback';font-weight:600;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:116.04%;ascent-override:92.11%;descent-override:25.25%;line-gap-override:0.00%}
-@font-face{font-family:'Open Sans Fallback';font-weight:700;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:116.04%;ascent-override:92.11%;descent-override:25.25%;line-gap-override:0.00%}</style>
+@font-face{font-family:'Open Sans Fallback';font-weight:700;unicode-range:U+2100-2BFF;src:local('Arial'),local('Roboto');size-adjust:116.04%;ascent-override:92.11%;descent-override:25.25%;line-gap-override:0.00%}
+/* Home hero "Get Free Quote" button (uppercase, 800, letter-spaced): the shared 800 fallback renders it 9-10px wider than Montserrat, which nudged the call button sideways on font swap. 104% matches the Montserrat width within 0.2px at 412/768/1440. */
+@font-face{font-family:'Tx Btn Fallback';unicode-range:U+0000-00FF,U+2000-206F;src:local('Arial');font-weight:800;size-adjust:104%;ascent-override:93.08%;descent-override:24.13%;line-gap-override:0%}
+html:has(link[rel=canonical][href="https://texorapainting.com/"]) .btn-hero{font-family:'Montserrat','Tx Btn Fallback',sans-serif}</style>
 </head>
 <body class="bb" data-page-type="service">
 <a class="skip" href="#main">Skip to content</a>
