@@ -1166,7 +1166,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<div id="showcaseLightbox" onclick="if(event.target===this)closeShowcaseLb()">
+<div id="showcaseLightbox" role="dialog" aria-modal="true" aria-label="Project photo viewer" onclick="if(event.target===this)closeShowcaseLb()">
   <button id="showcaseLbClose" onclick="closeShowcaseLb()" aria-label="Close">&times;</button>
   <img id="showcaseLbImg" alt="" width="1" height="1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 </div>
