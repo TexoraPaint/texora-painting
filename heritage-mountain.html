@@ -353,7 +353,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 @media(max-width:400px){.bb{--bb-nav-h:calc(72px + env(safe-area-inset-top,0px))}}
 
 /* skip link */
-.bb .skip{position:absolute;left:12px;top:-90px;z-index:2000;padding:10px 16px;border-radius:6px;background:var(--white);color:var(--blue);font-weight:700;text-decoration:none;box-shadow:0 4px 16px var(--bb-shadow-skip)}
+.bb .skip{position:absolute;left:12px;top:-90px;z-index:2000;padding:10px 16px;border-radius:var(--r-chrome,8px);background:var(--white);color:var(--blue);font-weight:700;text-decoration:none;box-shadow:0 4px 16px var(--bb-shadow-skip)}
 .bb .skip:focus{top:12px}
 
 /* 1. proof strip under the header */
@@ -387,7 +387,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 .bb .tx-form-field{min-width:0}
 .bb .tx-form-field-wide{grid-column:1/-1}
 .bb .tx-form-field label{display:block;margin:0 0 6px;color:var(--bb-form-label);font-size:13px;font-weight:700;line-height:1.4}
-.bb .tx-form-field input,.bb .tx-form-field textarea,.bb .tx-form-field select{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid var(--bb-field-line);border-radius:7px;background:var(--white);color:var(--bb-field-ink);font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
+.bb .tx-form-field input,.bb .tx-form-field textarea,.bb .tx-form-field select{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid var(--bb-field-line);border-radius:var(--r-chrome,8px);background:var(--white);color:var(--bb-field-ink);font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
 .bb .tx-form-field input:focus,.bb .tx-form-field textarea:focus,.bb .tx-form-field select:focus{outline:3px solid var(--bb-focus-ring);outline-offset:1px;border-color:var(--blue)}
 .bb .tx-form-field textarea{min-height:82px;resize:vertical}
 .bb .tx-form-submit{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;min-height:50px;margin:18px 0 0;padding:13px 16px;border:0;border-radius:var(--r-chrome);background:var(--orange);color:var(--bb-on-orange);font-family:var(--bb-head);font-size:15px;font-weight:800;line-height:1.4;cursor:pointer}
@@ -992,6 +992,11 @@ body.bb ul.hero-chips li{font-family:'Montserrat','Tx Chip Fallback',sans-serif}
 /* Home hero "Get Free Quote" button (uppercase, 800, letter-spaced): the shared 800 fallback renders it 9-10px wider than Montserrat, which nudged the call button sideways on font swap. 104% matches the Montserrat width within 0.2px at 412/768/1440. */
 @font-face{font-family:'Tx Btn Fallback';unicode-range:U+0000-00FF,U+2000-206F;src:local('Arial');font-weight:800;size-adjust:104%;ascent-override:93.08%;descent-override:24.13%;line-gap-override:0%}
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .btn-hero{font-family:'Montserrat','Tx Btn Fallback',sans-serif}</style>
+<style id="h2-hooks">.bb-listing-card,.svc-item-card,.detail-card,.highlight-card,.cost-card,.tx-faq-card,.blog-list,.tx-area-profile-card,.trustpilot-widget{box-sizing:border-box}</style>
+<style id="h2-hero-call">.btn-hero-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;margin:0 0 22px 12px;padding:12px 20px;border:2px solid rgba(255,255,255,.78);border-radius:var(--r-chrome,8px);background:transparent;color:#fff;font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;line-height:1.2;text-decoration:none;order:2}.btn-hero-call:hover,.btn-hero-call:focus-visible{background:rgba(255,255,255,.14)}.btn-hero-call-solo{margin:14px 0 0}.project-hero .btn-hero{margin:14px 12px 0 0}@media(max-width:600px){.btn-hero-call{margin-left:0;display:flex}}</style>
+<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}.cta-bar p,.tx-area-cta p,.tx-area-closing>p,.tx-area-map-intro{max-width:66ch;margin-left:auto;margin-right:auto}</style>
+<style id="h2-review-job">.review-card figcaption .review-job{margin:3px 0 0}</style>
+<style id="h2-pair">.tx-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px;margin:0 0 16px}.tx-pair>h2,.tx-pair>h3{margin-top:0}@media(max-width:900px){.tx-pair{grid-template-columns:1fr}}</style>
 </head>
 <body class="bb" data-page-type="city">
 <a class="skip" href="#main">Skip to content</a>
@@ -1027,6 +1032,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <ul class="tx-triples" data-section="triples" aria-label="Texora Painting &amp; Drywall at a glance"><li>Texora Painting &amp; Drywall is a painting contractor serving Heritage Mountain, Port Moody, in the Tri-Cities, Metro Vancouver.</li><li>Texora Painting &amp; Drywall is based at 1299 56 St, Delta, BC.</li><li>Texora Painting &amp; Drywall has been BBB Accredited since 29 September 2026, with an A- rating.</li></ul>
     <ul class="hero-chips"><li data-proof="hero-rating-chip"><span class="bb-star" aria-hidden="true"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="tx-star" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span>Rated 5.0 on Google</li><li>Free written quotes</li><li>Workmanship warranty in writing</li></ul>
     <a href="#service-quote" class="btn-hero">Get Your Free Quote &rarr;</a>
+    <a href="tel:+16044176483" class="btn-hero-call">Call (604) 417-6483</a>
   </div>
 
   <form id="service-quote" class="tx-hero-form" action="https://formsubmit.co/info@texorapainting.com" method="POST" aria-labelledby="service-quote-heading">
@@ -1059,11 +1065,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>On a Heritage Mountain exterior there's more surface area to manage: multiple elevations, exposed timber elements, cedar or composite siding, and fine millwork detailing that needs careful brushwork. We use premium products throughout and take the time to properly mask and protect the finished surfaces around each work area.</p>
   <p>Interior work in Heritage Mountain homes often involves vaulted ceilings, open-plan living areas, accent walls, and detailed trim packages. Our <a href="interior-painting-port-moody.html">interior painting in Port Moody</a> page covers that side of the work.</p></div><figure class="tx-layout-photo"><img src="/img/client-photos/exterior-house-480.webp" srcset="/img/client-photos/exterior-house-480.webp 480w, /img/client-photos/exterior-house-540.webp 540w, /img/client-photos/exterior-house-600.webp 600w, /img/client-photos/exterior-house-640.webp 640w, /img/client-photos/exterior-house-720.webp 720w, /img/client-photos/exterior-house-960.webp 960w" sizes="(max-width: 760px) min(calc(100vw - 57px), 300px), (max-width: 1100px) 320px, (max-width: 1439px) 401px, 444px" width="960" height="620" alt="Pale grey siding and white trim on the gable end of a bungalow" loading="lazy" decoding="async"><figcaption>Exterior walls, siding and trim · Exterior paintwork supplied by Texora.</figcaption></figure></div></section>
 
-<section class="tx-layout-band tx-layout-band-2" data-photo-text-layout="2" data-section="detail"><div class="tx-layout-inner"><div class="tx-layout-copy tx-layout-col"><h2>Painting considerations for a larger Heritage Mountain home</h2>
+<section class="tx-layout-band tx-layout-band-2" data-photo-text-layout="2" data-section="detail"><div class="tx-layout-inner"><div class="tx-layout-copy tx-layout-col"><div class="tx-pair"><h2>Painting considerations for a larger Heritage Mountain home</h2>
 <p>Bigger homes take longer to paint, and more wall area changes how prep and scheduling need to be planned, so a few questions are worth asking before work starts on a larger, multi-elevation property.</p>
 
 <h3>Exterior sequencing on a multi-elevation home</h3>
-<p>A home with several distinct elevations, on a lot with mature tree cover the way many properties in this area are, needs a sequencing plan rather than a single pass around the house. Shaded elevations under tree cover dry slower than elevations that get direct sun, so ask whether a contractor accounts for that difference when scheduling coats, rather than assuming every wall behaves the same way and moving straight from one to the next.</p></div><figure class="tx-layout-photo"><img src="/img/client-photos/exterior-window-protection-480.webp" srcset="/img/client-photos/exterior-window-protection-480.webp 480w, /img/client-photos/exterior-window-protection-540.webp 540w, /img/client-photos/exterior-window-protection-600.webp 600w, /img/client-photos/exterior-window-protection-640.webp 640w, /img/client-photos/exterior-window-protection-720.webp 720w, /img/client-photos/exterior-window-protection-960.webp 960w" sizes="(max-width: 760px) min(calc(100vw - 57px), 300px), (max-width: 1100px) 320px, (max-width: 1439px) 401px, 444px" width="960" height="640" alt="Protecting a window with clear sheeting and tape before exterior paint" loading="lazy" decoding="async"><figcaption>Protecting windows before painting · Exterior paintwork supplied by Texora.</figcaption></figure></div></section>
+<p>A home with several distinct elevations, on a lot with mature tree cover the way many properties in this area are, needs a sequencing plan rather than a single pass around the house. Shaded elevations under tree cover dry slower than elevations that get direct sun, so ask whether a contractor accounts for that difference when scheduling coats, rather than assuming every wall behaves the same way and moving straight from one to the next.</p></div></div><figure class="tx-layout-photo"><img src="/img/client-photos/exterior-window-protection-480.webp" srcset="/img/client-photos/exterior-window-protection-480.webp 480w, /img/client-photos/exterior-window-protection-540.webp 540w, /img/client-photos/exterior-window-protection-600.webp 600w, /img/client-photos/exterior-window-protection-640.webp 640w, /img/client-photos/exterior-window-protection-720.webp 720w, /img/client-photos/exterior-window-protection-960.webp 960w" sizes="(max-width: 760px) min(calc(100vw - 57px), 300px), (max-width: 1100px) 320px, (max-width: 1439px) 401px, 444px" width="960" height="640" alt="Protecting a window with clear sheeting and tape before exterior paint" loading="lazy" decoding="async"><figcaption>Protecting windows before painting · Exterior paintwork supplied by Texora.</figcaption></figure></div></section>
 
 <section class="bb-band bb-reviews" data-section="reviews" aria-labelledby="bb-reviews-title">
 <p class="bb-kicker">Featured Google reviews</p>
@@ -1072,7 +1078,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="bb-review-grid" data-cards="3">
 <figure class="review-card"><blockquote>&ldquo;They do know what they are doing Highly recommend 🙏🏼&rdquo;</blockquote><figcaption>Arta Manian, Google review, February 2026</figcaption></figure>
 <figure class="review-card"><blockquote>&ldquo;Highly recommended!&rdquo;</blockquote><figcaption>Fred Samoluk, Google review, April 2026</figcaption></figure>
-<figure class="review-card"><blockquote>&ldquo;These guys went above and beyond and everything was incredible. They just did our whole house very quickly and it looks unreal. Absolutely lovely to deal with and I highly recommend them!!!&rdquo;</blockquote><figcaption><span class="review-job">Whole house</span>Jessica Olafson, Google review, September 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;These guys went above and beyond and everything was incredible. They just did our whole house very quickly and it looks unreal. Absolutely lovely to deal with and I highly recommend them!!!&rdquo;</blockquote><figcaption>Jessica Olafson, Google review, September 2026<span class="review-job">Whole house</span></figcaption></figure>
 </div>
 <div class="bb-reviews-foot"><a class="review-cta" href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener">Read all reviews on Google</a><a class="review-cta" href="#service-quote">Get my free quote</a></div>
 </section>
@@ -1315,7 +1321,7 @@ function toggleFaq(b){var a=b.nextElementSibling,o=b.getAttribute('aria-expanded
 <style>
  #txaCookie{position:fixed;left:20px;bottom:20px;z-index:3000;max-width:380px;width:calc(100% - 40px);
    background:linear-gradient(160deg,#12244f 0%,#0d1c40 100%);color:#fff;border:1px solid rgba(255,255,255,.12);
-   border-radius:16px;padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.45);
+   border-radius:var(--r-card,14px);padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.45);
    font-family:'Open Sans','Open Sans Fallback',Arial,sans-serif;transform:translateY(160%);opacity:0;
    transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .5s;}
  #txaCookie.cc-show{transform:none;opacity:1;}

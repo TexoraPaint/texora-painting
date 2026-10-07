@@ -417,7 +417,7 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area-crumbs a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .tx-area-intro{max-width:760px;margin:0 auto;text-align:left;color:var(--light-gray)}
 .tx-area-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:26px 0}
-.tx-area-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 24px;border:2px solid var(--orange);border-radius:7px;background:var(--orange);color:var(--tx-on-orange);text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;line-height:1.4;text-align:center}
+.tx-area-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 24px;border:2px solid var(--orange);border-radius:var(--r-chrome,8px);background:var(--orange);color:var(--tx-on-orange);text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;line-height:1.4;text-align:center}
 .tx-area-button:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
 .tx-area-button.outline{background:transparent;border-color:#fff;color:#fff}
 .tx-area-button:focus-visible,.tx-area a:focus-visible,.tx-area button:focus-visible{outline:3px solid var(--tx-focus-on-dark);outline-offset:4px}
@@ -469,10 +469,10 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area .form-row.single{grid-template-columns:1fr}
 .tx-area .tx-field{display:flex;flex-direction:column;gap:7px}
 .tx-area label{color:var(--blue);font-weight:700;font-size:13px}
-.tx-area input:not([type="hidden"]):not([name="_honey"]),.tx-area select,.tx-area textarea{width:100%;min-width:0;min-height:48px;padding:12px 14px;border:1px solid var(--tx-line-steel);border-radius:7px;background:#fff;color:#111827;font:inherit;font-size:15px;line-height:1.5}
+.tx-area input:not([type="hidden"]):not([name="_honey"]),.tx-area select,.tx-area textarea{width:100%;min-width:0;min-height:48px;padding:12px 14px;border:1px solid var(--tx-line-steel);border-radius:var(--r-chrome,8px);background:#fff;color:#111827;font:inherit;font-size:15px;line-height:1.5}
 .tx-area textarea{min-height:110px;resize:vertical}
 .tx-area input:focus-visible,.tx-area select:focus-visible,.tx-area textarea:focus-visible{outline:3px solid var(--tx-focus-on-dark);outline-offset:2px}
-.tx-area .btn-form{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:var(--tx-on-orange);border:0;border-radius:7px;min-height:50px;padding:14px 20px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:15px;cursor:pointer}
+.tx-area .btn-form{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:var(--tx-on-orange);border:0;border-radius:var(--r-chrome,8px);min-height:50px;padding:14px 20px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:15px;cursor:pointer}
 .tx-area .btn-form:hover{background:var(--orange-dark)}
 .tx-area .form-note{font-size:12px;color:var(--tx-copy-muted);text-align:left}
 .tx-area .tx-area-cta{background:var(--blue);color:#fff;text-align:center}
@@ -530,7 +530,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 @media(max-width:400px){.bb{--bb-nav-h:calc(72px + env(safe-area-inset-top,0px))}}
 
 /* skip link */
-.bb .skip{position:absolute;left:12px;top:-90px;z-index:2000;padding:10px 16px;border-radius:6px;background:var(--white);color:var(--blue);font-weight:700;text-decoration:none;box-shadow:0 4px 16px var(--bb-shadow-skip)}
+.bb .skip{position:absolute;left:12px;top:-90px;z-index:2000;padding:10px 16px;border-radius:var(--r-chrome,8px);background:var(--white);color:var(--blue);font-weight:700;text-decoration:none;box-shadow:0 4px 16px var(--bb-shadow-skip)}
 .bb .skip:focus{top:12px}
 
 /* 1. proof strip under the header */
@@ -564,7 +564,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 .bb .tx-form-field{min-width:0}
 .bb .tx-form-field-wide{grid-column:1/-1}
 .bb .tx-form-field label{display:block;margin:0 0 6px;color:var(--bb-form-label);font-size:13px;font-weight:700;line-height:1.4}
-.bb .tx-form-field input,.bb .tx-form-field textarea,.bb .tx-form-field select{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid var(--bb-field-line);border-radius:7px;background:var(--white);color:var(--bb-field-ink);font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
+.bb .tx-form-field input,.bb .tx-form-field textarea,.bb .tx-form-field select{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid var(--bb-field-line);border-radius:var(--r-chrome,8px);background:var(--white);color:var(--bb-field-ink);font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
 .bb .tx-form-field input:focus,.bb .tx-form-field textarea:focus,.bb .tx-form-field select:focus{outline:3px solid var(--bb-focus-ring);outline-offset:1px;border-color:var(--blue)}
 .bb .tx-form-field textarea{min-height:82px;resize:vertical}
 .bb .tx-form-submit{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;min-height:50px;margin:18px 0 0;padding:13px 16px;border:0;border-radius:var(--r-chrome);background:var(--orange);color:var(--bb-on-orange);font-family:var(--bb-head);font-size:15px;font-weight:800;line-height:1.4;cursor:pointer}
@@ -1171,6 +1171,9 @@ body.bb ul.hero-chips li{font-family:'Montserrat','Tx Chip Fallback',sans-serif}
 /* Home hero "Get Free Quote" button (uppercase, 800, letter-spaced): the shared 800 fallback renders it 9-10px wider than Montserrat, which nudged the call button sideways on font swap. 104% matches the Montserrat width within 0.2px at 412/768/1440. */
 @font-face{font-family:'Tx Btn Fallback';unicode-range:U+0000-00FF,U+2000-206F;src:local('Arial');font-weight:800;size-adjust:104%;ascent-override:93.08%;descent-override:24.13%;line-gap-override:0%}
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .btn-hero{font-family:'Montserrat','Tx Btn Fallback',sans-serif}</style>
+<style id="h2-hooks">.bb-listing-card,.svc-item-card,.detail-card,.highlight-card,.cost-card,.tx-faq-card,.blog-list,.tx-area-profile-card,.trustpilot-widget{box-sizing:border-box}</style>
+<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}.cta-bar p,.tx-area-cta p,.tx-area-closing>p,.tx-area-map-intro{max-width:66ch;margin-left:auto;margin-right:auto}</style>
+<style id="h2-review-job">.review-card figcaption .review-job{margin:3px 0 0}</style>
 </head>
 <body class="bb bb-hub" data-page-type="areas-hub">
 <a class="skip" href="#main">Skip to content</a>
@@ -1231,8 +1234,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p class="bb-reviews-rating"><span class="bb-stars" aria-hidden="true"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="tx-star" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="tx-star" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="tx-star" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="tx-star" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" class="tx-star" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span>Rated 5.0 on Google</span></p>
 <p class="bb-reviews-lead">Word for word from our Google reviews.</p>
 <div class="bb-review-grid" data-cards="3">
-<figure class="review-card"><blockquote>&ldquo;Absolutely love the work done on my Tsawwassen home. A beautiful paint job, thanks guys ❤️&rdquo;</blockquote><figcaption><span class="review-job">House painting, Tsawwassen</span>Bruce Macdonald, Google review, August 2026</figcaption></figure>
-<figure class="review-card"><blockquote>&ldquo;Texora painted the exterior of our house in Tsawwassen and did a superb job! We are very happy with their performance and professionalism. Both partners were extremely nice and easy to deal with. We highly recommend Texora for any painting job.&rdquo;</blockquote><figcaption><span class="review-job">Exterior painting, Tsawwassen</span>Marianela Pita, Google review, July 2026</figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;Absolutely love the work done on my Tsawwassen home. A beautiful paint job, thanks guys ❤️&rdquo;</blockquote><figcaption>Bruce Macdonald, Google review, August 2026<span class="review-job">House painting, Tsawwassen</span></figcaption></figure>
+<figure class="review-card"><blockquote>&ldquo;Texora painted the exterior of our house in Tsawwassen and did a superb job! We are very happy with their performance and professionalism. Both partners were extremely nice and easy to deal with. We highly recommend Texora for any painting job.&rdquo;</blockquote><figcaption>Marianela Pita, Google review, July 2026<span class="review-job">Exterior painting, Tsawwassen</span></figcaption></figure>
 <figure class="review-card"><blockquote>&ldquo;Excellent experience with Texora Painting in Tsawwassen. The team was professional, reliable, and paid great attention to detail. The quality of the work exceeded our expectations, and everything was left clean and organized. Highly recommend Texora Painting to anyone looking for quality painters in Tsawwassen.&rdquo;</blockquote><figcaption>Rick Page Page, Google review, June 2026</figcaption></figure>
 </div>
 <div class="bb-reviews-foot"><p>The rest are on our <a href="https://maps.app.goo.gl/GEf9oTRDp4MH99Bp7" target="_blank" rel="noopener">Google profile</a>.</p><a class="review-cta" href="https://search.google.com/local/reviews?placeid=ChIJu3iPLkznhVQRcRSyA-anoYY" target="_blank" rel="nofollow noopener">Read all reviews on Google</a><a class="review-cta" href="#area-quote">Get my free quote</a></div>
@@ -1330,7 +1333,7 @@ function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');
 <style>
  #txaCookie{position:fixed;left:20px;bottom:20px;z-index:3000;max-width:380px;width:calc(100% - 40px);
    background:linear-gradient(160deg,#12244f 0%,#0d1c40 100%);color:#fff;border:1px solid rgba(255,255,255,.12);
-   border-radius:16px;padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.45);
+   border-radius:var(--r-card,14px);padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.45);
    font-family:'Open Sans','Open Sans Fallback',Arial,sans-serif;transform:translateY(160%);opacity:0;
    transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .5s;}
  #txaCookie.cc-show{transform:none;opacity:1;}
