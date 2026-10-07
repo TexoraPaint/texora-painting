@@ -1,5 +1,11 @@
 # Internal project instructions are not public website content.
 /CLAUDE.md  /404.html  404!
+/scripts/*  /404.html  404!
+/netlify/*  /404.html  404!
+/svc-1440.png  /404.html  404!
+/svc-412.png  /404.html  404!
+/trust-1440.png  /404.html  404!
+/trust-412.png  /404.html  404!
 
 # www → non-www
 https://www.texorapainting.com/* https://texorapainting.com/:splat 301!
