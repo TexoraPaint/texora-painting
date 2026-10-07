@@ -456,7 +456,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="footer-copy">© 2026 Texora Painting &amp; Drywall. All rights reserved. | <a href="privacy-policy.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Privacy Policy</a> | <a href="terms.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Terms</a> | <a href="cookie-policy.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Cookie Policy</a> | <a href="warranty.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Warranty</a> | <a href="service-areas.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Service Areas</a></div>
 </footer>
 
-<div id="lightbox" onclick="if(event.target===this)closeLightbox()">
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onclick="if(event.target===this)closeLightbox()">
   <button id="lbClose" onclick="closeLightbox()" aria-label="Close">&times;</button>
   <img decoding="async" id="lbImg" alt="" width="1" height="1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 </div>
