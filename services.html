@@ -1169,7 +1169,7 @@ body.bb ul.hero-chips li{font-family:'Montserrat','Tx Chip Fallback',sans-serif}
 /* Home hero "Get Free Quote" button (uppercase, 800, letter-spaced): the shared 800 fallback renders it 9-10px wider than Montserrat, which nudged the call button sideways on font swap. 104% matches the Montserrat width within 0.2px at 412/768/1440. */
 @font-face{font-family:'Tx Btn Fallback';unicode-range:U+0000-00FF,U+2000-206F;src:local('Arial');font-weight:800;size-adjust:104%;ascent-override:93.08%;descent-override:24.13%;line-gap-override:0%}
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .btn-hero{font-family:'Montserrat','Tx Btn Fallback',sans-serif}</style>
-<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}.tx-area-towns>p:not(.place-credits){max-width:70ch}</style>
+<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}.tx-area-towns>p:not(.place-credits){max-width:70ch}.tx-area-cta>p{max-width:68ch}</style>
 <style id="h2-review-job">.review-card figcaption .review-job{margin:3px 0 0}</style>
 </head>
 <body class="bb bb-hub" data-page-type="areas-hub">
@@ -1264,11 +1264,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <input type="hidden" name="_next" value="https://texorapainting.com/thank-you.html">
       <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1">
       <div class="form-row">
-        <div class="tx-field"><label for="areaName">Name</label><input id="areaName" type="text" name="Full Name" placeholder="Full Name" required></div>
+        <div class="tx-field"><label for="areaName">Name</label><input id="areaName" type="text" name="Full Name" autocomplete="name" placeholder="Full Name" required></div>
         <div class="tx-field"><label for="phoneInput">Phone</label><input type="tel" name="Phone Number" id="phoneInput" inputmode="tel" maxlength="14" autocomplete="tel" placeholder="(604) 417-6483" required></div>
       </div>
       <div class="form-row">
-        <div class="tx-field"><label for="areaEmail">Email</label><input id="areaEmail" type="email" name="Email" placeholder="Email" required></div>
+        <div class="tx-field"><label for="areaEmail">Email</label><input id="areaEmail" type="email" name="Email" autocomplete="email" placeholder="Email" required></div>
         <div class="tx-field"><label for="areaAddress">Project address (optional)</label><input autocomplete="street-address" id="areaAddress" type="text" name="Address" placeholder="Address"></div>
       </div>
       <div class="form-row single">
