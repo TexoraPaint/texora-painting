@@ -96,8 +96,8 @@ function gtag(){dataLayer.push(arguments);}
   .hero-cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
   .btn-hero{display:inline-flex;align-items:center;gap:10px;background:#f47b20;color:#fff;text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:16px 32px;border-radius:8px;box-shadow:0 6px 24px rgba(168,80,0,.5);transition:background .2s,transform .15s;}
   .btn-hero:hover{background:var(--orange-dark);transform:translateY(-2px);}
-  .btn-hero-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;margin:0;padding:12px 20px;border:2px solid rgba(255,255,255,.78);border-radius:var(--r-chrome,8px);background:transparent;color:#fff;font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;line-height:1.2;text-decoration:none;}
-  .btn-hero-call:hover,.btn-hero-call:focus-visible{background:rgba(255,255,255,.14);}
+  .btn-hero-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;margin:0;padding:12px 20px;border:2px solid var(--tx-on-dark-muted);border-radius:var(--r-chrome,8px);background:transparent;color:#fff;font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;line-height:1.2;text-decoration:none;}
+  .btn-hero-call:hover,.btn-hero-call:focus-visible{background:var(--bb-on-dark-14);}
 
   .city-intro{padding:70px 5%;max-width:960px;margin:0 auto;}
   .city-intro h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(22px,3vw,32px);color:var(--blue);margin-bottom:16px;}
@@ -323,7 +323,7 @@ function gtag(){dataLayer.push(arguments);}
 .tx-conversion-hero{width:100%;padding:140px 5% 64px;box-sizing:border-box}
 .tx-hero-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:48px;align-items:center;width:100%;max-width:1200px;margin:0 auto}
 .tx-hero-copy{min-width:0}
-.tx-hero-form{box-sizing:border-box;width:100%;min-width:0;padding:28px;background:#fff;border:1px solid var(--bb-form-line);border-radius:14px;box-shadow:var(--shadow-raised);color:var(--blue);text-align:left;scroll-margin-top:100px}
+.tx-hero-form{box-sizing:border-box;width:100%;min-width:0;padding:28px;background:var(--white);border:1px solid var(--bb-form-line);border-radius:var(--r-card);box-shadow:var(--shadow-raised);color:var(--blue);text-align:left;scroll-margin-top:100px}
 .tx-hero-form h2{margin:0 0 8px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:24px;line-height:1.25;color:var(--blue)}
 .tx-hero-form .tx-form-intro{margin:0 0 12px;max-width:none;color:var(--bb-form-intro);font-size:14px;line-height:1.5}
 .tx-hero-form .tx-form-proof{display:inline-block;margin:0 0 16px;color:var(--blue);font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
@@ -331,11 +331,11 @@ function gtag(){dataLayer.push(arguments);}
 .tx-form-field{min-width:0}
 .tx-form-field-wide{grid-column:1/-1}
 .tx-form-field label{display:block;margin:0 0 6px;color:var(--bb-form-label);font-size:13px;font-weight:700;line-height:1.4}
-.tx-form-field input,.tx-form-field textarea{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid var(--bb-field-line);border-radius:var(--r-chrome,8px);background:#fff;color:var(--bb-field-ink);font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
+.tx-form-field input,.tx-form-field textarea{box-sizing:border-box;width:100%;min-width:0;min-height:46px;margin:0;padding:11px 12px;border:1px solid var(--bb-field-line);border-radius:var(--r-chrome,8px);background:var(--white);color:var(--bb-field-ink);font:400 16px/1.4 Arial,sans-serif;box-shadow:none}
 .tx-form-field input:focus,.tx-form-field textarea:focus{outline:3px solid var(--bb-focus-ring);outline-offset:1px;border-color:var(--blue)}
 .tx-form-field textarea{min-height:82px;resize:vertical}
-.tx-form-submit{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;min-height:50px;margin:18px 0 0;padding:13px 16px;border:0;border-radius:8px;background:#f47b20;color:var(--tx-on-orange);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:15px;font-weight:800;line-height:1.4;cursor:pointer}
-.tx-form-submit:hover{background:#d96a10}
+.tx-form-submit{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;min-height:50px;margin:18px 0 0;padding:13px 16px;border:0;border-radius:var(--r-chrome);background:var(--orange);color:var(--tx-on-orange);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:15px;font-weight:800;line-height:1.4;cursor:pointer}
+.tx-form-submit:hover{background:var(--orange-dark)}
 .tx-form-submit:focus-visible,.tx-form-proof:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .tx-hero-form .tx-form-note{margin:12px 0 0;max-width:none;color:var(--bb-form-note);font-size:12px;line-height:1.5}
 .tx-form-note a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
@@ -344,14 +344,14 @@ function gtag(){dataLayer.push(arguments);}
 </style>
 <!-- texora-photo-expansion:styles:start -->
 <style id="tx-photo-expansion-styles">
-.tx-photo-band{margin:36px auto;padding:30px clamp(16px,3vw,32px);max-width:1100px;background:var(--tx-surface-chip);border:1px solid var(--tx-line-soft);border-radius:14px;text-align:left;clear:both}
-.tx-photo-band.tx-photo-band--light{background:#fff}
+.tx-photo-band{margin:36px auto;padding:30px clamp(16px,3vw,32px);max-width:1100px;background:var(--tx-surface-chip);border:1px solid var(--tx-line-soft);border-radius:var(--r-card);text-align:left;clear:both}
+.tx-photo-band.tx-photo-band--light{background:var(--white)}
 .tx-photo-band h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:clamp(21px,2.6vw,29px);line-height:1.25;color:var(--blue);margin:0 0 12px}
 .tx-photo-band .tx-photo-band__intro{font-size:15px;line-height:1.7;color:var(--tx-copy-soft);margin:0 0 24px;max-width:68ch}
 .tx-photo-band__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
-.tx-photo-band figure{margin:0;min-width:0;background:#fff;border:1px solid var(--tx-line-soft);border-radius:10px;overflow:hidden}
+.tx-photo-band figure{margin:0;min-width:0;background:var(--white);border:1px solid var(--tx-line-soft);border-radius:var(--r-panel);overflow:hidden}
 .tx-photo-band img{display:block;max-width:100%;width:100%;height:auto}
-.tx-photo-band figcaption{font-size:14px;line-height:1.6;color:var(--tx-copy-strong);background:#fff;padding:13px 16px}
+.tx-photo-band figcaption{font-size:14px;line-height:1.6;color:var(--tx-copy-strong);background:var(--white);padding:13px 16px}
 @media(max-width:600px){.tx-photo-band{margin:28px auto;padding:22px 16px}.tx-photo-band__grid{grid-template-columns:1fr;gap:18px}.tx-photo-band h2{font-size:23px}}
 </style>
 <!-- texora-photo-expansion:styles:end -->
@@ -359,18 +359,18 @@ function gtag(){dataLayer.push(arguments);}
 <style>
 /* Service-area directory: scoped to the added menu; existing header retained. */
 .tx-area-menu{position:relative;display:flex;align-items:center;gap:2px}
-.tx-area-menu>button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:40px;background:transparent;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:18px}
+.tx-area-menu>button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:40px;background:transparent;color:var(--white);border:0;border-radius:5px;cursor:pointer;font-size:18px}
 .tx-area-menu>button:focus-visible,.tx-area-menu a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.tx-area-menu>button[aria-expanded="true"]{background:rgba(255,255,255,.14)}
-.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:var(--tx-shadow-card);z-index:1100}
+.tx-area-menu>button[aria-expanded="true"]{background:var(--bb-on-dark-14)}
+.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:var(--white);color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 var(--r-tile) var(--r-tile);box-shadow:var(--tx-shadow-card);z-index:1100}
 .tx-area-menu.is-open .tx-area-dropdown{display:block}
 .tx-area-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .tx-area-directory strong{display:block;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:12px;line-height:1.5;color:var(--blue);margin-bottom:9px}
 nav .tx-area-dropdown a{display:block;color:var(--blue);font-size:12px;letter-spacing:0;text-transform:none;opacity:1;line-height:1.5;font-weight:600;padding:5px 0;text-decoration:none}
 nav .tx-area-dropdown a:hover{text-decoration:underline;color:var(--blue-mid)}
-nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bottom:1px solid #e5e9f2;font-size:14px;font-weight:800}
+nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bottom:1px solid var(--ptl-rule);font-size:14px;font-weight:800}
 @media(min-width:901px) and (max-width:1200px){nav .nav-links{gap:12px}nav .nav-links>li>a{font-size:11px;letter-spacing:.4px}nav .nav-links .btn-nav{padding:12px 14px}.tx-area-dropdown{right:-130px}}
-@media(max-width:900px){nav .nav-links .tx-area-menu{display:grid;grid-template-columns:1fr 52px;align-items:start;width:100%}nav .tx-area-menu>button{width:44px;height:48px;align-self:center}nav .tx-area-menu>a{border-bottom:1px solid rgba(255,255,255,.08)}.tx-area-dropdown{position:static;grid-column:1/-1;width:auto;padding:18px;margin:0 12px 12px;border-radius:8px;box-shadow:none;border-top:0}.tx-area-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}nav .tx-area-dropdown a{padding:7px 0;border:0;font-size:13px}nav .tx-area-dropdown .tx-area-all{padding:0 0 12px}}
+@media(max-width:900px){nav .nav-links .tx-area-menu{display:grid;grid-template-columns:1fr 52px;align-items:start;width:100%}nav .tx-area-menu>button{width:44px;height:48px;align-self:center}nav .tx-area-menu>a{border-bottom:1px solid var(--tx-on-dark-hair)}.tx-area-dropdown{position:static;grid-column:1/-1;width:auto;padding:18px;margin:0 12px 12px;border-radius:var(--r-chrome);box-shadow:none;border-top:0}.tx-area-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}nav .tx-area-dropdown a{padding:7px 0;border:0;font-size:13px}nav .tx-area-dropdown .tx-area-all{padding:0 0 12px}}
 @media(max-width:480px){.tx-area-directory{grid-template-columns:1fr}.tx-area-dropdown{max-height:65vh;overflow-y:auto;overscroll-behavior:contain}}
 @media(prefers-reduced-motion:reduce){.tx-area-dropdown{scroll-behavior:auto}}
 </style>
@@ -1062,11 +1062,11 @@ html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(180deg,var(--tx-hero-navy-95) 0%,var(--tx-hero-mid-86) 100%),url('img/client-photos/interior-brushwork-480.webp')!important}}</style>
 <style id="tx-lane-b">
 .city-hero-content .tx-tldr{list-style:none;margin:-8px 0 14px;padding:0;max-width:560px}
-.city-hero-content .tx-tldr li{position:relative;padding-left:16px;margin:0 0 6px;color:rgba(255,255,255,.9);font-size:14.5px;line-height:1.55}
+.city-hero-content .tx-tldr li{position:relative;padding-left:16px;margin:0 0 6px;color:var(--bb-on-dark-90);font-size:14.5px;line-height:1.55}
 .city-hero-content .tx-tldr li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
-.city-hero-content .tx-tldr strong{color:#fff;font-weight:700}
+.city-hero-content .tx-tldr strong{color:var(--white);font-weight:700}
 .city-hero-content .tx-triples{list-style:none;margin:0 0 20px;padding:12px 0 0;border-top:1px solid var(--bb-on-dark-22);max-width:560px}
-.city-hero-content .tx-triples li{margin:0 0 4px;color:rgba(255,255,255,.82);font-size:13px;line-height:1.5}
+.city-hero-content .tx-triples li{margin:0 0 4px;color:var(--bb-on-dark-82);font-size:13px;line-height:1.5}
 .tx-photo-band .eyebrow{margin:0 0 10px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx-kicker)}
 .tx-job-facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 16px;margin:16px 0;font-size:15px;line-height:1.6;color:var(--tx-ink)}
 .tx-job-facts dt{font-weight:800;color:var(--blue)}
@@ -1080,14 +1080,17 @@ html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,
 </style>
 <style id="tx-lane-b-table">
 .ip-table-wrap{max-width:960px;margin:28px auto 0;overflow-x:auto}
-.ip-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);text-align:left;font-size:14px;line-height:1.6}
+.ip-table{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--r-tile);overflow:hidden;box-shadow:0 2px 12px var(--bb-shadow-soft);text-align:left;font-size:14px;line-height:1.6}
 .ip-table caption{caption-side:top;text-align:left;padding:0 0 10px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:15px;color:var(--blue)}
-.ip-table th,.ip-table td{padding:14px 16px;border-bottom:1px solid #e5e7eb;vertical-align:top;color:var(--gray)}
-.ip-table thead th{background:var(--blue);color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px}
+.ip-table th,.ip-table td{padding:14px 16px;border-bottom:1px solid var(--tx-rule);vertical-align:top;color:var(--gray)}
+.ip-table thead th{background:var(--blue);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:13px}
 .ip-table tbody th{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;color:var(--blue)}
 .ip-table tbody tr:last-child>*{border-bottom:0}
 @media(max-width:640px){.ip-table{min-width:560px}}
 </style>
+<style id="h2-hooks">.bb-listing-card,.svc-item-card,.detail-card,.highlight-card,.cost-card,.tx-faq-card,.blog-list,.tx-area-profile-card,.trustpilot-widget{box-sizing:border-box}</style>
+<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}</style>
+<style id="h2-review-job">.review-card figcaption .review-job{margin:3px 0 0}</style>
 <style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
    at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the
    page-level fallback face for these weights. Inlined on bb pages only by scripts/inline_css.py. */
@@ -1110,9 +1113,6 @@ body.bb ul.hero-chips li{font-family:'Montserrat','Tx Chip Fallback',sans-serif}
 /* Home hero "Get Free Quote" button (uppercase, 800, letter-spaced): the shared 800 fallback renders it 9-10px wider than Montserrat, which nudged the call button sideways on font swap. 104% matches the Montserrat width within 0.2px at 412/768/1440. */
 @font-face{font-family:'Tx Btn Fallback';unicode-range:U+0000-00FF,U+2000-206F;src:local('Arial');font-weight:800;size-adjust:104%;ascent-override:93.08%;descent-override:24.13%;line-gap-override:0%}
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .btn-hero{font-family:'Montserrat','Tx Btn Fallback',sans-serif}</style>
-<style id="h2-hooks">.bb-listing-card,.svc-item-card,.detail-card,.highlight-card,.cost-card,.tx-faq-card,.blog-list,.tx-area-profile-card,.trustpilot-widget{box-sizing:border-box}</style>
-<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}</style>
-<style id="h2-review-job">.review-card figcaption .review-job{margin:3px 0 0}</style>
 </head>
 <body class="bb" data-page-type="service-city">
 <a class="skip" href="#main">Skip to content</a>
