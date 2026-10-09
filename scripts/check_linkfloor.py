@@ -7,9 +7,6 @@ FLOOR = 3
 # Pages waiting on an outside decision; remove a line once it is made.
 ALLOW = {
     "/painting-cost-guide-delta.html": "NEEDS DYLAN: promote the cost guide while its prices contradict the interior page, or noindex + drop from sitemap",
-    "/deck-building.html": "NEEDS DYLAN: deck pages keep or cut (client said 07-08 not to advertise decks)",
-    "/deck-staining.html": "NEEDS DYLAN: deck pages keep or cut (client said 07-08 not to advertise decks)",
-    "/project-deck-refinishing.html": "NEEDS DYLAN: deck pages keep or cut (client said 07-08 not to advertise decks)",
 }
 def norm(u, src):
     u = urllib.parse.urljoin(BASE + "/" + src, u.split("#")[0].split("?")[0])
