@@ -407,29 +407,29 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area{--area-space:clamp(44px,6vw,78px);--area-width:1160px}
 .tx-area section{width:100%;padding:var(--area-space) max(5%,calc((100% - var(--area-width))/2))}
 .tx-area h1,.tx-area h2,.tx-area h3{font-family:'Montserrat','Montserrat Fallback',sans-serif;color:var(--blue);line-height:1.2}
-.tx-area h1{font-size:clamp(31px,4.5vw,56px);font-weight:900;max-width:950px;margin:14px auto 20px;color:#fff}
+.tx-area h1{font-size:clamp(31px,4.5vw,56px);font-weight:900;max-width:950px;margin:14px auto 20px;color:var(--white)}
 .tx-area h2{font-size:clamp(24px,3vw,36px);font-weight:800}
 .tx-area p{font-size:16px;line-height:1.8}
 .tx-area-kicker{font-family:'Montserrat','Montserrat Fallback',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:var(--orange)}
-.tx-area .tx-area-hero{background:linear-gradient(90deg,var(--bb-scrim-top),var(--bb-scrim-bottom)),url('img/client-photos/kitchen-cabinetry-960.webp') center 48%/cover no-repeat;color:#fff;text-align:center;padding-top:150px;padding-bottom:64px;min-height:500px}
+.tx-area .tx-area-hero{background:linear-gradient(90deg,var(--bb-scrim-top),var(--bb-scrim-bottom)),url('img/client-photos/kitchen-cabinetry-960.webp') center 48%/cover no-repeat;color:var(--white);text-align:center;padding-top:150px;padding-bottom:64px;min-height:500px}
 .tx-area-crumbs{display:flex;justify-content:center;gap:8px;font-size:13px;margin-bottom:28px;color:var(--light-gray)}
-.tx-area-crumbs a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.tx-area-crumbs a{color:var(--white);text-decoration:underline;text-underline-offset:3px}
 .tx-area-intro{max-width:760px;margin:0 auto;text-align:left;color:var(--light-gray)}
 .tx-area-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:26px 0}
 .tx-area-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 24px;border:2px solid var(--orange);border-radius:var(--r-chrome,8px);background:var(--orange);color:var(--tx-on-orange);text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;line-height:1.4;text-align:center}
 .tx-area-button:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
-.tx-area-button.outline{background:transparent;border-color:#fff;color:#fff}
+.tx-area-button.outline{background:transparent;border-color:var(--white);color:var(--white)}
 .tx-area-button:focus-visible,.tx-area a:focus-visible,.tx-area button:focus-visible{outline:3px solid var(--tx-focus-on-dark);outline-offset:4px}
 .tx-area-chips{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:26px}
 .tx-area-chips li{font-size:13px;font-weight:600;padding:8px 13px;border:1px solid rgba(255,255,255,.35);border-radius:30px;background:rgba(255,255,255,.06)}
-.tx-area .tx-area-towns{background:#fff}
+.tx-area .tx-area-towns{background:var(--white)}
 .tx-area .place-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.tx-area .place-card{display:flex;flex-direction:column;align-items:stretch;border:1px solid var(--tx-line-cool);border-top:4px solid var(--orange);border-radius:12px;padding:26px 22px;background:#fff;box-shadow:var(--tx-shadow-soft-xs);text-decoration:none;color:var(--blue)}
+.tx-area .place-card{display:flex;flex-direction:column;align-items:stretch;border:1px solid var(--tx-line-cool);border-top:4px solid var(--orange);border-radius:var(--r-tile);padding:26px 22px;background:var(--white);box-shadow:var(--tx-shadow-soft-xs);text-decoration:none;color:var(--blue)}
 .tx-area .place-card h2{font-size:21px;margin:0 0 12px}
 .tx-area .place-card p{font-size:14px;color:var(--tx-copy-muted);margin-bottom:22px;line-height:1.6}
 .tx-area .place-card .place-link{font-size:13px;font-weight:800;margin-top:auto;color:var(--blue);text-decoration:underline;text-underline-offset:4px}
 .tx-area .place-card:hover{border-color:var(--orange);box-shadow:var(--tx-shadow-soft-sm)}
-.tx-area-neighbourhoods{margin-top:38px;border:1px solid #e5e9f2;border-radius:12px;background:var(--off-white);padding:26px}
+.tx-area-neighbourhoods{margin-top:38px;border:1px solid var(--light-gray);border-radius:var(--r-tile);background:var(--off-white);padding:26px}
 .tx-area-neighbourhoods h3{font-size:20px;margin-bottom:14px}
 .tx-area-neighbourhoods ul{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 24px}
 .tx-area-neighbourhoods a,.tx-area-service-links a{font-size:14px;color:var(--blue);text-underline-offset:3px;font-weight:600}
@@ -437,21 +437,21 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area-work{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:36px}
 .tx-area-work h3{font-size:28px;margin-bottom:16px}
 .tx-area-work p{color:var(--tx-copy-muted);margin-bottom:16px}
-.tx-area-work figure{margin:0;border-radius:12px;overflow:hidden;background:var(--tx-surface-ice)}
+.tx-area-work figure{margin:0;border-radius:var(--r-tile);overflow:hidden;background:var(--tx-surface-ice)}
 .tx-area-work img{display:block;width:100%;height:360px;object-fit:cover;object-position:center 42%}
 .tx-area-work figcaption,.tx-area-photo-pair figcaption{font-size:13px;line-height:1.5;color:var(--tx-copy-muted);padding:12px 16px;background:var(--off-white)}
 .tx-area-photo-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
-.tx-area-photo-pair figure{margin:0;overflow:hidden;border-radius:12px;background:var(--off-white)}
+.tx-area-photo-pair figure{margin:0;overflow:hidden;border-radius:var(--r-tile);background:var(--off-white)}
 .tx-area-photo-pair img{display:block;width:100%;height:340px;object-fit:cover;object-position:center 38%}
 .tx-area-maps{margin-top:56px}
 .tx-area-maps h3{font-size:24px;margin-bottom:10px}
 .tx-area-map-intro{color:var(--tx-copy-muted);max-width:740px;margin-bottom:24px;text-align:left}
 .tx-area-map-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.tx-area-map-card{border:1px solid #e5e9f2;overflow:hidden;border-radius:12px;background:var(--off-white)}
+.tx-area-map-card{border:1px solid var(--light-gray);overflow:hidden;border-radius:var(--r-tile);background:var(--off-white)}
 .tx-area-map-card iframe{display:block;width:100%;height:260px;border:0}
 .tx-area-map-card strong{display:block;font-family:'Montserrat','Montserrat Fallback',sans-serif;color:var(--blue);padding:18px 18px 4px;font-size:16px}
 .tx-area-map-card p{font-size:13px;color:var(--tx-copy-muted);padding:0 18px 18px;line-height:1.6}
-.tx-area-profile{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:28px;border:1px solid #e5e9f2;border-radius:12px;overflow:hidden}
+.tx-area-profile{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:28px;border:1px solid var(--light-gray);border-radius:var(--r-tile);overflow:hidden}
 .tx-area-profile-copy{padding:30px}
 .tx-area-profile-copy h3{font-size:23px;margin-bottom:14px}
 .tx-area-profile-copy p{color:var(--tx-copy-muted);font-size:14px;margin-bottom:14px}
@@ -461,21 +461,21 @@ function gtag(){dataLayer.push(arguments);}
 .tx-area-rating span:first-child{color:var(--tx-amber-text);letter-spacing:2px}
 .tx-area .tx-area-closing{background:var(--off-white);text-align:center;scroll-margin-top:95px}
 .tx-area-closing>p{max-width:700px;margin:16px auto 28px;color:var(--tx-copy-muted);text-align:left}
-.tx-area .form-card{max-width:700px;margin:0 auto;padding:30px;background:#fff;border:1px solid #e5e9f2;border-radius:14px;box-shadow:var(--tx-shadow-soft-md);text-align:left}
+.tx-area .form-card{max-width:700px;margin:0 auto;padding:30px;background:var(--white);border:1px solid var(--light-gray);border-radius:var(--r-card);box-shadow:var(--tx-shadow-soft-md);text-align:left}
 .tx-area .form-card h3{font-size:22px;margin-bottom:10px}
 .tx-area .form-grid{display:flex;flex-direction:column;gap:17px;padding:0;background:transparent;box-shadow:none}
 .tx-area .form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .tx-area .form-row.single{grid-template-columns:1fr}
 .tx-area .tx-field{display:flex;flex-direction:column;gap:7px}
 .tx-area label{color:var(--blue);font-weight:700;font-size:13px}
-.tx-area input:not([type="hidden"]):not([name="_honey"]),.tx-area select,.tx-area textarea{width:100%;min-width:0;min-height:48px;padding:12px 14px;border:1px solid var(--tx-line-steel);border-radius:var(--r-chrome,8px);background:#fff;color:#111827;font:inherit;font-size:15px;line-height:1.5}
+.tx-area input:not([type="hidden"]):not([name="_honey"]),.tx-area select,.tx-area textarea{width:100%;min-width:0;min-height:48px;padding:12px 14px;border:1px solid var(--tx-line-steel);border-radius:var(--r-chrome,8px);background:var(--white);color:var(--dark);font:inherit;font-size:15px;line-height:1.5}
 .tx-area textarea{min-height:110px;resize:vertical}
 .tx-area input:focus-visible,.tx-area select:focus-visible,.tx-area textarea:focus-visible{outline:3px solid var(--tx-focus-on-dark);outline-offset:2px}
 .tx-area .btn-form{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:var(--tx-on-orange);border:0;border-radius:var(--r-chrome,8px);min-height:50px;padding:14px 20px;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:15px;cursor:pointer}
 .tx-area .btn-form:hover{background:var(--orange-dark)}
 .tx-area .form-note{font-size:12px;color:var(--tx-copy-muted);text-align:left}
-.tx-area .tx-area-cta{background:var(--blue);color:#fff;text-align:center}
-.tx-area-cta h2{color:#fff;margin:14px auto;max-width:800px}
+.tx-area .tx-area-cta{background:var(--blue);color:var(--white);text-align:center}
+.tx-area-cta h2{color:var(--white);margin:14px auto;max-width:800px}
 .tx-area-cta p{color:var(--light-gray);max-width:700px;margin:0 auto}
 .tx-area-cta .tx-area-micro{font-size:13px;color:var(--tx-line-cool)}
 @media(max-width:1000px){.tx-area .place-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tx-area .tx-area-hero{padding-top:130px}.tx-area-map-grid{grid-template-columns:1fr}.tx-area-map-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.tx-area-map-card iframe{grid-row:1/3}.tx-area-map-card p{align-self:start}.tx-area-map-card strong{align-self:end}.tx-area-work{gap:24px}}
@@ -487,18 +487,18 @@ function gtag(){dataLayer.push(arguments);}
 <style>
 /* Service-area directory: scoped to the added menu; existing header retained. */
 .tx-area-menu{position:relative;display:flex;align-items:center;gap:2px}
-.tx-area-menu>button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:40px;background:transparent;color:#fff;border:0;border-radius:5px;cursor:pointer;font-size:18px}
+.tx-area-menu>button{display:inline-flex;align-items:center;justify-content:center;width:30px;height:40px;background:transparent;color:var(--white);border:0;border-radius:5px;cursor:pointer;font-size:18px}
 .tx-area-menu>button:focus-visible,.tx-area-menu a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.tx-area-menu>button[aria-expanded="true"]{background:rgba(255,255,255,.14)}
-.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:#fff;color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 12px 12px;box-shadow:var(--tx-shadow-card);z-index:1100}
+.tx-area-menu>button[aria-expanded="true"]{background:var(--bb-on-dark-14)}
+.tx-area-dropdown{display:none;position:absolute;top:100%;right:-160px;width:min(720px,calc(100vw - 40px));padding:22px;background:var(--white);color:var(--blue);border-top:3px solid var(--orange);border-radius:0 0 var(--r-tile) var(--r-tile);box-shadow:var(--tx-shadow-card);z-index:1100}
 .tx-area-menu.is-open .tx-area-dropdown{display:block}
 .tx-area-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .tx-area-directory strong{display:block;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-size:12px;line-height:1.5;color:var(--blue);margin-bottom:9px}
 nav .tx-area-dropdown a{display:block;color:var(--blue);font-size:12px;letter-spacing:0;text-transform:none;opacity:1;line-height:1.5;font-weight:600;padding:5px 0;text-decoration:none}
 nav .tx-area-dropdown a:hover{text-decoration:underline;color:var(--blue-mid)}
-nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bottom:1px solid #e5e9f2;font-size:14px;font-weight:800}
+nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bottom:1px solid var(--light-gray);font-size:14px;font-weight:800}
 @media(min-width:901px) and (max-width:1200px){nav .nav-links{gap:12px}nav .nav-links>li>a{font-size:11px;letter-spacing:.4px}nav .nav-links .btn-nav{padding:12px 14px}.tx-area-dropdown{right:-130px}}
-@media(max-width:900px){nav .nav-links .tx-area-menu{display:grid;grid-template-columns:1fr 52px;align-items:start;width:100%}nav .tx-area-menu>button{width:44px;height:48px;align-self:center}nav .tx-area-menu>a{border-bottom:1px solid rgba(255,255,255,.08)}.tx-area-dropdown{position:static;grid-column:1/-1;width:auto;padding:18px;margin:0 12px 12px;border-radius:8px;box-shadow:none;border-top:0}.tx-area-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}nav .tx-area-dropdown a{padding:7px 0;border:0;font-size:13px}nav .tx-area-dropdown .tx-area-all{padding:0 0 12px}}
+@media(max-width:900px){nav .nav-links .tx-area-menu{display:grid;grid-template-columns:1fr 52px;align-items:start;width:100%}nav .tx-area-menu>button{width:44px;height:48px;align-self:center}nav .tx-area-menu>a{border-bottom:1px solid var(--tx-on-dark-hair)}.tx-area-dropdown{position:static;grid-column:1/-1;width:auto;padding:18px;margin:0 12px 12px;border-radius:var(--r-chrome);box-shadow:none;border-top:0}.tx-area-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}nav .tx-area-dropdown a{padding:7px 0;border:0;font-size:13px}nav .tx-area-dropdown .tx-area-all{padding:0 0 12px}}
 @media(max-width:480px){.tx-area-directory{grid-template-columns:1fr}.tx-area-dropdown{max-height:65vh;overflow-y:auto;overscroll-behavior:contain}}
 @media(prefers-reduced-motion:reduce){.tx-area-dropdown{scroll-behavior:auto}}
 </style>
@@ -1148,32 +1148,34 @@ html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,
 <style id="tx-svc-hub">.place-card{overflow:hidden}.place-card .place-img{display:block;width:calc(100% + 44px);max-width:none;height:auto;aspect-ratio:3/2;object-fit:cover;margin:-26px -22px 16px}@media(max-width:600px){.place-card .place-img{width:calc(100% + 46px);margin:-23px -23px 14px}}.svc-card-name{font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:20px;line-height:1.2;color:var(--blue,#1a3a6e);margin:0 0 10px!important}.svc-group{font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:15px;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange,#f47b20);margin:34px 0 14px}.svc-hub-h2{margin:0 0 6px}.svc-hub-areas{margin-top:26px}</style>
 <style id="tx-faq-page">
 .tx-faq-band{padding:48px 5% 16px}
-.tx-faq-band--a{background:#fff}
-.tx-faq-band--b{background:#f4f7fb}
+.tx-faq-band--a{background:var(--white)}
+.tx-faq-band--b{background:var(--off-white)}
 .tx-faq-wrap{max-width:860px;margin:0 auto}
-.tx-faq-intro{max-width:68ch;margin:0 0 16px;color:#374151;line-height:1.7}
+.tx-faq-intro{max-width:68ch;margin:0 0 16px;color:var(--tx-copy);line-height:1.7}
 .tx-faq-intro a{color:var(--tx-link);text-decoration:underline}
 .tx-faq-band--b .tx-faq-group details{border-color:var(--tx-line-mist)}
 /* 508: kicker on the navy hero/closing band, 5.19:1 (was #f47b20, 4.1:1) */
 .tx-area-hero .tx-area-kicker,.tx-area-cta .tx-area-kicker{color:var(--tx-accent-on-dark)}
-.tx-faq-wrap>p.tx-faq-lead{max-width:68ch;margin:0 0 28px;color:#374151;line-height:1.7}
+.tx-faq-wrap>p.tx-faq-lead{max-width:68ch;margin:0 0 28px;color:var(--tx-copy);line-height:1.7}
 .tx-faq-group{margin:0 0 32px}
 .tx-faq-group h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,26px);color:var(--blue,#1a3a6e);margin:0 0 14px;line-height:1.25}
-.tx-faq-group details{background:#fff;border:1.5px solid var(--light-gray);border-radius:12px;margin:0 0 10px;overflow:hidden}
-.tx-faq-group summary{cursor:pointer;list-style:none;padding:18px 52px 18px 22px;position:relative;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:15px;color:#111827;line-height:1.45;min-height:24px}
+.tx-faq-group details{background:var(--white);border:1.5px solid var(--light-gray);border-radius:var(--r-tile);margin:0 0 10px;overflow:hidden}
+.tx-faq-group summary{cursor:pointer;list-style:none;padding:18px 52px 18px 22px;position:relative;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700;font-size:15px;color:var(--dark);line-height:1.45;min-height:24px}
 .tx-faq-group summary::-webkit-details-marker{display:none}
 .tx-faq-group summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--tx-orange-text);font-weight:700}
 .tx-faq-group details[open] summary::after{content:'\2212'}
 .tx-faq-group summary:focus-visible{outline:3px solid var(--tx-link);outline-offset:-3px}
-.tx-faq-ans{padding:0 22px 18px;color:#374151;line-height:1.7;font-size:15px}
+.tx-faq-ans{padding:0 22px 18px;color:var(--tx-copy);line-height:1.7;font-size:15px}
 .tx-faq-ans p,.tx-faq-ans ul{margin:0 0 10px;max-width:68ch}
 .tx-faq-ans ul{padding-left:20px}
 .tx-faq-ans li{margin:0 0 4px}
 .tx-faq-ans a{color:var(--tx-link);text-decoration:underline}
-.tx-faq-src{font-size:13px;color:#4b5563;margin:4px 0 0}
+.tx-faq-src{font-size:13px;color:var(--tx-muted);margin:4px 0 0}
 .tx-faq-src a{color:var(--tx-link);display:inline-block;min-height:24px;line-height:24px}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","HousePainter","Organization"],"@id":"https://texorapainting.com/#business","name":"Texora Painting & Drywall","alternateName":"Texora Painting","url":"https://texorapainting.com/","telephone":"+1-604-417-6483","email":"info@texorapainting.com","logo":"https://texorapainting.com/img/logo-v3.png","image":"https://texorapainting.com/og-image.png","address":{"@type":"PostalAddress","streetAddress":"1299 56 St","addressLocality":"Delta","addressRegion":"BC","postalCode":"V4L 2A6","addressCountry":"CA"},"geo":{"@type":"GeoCoordinates","latitude":49.0256322,"longitude":-123.0696518},"hasMap":"https://maps.google.com/maps?cid=9701219678679078001","areaServed":[{"@type":"City","name":"Delta"},{"@type":"Place","name":"Tsawwassen"},{"@type":"Place","name":"Ladner"},{"@type":"City","name":"Coquitlam"},{"@type":"City","name":"Port Coquitlam"},{"@type":"City","name":"Port Moody"},{"@type":"City","name":"Richmond"},{"@type":"City","name":"Surrey"},{"@type":"City","name":"Burnaby"},{"@type":"City","name":"New Westminster"},{"@type":"City","name":"North Vancouver"},{"@type":"City","name":"Vancouver"}],"sameAs":["https://share.google/ktiq1kINB0cnvunmX","https://www.bbb.org/ca/bc/delta/profile/painting-contractors/texora-painting-drywall-0037-2438116","https://www.facebook.com/people/Texora-Painting/61577587997631/","https://www.homestars.com/profile/texora","https://www.instagram.com/texora.painting/","https://www.tiktok.com/@texora.painting","https://www.youtube.com/@TexoraPainting","https://x.com/texorapainting","https://yelp.com/biz/texora-painting-delta"],"knowsAbout":["Interior painting","Exterior painting","Cabinet painting","Trim, door and ceiling painting","Full home repaint","Strata and multi-unit painting","Warehouse and industrial painting","Drywall repair","Drywall installation","Drywall taping and finishing","Drywall texture matching","Popcorn ceiling repair and removal","Water damage drywall repair","Wood rot and fascia repair","Heritage home restoration","Brick staining","Bathroom refresh"],"award":"Quality Business Awards 2026 winner, Best Painters in Delta BC","memberOf":{"@type":"Organization","name":"Better Business Bureau","url":"https://www.bbb.org/ca/bc/delta/profile/painting-contractors/texora-painting-drywall-0037-2438116","description":"BBB Accredited Business since 29 September 2026, A- rating"}},{"@type":"WebSite","@id":"https://texorapainting.com/#website","url":"https://texorapainting.com/","name":"Texora Painting & Drywall","publisher":{"@id":"https://texorapainting.com/#business"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","@id":"https://texorapainting.com/faq.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://texorapainting.com/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://texorapainting.com/faq.html"}]},{"@type":"WebPage","@id":"https://texorapainting.com/faq.html#webpage","url":"https://texorapainting.com/faq.html","name":"Painting and Drywall FAQ for Delta Homeowners | Texora","isPartOf":{"@id":"https://texorapainting.com/#website"},"about":{"@id":"https://texorapainting.com/#business"},"inLanguage":"en-CA","breadcrumb":{"@id":"https://texorapainting.com/faq.html#breadcrumb"}},{"@type":"FAQPage","@id":"https://texorapainting.com/faq.html#faq","mainEntity":[{"@type":"Question","name":"How much does it cost to paint a house in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"We price every job from a walkthrough, so the number depends on the rooms or walls, the prep they need and the paint line. One of the two partners walks the job with you, and the written estimate lists the scope, the paint and your 1, 2 or 3-year warranty term. Call (604) 417-6483 or use the free quote form to book the walkthrough."}},{"@type":"Question","name":"Do I need to move furniture before an interior paint job in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Move small items and valuables. Our crew shifts the large furniture in your Delta home to the centre of the room and covers it, so you don't need to strip the room bare."}},{"@type":"Question","name":"What paint brands does Texora use on interiors in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"We work with Benjamin Moore, Sherwin-Williams and Dulux premium lines on interior jobs across Delta. We can also apply paints you've already purchased."}},{"@type":"Question","name":"Can we stay in the home during a full repaint in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Most clients stay home during interior repaints. We work room by room where possible to minimize disruption, ensure adequate ventilation, and use low-VOC paints that are safe for families and pets. We'll discuss your schedule and preferences during the quote visit."}},{"@type":"Question","name":"Can you paint just the trim without the walls in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can refresh yellowed or chipped trim, update the colour, or apply a different sheen without touching the walls."}},{"@type":"Question","name":"What time of year is best to paint a house in Tsawwassen or Ladner?","acceptedAnswer":{"@type":"Answer","text":"Exterior work runs from late spring to early fall, roughly May to September, when temperatures stay above 10°C and rain is less frequent. We don't paint outside in rain or when frost is expected, because the coating will not bond properly. Interior painting goes ahead year-round."}},{"@type":"Question","name":"Will you move patio furniture and planters at my Delta, BC home?","acceptedAnswer":{"@type":"Answer","text":"Yes, we move and protect everything near the exterior work areas. We ask that you move any very heavy or fragile items, but everyday patio furniture, potted plants, and outdoor items we handle ourselves."}},{"@type":"Question","name":"Can you paint just one side of my house in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many homeowners paint just the street-facing side, a single section of damaged siding, or one elevation at a time. We provide quotes for whatever scope you need."}},{"@type":"Question","name":"Will painted cabinets chip or peel in a Delta, BC kitchen?","acceptedAnswer":{"@type":"Answer","text":"Not if the prep is right. Cabinet paint usually fails because degreasing, sanding or the right primer got skipped, and we do all three before a hard-wearing cabinet topcoat."}},{"@type":"Question","name":"What colours can I choose for cabinets painted in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Any colour. We work with Benjamin Moore, Sherwin-Williams, and Dulux colour systems. Popular choices include classic white (Chantilly Lace, Simply White), warm whites, navy, sage green, greige, and charcoal. We can also match existing colours or custom shades."}},{"@type":"Question","name":"Can you paint laminate or melamine cabinets in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Yes. With the right prep and adhesion primer we paint laminate, melamine and thermofoil cabinet surfaces, and we check your cabinet material at the quote visit."}},{"@type":"Question","name":"Can you repair water-damaged drywall in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Yes, but the source of the moisture must be fixed first. We can replace damaged sections, treat for mould if present (in minor cases), apply stain-blocking primer, and skim coat back to a finish with no visible seam."}},{"@type":"Question","name":"Will a drywall repair in my Delta, BC home show after painting?","acceptedAnswer":{"@type":"Answer","text":"Not with our process. We feather the edges well beyond the repair, apply multiple coats and always prime, so the patch doesn't show even in raking light."}},{"@type":"Question","name":"Do you replace rotten fascia boards in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"Yes. We remove the affected boards, install new wood, then prime and paint to match the rest of your home's trim. It's often done alongside an exterior repaint."}},{"@type":"Question","name":"Is wood rot repaired before painting on a Delta, BC house?","acceptedAnswer":{"@type":"Answer","text":"Almost always. Painting over rotten or soft wood just hides the problem. We fix the wood first (replace, fill, sand, and prime) so the finish lasts and the repair is invisible once painted."}},{"@type":"Question","name":"Is brick staining better than painting brick in Delta, BC?","acceptedAnswer":{"@type":"Answer","text":"For most homes, yes: stain soaks in and stays breathable, keeps the brick's texture, and won't peel the way painted brick eventually does. Paint sits on top as a film, hides the texture and can trap moisture, a real drawback on the rainy South Coast."}},{"@type":"Question","name":"What kind of paint do you use in Delta, BC bathrooms?","acceptedAnswer":{"@type":"Answer","text":"We use moisture- and mould-resistant paints designed for high-humidity rooms, applied over proper prep. This prevents the peeling, blistering, and mildew that standard paint develops in bathrooms."}}]}]}</script>
+<style id="h2-hooks">.bb-listing-card,.svc-item-card,.detail-card,.highlight-card,.cost-card,.tx-faq-card,.blog-list,.tx-area-profile-card,.trustpilot-widget{box-sizing:border-box}</style>
+<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}</style>
 <style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
    at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the
    page-level fallback face for these weights. Inlined on bb pages only by scripts/inline_css.py. */
@@ -1196,8 +1198,6 @@ body.bb ul.hero-chips li{font-family:'Montserrat','Tx Chip Fallback',sans-serif}
 /* Home hero "Get Free Quote" button (uppercase, 800, letter-spaced): the shared 800 fallback renders it 9-10px wider than Montserrat, which nudged the call button sideways on font swap. 104% matches the Montserrat width within 0.2px at 412/768/1440. */
 @font-face{font-family:'Tx Btn Fallback';unicode-range:U+0000-00FF,U+2000-206F;src:local('Arial');font-weight:800;size-adjust:104%;ascent-override:93.08%;descent-override:24.13%;line-gap-override:0%}
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .btn-hero{font-family:'Montserrat','Tx Btn Fallback',sans-serif}</style>
-<style id="h2-hooks">.bb-listing-card,.svc-item-card,.detail-card,.highlight-card,.cost-card,.tx-faq-card,.blog-list,.tx-area-profile-card,.trustpilot-widget{box-sizing:border-box}</style>
-<style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}</style>
 </head>
 <body class="bb bb-hub" data-page-type="areas-hub">
 <a class="skip" href="#main">Skip to content</a>
