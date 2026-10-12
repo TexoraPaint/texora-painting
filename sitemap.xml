@@ -479,4 +479,10 @@
     <loc>https://texorapainting.com/awards.html</loc>
     <lastmod>2026-10-07</lastmod>
   </url>
+  <url>
+    <loc>https://texorapainting.com/epoxy-flooring.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
