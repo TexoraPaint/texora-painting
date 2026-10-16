@@ -96,7 +96,7 @@ def pages(root):
     out = []
     for f in glob.glob(os.path.join(root, "**", "*.html"), recursive=True):
         rel = os.path.relpath(f, root).replace(os.sep, "/")
-        if rel.startswith(".") or rel.startswith(EXCLUDE_DIRS) or rel in EXCLUDE:
+        if rel.startswith(".") or rel.startswith(EXCLUDE_DIRS) or rel in EXCLUDE or rel.startswith("google"):  # google*.html = Search Console verification tokens, not pages
             continue
         out.append((rel, f))
     return sorted(out)
