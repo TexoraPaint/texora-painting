@@ -110,3 +110,12 @@ https://main--stirring-bienenstitch-9426ae.netlify.app/* https://texorapainting.
 /wood-rot-fascia-repair  /wood-rot-fascia-repair.html  301!
 /faq  /faq.html  301!
 /awards  /awards.html  301!
+
+# Image paths renamed/consolidated 2026-10-16 (PR #131)
+/img/ba-exterior-before-nonum.webp  /img/exterior-painting-siding-before.webp  301!
+/img/ba-exterior-after-nonum.webp  /img/exterior-painting-siding-after.webp  301!
+/img/ba-exterior-before-nonum.jpg  /img/exterior-painting-siding-before.jpg  301!
+/img/ba-exterior-after-nonum.jpg  /img/exterior-painting-siding-after.jpg  301!
+/img/deck-staining-before-tsawwassen.webp  /img/ba-deck-before.webp  301!
+/img/deck-staining-after-tsawwassen-2.webp  /img/ba-deck-after.webp  301!
+/img/deck-staining-after-tsawwassen-3.webp  /img/ba-deck-after.webp  301!
