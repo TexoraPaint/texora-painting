@@ -90,6 +90,8 @@ https://main--stirring-bienenstitch-9426ae.netlify.app/* https://texorapainting.
 /blog/how-to-prepare-your-home-for-painting  /blog/how-to-prepare-your-home-for-painting.html  301!
 /blog/interior-vs-exterior-paint  /blog/interior-vs-exterior-paint.html  301!
 /about  /about.html  301!
+# home links written as index.html resolve to the canonical /
+/index.html  /  301!
 /bathroom-refresh  /bathroom-refresh.html  301!
 /brick-staining  /brick-staining.html  301!
 /cookie-policy  /cookie-policy.html  301!
