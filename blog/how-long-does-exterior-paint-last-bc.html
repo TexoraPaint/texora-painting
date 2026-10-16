@@ -245,6 +245,70 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}</style>
 <style id="h2-hero-call">.btn-hero-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;margin:0 0 22px 12px;padding:12px 20px;border:2px solid rgba(255,255,255,.78);border-radius:var(--r-chrome,8px);background:transparent;color:#fff;font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;line-height:1.2;text-decoration:none;order:2}.btn-hero-call:hover,.btn-hero-call:focus-visible{background:rgba(255,255,255,.14)}.btn-hero-call-solo{margin:14px 0 0}.project-hero .btn-hero{margin:14px 12px 0 0}@media(max-width:600px){.btn-hero-call{margin-left:0;display:flex}}</style>
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
+<style data-tx-inline="tx-v2">/* tx-v2: round-2 visual/QA layer (lane V). Source of truth for the <style data-tx-inline="tx-v2"> block that
+   scripts/inline_v2.py writes at the end of <head> on every page except home, About, go/* and the legal pages.
+   EDIT THIS FILE, THEN RUN scripts/inline_v2.py. Values reuse the declared tokens in css/bb-structure.css. */
+
+/* ---- quote dialog (js/tx-quote-dialog.js builds it at click time from the page's own form card) ---- */
+dialog.tx-quote-dialog{box-sizing:border-box;width:min(560px,calc(100vw - 24px));max-width:none;max-height:none;margin:auto;padding:0;border:0;background:transparent;color:var(--blue,#1a3a6e);overflow:visible}
+dialog.tx-quote-dialog::backdrop{background:rgba(8,25,54,.66)}
+.tx-qd-body{position:relative;box-sizing:border-box;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;border-radius:var(--r-card,14px);background:#fff;box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.tx-qd-close{position:absolute;top:6px;right:6px;z-index:2;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:var(--r-chrome,8px);background:transparent;color:var(--blue,#1a3a6e);font:400 30px/1 Arial,sans-serif;cursor:pointer}
+.tx-qd-close:hover{background:#eef2f9}
+.tx-qd-close:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:-3px}
+dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{max-width:none;margin:0;border:0;border-radius:0;box-shadow:none;background:#fff;padding:36px 28px 26px}
+dialog.tx-quote-dialog .tx-hero-form h2,dialog.tx-quote-dialog .form-card h3{padding-right:40px}
+html:has(dialog.tx-quote-dialog[open]){overflow:hidden}
+@media(max-width:600px){dialog.tx-quote-dialog{width:calc(100vw - 16px)}dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{padding:34px 18px 22px}}
+@media print{dialog.tx-quote-dialog{display:none!important}}
+dialog.tx-quote-dialog .tx-qd-scope{padding:0;margin:0;background:transparent}
+
+/* ---- layout tokens: marker classes the markup carries so layout containers (cards, column grids) are named
+   in the stylesheet; no visual effect ---- */
+.tx-card,.tx-split,.tx-grid{--tx-layout:1}
+
+/* ---- row 291/292: one prose edge, no centred long prose. CTA bands read left like the hub CTA bands do ---- */
+.cta-bar,.bb .cta-bar,.bb .svc-cta,.svc-cta{text-align:left}
+.cta-bar>h2,.cta-bar>p,.bb .cta-bar>h2,.bb .cta-bar>p,.svc-cta>h2,.svc-cta>p,.bb .svc-cta>h2,.bb .svc-cta>p{text-align:left;margin-left:0;margin-right:0}
+.cta-bar .bb-cta-actions,.bb .cta-bar .bb-cta-actions,.svc-cta .bb-cta-actions,.bb .svc-cta .bb-cta-actions{justify-content:flex-start}
+.bb .bb-topic-grid>.bb-topic:last-child:nth-child(2n+3):not(:has(ul))>p{text-align:left}
+.blog-hero .dek{text-align:left}
+
+/* hub pages: same 1120px reading column and 20px phone gutter as every other band */
+.tx-area{--area-width:1120px}
+.tx-area section{padding-left:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2))}
+
+/* ---- row 263: section-end quote button after the photo / before-after proof blocks (the page's own hero quote link) ---- */
+.tx-section-cta{display:flex;justify-content:flex-start;box-sizing:border-box;max-width:1120px;margin:28px auto 0;padding:0 var(--bb-gutter,20px)}
+.tx-section-cta a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;padding:13px 24px;border-radius:var(--r-chrome,8px);background:var(--orange,#f47b20);color:var(--tx-on-orange,#081c3b);font-family:var(--bb-head,'Montserrat','Montserrat Fallback',sans-serif);font-weight:800;font-size:14px;letter-spacing:.4px;line-height:1.3;text-decoration:none;box-shadow:var(--shadow-cta,0 6px 20px rgba(4,12,45,.3))}
+.tx-section-cta a:hover{background:var(--orange-dark,#d96a10)}
+.tx-section-cta a:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:3px}
+.svc-gallery>.tx-section-cta{padding:0}
+
+/* ---- row 284: one radius scale: 12 (card + tile), 10 (panel), 8 (chrome) and the pill. The card rung (14px) folds into the 12px tile rung so no container
+   carries a value that only one element on a page uses; literal radii on page-local cards land on the same tokens ---- */
+:root{--r-card:12px}
+html body #txaCookie{border-radius:var(--r-panel,10px)}
+.form-card.form-card,.article-cta.article-cta,.review-box.review-box,.tx-hero-form.tx-hero-form,.ba-row.ba-row,.leave-review.leave-review,.review-card.review-card,.tx-photo-band.tx-photo-band{border-radius:var(--r-tile,12px)}
+.nf-quick-links.nf-quick-links{border-radius:var(--r-panel,10px)}
+@media(max-width:600px){.city-badge.city-badge,.svc-badge.svc-badge,.proj-badge.proj-badge{border-radius:var(--r-chrome,8px)}}
+
+/* ---- row 228: a band that repeats the tint above it gets the hairline and a taller top padding ---- */
+.bb main>.city-intro+.bb-band,.reviews-strip+.cta-bar,.cg-band--b+.faq-section{border-top:1px solid var(--bb-band-rule,#e3e8f0);padding-top:calc(var(--bb-pad,80px) + 16px)}
+
+/* ---- row 472 / 291: transparent centred wrappers run full width and keep the shared reading column ---- */
+.city-intro{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.reviews-section,.cta-bar{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.city-intro>.why-section{padding-left:0;padding-right:0}
+main>p.tx-case-links{max-width:none;margin:0;box-sizing:border-box;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+
+/* ---- row 260: paragraph measure stays under 75ch on the services hub too ---- */
+.tx-area-towns>p:not(.place-credits),.tx-area-map-intro,.tx-area-closing>p,.tx-area-cta>p{max-width:70ch}
+
+/* ---- row 292: process-step copy is prose; it reads left even inside the centred step cards ---- */
+.bb-process .step p{text-align:left}
+/* ---- row 273: hook class on the cost guide's first band (no visual rule) ---- */
+.cg-band--a{box-sizing:border-box}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -277,7 +341,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>One of the most common questions we get at <a class="tx-link-inherit" href="/">Texora Painting &amp; Drywall</a> from homeowners across Tsawwassen, Ladner, Delta, and Port Coquitlam is: "How long should my exterior paint last?" The short answer is 7 to 10 years for a quality job, but the real answer depends on a handful of factors that are mostly within your control.</p>
   <p>If you are planning a repaint, our <a href="/exterior-painting.html">exterior painting in Delta</a> page covers what the prep involves and what is in scope before you get a quote. Inside the house, our <a href="/interior-painting.html">interior painting page</a> lists the walls, ceilings, trim and doors we paint.</p>
 </div></section>
-<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner tx-split">
   <h2>The BC climate factor</h2>
   <p>Unlike Alberta or Ontario, where the primary challenge is freeze-thaw cycling, coastal BC hits a home's exterior from several directions at once:</p>
   <ul>
@@ -287,7 +351,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>UV radiation:</strong> BC summers bring intense UV on south- and west-facing walls, and UV breaks down paint binders, causing fading and chalking.</li>
   </ul>
 </div></section>
-<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner tx-split">
   <h2>How long paint lasts on each surface type</h2>
 
   <div class="tx-unit-grid"><div class="tx-unit-col"><h3>Wood siding (cedar, fir, pine)</h3>
@@ -301,7 +365,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>South-facing walls take heavy UV and fade sooner, while north-facing walls stay damp longer and are more prone to mold, mildew and moisture-driven peeling. A paint with UV inhibitors is worth the extra cost on south exposures; a mildew-resistant formula is the priority on north and west walls.</p>
   </div>
 </div></section>
-<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner tx-split">
   <h2>Signs it's time to repaint</h2>
   <p>Rather than painting on a fixed schedule, watch your home's exterior for these signs that the paint film is reaching end of life:</p>
   <ul>
@@ -313,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>Exposed bare wood or substrate:</strong> Wood left without a paint film can absorb enough rain to start rotting within a single BC wet season.</li>
   </ul>
 </div></section>
-<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner tx-split">
   <h2>What makes paint last longer in BC</h2>
   <p>How long an exterior paint job lasts depends as much on process and product as on the climate.</p>
 
@@ -328,7 +392,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Repainting while the existing paint is fading or chalking but still intact costs far less than waiting until it peels, because water-damaged siding has to be replaced before it can be repainted.</p>
   </div>
 </div></section>
-<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner tx-split">
   <h2>What to expect from an exterior repaint in BC</h2>
   <p>In BC's coastal climate, expect 7 to 10 years from a quality exterior paint job using premium products and proper preparation. Homes near the water in Tsawwassen may be at the lower end of that range due to salt air; homes with good sun exposure and well-maintained gutters and caulking can hit the upper end.</p>
   <p>Free exterior assessments are part of our quote process in Delta, Tsawwassen, Ladner, Port Coquitlam and Port Moody. One of the two partners walks the job with you, and the written estimate names the scope and your 1, 2 or 3-year warranty term. Call <a href="tel:+16044176483">(604) 417-6483</a>.</p>
@@ -339,7 +403,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/#quote" class="btn-cta">Book a Free Quote</a>
   </div>
 </div></section>
-<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner tx-split">
   <div class="related-section">
   <h2>Related articles</h2>
   <div class="related-grid">

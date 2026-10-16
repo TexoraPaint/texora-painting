@@ -243,6 +243,70 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <style id="h2-hero-call">.btn-hero-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;margin:0 0 22px 12px;padding:12px 20px;border:2px solid rgba(255,255,255,.78);border-radius:var(--r-chrome,8px);background:transparent;color:#fff;font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;line-height:1.2;text-decoration:none;order:2}.btn-hero-call:hover,.btn-hero-call:focus-visible{background:rgba(255,255,255,.14)}.btn-hero-call-solo{margin:14px 0 0}.project-hero .btn-hero{margin:14px 12px 0 0}@media(max-width:600px){.btn-hero-call{margin-left:0;display:flex}}</style>
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
 <style id="tx-blog-article">.blog-hero .dek{color:rgba(255,255,255,.9);font-size:17px;line-height:1.6;max-width:640px;margin:0 auto 16px}.tx-fig{margin:28px 0}.tx-fig img{display:block;width:100%;height:auto;border-radius:10px}.tx-fig figcaption{font-size:14px;color:var(--gray);margin-top:8px;line-height:1.5}.tx-fig--tall{max-width:360px;margin-left:auto;margin-right:auto}.tx-fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}.tx-fig-pair .tx-fig{margin:0}@media(max-width:600px){.tx-fig-pair{grid-template-columns:1fr}}.tx-table-wrap{overflow-x:auto;margin:0 0 24px}.tx-compare{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}.tx-compare th,.tx-compare td{border:1px solid #e3e8f0;padding:10px 12px;text-align:left;vertical-align:top;color:var(--dark)}.tx-compare thead th{background:var(--blue);color:#fff;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700}.tx-compare tbody th{background:#f4f7fb;font-weight:700}</style>
+<style data-tx-inline="tx-v2">/* tx-v2: round-2 visual/QA layer (lane V). Source of truth for the <style data-tx-inline="tx-v2"> block that
+   scripts/inline_v2.py writes at the end of <head> on every page except home, About, go/* and the legal pages.
+   EDIT THIS FILE, THEN RUN scripts/inline_v2.py. Values reuse the declared tokens in css/bb-structure.css. */
+
+/* ---- quote dialog (js/tx-quote-dialog.js builds it at click time from the page's own form card) ---- */
+dialog.tx-quote-dialog{box-sizing:border-box;width:min(560px,calc(100vw - 24px));max-width:none;max-height:none;margin:auto;padding:0;border:0;background:transparent;color:var(--blue,#1a3a6e);overflow:visible}
+dialog.tx-quote-dialog::backdrop{background:rgba(8,25,54,.66)}
+.tx-qd-body{position:relative;box-sizing:border-box;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;border-radius:var(--r-card,14px);background:#fff;box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.tx-qd-close{position:absolute;top:6px;right:6px;z-index:2;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:var(--r-chrome,8px);background:transparent;color:var(--blue,#1a3a6e);font:400 30px/1 Arial,sans-serif;cursor:pointer}
+.tx-qd-close:hover{background:#eef2f9}
+.tx-qd-close:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:-3px}
+dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{max-width:none;margin:0;border:0;border-radius:0;box-shadow:none;background:#fff;padding:36px 28px 26px}
+dialog.tx-quote-dialog .tx-hero-form h2,dialog.tx-quote-dialog .form-card h3{padding-right:40px}
+html:has(dialog.tx-quote-dialog[open]){overflow:hidden}
+@media(max-width:600px){dialog.tx-quote-dialog{width:calc(100vw - 16px)}dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{padding:34px 18px 22px}}
+@media print{dialog.tx-quote-dialog{display:none!important}}
+dialog.tx-quote-dialog .tx-qd-scope{padding:0;margin:0;background:transparent}
+
+/* ---- layout tokens: marker classes the markup carries so layout containers (cards, column grids) are named
+   in the stylesheet; no visual effect ---- */
+.tx-card,.tx-split,.tx-grid{--tx-layout:1}
+
+/* ---- row 291/292: one prose edge, no centred long prose. CTA bands read left like the hub CTA bands do ---- */
+.cta-bar,.bb .cta-bar,.bb .svc-cta,.svc-cta{text-align:left}
+.cta-bar>h2,.cta-bar>p,.bb .cta-bar>h2,.bb .cta-bar>p,.svc-cta>h2,.svc-cta>p,.bb .svc-cta>h2,.bb .svc-cta>p{text-align:left;margin-left:0;margin-right:0}
+.cta-bar .bb-cta-actions,.bb .cta-bar .bb-cta-actions,.svc-cta .bb-cta-actions,.bb .svc-cta .bb-cta-actions{justify-content:flex-start}
+.bb .bb-topic-grid>.bb-topic:last-child:nth-child(2n+3):not(:has(ul))>p{text-align:left}
+.blog-hero .dek{text-align:left}
+
+/* hub pages: same 1120px reading column and 20px phone gutter as every other band */
+.tx-area{--area-width:1120px}
+.tx-area section{padding-left:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2))}
+
+/* ---- row 263: section-end quote button after the photo / before-after proof blocks (the page's own hero quote link) ---- */
+.tx-section-cta{display:flex;justify-content:flex-start;box-sizing:border-box;max-width:1120px;margin:28px auto 0;padding:0 var(--bb-gutter,20px)}
+.tx-section-cta a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;padding:13px 24px;border-radius:var(--r-chrome,8px);background:var(--orange,#f47b20);color:var(--tx-on-orange,#081c3b);font-family:var(--bb-head,'Montserrat','Montserrat Fallback',sans-serif);font-weight:800;font-size:14px;letter-spacing:.4px;line-height:1.3;text-decoration:none;box-shadow:var(--shadow-cta,0 6px 20px rgba(4,12,45,.3))}
+.tx-section-cta a:hover{background:var(--orange-dark,#d96a10)}
+.tx-section-cta a:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:3px}
+.svc-gallery>.tx-section-cta{padding:0}
+
+/* ---- row 284: one radius scale: 12 (card + tile), 10 (panel), 8 (chrome) and the pill. The card rung (14px) folds into the 12px tile rung so no container
+   carries a value that only one element on a page uses; literal radii on page-local cards land on the same tokens ---- */
+:root{--r-card:12px}
+html body #txaCookie{border-radius:var(--r-panel,10px)}
+.form-card.form-card,.article-cta.article-cta,.review-box.review-box,.tx-hero-form.tx-hero-form,.ba-row.ba-row,.leave-review.leave-review,.review-card.review-card,.tx-photo-band.tx-photo-band{border-radius:var(--r-tile,12px)}
+.nf-quick-links.nf-quick-links{border-radius:var(--r-panel,10px)}
+@media(max-width:600px){.city-badge.city-badge,.svc-badge.svc-badge,.proj-badge.proj-badge{border-radius:var(--r-chrome,8px)}}
+
+/* ---- row 228: a band that repeats the tint above it gets the hairline and a taller top padding ---- */
+.bb main>.city-intro+.bb-band,.reviews-strip+.cta-bar,.cg-band--b+.faq-section{border-top:1px solid var(--bb-band-rule,#e3e8f0);padding-top:calc(var(--bb-pad,80px) + 16px)}
+
+/* ---- row 472 / 291: transparent centred wrappers run full width and keep the shared reading column ---- */
+.city-intro{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.reviews-section,.cta-bar{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.city-intro>.why-section{padding-left:0;padding-right:0}
+main>p.tx-case-links{max-width:none;margin:0;box-sizing:border-box;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+
+/* ---- row 260: paragraph measure stays under 75ch on the services hub too ---- */
+.tx-area-towns>p:not(.place-credits),.tx-area-map-intro,.tx-area-closing>p,.tx-area-cta>p{max-width:70ch}
+
+/* ---- row 292: process-step copy is prose; it reads left even inside the centred step cards ---- */
+.bb-process .step p{text-align:left}
+/* ---- row 273: hook class on the cost guide's first band (no visual rule) ---- */
+.cg-band--a{box-sizing:border-box}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -276,7 +340,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>We do <a href="/interior-painting-ladner.html">interior painting in Ladner</a>, and colour consultation is part of every quote. This guide is the finish side of that conversation, so you know what to ask for before anyone opens a can.</p>
 </div></section>
 
-<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner tx-split">
   <h2>Paint sheens, from flat to high gloss</h2>
   <p>Sheen is how much light the dried paint reflects. Benjamin Moore's guide to <a href="https://www.benjaminmoore.com/en-ca/interior-exterior-paints-stains/how-to-advice/painting-101/choosing-paint-finish" rel="noopener" target="_blank">choosing a paint finish</a> sorts interior finishes roughly like this:</p>
   <ul>
@@ -290,7 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>Each brand names its sheens a little differently, so read the product's own description rather than going by the word on the label. We use Sherwin-Williams, Benjamin Moore and Dulux paints.</p>
 </div></section>
 
-<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner tx-split">
   <h2>Which finish goes in which room</h2>
   <p>Our usual starting point on a Ladner interior is matte for ceilings, eggshell for living areas, and semi-gloss on trim and in kitchens and bathrooms. Room by room, that looks like this:</p>
   <ul>
@@ -303,7 +367,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <figure class="tx-fig tx-fig--tall"><img src="/img/client-photos/interior-wall-roller-480.webp" alt="Painter on one knee rolling the lower part of a white wall above a tiled floor and floor vent" width="480" height="720" loading="lazy" decoding="async"><figcaption>Rolling an interior wall. Our work.</figcaption></figure>
 </div></section>
 
-<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner tx-split">
   <h2>Bathrooms, basements and Ladner damp</h2>
   <p>Ladner sits on the Fraser River delta, and moisture is a real factor indoors. Crawl spaces, basements and north-facing rooms are where paint peels and grows mildew if it goes on without a moisture-resistant primer. Metro Vancouver's wet season runs October to April.</p>
   <p>In those rooms the primer matters as much as the topcoat. We use moisture-resistant primers and mould-inhibiting finishes in bathrooms, basements and anywhere condensation collects, and the topcoat sheen goes up with the moisture: semi-gloss in a busy family bathroom, or a matte made for humid rooms if you want a softer look. Ventilation still matters, so run the fan.</p>
@@ -313,14 +377,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div></section>
 
-<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner tx-split">
   <h2>Older Ladner walls and higher sheens</h2>
   <p>Ladner has 1920s character homes and 1930s houses around Ladner Village, alongside much newer builds. The older ones often have lath-and-plaster walls, textured surfaces and original trim profiles. Benjamin Moore's guide warns that high gloss accentuates blemishes and should not go on surfaces that are not completely smooth, and the same logic applies to any higher sheen on a wavy plaster wall. A lower sheen on the walls and semi-gloss on the trim usually suits these houses best.</p>
   <p>Going from a glossy finish to a flatter one, or the other way, also means prep. Glossy surfaces get sanded so the new coat can grip. In a house built before 1990 that sanding needs care: Health Canada says a house built before 1960 probably has lead-based paint, and interior paint in homes from 1960 to 1990 may carry smaller amounts. Their advice on <a href="https://www.canada.ca/en/health-canada/services/home-safety/lead-based-paint.html" rel="noopener" target="_blank">lead-based paint</a> is no sanders, heat guns or blowlamps on it. Tell us the year your house was built when you book the quote.</p>
   <figure class="tx-fig tx-fig--tall"><img src="/img/client-photos/interior-brushwork-480.webp" alt="Painter with a paint pail in one hand brushing white paint along horizontal wall boards, a second view of the brushwork" width="480" height="743" loading="lazy" decoding="async"><figcaption>Brushwork on wall boards. Our work.</figcaption></figure>
 </div></section>
 
-<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--a"><div class="article-wrap tx-band-inner tx-split">
   <h2>Keep sheens consistent, and test them first</h2>
   <p>Use one sheen per surface type through a room: walls one finish, trim another. Mixing sheens on the same wall shows as patches when the light moves across it. Patches are the other trap. Bare wood, drywall patches and repaired spots need their own coat of primer before the topcoat, or the repaired areas can end up with a slightly different sheen later.</p>
   <p>Before you commit, paint a large sample and look at it in daylight and again in the evening with the lights on. Sheen shows most when light rakes across a wall from a window or a lamp.</p>
@@ -332,7 +396,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="/interior-painting-ladner.html#service-quote" class="btn-cta">Get a Free Quote</a>
   </div>
 </div></section>
-<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner">
+<section class="tx-band tx-band--b"><div class="article-wrap tx-band-inner tx-split">
   <div class="related-section">
   <h2>Related articles</h2>
   <div class="related-grid">

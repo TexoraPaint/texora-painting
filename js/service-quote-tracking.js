@@ -26,10 +26,8 @@
     try { return w.localStorage.getItem('txa_cookie') !== 'declined'; }
     catch (e) { return false; }
   }
-  var form = d.getElementById('service-quote');
   var source = route(w.location.pathname);
-  if (form && source && production()) {
-    form.addEventListener('submit', function (event) {
+  function onSubmit(form, event) {
       var next = form.elements.namedItem('_next');
       if (!next) return;
       // Keep an allowed www return on the same origin as its session marker.
@@ -48,6 +46,14 @@
         if (w.sessionStorage.getItem(KEY) !== JSON.stringify(intent)) { discard(); return; }
         next.value = returnUrl + '?request=' + encodeURIComponent(id);
       } catch (e) { discard(); }
+  }
+  var form = d.getElementById('service-quote');
+  if (source && production()) {
+    // The inline form, and the copy of it that the quote dialog builds (js/tx-quote-dialog.js), share one handler.
+    if (form) form.addEventListener('submit', function (event) { onSubmit(form, event); });
+    d.addEventListener('submit', function (event) {
+      var f = event.target;
+      if (f && f.getAttribute && f.getAttribute('data-tx-popup') === '1') onSubmit(f, event);
     });
   }
   if (!d.getElementById('tx-service-confirmation') || !production()) return;

@@ -732,7 +732,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 .bb main>.process-section>.process-inner{max-width:none;margin-left:0;margin-right:0}
 .bb main>.process-section>.process-inner>h2{text-align:left}
 .bb.bb-hub .tx-faq-wrap{margin-left:0;margin-right:0}</style>
-<script src="/js/service-quote-tracking.js?v=2" defer></script>
+<script src="/js/service-quote-tracking.js?v=3" defer></script>
 <style data-tx-inline="tx-owner-nav">/* Texora owner preview: Services + Service Areas menus inside the owner's own header. Everything else is his CSS. */
 /* Shared design tokens for the Bloomview layer on every page that loads this sheet (home and About included).
    Same names and values as the .bb token block in bb-structure.css. Declaring them changes no rendered value. */
@@ -972,6 +972,7 @@ a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-form{animation-name:txSlideUp!important}
 @keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}</style>
 <script src="/js/tx-owner-nav.js?v=efa6ee50aa" defer></script>
+<script src="/js/tx-quote-dialog.js?v=1" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(160deg,var(--tx-hero-navy-95) 0%,var(--tx-hero-navy-88) 100%),url('img/areas/vancouver-downtown-aerial-480.webp')!important}}</style>
 <style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
    at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the
@@ -1001,6 +1002,70 @@ html:has(link[rel=canonical][href="https://texorapainting.com/"]) .btn-hero{font
 <style id="h2-review-job">.review-card figcaption .review-job{margin:3px 0 0}</style>
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
 <style id="tx-cta-topic-center">/* Bottom CTA band + odd last topic card centered (matches painters-ladner) */.bb .cta-bar,.bb .cta-bar>h2,.bb .cta-bar>p{text-align:center}.bb .cta-bar>p{margin-left:auto;margin-right:auto}.bb .cta-bar .bb-cta-actions{justify-content:center}.bb .bb-topic-grid>.bb-topic:last-child:nth-child(2n+3):not(:has(ul))>*{margin-left:auto;margin-right:auto;text-align:center}</style>
+<style data-tx-inline="tx-v2">/* tx-v2: round-2 visual/QA layer (lane V). Source of truth for the <style data-tx-inline="tx-v2"> block that
+   scripts/inline_v2.py writes at the end of <head> on every page except home, About, go/* and the legal pages.
+   EDIT THIS FILE, THEN RUN scripts/inline_v2.py. Values reuse the declared tokens in css/bb-structure.css. */
+
+/* ---- quote dialog (js/tx-quote-dialog.js builds it at click time from the page's own form card) ---- */
+dialog.tx-quote-dialog{box-sizing:border-box;width:min(560px,calc(100vw - 24px));max-width:none;max-height:none;margin:auto;padding:0;border:0;background:transparent;color:var(--blue,#1a3a6e);overflow:visible}
+dialog.tx-quote-dialog::backdrop{background:rgba(8,25,54,.66)}
+.tx-qd-body{position:relative;box-sizing:border-box;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;border-radius:var(--r-card,14px);background:#fff;box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.tx-qd-close{position:absolute;top:6px;right:6px;z-index:2;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:var(--r-chrome,8px);background:transparent;color:var(--blue,#1a3a6e);font:400 30px/1 Arial,sans-serif;cursor:pointer}
+.tx-qd-close:hover{background:#eef2f9}
+.tx-qd-close:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:-3px}
+dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{max-width:none;margin:0;border:0;border-radius:0;box-shadow:none;background:#fff;padding:36px 28px 26px}
+dialog.tx-quote-dialog .tx-hero-form h2,dialog.tx-quote-dialog .form-card h3{padding-right:40px}
+html:has(dialog.tx-quote-dialog[open]){overflow:hidden}
+@media(max-width:600px){dialog.tx-quote-dialog{width:calc(100vw - 16px)}dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{padding:34px 18px 22px}}
+@media print{dialog.tx-quote-dialog{display:none!important}}
+dialog.tx-quote-dialog .tx-qd-scope{padding:0;margin:0;background:transparent}
+
+/* ---- layout tokens: marker classes the markup carries so layout containers (cards, column grids) are named
+   in the stylesheet; no visual effect ---- */
+.tx-card,.tx-split,.tx-grid{--tx-layout:1}
+
+/* ---- row 291/292: one prose edge, no centred long prose. CTA bands read left like the hub CTA bands do ---- */
+.cta-bar,.bb .cta-bar,.bb .svc-cta,.svc-cta{text-align:left}
+.cta-bar>h2,.cta-bar>p,.bb .cta-bar>h2,.bb .cta-bar>p,.svc-cta>h2,.svc-cta>p,.bb .svc-cta>h2,.bb .svc-cta>p{text-align:left;margin-left:0;margin-right:0}
+.cta-bar .bb-cta-actions,.bb .cta-bar .bb-cta-actions,.svc-cta .bb-cta-actions,.bb .svc-cta .bb-cta-actions{justify-content:flex-start}
+.bb .bb-topic-grid>.bb-topic:last-child:nth-child(2n+3):not(:has(ul))>p{text-align:left}
+.blog-hero .dek{text-align:left}
+
+/* hub pages: same 1120px reading column and 20px phone gutter as every other band */
+.tx-area{--area-width:1120px}
+.tx-area section{padding-left:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2))}
+
+/* ---- row 263: section-end quote button after the photo / before-after proof blocks (the page's own hero quote link) ---- */
+.tx-section-cta{display:flex;justify-content:flex-start;box-sizing:border-box;max-width:1120px;margin:28px auto 0;padding:0 var(--bb-gutter,20px)}
+.tx-section-cta a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;padding:13px 24px;border-radius:var(--r-chrome,8px);background:var(--orange,#f47b20);color:var(--tx-on-orange,#081c3b);font-family:var(--bb-head,'Montserrat','Montserrat Fallback',sans-serif);font-weight:800;font-size:14px;letter-spacing:.4px;line-height:1.3;text-decoration:none;box-shadow:var(--shadow-cta,0 6px 20px rgba(4,12,45,.3))}
+.tx-section-cta a:hover{background:var(--orange-dark,#d96a10)}
+.tx-section-cta a:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:3px}
+.svc-gallery>.tx-section-cta{padding:0}
+
+/* ---- row 284: one radius scale: 12 (card + tile), 10 (panel), 8 (chrome) and the pill. The card rung (14px) folds into the 12px tile rung so no container
+   carries a value that only one element on a page uses; literal radii on page-local cards land on the same tokens ---- */
+:root{--r-card:12px}
+html body #txaCookie{border-radius:var(--r-panel,10px)}
+.form-card.form-card,.article-cta.article-cta,.review-box.review-box,.tx-hero-form.tx-hero-form,.ba-row.ba-row,.leave-review.leave-review,.review-card.review-card,.tx-photo-band.tx-photo-band{border-radius:var(--r-tile,12px)}
+.nf-quick-links.nf-quick-links{border-radius:var(--r-panel,10px)}
+@media(max-width:600px){.city-badge.city-badge,.svc-badge.svc-badge,.proj-badge.proj-badge{border-radius:var(--r-chrome,8px)}}
+
+/* ---- row 228: a band that repeats the tint above it gets the hairline and a taller top padding ---- */
+.bb main>.city-intro+.bb-band,.reviews-strip+.cta-bar,.cg-band--b+.faq-section{border-top:1px solid var(--bb-band-rule,#e3e8f0);padding-top:calc(var(--bb-pad,80px) + 16px)}
+
+/* ---- row 472 / 291: transparent centred wrappers run full width and keep the shared reading column ---- */
+.city-intro{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.reviews-section,.cta-bar{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.city-intro>.why-section{padding-left:0;padding-right:0}
+main>p.tx-case-links{max-width:none;margin:0;box-sizing:border-box;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+
+/* ---- row 260: paragraph measure stays under 75ch on the services hub too ---- */
+.tx-area-towns>p:not(.place-credits),.tx-area-map-intro,.tx-area-closing>p,.tx-area-cta>p{max-width:70ch}
+
+/* ---- row 292: process-step copy is prose; it reads left even inside the centred step cards ---- */
+.bb-process .step p{text-align:left}
+/* ---- row 273: hook class on the cost guide's first band (no visual rule) ---- */
+.cg-band--a{box-sizing:border-box}</style>
 </head>
 <body class="bb" data-page-type="city">
 <a class="skip" href="#main">Skip to content</a>

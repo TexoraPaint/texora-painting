@@ -282,6 +282,70 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <style id="h2-measure">.step-body p,.article-wrap p,.article-cta p,.form-grid .form-note,.svc-hub-areas{max-width:70ch}</style>
 <style id="h2-hero-call">.btn-hero-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;margin:0 0 22px 12px;padding:12px 20px;border:2px solid rgba(255,255,255,.78);border-radius:var(--r-chrome,8px);background:transparent;color:#fff;font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;line-height:1.2;text-decoration:none;order:2}.btn-hero-call:hover,.btn-hero-call:focus-visible{background:rgba(255,255,255,.14)}.btn-hero-call-solo{margin:14px 0 0}.project-hero .btn-hero{margin:14px 12px 0 0}@media(max-width:600px){.btn-hero-call{margin-left:0;display:flex}}</style>
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
+<style data-tx-inline="tx-v2">/* tx-v2: round-2 visual/QA layer (lane V). Source of truth for the <style data-tx-inline="tx-v2"> block that
+   scripts/inline_v2.py writes at the end of <head> on every page except home, About, go/* and the legal pages.
+   EDIT THIS FILE, THEN RUN scripts/inline_v2.py. Values reuse the declared tokens in css/bb-structure.css. */
+
+/* ---- quote dialog (js/tx-quote-dialog.js builds it at click time from the page's own form card) ---- */
+dialog.tx-quote-dialog{box-sizing:border-box;width:min(560px,calc(100vw - 24px));max-width:none;max-height:none;margin:auto;padding:0;border:0;background:transparent;color:var(--blue,#1a3a6e);overflow:visible}
+dialog.tx-quote-dialog::backdrop{background:rgba(8,25,54,.66)}
+.tx-qd-body{position:relative;box-sizing:border-box;max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow:auto;overscroll-behavior:contain;border-radius:var(--r-card,14px);background:#fff;box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.tx-qd-close{position:absolute;top:6px;right:6px;z-index:2;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:var(--r-chrome,8px);background:transparent;color:var(--blue,#1a3a6e);font:400 30px/1 Arial,sans-serif;cursor:pointer}
+.tx-qd-close:hover{background:#eef2f9}
+.tx-qd-close:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:-3px}
+dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{max-width:none;margin:0;border:0;border-radius:0;box-shadow:none;background:#fff;padding:36px 28px 26px}
+dialog.tx-quote-dialog .tx-hero-form h2,dialog.tx-quote-dialog .form-card h3{padding-right:40px}
+html:has(dialog.tx-quote-dialog[open]){overflow:hidden}
+@media(max-width:600px){dialog.tx-quote-dialog{width:calc(100vw - 16px)}dialog.tx-quote-dialog .tx-hero-form,dialog.tx-quote-dialog .form-card{padding:34px 18px 22px}}
+@media print{dialog.tx-quote-dialog{display:none!important}}
+dialog.tx-quote-dialog .tx-qd-scope{padding:0;margin:0;background:transparent}
+
+/* ---- layout tokens: marker classes the markup carries so layout containers (cards, column grids) are named
+   in the stylesheet; no visual effect ---- */
+.tx-card,.tx-split,.tx-grid{--tx-layout:1}
+
+/* ---- row 291/292: one prose edge, no centred long prose. CTA bands read left like the hub CTA bands do ---- */
+.cta-bar,.bb .cta-bar,.bb .svc-cta,.svc-cta{text-align:left}
+.cta-bar>h2,.cta-bar>p,.bb .cta-bar>h2,.bb .cta-bar>p,.svc-cta>h2,.svc-cta>p,.bb .svc-cta>h2,.bb .svc-cta>p{text-align:left;margin-left:0;margin-right:0}
+.cta-bar .bb-cta-actions,.bb .cta-bar .bb-cta-actions,.svc-cta .bb-cta-actions,.bb .svc-cta .bb-cta-actions{justify-content:flex-start}
+.bb .bb-topic-grid>.bb-topic:last-child:nth-child(2n+3):not(:has(ul))>p{text-align:left}
+.blog-hero .dek{text-align:left}
+
+/* hub pages: same 1120px reading column and 20px phone gutter as every other band */
+.tx-area{--area-width:1120px}
+.tx-area section{padding-left:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--area-width))/2))}
+
+/* ---- row 263: section-end quote button after the photo / before-after proof blocks (the page's own hero quote link) ---- */
+.tx-section-cta{display:flex;justify-content:flex-start;box-sizing:border-box;max-width:1120px;margin:28px auto 0;padding:0 var(--bb-gutter,20px)}
+.tx-section-cta a{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;padding:13px 24px;border-radius:var(--r-chrome,8px);background:var(--orange,#f47b20);color:var(--tx-on-orange,#081c3b);font-family:var(--bb-head,'Montserrat','Montserrat Fallback',sans-serif);font-weight:800;font-size:14px;letter-spacing:.4px;line-height:1.3;text-decoration:none;box-shadow:var(--shadow-cta,0 6px 20px rgba(4,12,45,.3))}
+.tx-section-cta a:hover{background:var(--orange-dark,#d96a10)}
+.tx-section-cta a:focus-visible{outline:3px solid var(--blue,#1a3a6e);outline-offset:3px}
+.svc-gallery>.tx-section-cta{padding:0}
+
+/* ---- row 284: one radius scale: 12 (card + tile), 10 (panel), 8 (chrome) and the pill. The card rung (14px) folds into the 12px tile rung so no container
+   carries a value that only one element on a page uses; literal radii on page-local cards land on the same tokens ---- */
+:root{--r-card:12px}
+html body #txaCookie{border-radius:var(--r-panel,10px)}
+.form-card.form-card,.article-cta.article-cta,.review-box.review-box,.tx-hero-form.tx-hero-form,.ba-row.ba-row,.leave-review.leave-review,.review-card.review-card,.tx-photo-band.tx-photo-band{border-radius:var(--r-tile,12px)}
+.nf-quick-links.nf-quick-links{border-radius:var(--r-panel,10px)}
+@media(max-width:600px){.city-badge.city-badge,.svc-badge.svc-badge,.proj-badge.proj-badge{border-radius:var(--r-chrome,8px)}}
+
+/* ---- row 228: a band that repeats the tint above it gets the hairline and a taller top padding ---- */
+.bb main>.city-intro+.bb-band,.reviews-strip+.cta-bar,.cg-band--b+.faq-section{border-top:1px solid var(--bb-band-rule,#e3e8f0);padding-top:calc(var(--bb-pad,80px) + 16px)}
+
+/* ---- row 472 / 291: transparent centred wrappers run full width and keep the shared reading column ---- */
+.city-intro{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.reviews-section,.cta-bar{max-width:none;margin:0;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+.city-intro>.why-section{padding-left:0;padding-right:0}
+main>p.tx-case-links{max-width:none;margin:0;box-sizing:border-box;padding-left:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2));padding-right:max(var(--bb-gutter,20px),calc((100% - var(--bb-max,1120px))/2))}
+
+/* ---- row 260: paragraph measure stays under 75ch on the services hub too ---- */
+.tx-area-towns>p:not(.place-credits),.tx-area-map-intro,.tx-area-closing>p,.tx-area-cta>p{max-width:70ch}
+
+/* ---- row 292: process-step copy is prose; it reads left even inside the centred step cards ---- */
+.bb-process .step p{text-align:left}
+/* ---- row 273: hook class on the cost guide's first band (no visual rule) ---- */
+.cg-band--a{box-sizing:border-box}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -318,7 +382,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>This page documents a real garage door repainting project we at <a class="tx-link-inherit" href="/">Texora Painting &amp; Drywall</a> completed in Tsawwassen, BC. The homeowner's existing garage door had lost its original look and needed a visual refresh: but the door itself was still sound and working, so instead of replacing it, the surface was professionally prepared and resprayed.</p>
   <p>The total price for this specific project was <strong>$400</strong>. Below you'll find the actual before, the preparation and spray process, and the completed result, along with the exact coating we used and what a repaint like this involves for a Tsawwassen home.</p>
 </div></section>
-<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner tx-split">
   <h2>Project details</h2>
   <table class="specs-table">
     <tr><td>Location</td><td>Tsawwassen, Delta, BC</td></tr>
@@ -329,7 +393,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <tr><td>Contractor</td><td>Texora Painting &amp; Drywall</td></tr>
   </table>
 </div></section>
-<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner tx-split">
   <h2>Before: the existing garage door</h2>
   <p>The before photo shows the original white garage door on this Tsawwassen home, set into white stucco with dark roof trim above. Before any coating goes on, we assess the existing surface, how the current finish is holding up and whether there are any areas that need patching, because the condition of what's already on the door determines how it needs to be prepared. On this project, minor imperfections were patched and prepared where required.</p>
   <div class="ba-grid">
@@ -343,27 +407,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </div></section>
-<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner tx-split">
   <h2>Preparing the garage door for painting</h2>
   <p>Preparation was completed before any paint was sprayed, and small imperfections were patched and prepared where needed. Prep is what separates a repaint that looks clean and lasts from one that fails early: it's about adhesion (so the new coating bonds to the door), appearance (so the finished surface is smooth), and uniformity (so the colour and sheen are even across every panel). A garage door faces full weather and, in Tsawwassen, coastal salt air, so getting the surface right before coating matters.</p>
   <!-- PROCESS PHOTO SLOT: drop real prep photos here, e.g. /img/garage-door-preparation-tsawwassen-bc.webp -->
 </div></section>
-<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner tx-split">
   <h2>Professional spray application</h2>
   <p>For this door, the coating was applied by professional spray. When the surface and conditions are suitable, spraying a garage door produces a smooth, consistent finish across all of the raised panels and avoids the visible brush and roller texture you often get on flat door faces.</p>
   <p>The goal is even coverage and a clean, uniform look from panel to panel. Surrounding surfaces were protected as part of the process so the finish stayed only where it belonged.</p>
   <!-- PROCESS PHOTO SLOT: drop real spray/process photos here, e.g. /img/garage-door-spray-painting-tsawwassen-bc.webp -->
 </div></section>
-<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner tx-split">
   <h2>Why we used Sherwin-Williams Emerald exterior</h2>
   <p>The door was finished in <strong>Sherwin-Williams Emerald Exterior Acrylic Latex</strong>, a premium exterior paint and primer in one. Sherwin-Williams states that Emerald Exterior resists blistering, peeling, fading and dirt pickup, and forms a mildew-resistant coating: all useful qualities for a garage door that takes direct sun and weather. It's a premium exterior coating we selected for its durability and exterior performance.</p>
   <p>This project was finished in a <strong>satin</strong> sheen. Sherwin-Williams describes satin as having a slight gloss and a richer appearance: a good fit when a homeowner wants a clean, finished look on the door without a high-shine finish.</p>
 </div></section>
-<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner tx-split">
   <h2>After: the finished garage door</h2>
   <p>The after photo shows the completed door in its new colour, crisp against the white stucco. Because the garage door takes up such a large share of the front of many homes, repainting it changes the look of the whole exterior: a relatively small project with an outsized effect on curb appeal. On this Tsawwassen home, the fresh finish gives the front a cleaner, more modern, more finished appearance.</p>
 </div></section>
-<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner tx-split">
   <h2>How much did this garage door repaint cost in Tsawwassen?</h2>
   <p>This specific garage-door repainting project of ours in Tsawwassen cost <strong>$400</strong>. $400 is the price of <em>this</em> project: it isn't a guaranteed universal price for painting any garage door.</p>
   <p>What another garage door costs to repaint depends on factors such as:</p>
@@ -379,16 +443,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
   <p>The most reliable way to know what your door would cost is a quick look and a written estimate.</p>
 </div></section>
-<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner tx-split">
   <h2>Can you repaint a garage door instead of replacing it?</h2>
   <p>In many cases, yes. When the existing garage door is structurally serviceable and still operating properly, as it was on this Tsawwassen project, and the goal is to restore or change its painted appearance, repainting is a practical, lower-cost alternative to replacement.</p>
   <p>What painting <em>won't</em> do is fix a mechanical or structural problem: if a door is damaged, warped, or not operating safely, that's a repair or replacement question, not a paint question. For this door, the surface simply needed refreshing, which made a professional repaint the right call.</p>
 </div></section>
-<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner tx-split">
   <h2>Garage door painting in Tsawwassen and Delta, BC</h2>
   <p>Our residential painting covers Tsawwassen and the surrounding Delta communities. We paint homes in Tsawwassen, including Beach Grove and Tsawwassen Springs, as well as nearby <a href="/painters-ladner.html">Ladner</a>. Beyond garage doors, we handle full <a href="/exterior-painting-tsawwassen.html">exterior painting in Tsawwassen</a>, <a href="/exterior-painting.html">exterior painting</a>, deck painting and staining, and <a href="/interior-painting.html">interior painting</a> for homes across the area.</p>
 </div></section>
-<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner tx-split">
   <h2>What a Google reviewer said</h2>
   <div class="review-box">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
@@ -406,7 +470,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a class="rev-meta" href="https://share.google/ktiq1kINB0cnvunmX" target="_blank" rel="noopener" style="color:var(--orange);font-weight:700;text-decoration:none;">Trish, Google review, July 2026 &nbsp;&#8599;</a>
   </div>
 </div></section>
-<section class="tx-band tx-band--a"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--a"><div class="project-body tx-band-inner tx-split">
   <h2>Thinking about repainting your garage door?</h2>
   <p>If you're a homeowner in Tsawwassen or Ladner considering a garage-door repaint, or a larger exterior project, we can take a look and provide an estimate.</p>
   <ul>
@@ -415,7 +479,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Web: <a href="/">Texora Painting &amp; Drywall</a></li>
   </ul>
 </div></section>
-<section class="tx-band tx-band--b"><div class="project-body tx-band-inner">
+<section class="tx-band tx-band--b"><div class="project-body tx-band-inner tx-split">
   <h2>Garage door painting FAQ</h2>
   <div class="proj-faq">
     <details open><summary>How much does garage door painting cost in Tsawwassen?</summary><p>This particular garage-door repaint of ours in Tsawwassen cost $400. Your cost can differ depending on the door's size, its existing condition, how much prep and repair is needed, the design of the door, and whether it's a colour change. A written estimate is the accurate way to know.</p></details>
