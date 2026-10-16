@@ -17,12 +17,12 @@
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
 </head>
 <body>
-<header><a class="logo" href="index.html" aria-label="Texora Painting home"><img src="img/logo-v3.webp" alt="Texora Painting" width="160" height="107"></a></header>
+<header><a class="logo" href="/" aria-label="Texora Painting home"><img src="img/logo-v3.webp" alt="Texora Painting" width="160" height="107"></a></header>
 <main id="tx-service-confirmation">
 <h1>Quote request</h1>
 <p id="tx-service-confirmation-message">You can contact Texora Painting about a quote request using the phone number below.</p>
 <a class="call" href="tel:+16044176483">Call (604) 417-6483</a>
-<div class="links"><a href="gallery.html">View our work</a><a href="index.html">Back to home</a></div>
+<div class="links"><a href="gallery.html">View our work</a><a href="/">Back to home</a></div>
 </main>
 </body>
 </html>
