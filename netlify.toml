@@ -3,6 +3,12 @@
 [functions]
   node_bundler = "esbuild"
 
+# Deploy gate (Hamza ruling 2026-10-16): the four repo checks run on every Netlify build (production and deploy preview).
+# Any non-zero exit fails the build, so a page that breaks a check is never published. Scripts are stdlib-only.
+[build]
+  publish = "."
+  command = "python3 scripts/check_jsonld.py && python3 scripts/check_section_order.py && python3 scripts/check_token_residue.py && python3 scripts/check_linkfloor.py"
+
 [build.environment]
   NODE_VERSION = "18"
 
