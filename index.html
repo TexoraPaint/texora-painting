@@ -545,10 +545,11 @@ body section.trust-strip{flex-wrap:wrap}
 .hero-chips .hero-badge{text-transform:none;letter-spacing:.2px;font-size:12.5px;line-height:1.2;padding:7px 12px;border-radius:var(--r-pill);white-space:nowrap}
 @media(min-width:1101px){.hero-chips{width:max-content;max-width:calc(45vw + 10px)}}</style>
 <script>
-/* owner preview: scroll-reveal failsafe. Every revealed element shows after 1.2s even if the observer never fires. */
-setTimeout(function(){document.querySelectorAll('.reveal,.reveal-scale').forEach(function(e){e.classList.add('visible')});document.querySelectorAll('.hw-step').forEach(function(s){s.classList.add('on')});},1200);
+/* owner preview: scroll-reveal failsafe. Every revealed element shows after 1.2s with transitions off, even if the observer never fires. */
+setTimeout(function(){document.documentElement.classList.add('tx-failsafe');document.querySelectorAll('.reveal,.reveal-scale').forEach(function(e){e.classList.add('visible')});document.querySelectorAll('.hw-step').forEach(function(s){s.classList.add('on')});},1200);
 </script>
-<style id="tx-reveal-guard">@media(prefers-reduced-motion:reduce){.pf-card,.pf-side,.reveal,.reveal-scale,.how.js .hw-step,.how.js .hw-badge,.how.js .hw-num,.how.js .hw-info h3,.how.js .hw-info p,.hw-eyebrow,.hw-title{opacity:1!important;transform:none!important;transition:none!important}}@media print{.reveal,.reveal-scale,.how.js .hw-step,.how.js .hw-badge,.how.js .hw-num,.how.js .hw-info h3,.how.js .hw-info p,.hw-eyebrow,.hw-title,.pf-card,.pf-side{opacity:1!important;transform:none!important}}</style>
+<noscript><style>.reveal,.reveal-scale,.how.js .hw-step{opacity:1!important;transform:none!important}</style></noscript>
+<style id="tx-reveal-guard">html.tx-failsafe .reveal,html.tx-failsafe .reveal-scale,html.tx-failsafe .hw-step{opacity:1!important;transform:none!important;transition:none!important}@media(prefers-reduced-motion:reduce){.pf-card,.pf-side,.reveal,.reveal-scale,.how.js .hw-step,.how.js .hw-badge,.how.js .hw-num,.how.js .hw-info h3,.how.js .hw-info p,.hw-eyebrow,.hw-title{opacity:1!important;transform:none!important;transition:none!important}}@media print{.reveal,.reveal-scale,.how.js .hw-step,.how.js .hw-badge,.how.js .hw-num,.how.js .hw-info h3,.how.js .hw-info p,.hw-eyebrow,.hw-title,.pf-card,.pf-side{opacity:1!important;transform:none!important}}</style>
 <style data-tx-inline="tx-fonts">/* Fallback faces sized to the site's own web fonts (2026-10-03, measured: width of the page text in Montserrat / Open Sans vs Arial
    at each weight; ascent/descent from fonts/*.woff2 hhea, divided by size-adjust). Weight-specific, so they take precedence over the
    page-level fallback face for these weights. Inlined on bb pages only by scripts/inline_css.py. */
