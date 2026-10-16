@@ -59,3 +59,9 @@
   for = "/sitemap.xml"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Links stay as written (/page.html): Netlify's "Pretty URLs" post-processing used to rewrite every
+# .html href to an extensionless path that the _redirects rules then 301 back to .html — one redirect
+# on ~7,000 internal links. Off = the link in the source is the link the visitor follows.
+[build.processing.html]
+  pretty_urls = false
