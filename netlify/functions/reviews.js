@@ -5,6 +5,13 @@
 
 const PLACE_ID = 'ChIJu3iPLkznhVQRcRSyA-anoYY';
 
+// Data endpoint, not a page: keep it out of Google's index. Upstream failures return 200 with an
+// empty list (the page already shows its static fallback reviews), so Search Console never logs a 5xx.
+const NOINDEX = { 'X-Robots-Tag': 'noindex, nofollow' };
+function soft(error) {
+  return { statusCode: 200, headers: { ...NOINDEX, 'Content-Type': 'application/json', 'Cache-Control': 'public, s-maxage=300' }, body: JSON.stringify({ reviews: [], error }) };
+}
+
 // Clean photo URL — strip any existing size suffix, apply =s76-c
 function cleanPhotoUrl(url) {
   if (!url) return null;
@@ -80,7 +87,8 @@ exports.handler = async () => {
   const missing = ['GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', 'GOOGLE_REFRESH_TOKEN']
     .filter(v => !process.env[v]);
   if (missing.length) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'Missing env vars: ' + missing.join(', ') }) };
+    console.error('Missing env vars: ' + missing.join(', '));
+    return key ? await fallbackToPlacesAPI(key) : soft('Missing env vars');
   }
 
   try {
@@ -114,6 +122,7 @@ exports.handler = async () => {
     return {
       statusCode: 200,
       headers: {
+        ...NOINDEX,
         'Content-Type':  'application/json',
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400'
       },
@@ -134,7 +143,7 @@ exports.handler = async () => {
       parsed._debug = err.message;
       return { ...fallback, body: JSON.stringify(parsed) };
     }
-    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
+    return soft(err.message);
   }
 };
 
@@ -144,7 +153,7 @@ async function fallbackToPlacesAPI(key) {
       headers: { 'X-Goog-FieldMask': 'reviews,rating,userRatingCount' }
     });
     const data = await res.json();
-    if (!data.reviews) return { statusCode: 502, body: JSON.stringify({ error: 'No reviews', raw: data }) };
+    if (!data.reviews) { console.error('Places API: no reviews', JSON.stringify(data)); return soft('No reviews'); }
 
     const reviews = data.reviews.map(r => ({
       author_name:               r.authorAttribution?.displayName || '',
@@ -157,12 +166,14 @@ async function fallbackToPlacesAPI(key) {
     return {
       statusCode: 200,
       headers: {
+        ...NOINDEX,
         'Content-Type':  'application/json',
         'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400'
       },
       body: JSON.stringify({ reviews, rating: data.rating, total: data.userRatingCount })
     };
   } catch (err) {
-    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
+    console.error('Places API error:', err.message);
+    return soft(err.message);
   }
 }
