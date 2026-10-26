@@ -97,8 +97,6 @@ https://main--stirring-bienenstitch-9426ae.netlify.app/* https://texorapainting.
 /index.html  /  301!
 # blog hub: one URL (/blog/), not /blog/index.html (GSC: alternate page with canonical)
 /blog/index.html  /blog/  301!
-# trailing slash after .html served a 200 duplicate (GSC: alternate page with canonical)
-/interior-painting.html/  /interior-painting.html  301!
 /bathroom-refresh  /bathroom-refresh.html  301!
 /brick-staining  /brick-staining.html  301!
 /cookie-policy  /cookie-policy.html  301!
