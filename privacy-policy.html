@@ -254,6 +254,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <script src="/js/tx-owner-nav.js?v=ff36ef2b82" defer></script>
 <style id="tx-hero-mobile">@media(max-width:767px){.city-hero,.svc-hero{background-image:linear-gradient(110deg,rgba(10,32,90,.94) 0%,rgba(22,65,150,.82) 45%,rgba(15,65,130,.62) 100%),url('img/client-photos/interior-window-brush-480.webp')!important}}</style>
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
+<style id="tx-policy-bands">/* legal pages: one H2 group per band; from 901px the H2 sits in a left column and its text on one prose edge (same pattern as warranty.html, scoped to this page) */main .tx-band--a{background:var(--white)}main .tx-band--b{background:var(--off-white)}@media(min-width:901px){main .tx-band>.policy-wrap.tx-band-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);column-gap:44px;align-content:start;max-width:1080px}main .tx-band>.policy-wrap.tx-band-inner>*{grid-column:2;min-width:0}main .tx-band>.policy-wrap.tx-band-inner>:is(h2,h3){grid-column:1;margin-top:0}main .tx-band>.policy-wrap.tx-band-inner>:is(h2,h3):first-child+*{margin-top:0}main .tx-band>.policy-wrap.tx-band-inner:not(:has(>:is(h2,h3)))>*{grid-column:1/-1}}</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -288,12 +289,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<div class="policy-wrap">
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <span class="policy-date">Last updated: September 2026</span>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>Who we are</h2>
   <p>Texora Painting &amp; Drywall ("we", "us", or "our") is a residential painting and drywall company based in Delta, British Columbia, serving Tsawwassen, Ladner, Delta and the wider Metro Vancouver area. Our business address is 1299 56 St, Delta, BC V4L 2A6. Our website is <a href="https://texorapainting.com">Texora Painting &amp; Drywall</a>. You can reach us at <a href="mailto:info@texorapainting.com">info@texorapainting.com</a> or by phone at <a href="tel:+17789079846">(778) 907-9846</a>. This policy explains how we handle personal information in accordance with Canada's <strong>PIPEDA</strong> and British Columbia's <strong>Personal Information Protection Act (PIPA)</strong>.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>What information we collect</h2>
   <p>We only collect information you voluntarily provide through our quote request form:</p>
   <ul>
@@ -305,7 +308,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>The town, ad and page your request came from (recorded automatically with requests sent from our advertising pages)</li>
   </ul>
   <p>We do not collect payment information on this website.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>How we use your information</h2>
   <p>Information submitted through our quote form is used solely to:</p>
   <ul>
@@ -314,7 +318,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Communicate about scheduling and project details if you become a client</li>
   </ul>
   <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>Cookies &amp; analytics</h2>
   <p>Our website uses cookies and similar tracking technologies to understand how visitors use the site and to measure our advertising. When you first visit, a <strong>cookie banner</strong> lets you <strong>Accept</strong> or <strong>Decline</strong> these analytics and advertising cookies; if you decline, these tools are not loaded. Strictly necessary cookies that remember your choice are always used. For full detail, see our <a href="cookie-policy.html">Cookie Policy</a>. The tools we may use are:</p>
   <ul>
@@ -325,7 +330,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
   <p>These tools are loaded only after you accept the cookie banner (or take no action and interact with the page), and never if you decline. No personally identifiable information is passed to these tools.</p>
   <p>You can also disable cookies in your browser settings at any time. Note that doing so may affect the functionality of some websites.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>Third-party services</h2>
   <p>Our website uses the following third-party services:</p>
   <ul>
@@ -335,13 +341,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><strong>Self-hosted fonts</strong> — our typefaces are served directly from our own website, so no font data is sent to third parties.</li>
     <li><strong>Netlify</strong> — hosts this website and processes serverless functions. Netlify may log standard server access data (IP address, browser type, pages visited) for security and performance purposes.</li>
   </ul>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>Data retention</h2>
   <p>Quote request information is retained in our email inbox for as long as necessary to complete your project or respond to your inquiry. You may request deletion of your data at any time by contacting us.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>Consent &amp; communications (CASL)</h2>
   <p>When you submit our quote form, you check a box confirming you consent to us contacting you about your request. In line with Canada's Anti-Spam Legislation (CASL), we only send communications related to your inquiry or projects with us. You can withdraw consent or unsubscribe at any time by replying to any message or emailing <a href="mailto:info@texorapainting.com">info@texorapainting.com</a>.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>Your rights (PIPEDA &amp; BC PIPA)</h2>
   <p>Under Canada's Personal Information Protection and Electronic Documents Act (PIPEDA) and BC's Personal Information Protection Act (PIPA), you have the right to:</p>
   <ul>
@@ -351,13 +360,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Withdraw consent to our use of your information</li>
   </ul>
   <p>To exercise any of these rights, contact us at <a href="mailto:info@texorapainting.com">info@texorapainting.com</a>.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>Children's privacy</h2>
   <p>Our services are not directed at children under 13. We do not knowingly collect personal information from children.</p>
-
+</div></section>
+<section class="tx-band tx-band--a"><div class="policy-wrap tx-band-inner">
   <h2>Changes to this policy</h2>
   <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of our website after changes constitutes acceptance of the updated policy.</p>
-
+</div></section>
+<section class="tx-band tx-band--b"><div class="policy-wrap tx-band-inner">
   <h2>Contact us</h2>
   <p>Questions about this Privacy Policy? Reach us at:</p>
   <ul>
@@ -365,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Phone: <a href="tel:+17789079846">(778) 907-9846</a></li>
     <li>Address: 1299 56 St, Delta, BC V4L 2A6, Canada</li>
   </ul>
-</div>
+</div></section>
 
 </main>
 <footer class="footer-bar">
