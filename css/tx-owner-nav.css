@@ -236,3 +236,5 @@ a.tx-pill,a.tx-pill:hover{text-decoration:none;color:inherit}
    so the headline counts as painted at first paint (LCP). Same distance and timing as fadeUp. */
 html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-content,html:has(link[rel=canonical][href="https://texorapainting.com/"]) .hero-form{animation-name:txSlideUp!important}
 @keyframes txSlideUp{from{transform:translateY(28px)}to{transform:translateY(0)}}
+.txn-cols strong.txn-sub{margin-top:14px}
+@media(max-width:520px){.footer-bar .tx-foot-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}.footer-bar .tx-foot-list .tx-foot-h{grid-column:1/-1}}
