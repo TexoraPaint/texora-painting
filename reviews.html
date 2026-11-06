@@ -137,6 +137,8 @@ function gtag(){dataLayer.push(arguments);}
   .leave-review p{color:var(--gray);font-size:14px;margin-bottom:24px;}
   .btn-review{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#fff;text-decoration:none;font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;padding:14px 28px;border-radius:8px;transition:background .2s,transform .15s;}
   .btn-review:hover{background:#122d5a;transform:translateY(-2px);}
+  .btn-review-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}
+  @media(max-width:480px){.btn-review{padding:14px 18px;}}
   /* CTA bar */
   .cta-bar{background:var(--blue);padding:80px 5%;text-align:center;}
   .cta-bar h2{font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:900;font-size:clamp(24px,3vw,36px);color:#fff;margin-bottom:12px;}
@@ -469,15 +471,13 @@ Highly recommend 🙏🏼"</p>
   <div class="leave-review">
     <h2>Happy with our work? Leave us a review</h2>
     <p>Your review helps other Delta homeowners find a painter they can trust.</p>
+    <div class="btn-review-row">
     <a href="https://share.google/ktiq1kINB0cnvunmX" target="_blank" rel="noopener" class="btn-review">
       <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="white"/><path d="M28 16.3c0-.9-.1-1.8-.2-2.6H16v5h6.7c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.8-5.2 3.8-9z" fill="#4285F4"/><path d="M16 29c3.3 0 6.1-1.1 8.2-3l-3.9-3c-1.1.7-2.5 1.2-4.3 1.2-3.3 0-6.1-2.2-7.1-5.2H5v3.1C7.1 26.6 11.3 29 16 29z" fill="#34A853"/><path d="M8.9 19c-.3-.7-.4-1.4-.4-2.1s.1-1.4.4-2.1V11.7H5A13 13 0 0 0 3 16.9c0 2.1.5 4.1 1.4 5.9l3.5-3.8z" fill="#FBBC05"/><path d="M16 9.8c1.9 0 3.5.6 4.8 1.9l3.6-3.6C22.2 6 19.3 4.9 16 4.9 11.3 4.9 7.1 7.3 5 11l3.9 3.1C9.9 12 12.7 9.8 16 9.8z" fill="#EA4335"/></svg>
       Write a Google Review &rarr;
     </a>
-    <!-- TrustBox widget - Review Collector -->
-    <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6aa1d445185a678d38da2b11" data-style-height="52px" data-style-width="100%" data-token="5e736e16-a8be-4645-b5d2-dec775943096" style="margin-top:20px;max-width:340px;margin-left:auto;margin-right:auto;">
-      <a href="https://www.trustpilot.com/review/texorapainting.com" target="_blank" rel="noopener">Trustpilot</a>
+    <a href="https://www.trustpilot.com/review/texorapainting.com" target="_blank" rel="noopener" class="btn-review">Review us on Trustpilot &rarr;</a>
     </div>
-    <!-- End TrustBox widget -->
   </div>
 </div>
 
@@ -538,8 +538,6 @@ Highly recommend 🙏🏼"</p>
 (function(){var btn=document.getElementById('scrollTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>300);},{passive:true});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});})();
 function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(function(x){x.classList.remove('open');x.previousElementSibling.classList.remove('open');});if(!o){a.classList.add('open');b.classList.add('open');}}
 </script>
-<!-- Trustpilot widget bootstrap -->
-<script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 <!-- COOKIE CONSENT (branded, dismissible, remembers choice) -->
 <style>
  #txaCookie{position:fixed;left:20px;bottom:20px;z-index:3000;max-width:380px;width:calc(100% - 40px);
