@@ -373,7 +373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <figcaption>Exterior walls, siding and trim</figcaption>
       </figure>
   </div>
-  <p class="client-photos-cta"><a href="/#hero-quote">Get a free quote for your own project &rarr;</a></p>
+  <p class="client-photos-cta"><a href="/contact.html#area-quote">Get a free quote for your own project &rarr;</a></p>
 </section>
 
 <section class="gallery-section">
@@ -384,7 +384,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="photoGrid" class="photo-grid">
       <div class="gallery-loading">Loading photos&hellip;</div>
     </div>
-    <p class="client-photos-cta"><a href="/#hero-quote">Get a free quote &rarr;</a></p>
   </div>
 </section>
 
@@ -477,13 +476,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){
   var FALLBACK=[
     {url:'img/exterior-painting-siding-after.webp',caption:'Exterior repaint, after',alt:'Blue lap siding on a steep gable with white louvred shutters and a glass railing, after repainting'},
-    {url:'img/ba-interior-after.webp',caption:'Interior painting, after',alt:'Charcoal-painted basement walls and bulkhead above a black bar, a yellow sofa in front'},
-    {url:'img/ba-kitchen-after.webp',caption:'Cabinet painting, after',alt:'Pale green painted cabinets with brass knobs around a white electric range'},
-    {url:'img/ba-bathroom-after.webp',caption:'Bathroom drywall repair and paint, after',alt:'White-painted bathroom wall with a high small window, a black towel bar and a toilet'},
-    {url:'img/ba-deck-after.webp',caption:'Deck refinishing, after',alt:'Cedar-toned deck boards and a front step leading up to white French doors'},
-    {url:'img/ba-drywall-after.webp',caption:'Drywall repair and paint, after',alt:'Smooth white ceiling bulkhead corner above a grey wall after painting'},
+    {url:'img/ba-interior-after.webp',thumb:'img/ba-interior-after-640.webp',caption:'Interior painting, after',alt:'Charcoal-painted basement walls and bulkhead above a black bar, a yellow sofa in front'},
+    {url:'img/ba-kitchen-after.webp',thumb:'img/ba-kitchen-after-640.webp',caption:'Cabinet painting, after',alt:'Pale green painted cabinets with brass knobs around a white electric range'},
+    {url:'img/ba-bathroom-after.webp',thumb:'img/ba-bathroom-after-640.webp',caption:'Bathroom drywall repair and paint, after',alt:'White-painted bathroom wall with a high small window, a black towel bar and a toilet'},
+    {url:'img/ba-deck-after.webp',thumb:'img/ba-deck-after-640.webp',caption:'Deck refinishing, after',alt:'Cedar-toned deck boards and a front step leading up to white French doors'},
+    {url:'img/ba-drywall-after.webp',thumb:'img/ba-drywall-after-640.webp',caption:'Drywall repair and paint, after',alt:'Smooth white ceiling bulkhead corner above a grey wall after painting'},
     {url:'img/exterior-painting-siding-before.webp',caption:'Exterior repaint, before',alt:'Faded blue siding and a glass balcony railing under a gable with one white shutter, before repainting'},
-    {url:'img/ba-interior-before.webp',caption:'Interior painting, before',alt:'White basement walls and pot lights over a black bar counter, before the charcoal repaint'}
+    {url:'img/ba-interior-before.webp',thumb:'img/ba-interior-before-640.webp',caption:'Interior painting, before',alt:'White basement walls and pot lights over a black bar counter, before the charcoal repaint'}
   ];
   function renderPhotos(photos){
     var grid=document.getElementById('photoGrid');
@@ -491,7 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(!photos||!photos.length)photos=FALLBACK;
     window._galleryPhotos=photos;
     grid.innerHTML=photos.map(function(p,i){
-      var src=p.url||p;
+      var src=p.thumb||p.url||p;
       var cap=p.caption||'Texora Painting & Drywall Project';
       var alt=p.alt||cap;
       return '<div class="photo-item" onclick="openLightbox('+i+')" role="button" tabindex="0" aria-label="View '+cap+'">'
