@@ -1694,7 +1694,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <style>
 /* ===== Footer mountain ridge — blends quote section into footer ===== */
-.footer-mtn{position:relative;width:100%;line-height:0;margin-top:-24vw;z-index:2;pointer-events:none;user-select:none}
+.footer-mtn{position:relative;width:100%;line-height:0;margin-top:-24vw;z-index:2;pointer-events:none;user-select:none;background:linear-gradient(to bottom,transparent 0%,transparent 66%,#021c40 86%,#021c40 100%)}
 .footer-mtn img{display:block;width:100%;height:auto}
 .footer-bar{background:#021c40!important}
 .quote{padding-bottom:calc(24vw + 18px)!important}
@@ -1810,12 +1810,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function updateBtnBottom() {
       var vpH = window.innerHeight;
       var bottom = 28;
-
-      // 1. Stay clear of footer (8px gap)
-      if (footer) {
-        var ft = footer.getBoundingClientRect().top;
-        if (ft < vpH) bottom = Math.max(bottom, vpH - ft + 8);
-      }
 
       // 2. If button would overlap the white form card, push it just below the card
       if (formGrid) {
