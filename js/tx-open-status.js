@@ -45,7 +45,7 @@
   }
   var text, open = isOpen(today, cur);
   if (open) {
-    text = always ? 'Open now, 24 hours' : 'Open now';
+    text = always ? 'Open now, 24h' : 'Open now';
   } else {
     text = 'Closed';
     for (var k = 0; k < 8; k++) {
