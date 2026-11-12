@@ -284,6 +284,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <style id="h2-hero-call">.btn-hero-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;margin:0 0 22px 12px;padding:12px 20px;border:2px solid rgba(255,255,255,.78);border-radius:var(--r-chrome);background:transparent;color:var(--white);font-family:Montserrat,"Montserrat Fallback",sans-serif;font-weight:800;font-size:14px;letter-spacing:.5px;line-height:1.2;text-decoration:none;order:2}.btn-hero-call:hover,.btn-hero-call:focus-visible{background:rgba(255,255,255,.14)}.btn-hero-call-solo{margin:14px 0 0}.project-hero .btn-hero{margin:14px 12px 0 0}@media(max-width:600px){.btn-hero-call{margin-left:0;display:flex}}</style>
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
 <style id="tx-menu-scroll">@media(max-width:900px){nav .nav-links.open{max-height:calc(100vh - 80px - env(safe-area-inset-top,0px));max-height:calc(100dvh - 80px - env(safe-area-inset-top,0px));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}body:has(.tx-qtab) .footer-copy{padding-bottom:88px}}</style>
+<style id="tx-open-status-css">.tx-open-dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#2e9d4f}[data-tx-open-box][data-state=closed] .tx-open-dot{background:#c2410c}[data-tx-open-status]{display:inline-block;min-width:18ch}.tx-open-line{display:flex;align-items:center;gap:8px;min-height:22px;margin:4px 0 14px;font-size:14px;font-weight:700;line-height:1.4}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -309,6 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div>
     <span class="proj-badge">Tsawwassen Springs · Tsawwassen</span>
     <h1>Tsawwassen <em>Full Interior Repaint</em></h1>
+<p class="tx-open-line" data-tx-open-box><span class="tx-open-dot" aria-hidden="true"></span><span data-tx-open-status>Open 24 hours</span></p>
     <p><a class="tx-link-inherit" href="/">Texora Painting &amp; Drywall</a>'s <a href="/interior-painting.html">complete interior repaint</a> of a 4-bedroom home: every wall, ceiling, door, and trim surface refreshed with Benjamin Moore Aura in five days. This job is one of our <a href="/interior-painting-tsawwassen.html">interior painting in Tsawwassen</a> projects.</p>
     <!--h2-proj-cta--><a href="/#hero-quote" class="btn-hero">Get Your Free Quote &rarr;</a>
     <a href="tel:+17789079846" class="btn-hero-call btn-hero-call-solo">Call (778) 907-9846</a>
@@ -422,7 +424,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="showcase-inner">
     <p class="sec-label">Our Work</p>
     <h2 class="sec-title">More before and after repaint photos from our jobs</h2>
-    <p class="sec-sub">Before and after photos from our painting and drywall jobs.</p>
+    <p class="sec-sub">Each pair below shows the same surface before we started and after the job was finished.</p>
     <div id="gphotoStrip" class="gphoto-strip"></div>
     <div class="ba-showcase-grid">
     <div class="ba-showcase-card">
@@ -574,5 +576,6 @@ function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');
 })();
 </script>
 <!-- TX SERVICE AREA NAV SCRIPT END -->
+<script src="/js/tx-open-status.js" defer></script>
 </body>
 </html>

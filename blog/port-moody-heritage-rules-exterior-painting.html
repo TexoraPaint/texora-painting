@@ -246,6 +246,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <style id="tx-blog-article">.blog-hero .dek{color:rgba(255,255,255,.9);font-size:17px;line-height:1.6;max-width:640px;margin:0 auto 16px}.tx-fig{margin:28px 0}.tx-fig img{display:block;width:100%;height:auto;border-radius:var(--r-panel)}.tx-fig figcaption{font-size:14px;color:var(--gray);margin-top:8px;line-height:1.5}.tx-fig--tall{max-width:360px;margin-left:auto;margin-right:auto}.tx-fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}.tx-fig-pair .tx-fig{margin:0}@media(max-width:600px){.tx-fig-pair{grid-template-columns:1fr}}.tx-table-wrap{overflow-x:auto;margin:0 0 24px}.tx-compare{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}.tx-compare th,.tx-compare td{border:1px solid #e3e8f0;padding:10px 12px;text-align:left;vertical-align:top;color:var(--dark)}.tx-compare thead th{background:var(--blue);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700}.tx-compare tbody th{background:var(--off-white);font-weight:700}</style>
 <style id="tx-left-prose">/* Website Checklist row 292: no centered prose over ~200 characters. Long paragraphs in centered bands read left-aligned inside a centered column. */.tx-left-prose{text-align:left!important;max-width:64ch;margin-left:auto!important;margin-right:auto!important}.bb .bb-topic>p.tx-left-prose{max-width:none;margin-left:0!important;margin-right:0!important}</style>
 <style id="tx-menu-scroll">@media(max-width:900px){nav .nav-links.open{max-height:calc(100vh - 80px - env(safe-area-inset-top,0px));max-height:calc(100dvh - 80px - env(safe-area-inset-top,0px));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}body:has(.tx-qtab) .footer-copy{padding-bottom:88px}}</style>
+<style id="tx-open-status-css">.tx-open-dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#2e9d4f}[data-tx-open-box][data-state=closed] .tx-open-dot{background:#c2410c}[data-tx-open-status]{display:inline-block;min-width:18ch}.tx-open-line{display:flex;align-items:center;gap:8px;min-height:22px;margin:4px 0 14px;font-size:14px;font-weight:700;line-height:1.4}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -270,6 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="blog-hero">
   <span class="cat-tag">Exterior Painting · Port Moody</span>
   <h1>Port Moody Heritage Rules for Exterior Painting</h1>
+<p class="tx-open-line" data-tx-open-box><span class="tx-open-dot" aria-hidden="true"></span><span data-tx-open-status>Open 24 hours</span></p>
   <p class="dek tx-left-prose">Exterior painting in Moody Centre or Ioco comes with one question before the ladders go up: does the City of Port Moody want a heritage alteration permit? What the city's own guidelines say, and what to sort out before you ask <a class="tx-link-inherit" href="/">Texora Painting &amp; Drywall</a> for a quote.</p>
   <div class="meta">By Texora Painting &amp; Drywall &nbsp;&bull;&nbsp; October 2026 &nbsp;&bull;&nbsp; 6 min read</div>
 </section>
@@ -506,5 +508,6 @@ function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');
 })();
 </script>
 <!-- TX SERVICE AREA NAV SCRIPT END -->
+<script src="/js/tx-open-status.js" defer></script>
 </body>
 </html>
