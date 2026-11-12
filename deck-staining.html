@@ -265,6 +265,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
 <style id="tx-cta-topic-center">/* Bottom CTA band + odd last topic card centered (matches painters-ladner) */.bb .cta-bar,.bb .cta-bar>h2,.bb .cta-bar>p{text-align:center}.bb .cta-bar>p{margin-left:auto;margin-right:auto}.bb .cta-bar .bb-cta-actions{justify-content:center}.bb .bb-topic-grid>.bb-topic:last-child:nth-child(2n+3):not(:has(ul))>*{margin-left:auto;margin-right:auto;text-align:center}</style>
 <style id="tx-menu-scroll">@media(max-width:900px){nav .nav-links.open{max-height:calc(100vh - 80px - env(safe-area-inset-top,0px));max-height:calc(100dvh - 80px - env(safe-area-inset-top,0px));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}body:has(.tx-qtab) .footer-copy{padding-bottom:88px}}</style>
+<style id="tx-open-status-css">.tx-open-dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#2e9d4f}[data-tx-open-box][data-state=closed] .tx-open-dot{background:#c2410c}[data-tx-open-status]{display:inline-block;min-width:13ch}.tx-open-line{display:block;min-height:22px;margin:4px 0 14px;color:#fff;font-size:14px;font-weight:700;line-height:1.4}.tx-open-line .tx-open-dot{margin-right:8px;vertical-align:middle}</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -290,6 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="city-hero-content">
     <span class="city-badge">Texora Painting &amp; Drywall, Deck Refinishing</span>
     <h1>Deck Staining &amp; Painting <em>Tsawwassen, Ladner &amp; Delta</em></h1>
+<p class="tx-open-line" data-tx-open-box><span class="tx-open-dot" aria-hidden="true"></span><span data-tx-open-status>Open 24 hours</span></p>
     <p>Your deck takes a beating from BC's coastal weather, sun, rain, and moisture cause wood to grey, crack, and peel. Texora Painting &amp; Drywall strips old finish, preps the surface, and applies professional-grade deck stain or paint for a result that lasts 5–8 years.</p>
     <a href="/#quote" class="btn-hero">Get a Free Deck Quote</a>
   </div>
@@ -499,5 +501,6 @@ function toggleFaq(b){var a=b.nextElementSibling,o=b.getAttribute('aria-expanded
 })();
 </script>
 <!-- TX SERVICE AREA NAV SCRIPT END -->
+<script src="/js/tx-open-status.js" defer></script>
 </body>
 </html>

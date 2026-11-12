@@ -245,6 +245,7 @@ nav .tx-area-dropdown .tx-area-all{padding:0 0 14px;margin-bottom:16px;border-bo
 <script id="bvg-instrumentation">/* Bloomview phone-tap beacon: measurement only */if(['texorapainting.com','www.texorapainting.com'].indexOf(location.hostname)>-1)(function(){var seen={},ep='https://bloomviewgrowth.com/collect/phone-click.php';document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon(ep,new URLSearchParams({phone:h.slice(4),text:(a.textContent||'').trim().slice(0,80),page:location.pathname+(/[?&]bvg_test=1\b/.test(location.search)?'?bvg_test=1':''),s:'texora'}));}}catch(err){}},true);})();</script>
 <style id="tx-blog-article">.blog-hero .dek{color:rgba(255,255,255,.9);font-size:17px;line-height:1.6;max-width:640px;margin:0 auto 16px}.tx-fig{margin:28px 0}.tx-fig img{display:block;width:100%;height:auto;border-radius:var(--r-panel)}.tx-fig figcaption{font-size:14px;color:var(--gray);margin-top:8px;line-height:1.5}.tx-fig--tall{max-width:360px;margin-left:auto;margin-right:auto}.tx-fig-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}.tx-fig-pair .tx-fig{margin:0}@media(max-width:600px){.tx-fig-pair{grid-template-columns:1fr}}.tx-table-wrap{overflow-x:auto;margin:0 0 24px}.tx-compare{width:100%;border-collapse:collapse;font-size:15px;line-height:1.5}.tx-compare th,.tx-compare td{border:1px solid #e3e8f0;padding:10px 12px;text-align:left;vertical-align:top;color:var(--dark)}.tx-compare thead th{background:var(--blue);color:var(--white);font-family:'Montserrat','Montserrat Fallback',sans-serif;font-weight:700}.tx-compare tbody th{background:var(--off-white);font-weight:700}</style>
 <style id="tx-menu-scroll">@media(max-width:900px){nav .nav-links.open{max-height:calc(100vh - 80px - env(safe-area-inset-top,0px));max-height:calc(100dvh - 80px - env(safe-area-inset-top,0px));overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}body:has(.tx-qtab) .footer-copy{padding-bottom:88px}}</style>
+<style id="tx-open-status-css">.tx-open-dot{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:#2e9d4f}[data-tx-open-box][data-state=closed] .tx-open-dot{background:#c2410c}[data-tx-open-status]{display:inline-block;min-width:13ch}.tx-open-line{display:block;min-height:22px;margin:4px 0 14px;color:#fff;font-size:14px;font-weight:700;line-height:1.4}.tx-open-line .tx-open-dot{margin-right:8px;vertical-align:middle}</style>
 </head>
 <body class="tx-inner">
 <!-- Google Tag Manager (noscript) -->
@@ -269,6 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="blog-hero">
   <span class="cat-tag">Drywall Installation &middot; Port Moody</span>
   <h1>Do you need a permit for drywall installation in Port Moody?</h1>
+<p class="tx-open-line" data-tx-open-box><span class="tx-open-dot" aria-hidden="true"></span><span data-tx-open-status>Open 24 hours</span></p>
   <p class="dek">Drywall on its own is not on Port Moody's permit list either way. What the drywall is part of decides it: a finished basement or a removed wall needs a permit, a patch and a coat of paint does not.</p>
   <div class="meta">By Texora Painting &amp; Drywall &nbsp;&bull;&nbsp; November 11, 2026 &nbsp;&bull;&nbsp; 5 min read</div>
 </section>
@@ -496,5 +498,6 @@ function toggleFaq(b){var a=b.nextElementSibling,o=a.classList.contains('open');
 })();
 </script>
 <!-- TX SERVICE AREA NAV SCRIPT END -->
+<script src="/js/tx-open-status.js" defer></script>
 </body>
 </html>
