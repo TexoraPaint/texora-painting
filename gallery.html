@@ -251,8 +251,14 @@ body{font-family:'Open Sans','Open Sans Fallback',sans-serif;color:var(--dark);b
 .client-photo-grid img{display:block;width:100%;height:auto;}
 .client-photo-grid figcaption{padding:var(--space-12) var(--space-14);font-size:14px;line-height:1.5;font-weight:600;}
 .client-photo-grid-two{grid-template-columns:repeat(2,minmax(0,1fr));}
-@media(max-width:900px){.client-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(max-width:600px){.client-photo-grid{grid-template-columns:minmax(0,1fr);}.client-photos{padding-bottom:var(--space-48);}}
+.client-photo-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-16);align-items:stretch;}
+.client-photo-grid img{aspect-ratio:3/4;object-fit:cover;height:auto;}
+.client-photo-grid figcaption{padding:var(--space-10) var(--space-12);font-size:13px;}
+@media(max-width:900px){.client-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-12);}}
+@media(max-width:600px){.client-photos{padding-bottom:var(--space-48);}}
+.gh-open strong{display:flex;align-items:center;gap:var(--space-8);font-size:16px;line-height:20px;}
+.gh-open .tx-open-dot{margin:0;}
+.ba-inner>.section-label{padding-left:0!important;padding-right:0!important;}
 </style>
 <!-- TX SERVICE AREA NAV STYLE START -->
 <style>
@@ -312,11 +318,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="gallery-hero-inner">
     <span class="gh-eyebrow">Portfolio</span>
     <h1>Painting &amp; Drywall Photos <em>from Our Delta, BC Crews</em></h1>
-<p class="tx-open-line" data-tx-open-box><span class="tx-open-dot" aria-hidden="true"></span><span data-tx-open-status>Open 24 hours</span></p>
-    <a href="tel:+17789079846" class="btn-hero-call btn-hero-call-solo">Call (778) 907-9846</a>
-    <p class="gallery-hero-desc">Real photos from <a class="tx-link-inherit" href="/">Texora Painting &amp; Drywall</a> projects: interior painting, exterior repaints, cabinet refinishing, deck staining, and drywall. We do <a href="/interior-painting.html">interior painting in Delta</a>, Tsawwassen and Ladner.</p>
+    <p class="gallery-hero-desc">Real photos from <a class="tx-link-inherit" href="/">Texora Painting &amp; Drywall</a> projects: interior painting, exterior repaints, cabinet refinishing, deck staining, and drywall. We do <a class="tx-link-inherit" href="/interior-painting.html">interior painting in Delta</a>, Tsawwassen and Ladner.</p>
     <div class="gh-stats">
       <div class="gh-stat"><strong>5.0</strong><span>On Google, 50+ reviews</span></div>
+      <div class="gh-stat gh-open" data-tx-open-box><strong><span class="tx-open-dot" aria-hidden="true"></span><span data-tx-open-status>Open 24 hours</span></strong><span>7 days a week</span></div>
     </div>
     <div class="gh-cta">
       <a href="/#quote" class="btn-primary">
@@ -377,17 +382,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </figure>
   </div>
   <p class="client-photos-cta"><a href="/contact.html#area-quote">Get a free quote for your own project &rarr;</a></p>
-</section>
-
-<section class="gallery-section">
-  <div class="gallery-section-inner">
-    <p class="section-label">Project photos</p>
-    <h2 class="section-title">Photos from painting and drywall jobs</h2>
-    <p class="section-sub">The photos cover an exterior repaint, interior painting, cabinet painting, a bathroom drywall repair and a drywall repair, before and after. When our Google Business Profile photo feed is connected, this grid shows those photos instead.</p>
-    <div id="photoGrid" class="photo-grid">
-      <div class="gallery-loading">Loading photos&hellip;</div>
-    </div>
-  </div>
 </section>
 
 <section class="ba-section">
@@ -464,72 +458,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="footer-copy">© 2026 Texora Painting &amp; Drywall. All rights reserved. | <a href="privacy-policy.html" style="color:var(--tx-on-dark-60);text-decoration:underline;">Privacy Policy</a> | <a href="terms.html" style="color:var(--tx-on-dark-60);text-decoration:underline;">Terms</a> | <a href="cookie-policy.html" style="color:var(--tx-on-dark-60);text-decoration:underline;">Cookie Policy</a> | <a href="warranty.html" style="color:var(--tx-on-dark-60);text-decoration:underline;">Warranty</a> | <a href="service-areas.html" style="color:var(--tx-on-dark-60);text-decoration:underline;">Service Areas</a></div>
 </footer>
 
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" onclick="if(event.target===this)closeLightbox()">
-  <button id="lbClose" onclick="closeLightbox()" aria-label="Close">&times;</button>
-  <img decoding="async" id="lbImg" alt="" width="1" height="1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-</div>
-
 <button id="scrollTop" aria-label="Back to top">
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 14V4M9 4L4 9M9 4L14 9" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
 <script>
-
-// Gallery — show fallback immediately, upgrade with live Google photos
-(function(){
-  var FALLBACK=[
-    {url:'img/exterior-painting-siding-after.webp',caption:'Exterior repaint, after',alt:'Blue lap siding on a steep gable with white louvred shutters and a glass railing, after repainting'},
-    {url:'img/ba-interior-after.webp',thumb:'img/ba-interior-after-640.webp',caption:'Interior painting, after',alt:'Charcoal-painted basement walls and bulkhead above a black bar, a yellow sofa in front'},
-    {url:'img/ba-kitchen-after.webp',thumb:'img/ba-kitchen-after-640.webp',caption:'Cabinet painting, after',alt:'Pale green painted cabinets with brass knobs around a white electric range'},
-    {url:'img/ba-bathroom-after.webp',thumb:'img/ba-bathroom-after-640.webp',caption:'Bathroom drywall repair and paint, after',alt:'White-painted bathroom wall with a high small window, a black towel bar and a toilet'},
-    {url:'img/ba-deck-after.webp',thumb:'img/ba-deck-after-640.webp',caption:'Deck refinishing, after',alt:'Cedar-toned deck boards and a front step leading up to white French doors'},
-    {url:'img/ba-drywall-after.webp',thumb:'img/ba-drywall-after-640.webp',caption:'Drywall repair and paint, after',alt:'Smooth white ceiling bulkhead corner above a grey wall after painting'},
-    {url:'img/exterior-painting-siding-before.webp',caption:'Exterior repaint, before',alt:'Faded blue siding and a glass balcony railing under a gable with one white shutter, before repainting'},
-    {url:'img/ba-interior-before.webp',thumb:'img/ba-interior-before-640.webp',caption:'Interior painting, before',alt:'White basement walls and pot lights over a black bar counter, before the charcoal repaint'}
-  ];
-  function renderPhotos(photos){
-    var grid=document.getElementById('photoGrid');
-    if(!grid)return;
-    if(!photos||!photos.length)photos=FALLBACK;
-    window._galleryPhotos=photos;
-    grid.innerHTML=photos.map(function(p,i){
-      var src=p.thumb||p.url||p;
-      var cap=p.caption||'Texora Painting & Drywall Project';
-      var alt=p.alt||cap;
-      return '<div class="photo-item" onclick="openLightbox('+i+')" role="button" tabindex="0" aria-label="View '+cap+'">'
-        +'<img src="'+src+'" alt="'+alt+'" loading="lazy" decoding="async" width="400" height="300" onerror="this.parentNode.remove()">'
-        +'<div class="photo-overlay"><span class="photo-caption">'+cap+'</span></div>'
-        +'</div>';
-    }).join('');
-  }
-  // Show local fallback immediately — no spinner
-  renderPhotos(FALLBACK);
-  // Try to upgrade with live Google Business photos (5s timeout)
-  try {
-    var ctrl=typeof AbortController!=='undefined'?new AbortController():null;
-    var timer=ctrl?setTimeout(function(){ctrl.abort();},5000):null;
-    fetch('/.netlify/functions/photos',ctrl?{signal:ctrl.signal}:{})
-      .then(function(r){if(timer)clearTimeout(timer);return r.ok?r.json():Promise.reject(r.status);})
-      .then(function(d){if(d.photos&&d.photos.length>2)renderPhotos(d.photos);})
-      .catch(function(){/* fallback already shown */});
-  } catch(e){}
-})();
-
-function openLightbox(idx){
-  var photos=window._galleryPhotos||[];
-  if(!photos[idx])return;
-  var src=photos[idx].url||photos[idx];
-  var overlay=document.getElementById('lightbox');
-  var img=document.getElementById('lbImg');
-  if(overlay&&img){img.src=src;img.alt=photos[idx].alt||photos[idx].caption||'';overlay.style.display='flex';}
-}
-
-function closeLightbox(){
-  var overlay=document.getElementById('lightbox');
-  if(overlay)overlay.style.display='none';
-}
-
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
 
 (function(){var nav=document.querySelector('nav');function s(){nav.classList.toggle('scrolled',window.scrollY>60);}window.addEventListener('scroll',s,{passive:true});s();})();
 (function(){if(window._navInit)return;window._navInit=true;var b=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!b||!l)return;function setOpen(o){l.classList.toggle('open',o);b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');}setOpen(l.classList.contains('open'));b.addEventListener('click',function(){setOpen(!l.classList.contains('open'));});l.addEventListener('click',function(e){if(e.target.tagName==='A')setOpen(false);});document.addEventListener('click',function(e){if(!b.contains(e.target)&&!l.contains(e.target))setOpen(false);});document.addEventListener('keydown',function(e){if(e.key!=='Escape'||e.defaultPrevented||!l.classList.contains('open'))return;var a=document.activeElement;if(a!==b&&!l.contains(a))return;e.preventDefault();setOpen(false);b.focus();});})();
